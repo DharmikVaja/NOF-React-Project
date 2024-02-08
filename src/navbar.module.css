@@ -1,0 +1,22 @@
+/* .items {
+  position: fixed;
+  top: 84px;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background-color: rgb(247, 28, 28) !important;
+  height: 56px;
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+} */
+
+.navbar-nav {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    display: block;
+  }
+}

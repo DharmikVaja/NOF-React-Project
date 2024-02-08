@@ -1,0 +1,24 @@
+.main {
+  position: absolute;
+}
+Header {
+  background-color: "#0000FF";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logoImg {
+  height: 3.75rem;
+}
+
+.home-header {
+  background-color: #597ad1;
+  padding: 8px 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  /* position: fixed; */
+}
