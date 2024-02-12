@@ -1,15 +1,12 @@
 import React from "react";
 import "../../app.css";
-import "../../content.module.css";
-// import bgimage from "../../assets/first_banner.png";
+import "./content.css";
 import aboutTSImage from "../../assets/about-telescope-image.png";
 
 const Content = () => {
   return (
     <>
       <div className="story-home-sec spacer-y ">
-        {/* {bgimage} */}
-
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-7">

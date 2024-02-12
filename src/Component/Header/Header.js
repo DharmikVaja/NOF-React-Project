@@ -1,6 +1,6 @@
 import React from "react";
 import logoImg from "../../assets/logo.png";
-import styles from "../../header.module.css";
+import styles from "./header.css";
 // import { BsBagHeartFill } from "react-icons/bs";
 import wishlist from "../../assets/wishlist.png";
 // import { FaCartPlus } from "react-icons/fa6";

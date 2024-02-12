@@ -1,12 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../app.css";
-import "../../Form.module.css";
+import "./Form.css";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaYoutube } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
+
 const Form = () => {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    phone: "+91",
+    email: "",
+    comment: "",
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    first_name: "",
+    last_name: "",
+    phone: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    // Clear the specific error when the user starts typing
+    setFormErrors({
+      ...formErrors,
+      [name]: "",
+    });
+  };
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { ...formErrors };
+
+    // Validate First Name
+    if (!formData.first_name.trim()) {
+      newErrors.first_name = "First Name is required";
+      valid = false;
+    }
+
+    // Validate Last Name
+    if (!formData.last_name.trim()) {
+      newErrors.last_name = "Last Name is required";
+      valid = false;
+    }
+
+    // Validate Phone Number
+    const phoneRegex = /^\+91[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Phone Number must be +91 followed by 10 digits";
+      valid = false;
+    }
+
+    // Validate Email Address
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      newErrors.email = "Invalid Email Address";
+      valid = false;
+    }
+
+    setFormErrors(newErrors);
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // Perform your submit logic here
+      console.log("Form submitted:", formData);
+    } else {
+      console.log("Form validation failed");
+    }
+  };
+
   return (
     <>
-      <footer class="footer-home-new" id="footer">
+      <footer class="footer-home-new " id="footer">
         <div className="container-fluid">
-          <div className="align-items-center  row">
+          <div className="row align-items-center">
             <div className=" offset-md-1 offset-0 col-md-3">
               <div className="get-touch-info">
                 <h2>National Olympiad Foundation</h2>
@@ -17,123 +97,147 @@ const Form = () => {
                 <p>Helpline :</p>
                 <p>junior@groupnof.com</p>
                 <p>+91 93011 95542</p>
-                <ul>
+                <ul className="social-icons">
                   <li>
                     <a
                       href="https://www.facebook.com/NOF-Junior-105382224526859/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <i className="fa fa-facebook"></i>
+                      <FaFacebook />
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/nofolympiad" target="_blank">
-                      <i className="fa fa-twitter"></i>
+                    <a
+                      href="https://twitter.com/nofolympiad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTwitter />
                     </a>
                   </li>
                   <li>
                     <a
                       href="https://www.instagram.com/nofjunior/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <i className="fa fa-instagram"></i>
+                      <AiFillInstagram />
                     </a>
                   </li>
                   <li>
                     <a
                       href="https://www.youtube.com/channel/UCoVgu8YEtOEDZRnHoebokEA"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <i className="fa fa-youtube"></i>
+                      <FaYoutube />
                     </a>
                   </li>
                   <li>
                     <a
                       href="https://in.pinterest.com/5855264130ae1e564c13d784250868/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <i className="fa fa-pinterest"></i>
+                      <FaPinterest />
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="offset-md-1 p-0 col-xl-7 col-lg-7 col-md-7"></div>
-            <div className="get-touch-bg">
-              <h2>Get in touch with us</h2>
-              <div>
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div className="form-group">
-                      <label className="form-label">First Name</label>
-                      <input
-                        placeholder="Enter First Name"
-                        name="first_name"
-                        type="text"
-                        className="form-control"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="form-group">
-                      <label className="form-label">Last Name</label>
-                      <input
-                        placeholder="Enter Last Name"
-                        name="last_name"
-                        type="text"
-                        className="form-control"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Phone Number</label>
-                  <div className=" react-tel-input flag-phone">
-                    <div className="special-label">Phone</div>
-                    <input
-                      className="form-control "
-                      placeholder="Phone Number"
-                      type="tel"
-                      value="+91"
-                    />
-                    <div className="flag-dropdown ">
-                      <div
-                        className="selected-flag"
-                        title="India: + 91"
-                        tabindex="0"
-                        role="button"
-                        aria-haspopup="listbox"
-                      >
-                        <div className="flag in">
-                          <div className="arrow"></div>
+
+            <div className="offset-md-1 p-0 col-xl-7 col-lg-7 col-md-7">
+              <div className="get-touch-bg">
+                <h2>Get in touch with us...</h2>
+                <div>
+                  <form onSubmit={handleSubmit}>
+                    <div className="row">
+                      <div className="col-sm-6">
+                        <div className="form-group">
+                          <label className="form-label">First Name</label>
+                          <input
+                            placeholder="Enter First Name"
+                            name="first_name"
+                            type="text"
+                            className="form-control"
+                            value={formData.first_name}
+                            onChange={handleChange}
+                          />
+                          <p className="error-msg">{formErrors.first_name}</p>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div className="form-group">
+                          <label className="form-label">Last Name</label>
+                          <input
+                            placeholder="Enter Last Name"
+                            name="last_name"
+                            type="text"
+                            className="form-control"
+                            value={formData.last_name}
+                            onChange={handleChange}
+                          />
+                          <p className="error-msg">{formErrors.last_name}</p>
                         </div>
                       </div>
                     </div>
-                  </div>
+
+                    <div className="form-group">
+                      <label className="form-label">Phone Number</label>
+                      <div className="react-tel-input flag-phone">
+                        <input
+                          className="form-control"
+                          placeholder="Phone Number"
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                        />
+                        <div className="flag-dropdown">
+                          <div
+                            className="selected-flag"
+                            title="India: +91"
+                            tabIndex="0"
+                            role="button"
+                            aria-haspopup="listbox"
+                          >
+                            <div className="flag in">
+                              <div className="arrow"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="error-msg">{formErrors.phone}</p>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="form-label">Email Address</label>
+                      <input
+                        placeholder="Enter Email Address"
+                        name="email"
+                        type="email"
+                        className="form-control"
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                      <p className="error-msg">{formErrors.email}</p>
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Comments</label>
+                      <textarea
+                        rows="4"
+                        placeholder="Write something you want to ask.."
+                        name="comment"
+                        className="form-control"
+                        value={formData.comment}
+                        onChange={handleChange}
+                      ></textarea>
+                    </div>
+                    <p className="error-msg"></p>
+                    <button type="submit">Submit</button>
+                  </form>
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input
-                    placeholder="Enter Email Address"
-                    name="email"
-                    type="email"
-                    className="form-control"
-                    value=""
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Comments</label>
-                  <textarea
-                    rows="4"
-                    placeholder="Write something you want to ask.."
-                    name="comment"
-                    className="form-control"
-                  ></textarea>
-                </div>
-                <p className="error-msg"></p>
-                <button type="submit">Submit</button>
               </div>
             </div>
           </div>

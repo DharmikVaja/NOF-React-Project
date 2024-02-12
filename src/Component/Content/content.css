@@ -1,17 +1,11 @@
-.spacer-y {
-  padding: 70px 0;
-}
 .international-sec {
   padding: 80px 0;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color:aqua;
 }
 
-.int-head-h2 {
-  align-items: center;
-  justify-content: center;
-  color: #ffc426;
-}
+
 .justify-content-center {
   justify-content: center !important;
 }

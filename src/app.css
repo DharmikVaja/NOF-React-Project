@@ -163,14 +163,14 @@
   font-weight: 700;
   text-transform: capitalize;
 }
-.international-sec {
+/* .international-sec {
   padding: 80px 0;
   font-family: "Montserrat Alternates", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-}
-.international-box p {
+} */
+/* .international-box p {
   color: #55c4ec;
   text-align: center;
   font-size: 20px;
@@ -179,15 +179,16 @@
   text-transform: capitalize;
   margin-bottom: 0;
   padding: 30px 20px;
-}
-.int-head-h2 {
+} */
+
+/* .int-head-h2 {
   font-family: "Montserrat Alternates", sans-serif;
   padding-bottom: 3rem;
   align-items: center;
   justify-content: center;
   color: #ffc426;
-}
-.international-head h2 {
+} */
+/* .international-head h2 {
   color: #ffc426;
   text-align: center;
   font-size: 40px;
@@ -196,8 +197,8 @@
 }
 .justify-content-center {
   justify-content: center !important;
-}
-.row {
+} */
+/* .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -205,7 +206,8 @@
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
+} */
+
 .set-top-margin {
   padding-top: 3rem;
 }
@@ -220,6 +222,7 @@
 .footer-home-new {
   padding-top: 80px;
   border: none !important;
+  margin-bottom: 5rem;
   /* background-color: #F8F9F9; */
 }
 @media (min-width: 768px) {
@@ -292,6 +295,14 @@ footer {
   text-transform: uppercase;
   margin-bottom: 34px;
 }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -310,6 +321,20 @@ footer {
 .get-touch-bg .form-group {
   margin-bottom: 12px;
 }
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 .error-msg {
   font-size: 12px;
   text-align: center;
@@ -319,4 +344,27 @@ footer {
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
+}
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons li {
+  margin: 0 10px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.social-icons li a {
+  display: block;
+}
+
+.social-icon-img {
+  width: 30px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 50%;
 }
