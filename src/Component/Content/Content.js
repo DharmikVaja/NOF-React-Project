@@ -2,11 +2,12 @@ import React from "react";
 import "../../app.css";
 import "../../content.module.css";
 // import bgimage from "../../assets/first_banner.png";
+import aboutTSImage from "../../assets/about-telescope-image.png";
 
 const Content = () => {
   return (
     <>
-      <div className="story-home-sec">
+      <div className="story-home-sec spacer-y ">
         {/* {bgimage} */}
 
         <div className="container">
@@ -65,14 +66,15 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="about-use-sec">
+      <div className="about-use-sec spacer-y">
         <div className="container">
           <div className="align-items-center row">
             <div className="col-lg-7 col-md-6">
               <div>
                 <img
-                  src="../../assets/about-telescope-image.png"
-                  className="img-fluid"
+                  className="img-fluid abtIMage"
+                  src={aboutTSImage}
+                  // background-image="../../assets/about-telescope-image.png"
                   alt="icon"
                 />
               </div>

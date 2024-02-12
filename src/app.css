@@ -1,9 +1,21 @@
+.spacer-y {
+  padding: 70px 0;
+}
+
 .logoImg {
   height: 3.75rem;
 }
 
-.navbarClass {
-  color: white;
+.align-items-center {
+  align-items: center !important;
+}
+.navbarClass .nav-item .nav-link {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: white !important;
+}
+.navbarClass .nav-item:hover .nav-link {
+  font-size: 1.02rem;
+  color: gray !important;
 }
 
 .story-home-sec {
@@ -67,10 +79,12 @@
   position: relative;
   z-index: 1;
 }
+.story-home-sec {
+  font-family: " Montserrat Alternates", sans-serif;
+}
 .story-home-sec h1 {
   color: #24242e;
   font-size: 50px;
-  /* font-family: Montserrat Alternates; */
   font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 34px;
@@ -82,7 +96,6 @@
 .story-home-sec p {
   color: #4d4d56;
   font-size: 16px;
-  font-family: Montserrat;
   line-height: 20px;
   font-weight: 400;
   margin-bottom: 0;
@@ -91,11 +104,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
   gap: 28px;
   margin-top: 35px;
   margin-bottom: 35px;
 }
 .new-yellow-btn {
+  font-family: "Montserrat Alternates", sans-serif;
   border-radius: 16px;
   background: var(--yellow, #ffc426);
   padding: 10px 19px;
@@ -130,4 +145,178 @@
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+/* **********************about telescope***************************** */
+.about-heading {
+  padding: 15px 0;
+}
+
+.about-heading h2 {
+  color: #ffc426;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.about-heading .bold-heading {
+  color: #24242e;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.international-sec {
+  padding: 80px 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.international-box p {
+  color: #55c4ec;
+  text-align: center;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  padding: 30px 20px;
+}
+.int-head-h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  padding-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffc426;
+}
+.international-head h2 {
+  color: #ffc426;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+.set-top-margin {
+  padding-top: 3rem;
+}
+@media (min-width: 1200px) {
+  .col-xl-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+}
+
+/* *************************footer************************************** */
+.footer-home-new {
+  padding-top: 80px;
+  border: none !important;
+  /* background-color: #F8F9F9; */
+}
+@media (min-width: 768px) {
+  .offset-md-1 {
+    margin-left: 8.33333333%;
+  }
+}
+footer {
+  display: block;
+}
+
+.get-in-touch-section {
+  padding: 0px 0 80px;
+}
+.get-touch-info {
+  text-align: left;
+}
+.p-0 {
+  padding: 0 !important;
+}
+.get-touch-bg::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  border-radius: 215px 0px 0px 0px;
+  border: 4px solid var(--yellow, #ffc426);
+  left: -10px;
+  width: 100%;
+  border-right: 0;
+  height: 100%;
+  z-index: -1;
+}
+.get-touch-bg {
+  border-radius: 215px 0px 0px 0px;
+  background: #ffc426;
+  padding: 79px 150px 50px 190px;
+  position: relative;
+}
+.get-touch-info h2 {
+  color: #ffc426;
+  font-size: 40px;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+.get-touch-info ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 25px;
+}
+.get-touch-info ul li {
+  list-style: none;
+  width: 45px;
+  height: 45px;
+  background: #e9e9f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.get-touch-bg h2 {
+  color: #000;
+  font-size: 32px;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+.get-touch-bg .form-group {
+  margin-bottom: 12px;
+}
+.error-msg {
+  font-size: 12px;
+  text-align: center;
+  margin: 15px 0 10px;
+  color: red !important;
+}
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
 }

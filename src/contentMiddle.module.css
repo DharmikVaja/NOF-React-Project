@@ -1,10 +1,17 @@
+.spacer-y {
+  padding: 70px 0;
+}
 .international-sec {
   padding: 80px 0;
-  background-image: "url(./assets/contentMiddle-bgImage.png)";
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.int-head-h2 {
+  align-items: center;
+  justify-content: center;
+  color: #ffc426;
+}
 .justify-content-center {
   justify-content: center !important;
 }
@@ -23,3 +30,7 @@
     width: 83.33333333%;
   }
 }
+/* *******************about Telescope Image******************** */
+/* .abtImage {
+  background-image: url("../src/assets/about-telescope-image.png");
+} */
