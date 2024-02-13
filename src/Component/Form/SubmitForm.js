@@ -86,7 +86,7 @@ const SubmitForm = () => {
     <>
       <footer class="footer-home-new" id="footer">
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row align-items-center d-flex justify-content-between">
             <div className="offset-md-1 col-md-3">
               <div className="get-touch-info">
                 <h2>National Olympiad Foundation</h2>
@@ -196,7 +196,7 @@ const SubmitForm = () => {
                         />
                         <div className="flag-dropdown">
                           <div
-                            className="selected-flag"
+                            className="selected-flag open"
                             title="India: +91"
                             tabIndex="0"
                             role="button"

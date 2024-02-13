@@ -5,7 +5,7 @@ import "./content.css";
 const Content = () => {
   return (
     <>
-      <div className="story-home-sec spacer-y ">
+      <div className="story-home-sec ">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-7">

@@ -131,6 +131,8 @@
   font-family: " Montserrat Alternates", sans-serif;
   background-position: center;
   color: #ffffff;
+  padding-top: 200px;
+  padding-bottom: 95px;
 }
 
 .story-home-sec::before {
