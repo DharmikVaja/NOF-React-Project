@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import styles from "./navbar.css";
+import "./navbar.css";
 
 const Navbar = () => {
   return (
     <>
-      <div className={styles.containerFluid}>
+      <div className="container-fluid">
         <nav className="navbar navbar-expand-lg ">
           <button
             className="navbar-toggler"
@@ -29,11 +29,7 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item ">
-                <a href="#" className="nav-link listNames">
-                  Products
-                </a>
-              </li>
+
               <li className="nav-item">
                 <a href="#" className="nav-link listNames">
                   How it works

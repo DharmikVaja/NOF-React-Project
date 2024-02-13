@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../../app.css";
-import "./Form.css";
+import "./submitForm.css";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
 
-const Form = () => {
+const SubmitForm = () => {
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -84,10 +84,10 @@ const Form = () => {
 
   return (
     <>
-      <footer class="footer-home-new " id="footer">
-        <div className="container-fluid">
+      <footer class="footer-home-new" id="footer">
+        <div className="container">
           <div className="row align-items-center">
-            <div className=" offset-md-1 offset-0 col-md-3">
+            <div className="offset-md-1 col-md-3">
               <div className="get-touch-info">
                 <h2>National Olympiad Foundation</h2>
                 <p>
@@ -147,7 +147,7 @@ const Form = () => {
               </div>
             </div>
 
-            <div className="offset-md-1 p-0 col-xl-7 col-lg-7 col-md-7">
+            <div className="p-0 col-xl-7 col-lg-7 col-md-7">
               <div className="get-touch-bg">
                 <h2>Get in touch with us...</h2>
                 <div>
@@ -247,4 +247,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SubmitForm;

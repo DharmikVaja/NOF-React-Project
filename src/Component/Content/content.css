@@ -2,29 +2,156 @@
   padding: 80px 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color:aqua;
+  background-color: aqua;
+}
+.spacer-y {
+  padding: 70px 0;
 }
 
-
-.justify-content-center {
-  justify-content: center !important;
+.bold-heading {
+  color: #24242e;
+  font-size: 18px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
 }
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
+.align-items-center {
+  align-items: center !important;
+}
+.set-position {
+  position: relative;
+  z-index: 1;
+}
+
+.story-home-sec h1 {
+  color: #24242e;
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 34px;
+  /* max-width: 590px; */
+}
+.story-home-sec h1 span {
+  color: #ffc426;
+}
+.banner-story-btn {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  align-items: center;
+  justify-content: flex-start;
+  gap: 28px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
+.story-home-sec p {
+  color: #4d4d56;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.show-description .inner-describe {
+  border-radius: 24px;
+  background: #fff;
+  padding: 60px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  margin-top: -7%;
+  position: relative;
+  z-index: 1;
+}
+.show-description .inner-describe ul {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.show-description .inner-describe ul li {
+  width: 33%;
+  list-style: none;
+  position: relative;
+}
+.show-description .inner-describe ul li p {
+  color: #363636;
+  font-size: 18px;
+  /* font-family: Montserrat; */
+  font-family: " Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  text-align: center;
+}
+.new-yellow-btn {
+  font-family: "Montserrat Alternates", sans-serif;
+  border-radius: 16px;
+  background: var(--yellow, #ffc426);
+  padding: 10px 19px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.new-white-btn {
+  border-radius: 16px;
+  border: 2px solid var(--yellow, #ffc426);
+  background: #fff;
+  padding: 10px 20px;
+  color: #000;
+  font-size: 16px;
+  /* font-family: Montserrat; */
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.show-description .inner-describe ul li::after {
+  content: "|";
+  color: #ffc426;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  font-size: 25px;
+}
+.show-description .inner-describe ul li:last-child::after {
+  content: none; /* Remove the last "|" */
+}
+.show-description .inner-describe ul li p span {
+  font-size: 24px;
+}
+
+.story-home-sec {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: " Montserrat Alternates", sans-serif;
+  background-position: center;
+  color: #ffffff;
+}
+
+.story-home-sec::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("../../assets/first_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 @media (min-width: 1200px) {
   .col-xl-10 {
     flex: 0 0 auto;
     width: 83.33333333%;
   }
 }
-/* *******************about Telescope Image******************** */
-/* .abtImage {
-  background-image: url("../src/assets/about-telescope-image.png");
-} */

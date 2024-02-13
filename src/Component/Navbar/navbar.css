@@ -1,19 +1,39 @@
-.containerFluid {
+.container-fluid {
   color: white;
   background: black;
+}
+.navbar-nav .nav-item .nav-link {
+  color: white !important;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.navbarClass .nav-item:hover {
+  font-size: 1.01rem;
+  color: #ffc426;
+}
+
+.navbarClass li a {
+  color: #fffffe;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+.navbarClass li a:hover {
+  color: #ffc426;
 }
 
 .navbar-nav {
   display: flex;
-  padding-left: 0; /* Remove default padding from the navbar */
+  padding-left: 0;
 }
-
-.navbar-nav .nav-item {
-  color: white !important; /* Set the default color of the nav item to white */
-}
-
-.navbar-nav .nav-item:hover {
-  color: grey !important; /* Change the color on hover to grey */
+.nav-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
 @media (max-width: 767px) {
@@ -21,4 +41,3 @@
     display: block;
   }
 }
-
