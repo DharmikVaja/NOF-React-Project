@@ -1,0 +1,43 @@
+.report-analysis-sec {
+  min-height: 82vh;
+  align-items: center;
+  display: flex;
+  padding: 30px 0;
+}
+.report-analysis-sec .content {
+  text-align: start;
+}
+.report-analysis-sec .content h1 {
+  color: #363636;
+  font-size: 32px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.report-analysis-sec .content h1 span {
+  color: #ffc426;
+}
+.report-analysis-sec .content p {
+  color: #4d4d56;
+  font-size: 18px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 40px 0 55px;
+}
+.new-yellow-btn {
+  border-radius: 16px;
+  background: var(--yellow, #ffc426);
+  padding: 10px 19px;
+  color: #000;
+  font-size: 16px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  border-color: transparent;
+  cursor: pointer;
+}

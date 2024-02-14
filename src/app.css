@@ -9,9 +9,9 @@
   height: auto;
 }
 
-/* **********************about telescope***************************** */
-
-/* *************************footer************************************** */
+.set-top-margin-all {
+  margin-top: 180px;
+}
 
 .error-msg {
   font-size: 12px;

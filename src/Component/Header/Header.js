@@ -3,6 +3,7 @@ import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
 import cart from "../../assets/cart.png";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -81,14 +82,14 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item">
-                  <a href="#" className="nav-link listNames">
+                <Link to="/how-it-works" className="nav-link listNames">
                     How it works
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link listNames">
+                  <Link to="/reports-and-analysis" className="nav-link listNames">
                     Reports & Analysis
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a href="#" className="nav-link listNames">
