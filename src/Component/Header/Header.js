@@ -3,7 +3,10 @@ import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
 import cart from "../../assets/cart.png";
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import HowItWork from "../How-it-Work/HowItWork";
+import ReportAnalysis from "../ReportAnalysis/ReportAnalysis";
+import Home from "../Home/Home";
 
 const Header = () => {
   return (
@@ -76,41 +79,52 @@ const Header = () => {
             >
               <ul className="nav navbarClass">
                 <li className="nav-item ">
-                  <a href="#" className="nav-link listNames">
+                  <Link href="/" className="nav-link listNames">
                     Home
-                  </a>
+                  </Link>
                 </li>
-
                 <li className="nav-item">
-                <Link to="/how-it-works" className="nav-link listNames">
+                  <Link to="/how-it-works" className="nav-link listNames">
                     How it works
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/reports-and-analysis" className="nav-link listNames">
+                  <Link
+                    to="/reports-and-analysis"
+                    className="nav-link listNames"
+                  >
                     Reports & Analysis
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link listNames">
+                  <Link href="/syllabus" className="nav-link listNames">
                     Syllabus
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link listNames">
+                  <Link href="#" className="nav-link listNames">
                     Downloads
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link listNames">
+                  <Link href="#" className="nav-link listNames">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
       </div>
+      <Routes>
+        {/* <Route path="/home" exact render={() => <Home />} />
+        <Route path="/how-it-works" render={() => <HowItWork />} />
+        <Route path="/report-&-analysis" render={() => <ReportAnalysis />} /> */}
+        {/* <Route path="/syllabus" exact render={() => <Header />} />
+        <Route path="/downloads" exact render={() => <Header />} />
+        <Route path="/contact" exact render={() => <Header />} /> */}
+      </Routes>
+      {/* <Route path="/" */}
     </>
   );
 };

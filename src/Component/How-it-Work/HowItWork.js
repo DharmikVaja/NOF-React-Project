@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./how-it-work.css";
 import slider1 from "../../assets/slider1.png";
+import Header from "../Header/Header";
 
 const HowItWork = () => {
   let settings = {
@@ -49,13 +50,14 @@ const HowItWork = () => {
 
   return (
     <>
+      <Header />
       <div className="set-top-margin-all"></div>
       <div className="how-it-work-page" style={containerStyle}>
-        <div class="head-practice-test p-0">
-          <div class="container">
-            <div class="justify-content-center row">
-              <div class="col-lg-9 col-md-12">
-                <div class="testimonial-heading text-center">
+        <div className="head-practice-test p-0">
+          <div className="container">
+            <div className="justify-content-center row">
+              <div className="col-lg-9 col-md-12">
+                <div className="testimonial-heading text-center">
                   <h1>How It Works </h1>
                   <p>
                     Discover the power of personalized learning with NOF and
@@ -90,8 +92,8 @@ const HowItWork = () => {
               </div>
             </div>
           ))} */}
-          <div className="container">
-            <div className="how-work-box" tabindex="-1">
+          <div className="slick-slide slick-active">
+            <div className="how-work-box" tabIndex="-1">
               <div className="image">
                 <img src={slider1} className="img-fluid" alt="img" />
               </div>
@@ -107,11 +109,11 @@ const HowItWork = () => {
           <div
             data-index="1"
             className="slick-slide slick-active"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="false"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -131,11 +133,11 @@ const HowItWork = () => {
           <div
             data-index="2"
             className="slick-slide slick-active"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="false"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -154,11 +156,11 @@ const HowItWork = () => {
           <div
             data-index="3"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -176,11 +178,11 @@ const HowItWork = () => {
           <div
             data-index="4"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -199,11 +201,11 @@ const HowItWork = () => {
           <div
             data-index="5"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -219,11 +221,11 @@ const HowItWork = () => {
           <div
             data-index="6"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -239,11 +241,11 @@ const HowItWork = () => {
           <div
             data-index="7"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>
@@ -259,11 +261,11 @@ const HowItWork = () => {
           <div
             data-index="8"
             className="slick-slide"
-            tabindex="-1"
+            tabIndex="-1"
             aria-hidden="true"
           >
             <div>
-              <div className="how-work-box" tabindex="-1">
+              <div className="how-work-box" tabIndex="-1">
                 <div className="image">
                   <img src={slider1} className="img-fluid" alt="img" />
                 </div>

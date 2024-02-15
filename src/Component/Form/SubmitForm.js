@@ -84,7 +84,7 @@ const SubmitForm = () => {
 
   return (
     <>
-      <footer class="footer-home-new" id="footer">
+      <footer className="footer-home-new" id="footer">
         <div className="container">
           <div className="row align-items-center d-flex justify-content-between">
             <div className="offset-md-1 col-md-3">

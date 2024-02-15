@@ -6,10 +6,9 @@
 .benefit-sec {
   padding: 70px 0;
 }
-/* .how-work-box {
-  width: 100% !important;
-  display: inline-block !important;
-} */
+.slick-slide {
+  padding: 20px;
+}
 .benefit-heading {
   color: #363636;
   text-align: center;
@@ -56,4 +55,47 @@
   line-height: normal;
   text-transform: capitalize;
   margin-top: 30px;
+}
+.slick-list {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.how-work-box {
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0px 16px 42px 0px rgba(31, 31, 51, 0.06);
+  padding: 23px 30px;
+  text-align: center;
+  min-height: 265px;
+  margin: 15px 0;
+  min-height: 410px;
+}
+.how-work-box .image {
+  border-radius: 24px;
+  background: #e9e9f6;
+  padding: 20px;
+  height: 72px;
+  width: 72px;
+  margin: auto;
+}
+.how-work-box h4 {
+  color: #24242e;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  margin: 22px 0;
+}
+.how-work-box p {
+  color: #4d4d56;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }

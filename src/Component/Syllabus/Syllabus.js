@@ -2,10 +2,13 @@ import React from "react";
 import Form from "../Form/SubmitForm";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const Syllabus = () => {
   return (
     <div>
+      <Header />
+      <div className="set-top-margin-all"></div>
       <div class="head-practice-test">
         <div class="container">
           <div class="justify-content-center row">
@@ -34,7 +37,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_Nursery.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> NURSERY</p>
@@ -45,7 +47,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_LKG.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> LKG</p>
@@ -56,7 +57,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_UKG.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> UKG</p>
@@ -67,7 +67,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_1.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 1</p>
@@ -78,7 +77,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_2.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 2</p>
@@ -89,7 +87,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_3.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 3</p>
@@ -100,7 +97,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_4.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 4</p>
@@ -111,7 +107,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_5.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 5</p>
@@ -138,7 +133,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_6.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 6</p>
@@ -149,7 +143,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_7.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 7</p>
@@ -160,7 +153,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_8.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 8</p>
@@ -171,7 +163,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_9.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 9</p>
@@ -182,7 +173,6 @@ const Syllabus = () => {
               <a
                 href="/assets/pdf/syllabus/Syllabus_Class_10.pdf"
                 target="_blank"
-                style="text-decoration: none;"
               >
                 <div class="syllabus-home-box">
                   <p> CLASS 10</p>

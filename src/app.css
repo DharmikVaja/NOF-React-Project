@@ -19,10 +19,7 @@
   margin: 15px 0 10px;
   color: red !important;
 }
-[type="submit"]:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
-}
+
 .social-icons {
   list-style: none;
   padding: 0;
@@ -45,4 +42,8 @@ button:not(:disabled) {
   width: 30px; /* Adjust the width as needed */
   height: auto;
   border-radius: 50%;
+}
+
+.slick-next {
+  right: 0px !important;
 }
