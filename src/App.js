@@ -16,6 +16,8 @@ import Home from "./Component/Home/Home";
 import Syllabus from "./Component/Syllabus/Syllabus";
 import WIshlist from "./Component/Wishlist/WIshlist";
 import Download from "./Component/Download/Download";
+import Contact from "./Component/Contact/Contact";
+import Cart from "./Component/Cart/Cart";
 
 function App() {
   return (
@@ -23,11 +25,14 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWork />} />
         <Route path="/reports-and-analysis" element={<ReportAnalysis />} />
         <Route path="/syllabus" element={<Syllabus />} />
         <Route path="/wishlist" element={<WIshlist />} />
         <Route path="/downloads" element={<Download />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

@@ -29,13 +29,13 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="position-relative me-3">
-                  <a role="button" className="btn" href="#">
+                  <Link role="button" className="btn" to="/cart">
                     <img src={cart} alt="cart" />
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill badge bg-danger">
                       0
                     </span>
                     <span>View Cart</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
 

@@ -217,7 +217,7 @@ const SubmitForm = () => {
                         placeholder="Enter Email Address"
                         name="email"
                         type="email"
-                        className="form-control"
+                        className="form-control submitform-control"
                         value={formData.email}
                         onChange={handleChange}
                       />

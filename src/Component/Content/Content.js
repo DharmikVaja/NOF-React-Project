@@ -9,7 +9,7 @@ const Content = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-7">
-              <div className="set-position">
+              <div className="set-position ">
                 <h1>
                   <span>Animation Story &amp; </span>Artificial Intelligence
                   based International Olympiads
