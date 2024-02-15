@@ -1,0 +1,28 @@
+.olympaid-section {
+  padding: 30px 0;
+}
+.nof-same-font {
+  margin-bottom: 30px;
+}
+.nof-same-font h3 {
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.nof-same-font span {
+  background-color: #cccaca;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 85%;
+}
+.nof-same-font span::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10%;
+}
+.nof-same-font.wishlist span:before {
+  background-color: #597ad1;
+}

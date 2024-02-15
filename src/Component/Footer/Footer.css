@@ -1,6 +1,7 @@
 .link-list li a {
   color: #000 !important;
   text-decoration: none;
+  font-size: 13px;
 }
 @media screen and (max-width: 1400px) {
   .link-list {
@@ -10,15 +11,17 @@
 ul {
   text-decoration: none;
   list-style: none !important;
-  margin-bottom: 0 !important;
+  /* margin-bottom: 0 !important; */
 }
 li a {
   line-height: 22px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   color: #000;
   margin: 0 10px;
   text-decoration: none;
   font-family: "Montserrat Alternates", sans-serif;
 }
-
+.copyright-text {
+  font-size: 10px !important;
+}

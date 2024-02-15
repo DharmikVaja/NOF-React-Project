@@ -1,0 +1,7 @@
+.download-heading h1{
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    justify-content: center;
+    font-family: "Montserrat Alternates", sans-serif;;
+}

@@ -23,10 +23,10 @@ const Header = () => {
 
               <div className="col-md-7 d-flex justify-content-end align-items-center">
                 <div className="me-3">
-                  <a role="button" className="nav-link" href="#">
+                  <Link role="button" className="nav-link" to="/wishlist">
                     <img src={wishlist} alt="wishlist" />
                     Wishlist
-                  </a>
+                  </Link>
                 </div>
                 <div className="position-relative me-3">
                   <a role="button" className="btn" href="#">
@@ -79,7 +79,7 @@ const Header = () => {
             >
               <ul className="nav navbarClass">
                 <li className="nav-item ">
-                  <Link href="/" className="nav-link listNames">
+                  <Link to="/" className="nav-link listNames">
                     Home
                   </Link>
                 </li>
@@ -97,17 +97,17 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/syllabus" className="nav-link listNames">
+                  <Link to="/syllabus" className="nav-link listNames">
                     Syllabus
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" className="nav-link listNames">
+                  <Link to="/downloads" className="nav-link listNames">
                     Downloads
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" className="nav-link listNames">
+                  <Link to="/contact" className="nav-link listNames">
                     Contact
                   </Link>
                 </li>

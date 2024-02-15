@@ -1,0 +1,64 @@
+.syllabus-text h3 {
+  text-align: left;
+  justify-content: left;
+}
+.syllabus-heading h1 {
+  font-family: "Montserrat Alternates", sans-serif !important;
+  padding-bottom: 50px;
+}
+.syllabus-text h3 {
+  font-family: "Montserrat Alternates", sans-serif !important;
+}
+.syllabus-text {
+  text-align: left;
+  justify-content: left;
+  padding-bottom: 40px;
+}
+.syllabus-text span {
+  background-color: #cccaca;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 85%;
+}
+.syllabus-text span::before {
+  content: "";
+  position: absolute;
+  background-color: #ffc426;
+  height: 4px;
+  width: 10%;
+}
+.syllabus-text.wishlist span:before {
+  background-color: #ffc426;
+}
+.olympaid-section {
+  padding: 30px 0;
+}
+.syllabus-home-box {
+  border-radius: 8px;
+  background: #f5f5fa;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 28px 50px;
+  margin: 15px 0;
+  min-height: 105px;
+  display: flex;
+  text-decoration: none !important;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.syllabus-a {
+  color: white !important;
+  text-decoration: none !important;
+}
+.syllabus-home-box p {
+  text-decoration: none !important;
+  color: #363636;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+}

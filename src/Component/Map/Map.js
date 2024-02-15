@@ -1,7 +1,7 @@
 import React from "react";
 import "./map.css";
 
-const MapFooter = () => {
+const Map = () => {
   return (
     <>
       <iframe
@@ -14,10 +14,8 @@ const MapFooter = () => {
         tabIndex="0"
         style={{ border: 0 }}
       />
-
-      
     </>
   );
 };
 
-export default MapFooter;
+export default Map;

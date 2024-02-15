@@ -24,8 +24,8 @@
   font-family: "Montserrat Alternates", sans-serif;
 }
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  /* color: var(--bs-link-color); */
+  /* text-decoration: underline; */
 }
 .footer-home-new ul.link-list li::after {
   content: "|";

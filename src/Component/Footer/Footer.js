@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="col-lg-6">
               <div className="content">
                 <div className="content">
-                  <p>
+                  <p className="copyright-text">
                     © NOF Edtech Private Limited 2023-2024. All rights reserved.
                   </p>
                 </div>

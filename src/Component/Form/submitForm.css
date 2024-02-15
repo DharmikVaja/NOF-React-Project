@@ -2,12 +2,14 @@
   padding-top: 80px;
   border: none !important;
   margin-bottom: 5rem;
-  /* background-color: #F8F9F9; */
 }
 footer {
   display: block;
 }
-
+.social-icons li a {
+  display: inline-block;
+  margin: 0;
+}
 footer {
   display: block;
 }
@@ -42,18 +44,14 @@ footer {
 .get-touch-info h2 {
   color: #ffc426;
   font-size: 40px;
-
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 27px;
 }
 .get-touch-info ul {
   padding: 0;
-  margin: 0;
   display: flex;
   align-items: center;
-  justify-content: start;
-  gap: 25px;
 }
 .get-touch-info ul li {
   list-style: none;

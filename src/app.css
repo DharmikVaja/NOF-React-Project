@@ -3,7 +3,9 @@
 ::before {
   box-sizing: border-box;
 }
-
+.spacer-y {
+  padding: 70px 0;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -25,11 +27,11 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .social-icons li {
-  margin: 0 10px;
+  margin: 0 7px;
   text-align: center;
   overflow: hidden;
   border-radius: 50%;
