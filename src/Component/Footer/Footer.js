@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,27 +11,27 @@ const Footer = () => {
             <div className="col-lg-6">
               <ul className="link-list d-flex align-items-center">
                 <li>
-                  <a href="/privacy-policy" target="_blank">
+                  <Link to="/privacy-policy" className="footer-links">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 |
                 <li>
-                  <a href="/terms-of-service" target="_blank">
+                  <Link to="/terms-of-service" className="footer-links">
                     Terms Of Service
-                  </a>
+                  </Link>
                 </li>
                 |
                 <li>
-                  <a href="/disclaimer" target="_blank">
+                  <Link to="/disclaimer" className="footer-links">
                     Disclaimer
-                  </a>
+                  </Link>
                 </li>
                 |
                 <li>
-                  <a href="/refund-and-cancellation" target="_blank">
+                  <Link to="/refund-and-cancellation" className="footer-links">
                     Refund &amp; Cancellation
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,0 +1,16 @@
+.border-yellow {
+  bottom: 90px;
+  width: 60%;
+  background-color: #ffc426;
+  height: 2px;
+  content: "-";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.privacy-heading{
+    text-decoration: underline orange ;
+    text-decoration-thickness: 2px;
+    /* text-decoration: ; */
+}

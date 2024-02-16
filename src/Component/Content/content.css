@@ -207,7 +207,7 @@
 @media (max-width: 768px){
   .story-home-sec::before{
     background-color: rgba(255,255,255,0.9) !important;
-    -moz-background-origin: multiply;
+    /* -moz-background-origin: multiply; */
     /* opacity: 0.5;    */
   }
   .set-position {

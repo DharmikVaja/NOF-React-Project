@@ -49,3 +49,5 @@
 .slick-next {
   right: 0px !important;
 }
+
+/* window.scrollTo- in useEffect for scroll to the beginning of routes */

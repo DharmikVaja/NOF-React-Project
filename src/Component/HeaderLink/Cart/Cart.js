@@ -45,7 +45,7 @@ const Cart = () => {
                             />
                             <button
                               type="button"
-                              className="cart-btn   btn btn-lg btn-primary"
+                              className="cart-btn btn btn-lg btn-primary"
                               onClick={invalidCoupon}
                             >
                               Apply Coupon
@@ -60,9 +60,9 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          {/* <div className="align-items-end row">
+          <div className="align-items-end row">
             <div className="col-md-12">
-              <div className="cart-table cart-total">
+              <div className="cart2-table cart2-total">
                 <div className="table-responsive">
                   <table className="table">
                     <thead>
@@ -76,7 +76,7 @@ const Cart = () => {
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="table">
                       <td>Price</td>
                       <td>$&nbsp;0</td>
                       <td>$&nbsp;00.00</td>
@@ -86,17 +86,20 @@ const Cart = () => {
                   </table>
                 </div>
                 <p className="error-msg"></p>
-                <div className="order-btn   ">
-                  <button type="submit" className="btn btn-primary">
+                <div className="order-btn justify-content-center  ">
+                  <button
+                    type="submit"
+                    class="btn btn-primary place-order-button"
+                  >
                     Place Order
                   </button>
                 </div>
-                <div className="back-to-product responsive-end px-4 py-2">
-                  <a className="cursorPointerClass">Back to product</a>
+                <div class="back-to-product responsive-end px-4 py-2">
+                  <a class="cursorPointerClass">Back to product</a>
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

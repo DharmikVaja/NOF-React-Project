@@ -1,23 +1,17 @@
 import React from "react";
 import "./app.css";
-// import About from "./Component/About/About";
-// import AboutTele from "./Component/AboutTele/AboutTele";
-// import Content from "./Component/Content/Content";
-// import ContentMiddle from "./Component/ContentMiddle/ContentMiddle";
-// import Footer from "./Component/Footer/Footer";
-// import SubmitForm from "./Component/Form/SubmitForm";
-// import Header from "./Component/Header/Header";
-// import Map from "./Component/Map/Map";
 import HowItWork from "./Component/How-it-Work/HowItWork";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import ReportAnalysis from "./Component/ReportAnalysis/ReportAnalysis";
 import Home from "./Component/Home/Home";
 import Syllabus from "./Component/Syllabus/Syllabus";
-import WIshlist from "./Component/Wishlist/WIshlist";
+import WIshlist from "./Component/HeaderLink/Wishlist/WIshlist";
 import Download from "./Component/Download/Download";
 import Contact from "./Component/Contact/Contact";
 import Cart from "./Component/Cart/Cart";
+import PrivacyPolicy from "./Component/FooterLinks/PrivacyPolicy/PrivacyPolicy";
+import TermsService from "./Component/FooterLinks/TermsService/TermsService";
 
 function App() {
   return (
@@ -33,6 +27,8 @@ function App() {
         <Route path="/downloads" element={<Download />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsService />} />
       </Routes>
     </>
   );
