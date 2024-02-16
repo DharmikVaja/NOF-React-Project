@@ -1,0 +1,47 @@
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(128, 128, 128, 0.9);
+}
+.modal-container {
+  position: fixed;
+  max-width: 30rem;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(245, 197, 124);
+  padding: 2rem 3rem;
+  border-radius: 1.2rem;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+.modal-container h2 {
+  font-size: 2.4rem;
+  font-family: "Helvetica Neue", sans-serif;
+}
+.modal-container p {
+  font-size: 1.4rem;
+  margin: 1rem 0 2.4rem 0;
+  color: black;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+.modal-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.4rem;
+  border: black;
+  border-radius: 0.6rem;
+  background-color: rgb(71, 83, 254);
+  color: black;
+  transform: scale(0.9);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.modal-btn:hover {
+  background-color: rgb(16, 16, 234);
+  color: white;
+  border: white;
+  transform: scale(1);
+  transition: all 0.1s;
+}

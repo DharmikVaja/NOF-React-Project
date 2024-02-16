@@ -1,10 +1,10 @@
 import React from "react";
-import SubmitForm from "../Form/SubmitForm";
-import Map from "../Map/Map";
-import Footer from "../Footer/Footer";
+import SubmitForm from "../../Form/SubmitForm";
+import Map from "../../Map/Map";
+import Footer from "../../Footer/Footer";
 import "./report_analysis.css";
-import reportAnalysis from "../../assets/report-analysis.png";
-import Header from "../Header/Header";
+import reportAnalysis from "../../../assets/report-analysis.png";
+import Header from "../../Header/Header";
 
 const ReportAnalysis = () => {
   return (

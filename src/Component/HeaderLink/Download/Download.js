@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import "./download.css"
-import Form from "../Form/SubmitForm";
-import Map from '../Map/Map';
-import Footer from '../Footer/Footer';
+import Form from "../../Form/SubmitForm";
+import Map from '../../Map/Map';
+import Footer from '../../Footer/Footer';
 import { FaDownload } from "react-icons/fa";
-import downreport1 from "../../assets/pdf/download/report1.pdf"
-import downreport2 from "../../assets/pdf/download/report2.pdf"
-import downreport3 from "../../assets/pdf/download/report3.pdf"
+import downreport1 from "../../../assets/pdf/download/report1.pdf"
+import downreport2 from "../../../assets/pdf/download/report2.pdf"
+import downreport3 from "../../../assets/pdf/download/report3.pdf"
 
 const Download = () => {
   return (

@@ -4,8 +4,7 @@ import "./header.css";
 import wishlist from "../../assets/wishlist.png";
 import cart from "../../assets/cart.png";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import HowItWork from "../How-it-Work/HowItWork";
-import ReportAnalysis from "../ReportAnalysis/ReportAnalysis";
+
 import Home from "../Home/Home";
 
 const Header = () => {

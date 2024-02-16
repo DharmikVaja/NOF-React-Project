@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./privacy-policy.css"
+import Footer from "../../Footer/Footer";
+import SubmitForm from "../../Form/SubmitForm";
 
 const PrivacyPolicy = () => {
   return (
@@ -133,7 +135,11 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </div>
+      <SubmitForm/>
+      <hr/>
+      <Footer/>
     </div>
+    
   );
 };
 

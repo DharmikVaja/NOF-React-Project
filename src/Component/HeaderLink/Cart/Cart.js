@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
+import CouponImg from "../../../assets/cart-coupon.png";
 import "./cart.css";
-import CouponImg from "../../assets/cart-coupon.png";
 
 const Cart = () => {
   const invalidCoupon = () => {

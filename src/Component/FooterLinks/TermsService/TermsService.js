@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./tos.css";
+import Footer from "../../Footer/Footer";
+import SubmitForm from "../../Form/SubmitForm";
 
 const TermsService = () => {
   return (
@@ -55,8 +57,8 @@ const TermsService = () => {
                 products. Any access to our Services/Application/products
                 through registrations/subscription is non transferable.
               </p>
-
-              <h4>Users are prohibited from...</h4>
+              <br />
+              <h5>Users are prohibited from...</h5>
               <ol>
                 <li>
                   decompiling, reverse engineering, disassembling, modifying,
@@ -129,52 +131,65 @@ const TermsService = () => {
                   Application/Website/Services/products.
                 </li>
               </ol>
-
+              <br />
+              <h5>General Provision:</h5>
               <p>
-                The Application provides a platform for users to submit content,
-                granting them a worldwide, non-exclusive, royalty-free license
-                to use, copy, reproduce, process, adapt, modify, publish,
-                transmit, display, and distribute the material.
+                The Company's Privacy Policy, along with the Terms, constitutes
+                the entire agreement between the Company and You regarding
+                access to the Application, Website, and Services.
               </p>
 
               <p>
-                Users agree that others may use their material in the same way
-                as other content available through the Services. The Application
-                is designed to be error-free and user-friendly, but the Company
-                disclaims responsibility for any inadvertent errors. Feedback is
-                welcome to improve the application's accuracy and suitability.
+                The Company's rights are freely transferable without requiring
+                consent.
               </p>
-
-              
               <p>
-              The website offers users access to compiled educational information and related sources, but it is provided on an As Is basis and the company assumes no liability for its accuracy, completeness, or non-obsolescence. The website may include links to other websites for convenience, but they do not endorse the content of these sites. The application/services/products are developed on the concepts covered in the structured curriculum syllabus prescribed for students of various courses. 
+                The Company enforces any unenforceable provisions to the maximum
+                extent permissible, while the remaining terms remain in full
+                force.
               </p>
-
               <p>
-              The use of these services is not a substitute for curriculum-based education provided by educational institutions but to supplement it by explaining and presenting concepts in an easy-to-understand manner. The company acknowledges that there are various methods of delivering structured curriculum pedagogy and that subscription to the application or usage of the website/products does not guarantee admission to educational institutions, passing exams, or achievement of specified percentages of marks. Certain content may contain opinions and views, and the company makes no warranties or representations regarding the quality, content, completeness, or adequacy of such information and data.
+                Failure to enforce or exercise any provision does not constitute
+                a waiver.
               </p>
-
+              <p>
+                Participation on the Application/Website does not make you an
+                employee, agency, partnership, joint venture, or franchise of
+                the Company.
+              </p>
+              <br />
               <p>
                 <strong>Disclaimer:</strong> Some of NOF’S features and services
                 may not function properly if your cookies are disabled.
               </p>
+              <br />
+              <h5>Feedback:</h5>
+              <ul>
+                <li>
+                  <p>
+                    The Company respects the privacy of its Application users,
+                    ensuring that feedback submitted is non-confidential and can
+                    be used on an unrestricted basis.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The Company is not obligated to maintain confidentiality,
+                    and the feedback may be similar to existing considerations.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The Company is not responsible for offensive or hurtful
+                    content provided by users.
+                  </p>
+                </li>
+              </ul>
 
-              <h3>Links</h3>
+              <br />
+              <h5>Contact Information</h5>
               <p>
-                NOF’S may present links in a format that enables us to keep
-                track of whether these links have been followed. NOF’S uses this
-                information to improve its customized content. Clicking on links
-                may take you to sites outside its domain. NOF’S are not
-                responsible for the privacy practices of other websites. NOF’S
-                encourage its users to be aware when they leave its site to read
-                the EULA/T&Cs of each and every website that collects personally
-                identifiable information. This Privacy Policy applies solely to
-                information collected by its Website.
-              </p>
-
-              <h3>Contact Information</h3>
-              <p>
-                Reach out to us on{" "}
+                Reach out to us on
                 <a href="mailto:support@nof.org.in">support@nof.org.in</a> in
                 case of any queries.
               </p>
@@ -183,6 +198,9 @@ const TermsService = () => {
           </div>
         </div>
       </div>
+      <SubmitForm/>
+      <hr/>
+      <Footer />
     </div>
   );
 };

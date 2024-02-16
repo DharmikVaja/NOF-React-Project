@@ -1,22 +1,22 @@
 import React from "react";
-import Form from "../Form/SubmitForm";
-import Map from "../Map/Map";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import Form from "../../Form/SubmitForm";
+import Map from "../../Map/Map";
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
 import "./syllabus.css";
-import SyPDF1 from "../../assets/pdf/syllabus/Syllabus_Class_Nursery.pdf";
-import SyPDF2 from "../../assets/pdf/syllabus/Syllabus_Class_LKG.pdf";
-import SyPDF3 from "../../assets/pdf/syllabus/Syllabus_Class_UKG.pdf";
-import SyPDF5 from "../../assets/pdf/syllabus/Syllabus_Class_1.pdf";
-import SyPDF4 from "../../assets/pdf/syllabus/Syllabus_Class_2.pdf";
-import SyPDF6 from "../../assets/pdf/syllabus/Syllabus_Class_3.pdf";
-import SyPDF7 from "../../assets/pdf/syllabus/Syllabus_Class_4.pdf";
-import SyPDF8 from "../../assets/pdf/syllabus/Syllabus_Class_5.pdf";
-import SyPDF9 from "../../assets/pdf/syllabus/Syllabus_Class_6.pdf";
-import SyPDF10 from "../../assets/pdf/syllabus/Syllabus_Class_7.pdf";
-import SyPDF11 from "../../assets/pdf/syllabus/Syllabus_Class_8.pdf";
-import SyPDF12 from "../../assets/pdf/syllabus/Syllabus_Class_9.pdf";
-import SyPDF13 from "../../assets/pdf/syllabus/Syllabus_Class_10.pdf";
+import SyPDF1 from "../../../assets/pdf/syllabus/Syllabus_Class_Nursery.pdf";
+import SyPDF2 from "../../../assets/pdf/syllabus/Syllabus_Class_LKG.pdf";
+import SyPDF3 from "../../../assets/pdf/syllabus/Syllabus_Class_UKG.pdf";
+import SyPDF5 from "../../../assets/pdf/syllabus/Syllabus_Class_1.pdf";
+import SyPDF4 from "../../../assets/pdf/syllabus/Syllabus_Class_2.pdf";
+import SyPDF6 from "../../../assets/pdf/syllabus/Syllabus_Class_3.pdf";
+import SyPDF7 from "../../../assets/pdf/syllabus/Syllabus_Class_4.pdf";
+import SyPDF8 from "../../../assets/pdf/syllabus/Syllabus_Class_5.pdf";
+import SyPDF9 from "../../../assets/pdf/syllabus/Syllabus_Class_6.pdf";
+import SyPDF10 from "../../../assets/pdf/syllabus/Syllabus_Class_7.pdf";
+import SyPDF11 from "../../../assets/pdf/syllabus/Syllabus_Class_8.pdf";
+import SyPDF12 from "../../../assets/pdf/syllabus/Syllabus_Class_9.pdf";
+import SyPDF13 from "../../../assets/pdf/syllabus/Syllabus_Class_10.pdf";
 
 const Syllabus = () => {
   return (

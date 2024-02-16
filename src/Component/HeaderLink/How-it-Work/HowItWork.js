@@ -1,19 +1,19 @@
 import React from "react";
 import Slider from "react-slick";
-import SubmitForm from "../Form/SubmitForm";
-import Map from "../Map/Map";
-import Footer from "../Footer/Footer";
-import BgImg from "../../assets/contentMiddle-bgImage.png";
-import Benefit1 from "../../assets/hiw-achievement.png";
-import Benefit2 from "../../assets/hiw-achievement2.png";
-import Benefit3 from "../../assets/hiw-achievement3.png";
-import Benefit4 from "../../assets/hiw-achievement4.png";
+import SubmitForm from "../../Form/SubmitForm";
+import Map from "../../Map/Map";
+import Footer from "../../Footer/Footer";
+import BgImg from "../../../assets/contentMiddle-bgImage.png";
+import Benefit1 from "../../../assets/hiw-achievement.png";
+import Benefit2 from "../../../assets/hiw-achievement2.png";
+import Benefit3 from "../../../assets/hiw-achievement3.png";
+import Benefit4 from "../../../assets/hiw-achievement4.png";
 import "./how-it-work.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./how-it-work.css";
-import slider1 from "../../assets/slider1.png";
-import Header from "../Header/Header";
+import slider1 from "../../../assets/slider1.png";
+import Header from "../../Header/Header";
 
 const HowItWork = () => {
   let settings = {
