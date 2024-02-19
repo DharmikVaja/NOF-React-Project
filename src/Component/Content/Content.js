@@ -98,7 +98,7 @@ const Content = () => {
                         </div>
                         
                         <Button variant="primary" className="new-yellow-btn content-sav-btn" >
-                          Save Changes
+                          Submit
                         </Button>
                       </div>
                     </Modal.Body>

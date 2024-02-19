@@ -276,9 +276,7 @@
   /* border: #ffc426 !important; */
   transform: scale(1.01);
 }
-.reg-modal-text {
-  margin-bottom: 50px;
-}
+
 .btn-close {
   box-sizing: content-box;
   width: 1em;

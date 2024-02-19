@@ -169,20 +169,29 @@ Header {
 }
 .login-text{
   font-size: 1.5rem;
+  padding:20px
 }
 .login-modal{
   /* border: 2px solid #ffc426 !important; */
   border-radius: 30px;
 }
-.login-links{
+.login-link{
   text-decoration: none;
   color: black
 }
+
 .student-login-detail{
   display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+.student-login-image {
+  padding-bottom: 20px;
+}
+.school-login-image{
+  padding-bottom: 20px;
+
 }
 .school-login-detail{
   display: flex;

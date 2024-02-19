@@ -3,12 +3,14 @@ import Header from "../../Header/Header";
 import "./privacy-policy.css"
 import Footer from "../../Footer/Footer";
 import SubmitForm from "../../Form/SubmitForm";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const PrivacyPolicy = () => {
   return (
     <div>
       <div className="set-top-margin-all"></div>
       <Header />
+      <ScrollToTop/>
       <div className="container text-center spacer-y">
         <div className="row">
           <div className="col-md-12">

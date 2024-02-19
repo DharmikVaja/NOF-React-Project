@@ -95,12 +95,12 @@ const Header = () => {
                       <div className="login-detail-btns">
                         <div className="student-login-detail">
                           <div className="student-login-image">
-                            <HiMiniUserGroup />
+                            <HiMiniUserGroup className="fs-1" />
                           </div>
                           <Button variant="primary" className="new-white-btn ">
                             <div>
-                              <Link to="student-login" className="login-links">
-                                <h5>Student Login </h5>
+                              <Link to="student-login" className="login-link">
+                                <h6 >Student Login </h6>
                               </Link>
                             </div>
                           </Button>
@@ -108,12 +108,12 @@ const Header = () => {
 
                         <div className="school-login-detail">
                           <div className="school-login-image">
-                            <FaSchool />
+                            <FaSchool className="fs-1" />
                           </div>
                           <Button variant="primary" className="new-white-btn ">
                             <div>
-                              <Link to="school-login" className="login-links">
-                                <h5>School Login</h5>
+                              <Link to="school-login" className="login-link">
+                                <h6 >School Login</h6>
                               </Link>
                             </div>
                           </Button>
@@ -178,7 +178,7 @@ const Header = () => {
                         variant="primary"
                         className="new-yellow-btn content-sav-btn"
                       >
-                        Save Changes
+                        Submit
                       </Button>
                     </div>
                   </Modal.Body>

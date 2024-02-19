@@ -1,18 +1,34 @@
 import React from "react";
 import "./login-page.css";
-import LoginBGImg from "../../assets/login-after-btn-bg.png"
+import LoginBGImg from "../../assets/login-after-btn-bg.png";
+import logoImg from "../../assets/logo.png";
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const StudentLogin = () => {
+   
   return (
     <div>
+      <header className="header-main-login">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 mb-2 mb-md-0">
+              <div>
+                <img src={logoImg} alt="LogoImg" className="logoImg"></img>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
       <section className="login-sec-main">
         <div className="p-0 container-fluid">
           <div className="align-items-center row">
-            <div className="ms-auto col-lg-4">
+            <div className="ms-auto col-lg-4 ">
               <div>
                 <img
                   src={LoginBGImg}
-                  alt="Login" 
+                  alt="Login"
                   className="img-fluid img-login-side"
                 />
               </div>
@@ -24,7 +40,7 @@ const StudentLogin = () => {
                   <p>Please login to continue</p>
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
-                      <i className="fa fa-user-o" aria-hidden="true"></i>{" "}
+                      <FaUser />
                     </span>
                     <input
                       placeholder="Email"
@@ -36,7 +52,7 @@ const StudentLogin = () => {
                   </div>
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
-                      <i className="fa fa-lock" aria-hidden="true"></i>
+                      <FaLock />
                     </span>
                     <input
                       placeholder="Password"
@@ -47,7 +63,7 @@ const StudentLogin = () => {
                       value=""
                     />
                     <span className="input-group-text">
-                      <i className="fa fa-eye-slash"></i>
+                      <FaEyeSlash />
                     </span>
                   </div>
                   <p className="forgot-link">
@@ -61,7 +77,7 @@ const StudentLogin = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
     </div>
   );
 };
