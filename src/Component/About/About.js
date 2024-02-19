@@ -28,7 +28,10 @@ const About = () => {
               </p>
             </div>
             <div className="col-lg-7 col-md-6 d-flex justify-content-end">
+            <a href="https://youtu.be/FDj1eEHOF_E?si=MSEu_00iK5gqBm26">
+
               <img src={AboutImage} className="img-fluid" alt="icon" />
+            </a>
             </div>
           </div>
         </div>

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../Header/Header";
 import CouponImg from "../../../assets/cart-coupon.png";
 import "./cart.css";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 const Cart = () => {
-  const invalidCoupon = () => {
-    alert("Sorry! Invalid Coupon Entered!");
-  };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
       <div className="set-top-margin-all"></div>
@@ -43,14 +47,29 @@ const Cart = () => {
                               type="text"
                               className="cart-from-control form-control"
                             />
-                            <button
-                              type="button"
+
+                            <Button
+                              variant="primary"
+                              type="submit"
                               className="cart-btn btn btn-lg btn-primary"
-                              onClick={invalidCoupon}
+                              onClick={handleShow}
                             >
                               Apply Coupon
-                            </button>
-                            <img src={CouponImg} />
+                            </Button>
+                            <Modal
+                              show={show}
+                              onHide={handleClose}
+                              backdrop="static"
+                              keyboard={false}
+                              aria-labelledby="contained-modal-title-vcenter"
+                              centered
+                            >
+                              <Modal.Header closeButton>
+                                <Modal.Title></Modal.Title>
+                              </Modal.Header>
+                              <Modal.Body>Invalid Coupon code</Modal.Body>
+                            </Modal>
+                            <img src={CouponImg} alt="Coupon" />
                           </div>
                         </div>
                       </div>
@@ -87,15 +106,19 @@ const Cart = () => {
                 </div>
                 <p className="error-msg"></p>
                 <div className="order-btn justify-content-center  ">
-                  <button
+                  {/* <Button
+                    variant="primary"
                     type="submit"
                     class="btn btn-primary place-order-button"
+                    onClick={handleShow}
                   >
                     Place Order
-                  </button>
+                  </Button> */}
                 </div>
                 <div class="back-to-product responsive-end px-4 py-2">
-                  <a class="cursorPointerClass">Back to product</a>
+                  <a href="#" className="cursorPointerClass">
+                    Back to product
+                  </a>
                 </div>
               </div>
             </div>

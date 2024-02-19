@@ -1,3 +1,12 @@
+.homeHeader {
+  background-color: #597ad1;
+  padding: 8px 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10 !important;
+  position: fixed;
+}
 Header {
   background-color: "#0000FF";
 }
@@ -5,15 +14,11 @@ Header {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 .logoImg {
   height: 3.75rem;
 }
-
-/* .wish-and-cart {
-  padding-left: 31.25rem;
-} */
 
 .new-header-home .yellow-no-border {
   color: var #ffc426 !important;
@@ -40,15 +45,6 @@ Header {
 .d-flex {
   display: flex !important;
 }
-.homeHeader {
-  background-color: #597ad1;
-  padding: 8px 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 100;
-  position: fixed;
-}
 
 .new-header-home .header-side a {
   color: #fff;
@@ -58,23 +54,6 @@ Header {
   font-weight: 400;
   line-height: normal;
   margin: 0 12px;
-}
-
-.show-number .show1 {
-  left: -10px;
-  position: absolute;
-  height: 25px;
-  min-width: 25px;
-  border: 2px solid #ffc426;
-  background-color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  top: -10px;
-  color: #000;
-  display: flex;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
 }
 
 .show-number {
@@ -125,4 +104,51 @@ Header {
   .navbar-nav {
     display: block;
   }
+}
+.cart-wl-btn {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Montserrat Alternates", sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 12px;
+}
+.wl-cart-img {
+  margin: 0px 6px 0px 0px;
+}
+.show1 {
+  position: absolute;
+  height: 25px;
+  min-width: 25px;
+  border: 2px solid #ffc426;
+  background-color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  top: -20px !important;
+  color: #000;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.login-btn {
+  color: var(--yellow, #ffc426);
+  font-size: 16px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  padding: 12px 20px;
+}
+.sign-up {
+  color: var(--yellow, #ffc426) !important;
+  font-size: 16px !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
+  padding: 12px 26px !important;
+  background-color: #597ad1 !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--yellow, #ffc426) !important;
 }

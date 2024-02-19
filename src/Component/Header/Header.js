@@ -3,9 +3,7 @@ import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
 import cart from "../../assets/cart.png";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-
-import Home from "../Home/Home";
+import { Link} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -22,39 +20,31 @@ const Header = () => {
 
               <div className="col-md-7 d-flex justify-content-end align-items-center">
                 <div className="me-3">
-                  <Link role="button" className="nav-link" to="/wishlist">
-                    <img src={wishlist} alt="wishlist" />
+                  <Link role="button" className="cart-wl-btn" to="/wishlist">
+                    <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                     Wishlist
                   </Link>
                 </div>
                 <div className="position-relative me-3">
-                  <Link role="button" className="btn" to="/cart">
-                    <img src={cart} alt="cart" />
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill badge bg-danger">
-                      0
-                    </span>
-                    <span>View Cart</span>
+                  <Link role="button" className="show-number cart-wl-btn" to="/cart">
+                  <div class="show1"> 0</div>
+                    <img src={cart} alt="cart" className="wl-cart-img" />
+                    
+                    View Cart
                   </Link>
                 </div>
               </div>
 
-              <div className="col-md-2 text-md-end d-none d-md-block">
-                <button type="button" className="btn text-dark me-2">
+              <div className="col-md-2 text-md-end  d-md-flex">
+                <button type="button" className="login-btn">
                   Login
                 </button>
-                <button type="button" className="btn btn-primary">
-                  Sign-up
+                <button type="button" className="sign-up btn">
+                  Signup
                 </button>
               </div>
 
-              <div className="col-12 d-md-none mt-3 text-end">
-                <button type="button" className="btn text-dark me-2">
-                  Login
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Sign-up
-                </button>
-              </div>
+              
             </header>
           </div>
         </div>
@@ -115,15 +105,6 @@ const Header = () => {
           </nav>
         </div>
       </div>
-      <Routes>
-        {/* <Route path="/home" exact render={() => <Home />} />
-        <Route path="/how-it-works" render={() => <HowItWork />} />
-        <Route path="/report-&-analysis" render={() => <ReportAnalysis />} /> */}
-        {/* <Route path="/syllabus" exact render={() => <Header />} />
-        <Route path="/downloads" exact render={() => <Header />} />
-        <Route path="/contact" exact render={() => <Header />} /> */}
-      </Routes>
-      {/* <Route path="/" */}
     </>
   );
 };

@@ -41,3 +41,22 @@
   border-color: transparent;
   cursor: pointer;
 }
+
+  .common-btn {
+    background: #597ad1;
+    border: 1px solid #597ad1;
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ffffff;
+
+}
+.modal-body{
+  padding:40px;
+}

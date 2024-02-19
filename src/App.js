@@ -14,7 +14,7 @@ import PrivacyPolicy from "./Component/FooterLinks/PrivacyPolicy/PrivacyPolicy";
 import TermsService from "./Component/FooterLinks/TermsService/TermsService";
 import Disclaimer from "./Component/FooterLinks/Disclaimer/Disclaimer";
 import RefundCancel from "./Component/FooterLinks/RefundCancel/RefundCancel";
-import Modal from "./Component/Modal/sampleModal/Modal";
+import RegModal from "./Component/Modal/RegisterModal/RegModal";
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsService />} />
         <Route path="disclaimer" element={<Disclaimer />} />
         <Route path="refund-and-cancellation" element={<RefundCancel />} />
+        <Route path="modal" element={<RegModal />} />
       </Routes>
     
     </>
