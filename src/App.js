@@ -15,8 +15,11 @@ import TermsService from "./Component/FooterLinks/TermsService/TermsService";
 import Disclaimer from "./Component/FooterLinks/Disclaimer/Disclaimer";
 import RefundCancel from "./Component/FooterLinks/RefundCancel/RefundCancel";
 import RegModal from "./Component/Modal/RegisterModal/RegModal";
+import StudentLogin from "./Component/LoginPage/StudentLogin";
+import SchoolLogin from "./Component/LoginPage/SchoolLogin";
 
 function App() {
+  
   return (
     <>
       <Routes>
@@ -35,6 +38,8 @@ function App() {
         <Route path="disclaimer" element={<Disclaimer />} />
         <Route path="refund-and-cancellation" element={<RefundCancel />} />
         <Route path="modal" element={<RegModal />} />
+        <Route path="student-login" element={<StudentLogin />} />
+        <Route path="school-login" element={<SchoolLogin />} />
       </Routes>
     
     </>

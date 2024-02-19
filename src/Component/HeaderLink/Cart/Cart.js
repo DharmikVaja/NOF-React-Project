@@ -6,10 +6,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const Cart = () => {
-  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
+
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   return (
     <div>
@@ -52,13 +56,13 @@ const Cart = () => {
                               variant="primary"
                               type="submit"
                               className="cart-btn btn btn-lg btn-primary"
-                              onClick={handleShow}
+                              onClick={handleShow1}
                             >
                               Apply Coupon
                             </Button>
                             <Modal
-                              show={show}
-                              onHide={handleClose}
+                              show={show1}
+                              onHide={handleClose1}
                               backdrop="static"
                               keyboard={false}
                               aria-labelledby="contained-modal-title-vcenter"
@@ -105,18 +109,38 @@ const Cart = () => {
                   </table>
                 </div>
                 <p className="error-msg"></p>
-                <div className="order-btn justify-content-center  ">
-                  {/* <Button
+                <div className="order-btn  ">
+                  <Button
                     variant="primary"
                     type="submit"
-                    class="btn btn-primary place-order-button"
-                    onClick={handleShow}
+                    className="btn btn-primary place-order-button"
+                    onClick={handleShow2}
                   >
                     Place Order
-                  </Button> */}
+                  </Button>
+                  <Modal
+                    show={show2}
+                    onHide={handleClose2}
+                    backdrop="static"
+                    keyboard={false}
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Modal title</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      I will not close if you click outside me. Do not even try
+                      to press escape key.
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose2}>
+                        Close
+                      </Button>
+                      <Button variant="primary">Understood</Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
-                <div class="back-to-product responsive-end px-4 py-2">
-                  <a href="#" className="cursorPointerClass">
+                <div className="back-to-product responsive-end px-4 py-2">
+                  <a href="/#" className="cursorPointerClass">
                     Back to product
                   </a>
                 </div>

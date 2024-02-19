@@ -8,11 +8,13 @@ import About from "../About/About";
 import SubmitForm from "../Form/SubmitForm";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
+import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
 
 const Home = () => {
   return (
     <div>
       <Header />
+    <ScrollToTop/>
       <Content />
       <AboutTele />
       <ContentMiddle />

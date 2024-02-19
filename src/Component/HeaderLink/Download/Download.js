@@ -8,12 +8,14 @@ import { FaDownload } from "react-icons/fa";
 import downreport1 from "../../../assets/pdf/download/report1.pdf"
 import downreport2 from "../../../assets/pdf/download/report2.pdf"
 import downreport3 from "../../../assets/pdf/download/report3.pdf"
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const Download = () => {
   return (
     <div>
     <div className="set-top-margin-all"></div>
     <Header/>
+    <ScrollToTop/>
         <div className="container">
             <div className="row justify-content-center">
                 <div className="download-heading spacer-y">

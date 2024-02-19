@@ -102,9 +102,6 @@ const Content = () => {
                         </Button>
                       </div>
                     </Modal.Body>
-                    
-                      
-                   
                   </Modal>
                   
                 </div>

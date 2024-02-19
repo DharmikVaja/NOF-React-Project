@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import report1 from "../../../assets/pdf/report/report1.pdf";
 import report2 from "../../../assets/pdf/report/report2.pdf";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const ReportAnalysis = () => {
   const [show, setShow] = useState(false);
@@ -18,6 +19,7 @@ const ReportAnalysis = () => {
   return (
     <div>
       <Header />
+      <ScrollToTop/>
       <div className="set-top-margin-all"></div>
       <div class="report-analysis-sec">
         <div class="container">

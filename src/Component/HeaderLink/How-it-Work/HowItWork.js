@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./how-it-work.css";
 import slider1 from "../../../assets/slider1.png";
 import Header from "../../Header/Header";
+import ScrollToTop from "../../../Component/ScrollToTop/ScrollToTop";
 
 const HowItWork = () => {
   let settings = {
@@ -50,7 +51,9 @@ const HowItWork = () => {
 
   return (
     <>
+
       <Header />
+      <ScrollToTop/>
       <div className="set-top-margin-all"></div>
       <div className="how-it-work-page" style={containerStyle}>
         <div className="head-practice-test p-0">

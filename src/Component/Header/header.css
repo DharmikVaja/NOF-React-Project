@@ -134,21 +134,70 @@ Header {
   justify-content: center;
 }
 .login-btn {
-  color: var(--yellow, #ffc426);
-  font-size: 16px;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  background-color: transparent;
-  border: none;
-  padding: 12px 20px;
+  color: var(--yellow, #ffc426) !important;
+  font-size: 16px !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 500 !important;
+  background-color: transparent !important ;
+  border: none !important;
+  padding: 12px 20px !important;
+}
+.login-btn:hover{
+  font-size: 16px !important;
+  color:#000dff !important;
+  font-weight: 510 !important;
+}
+.sign-up:hover{
+  font-size: 16px !important;
+  color:#000dff !important;
+  border: 2.5px solid #000dff !important;
+  font-weight: 510 !important;
 }
 .sign-up {
   color: var(--yellow, #ffc426) !important;
   font-size: 16px !important;
   font-family: "Montserrat Alternates", sans-serif !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   padding: 12px 26px !important;
   background-color: #597ad1 !important;
   border-radius: 8px !important;
   border: 1px solid var(--yellow, #ffc426) !important;
+}
+
+.login-modal-heading{
+  border:none !important;
+}
+.login-text{
+  font-size: 1.5rem;
+}
+.login-modal{
+  /* border: 2px solid #ffc426 !important; */
+  border-radius: 30px;
+}
+.login-links{
+  text-decoration: none;
+  color: black
+}
+.student-login-detail{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.school-login-detail{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-detail-btns{
+  display: flex;
+  text-decoration:none!important; ;
+  gap:25px;
+
+}
+.login-modal-footer{
+  justify-content:space-evenly   !important;
+  padding-bottom: 30px !important;
 }

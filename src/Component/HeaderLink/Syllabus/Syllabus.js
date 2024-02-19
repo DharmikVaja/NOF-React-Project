@@ -17,11 +17,13 @@ import SyPDF10 from "../../../assets/pdf/syllabus/Syllabus_Class_7.pdf";
 import SyPDF11 from "../../../assets/pdf/syllabus/Syllabus_Class_8.pdf";
 import SyPDF12 from "../../../assets/pdf/syllabus/Syllabus_Class_9.pdf";
 import SyPDF13 from "../../../assets/pdf/syllabus/Syllabus_Class_10.pdf";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const Syllabus = () => {
   return (
     <div>
       <Header />
+      <ScrollToTop/>
       <div className="set-top-margin-all spacer-y"></div>
       <div className="head-practice-test">
         <div className="container">

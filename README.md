@@ -69,44 +69,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 <!-- in useEffect for scroll to the beginning of routes
-import React, { useState, useEffect } from 'react';
+// ScrollToTop.js
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleScroll = () => {
-    // Show the button when the user scrolls down 100 pixels
-    if (window.scrollY > 100) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
+const ScrollToTop = () => {
+  const location = useLocation();
 
   useEffect(() => {
-    // Add scroll event listener when component mounts
-    window.addEventListener('scroll', handleScroll);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
-    // Clean up the event listener when component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <div>
-      {/* Your component content goes here */}
-      {isVisible && (
-        <button onClick={scrollToTop} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
-          Scroll to Top
-        </button>
-      )}
-    </div>
-  );
+  return null;
 };
 
-export default ScrollToTopButton; -->
+export default ScrollToTop;
+ -->

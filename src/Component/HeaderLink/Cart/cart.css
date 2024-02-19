@@ -17,7 +17,7 @@
 .cart {
   margin-bottom: 30px;
 }
-.cart-shadow{
+.cart-shadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
 }
 .cart h3 {
@@ -41,25 +41,25 @@
   color: #727272;
   padding-bottom: 30px;
 }
-.cart-btn{
-    background-color:#597ad1;
+.cart-btn {
+  background-color: #597ad1;
 }
 .cart-coupon-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    align-items: center;
-    width: 40%;
-    border: 0;
-    align-items: center;
-    gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  border: 0;
+  align-items: center;
+  gap: 4px;
 }
-.cart-from-control{
-    width: 229px;
-    height: 47px;
-    border-radius: 8px;
+.cart-from-control {
+  width: 229px;
+  height: 47px;
+  border-radius: 8px;
 }
-.card-detail{
+.card-detail {
   padding: 15px;
 }
 .cart2-total {
@@ -68,19 +68,19 @@
 }
 .cart2-table {
   border-radius: 8px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding-bottom: 51px;
   margin-bottom: 70px;
 }
-.cart2-table .table>thead {
+.cart2-table .table > thead {
   border-radius: 8px 8px 0px 0px;
 }
-.cart2-total .table>thead tr th {
+.cart2-total .table > thead tr th {
   padding: 33px 64px 33px;
 }
-.cart2-table .table>thead tr th {
-  background-color: #F5F5FA;
+.cart2-table .table > thead tr th {
+  background-color: #f5f5fa;
   color: #363636;
   font-size: 20px;
   font-family: " Montserrat Alternates", sans-serif;
@@ -95,42 +95,38 @@
 .cart2-total table td {
   padding: 10px 0;
 }
-.table{
-  text-align:center;
+.table {
+  text-align: center;
 }
-.table>tbody {
+.table > tbody {
   vertical-align: inherit;
 }
-.order-btn{
+.order-btn {
   justify-content: center !important;
   padding: 0 64px;
 }
-.place-order-button{
-  max-width: 280px; margin: auto;
-  background-color: #597AD1;
-}
+
 .place-order-button {
   border-radius: 8px;
-  background: var(--blue, #597AD1);
-  padding: 15px 30px;
-  color: #FFF;
+  background: var(--blue, #597ad1);
+  padding: 18px 30px;
   font-size: 18px;
-  font-family: " Montserrat Alternates", sans-serif;
-  font-style: normal;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   line-height: 28px;
-  text-align: center;
   display: block;
   width: 100%;
+  max-width: 278px;
+  margin: auto;
 }
 .responsive-end {
   text-align: end;
 }
 .back-to-product a {
   border-radius: 8px;
-  border: 1px solid var(--blue, #597AD1);
+  border: 1px solid var(--blue, #597ad1);
   padding: 10px 30px;
-  color: rgba(77, 77, 86, 0.70);
+  color: rgba(77, 77, 86, 0.7);
   font-size: 18px;
   font-family: " Montserrat Alternates", sans-serif;
   font-style: normal;
