@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-const StudentLogin = () => {
+const SchoolLogin = () => {
    
   return (
     <div>
@@ -82,4 +82,4 @@ const StudentLogin = () => {
   );
 };
 
-export default StudentLogin;
+export default SchoolLogin;

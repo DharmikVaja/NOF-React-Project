@@ -78,7 +78,7 @@ const About = () => {
         </div>
       </div>
       <div className="video-calls-sec w-100">
-        <img className="img-fluid" src={ImgVideoCall} />
+        <img className="img-fluid" src={ImgVideoCall} alt=""/>
       </div>
     </>
   );

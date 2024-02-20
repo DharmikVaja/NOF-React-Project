@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
+import CountryData from "../../../src/CountryData.json";
 
 const Header = () => {
   // Signup
@@ -20,6 +21,15 @@ const Header = () => {
 
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
+
+  // signup country and class
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+
+  const handleFormSubmit = () => {
+    console.log("Selected Country:", selectedCountry);
+    console.log("Selected Class:", selectedClass);
+  };
   return (
     <>
       <div className="homeHeader ">
@@ -100,7 +110,7 @@ const Header = () => {
                           <Button variant="primary" className="new-white-btn ">
                             <div>
                               <Link to="student-login" className="login-link">
-                                <h6 >Student Login </h6>
+                                <h6>Student Login </h6>
                               </Link>
                             </div>
                           </Button>
@@ -113,7 +123,7 @@ const Header = () => {
                           <Button variant="primary" className="new-white-btn ">
                             <div>
                               <Link to="school-login" className="login-link">
-                                <h6 >School Login</h6>
+                                <h6>School Login</h6>
                               </Link>
                             </div>
                           </Button>
@@ -122,9 +132,7 @@ const Header = () => {
                     </Modal.Footer>
                   </div>
                 </Modal>
-
                 {/* Signup */}
-
                 <Modal show={show1} onHide={handleClose1}>
                   <Modal.Header closeButton>
                     <Modal.Title></Modal.Title>
@@ -136,26 +144,44 @@ const Header = () => {
                       <div className="form-modal">
                         <div className="mb-3">
                           <div className="modal-form-country">
-                            <label className="form-label">Country</label>
-                            <select
-                              name="form-select"
-                              className="modal-form-select"
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
                             >
-                              <option value>Select your Country</option>
-                              <option value="India">India</option>
-                              <option value="Nepal">Nepal</option>
-                              <option value="Pakistan">Pakistan</option>
-                              <option value="Afghanistan">Afghanistan</option>
-                              <option value="Sri-lanka">Sri-lanka</option>
+                              Country
+                            </label>
+                            <select
+                              name="country"
+                              id="exampleForm.ControlInput1"
+                              className="modal-form-select"
+                              onChange={(e) =>
+                                setSelectedCountry(e.target.value)
+                              }
+                              value={selectedCountry}
+                            >
+                              <option value="">Select your Country</option>
+                              {CountryData.map((country, index) => (
+                                <option key={index} value={country.code}>
+                                  {country.name}
+                                </option>
+                              ))}
                             </select>
                           </div>
                         </div>
                         <div className="mb-3">
                           <div className="modal-form-class">
-                            <label className="form-label">Class</label>
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
+                            >
+                              Class
+                            </label>
                             <select
                               name="form-select"
                               className="modal-form-select"
+                              id="exampleForm.ControlInput2"
+                              onChange={(e) => setSelectedClass(e.target.value)}
+                              value={selectedClass}
                             >
                               <option value>Select your Class</option>
                               <option value="LKG">LKG</option>
@@ -174,9 +200,11 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
+
                       <Button
                         variant="primary"
                         className="new-yellow-btn content-sav-btn"
+                        onClick={handleFormSubmit}
                       >
                         Submit
                       </Button>
@@ -187,7 +215,7 @@ const Header = () => {
             </header>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid navBar">
           <nav className="navbar navbar-expand-lg ">
             <button
               className="navbar-toggler"
@@ -209,6 +237,11 @@ const Header = () => {
                 <li className="nav-item ">
                   <Link to="/" className="nav-link listNames">
                     Home
+                  </Link>
+                </li>
+                <li className="nav-item ">
+                  <Link to="/product" className="nav-link listNames">
+                    Product
                   </Link>
                 </li>
                 <li className="nav-item">

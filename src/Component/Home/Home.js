@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-    <ScrollToTop/>
+      <ScrollToTop />
       <Content />
       <AboutTele />
       <ContentMiddle />

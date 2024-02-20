@@ -10,12 +10,14 @@ const AboutTele = () => {
           <div className="align-items-center row">
             <div className="col-lg-7 col-md-6">
               <div>
-                <img
-                  className="img-fluid abtIMage"
-                  src={aboutTSImage}
-                  // background-image="../../assets/about-telescope-image.png"
-                  alt="icon"
-                />
+                <a href="https://youtu.be/-Qj5QjU6rUU?si=ys1a6IGTCbDktD-4">
+                  <img
+                    className="img-fluid abtIMage"
+                    src={aboutTSImage}
+                    // background-image="../../assets/about-telescope-image.png"
+                    alt="icon"
+                  />
+                </a>
               </div>
             </div>
             <div className="col-lg-5 col-md-6">

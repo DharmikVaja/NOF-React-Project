@@ -61,7 +61,7 @@ Header {
 }
 
 /* Navbar */
-.container-fluid {
+.navBar{
   color: white;
   background: black;
   position: fixed;

@@ -3,6 +3,7 @@ import "../../app.css";
 import "./content.css";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
+import CountryData from "./../../../src/CountryData.json";
 // import "../Modal/RegisterModal/RegModal.css";
 
 const Content = () => {
@@ -10,6 +11,14 @@ const Content = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+
+  const handleFormSubmit = () => {
+    console.log("Selected Country:", selectedCountry);
+    console.log("Selected Class:", selectedClass);
+  };
   return (
     <>
       <div className="story-home-sec ">
@@ -58,26 +67,46 @@ const Content = () => {
                         <div className="form-modal">
                           <div className="mb-3">
                             <div className="modal-form-country">
-                              <label className="form-label">Country</label>
-                              <select
-                                name="form-select"
-                                className="modal-form-select"
+                              <label
+                                className="form-label"
+                                for="exampleForm.ControlInput1"
                               >
-                                <option value>Select your Country</option>
-                                <option value="India">India</option>
-                                <option value="Nepal">Nepal</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="Afghanistan">Afghanistan</option>
-                                <option value="Sri-lanka">Sri-lanka</option>
+                                Country
+                              </label>
+                              <select
+                                name="country"
+                                id="exampleForm.ControlInput1"
+                                className="modal-form-select"
+                                onChange={(e) =>
+                                  setSelectedCountry(e.target.value)
+                                }
+                                value={selectedCountry}
+                              >
+                                <option value="">Select your Country</option>
+                                {CountryData.map((country, index) => (
+                                  <option key={index} value={country.code}>
+                                    {country.name}
+                                  </option>
+                                ))}
                               </select>
                             </div>
                           </div>
                           <div className="mb-3">
                             <div className="modal-form-class">
-                              <label className="form-label">Class</label>
+                              <label
+                                className="form-label"
+                                for="exampleForm.ControlInput1"
+                              >
+                                Class
+                              </label>
                               <select
                                 name="form-select"
                                 className="modal-form-select"
+                                id="exampleForm.ControlInput1"
+                                onChange={(e) =>
+                                  setSelectedClass(e.target.value)
+                                }
+                                value={selectedClass}
                               >
                                 <option value>Select your Class</option>
                                 <option value="LKG">LKG</option>
@@ -96,14 +125,17 @@ const Content = () => {
                             </div>
                           </div>
                         </div>
-                        
-                        <Button variant="primary" className="new-yellow-btn content-sav-btn" >
+
+                        <Button
+                          variant="primary"
+                          className="new-yellow-btn content-sav-btn"
+                          onClick={handleFormSubmit}
+                        >
                           Submit
                         </Button>
                       </div>
                     </Modal.Body>
                   </Modal>
-                  
                 </div>
               </div>
             </div>
@@ -138,5 +170,4 @@ const Content = () => {
     </>
   );
 };
-
 export default Content;

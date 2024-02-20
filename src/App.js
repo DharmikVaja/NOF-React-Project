@@ -17,15 +17,21 @@ import RefundCancel from "./Component/FooterLinks/RefundCancel/RefundCancel";
 import RegModal from "./Component/Modal/RegisterModal/RegModal";
 import StudentLogin from "./Component/LoginPage/StudentLogin";
 import SchoolLogin from "./Component/LoginPage/SchoolLogin";
+import Product from "./Component/Product/Product";
 
 function App() {
-  
   return (
     <>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<Home />} />
+
+        <Route
+          path="/product"
+          element={<Product country={"Norway"} class={"8"} />}
+        />
+
         <Route path="/how-it-works" element={<HowItWork />} />
         <Route path="/reports-and-analysis" element={<ReportAnalysis />} />
         <Route path="/syllabus" element={<Syllabus />} />
@@ -41,7 +47,6 @@ function App() {
         <Route path="student-login" element={<StudentLogin />} />
         <Route path="school-login" element={<SchoolLogin />} />
       </Routes>
-    
     </>
   );
 }
