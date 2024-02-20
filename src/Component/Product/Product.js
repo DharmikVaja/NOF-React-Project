@@ -8,15 +8,16 @@ import ProImg4 from "../../../src/assets/product/pro4.png";
 import ProImg5 from "../../../src/assets/product/pro5.png";
 import "./product.css";
 import { FaHeart } from "react-icons/fa";
-import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop"
+import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
 import SubmitForm from "../Form/SubmitForm";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
-    setRating(rate)
+    setRating(rate);
   };
   const onPointerEnter = () => console.log("Enter");
   const onPointerLeave = () => console.log("Leave");
@@ -29,7 +30,7 @@ const Product = (props) => {
     <div>
       <div className="set-top-margin-all"></div>
       <Header />
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="container spacer-y">
         <div className="row justify-content-center">
           <div className="col-lg-6">
@@ -45,7 +46,9 @@ const Product = (props) => {
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
-              <button className="common-btn">Clear filter</button>
+              <Link to="/home">
+                <button className="common-btn">Clear filter</button>
+              </Link>
             </div>
           </div>
           <section className="olympiad-section">
@@ -69,7 +72,11 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <a
+                          className="olympiad-cart cursorPointerClass"
+                          href="/product"
+                          onClick={props.onAddToCart}
+                        >
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
                         </a>
@@ -84,8 +91,8 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                        //   onPointerEnter={onPointerEnter}
-                        //   onPointerLeave={onPointerLeave}
+                          //   onPointerEnter={onPointerEnter}
+                          //   onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -486,9 +493,9 @@ const Product = (props) => {
           </section>
         </div>
       </div>
-      <SubmitForm/>
-      <Map/>
-      <Footer/>
+      <SubmitForm />
+      <Map />
+      <Footer />
     </div>
   );
 };

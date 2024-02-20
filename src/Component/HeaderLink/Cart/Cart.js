@@ -15,6 +15,13 @@ const Cart = () => {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
 
+  const [cartItems, setCartItems] = useState([]);
+
+  // Function to add a product to the cart
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  }
+
   return (
     <div>
       <div className="set-top-margin-all"></div>
@@ -42,6 +49,7 @@ const Cart = () => {
                         </h4>
                       </div>
                       <div className="card-body">
+                      
                         <h3 className="card-title ">Cart is Empty</h3>
                         <div className="card-detail">
                           <h5 className="card-coupon">Coupon</h5>
