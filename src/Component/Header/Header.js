@@ -139,8 +139,8 @@ const Header = () => {
                   </Modal.Header>
                   <Modal.Body>
                     <div className="reg-modal-text modal-body">
-                      <h2>Your Learning, Your Way!</h2>
-                      <p>Select Your Region and Class Preference.</p>
+                      <h3>Please give your details to Register</h3>
+                      
                       <div className="form-modal">
                         <div className="mb-3">
                           <div className="modal-form-country">

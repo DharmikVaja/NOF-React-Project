@@ -19,7 +19,9 @@ Header {
 .logoImg {
   height: 3.75rem;
 }
-
+.nav-item.active {
+  background-color: #ffc426 !important;
+}
 .new-header-home .yellow-no-border {
   color: var #ffc426 !important;
   font-size: 16px;
@@ -61,19 +63,19 @@ Header {
 }
 
 /* Navbar */
-.navBar{
+.navBar {
   color: white;
   background: black;
   position: fixed;
 }
 .navbar-nav .nav-item .nav-link {
-  color: white !important;
+  /* color: white !important; */
   font-family: "Montserrat Alternates", sans-serif;
 }
 
 .navbarClass .nav-item:hover {
   font-size: 1.01rem;
-  color: #ffc426;
+  color: #ffc426 !important;
 }
 
 .navbarClass li a {
@@ -82,7 +84,7 @@ Header {
   text-decoration: none;
 }
 .navbarClass li a:hover {
-  color: #ffc426;
+  color: #ffc426  !important;
 }
 
 .navbar-nav {
@@ -96,8 +98,6 @@ Header {
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
 }
 
 @media (max-width: 767px) {
@@ -142,14 +142,14 @@ Header {
   border: none !important;
   padding: 12px 20px !important;
 }
-.login-btn:hover{
+.login-btn:hover {
   font-size: 16px !important;
-  color:#000dff !important;
+  color: #000dff !important;
   font-weight: 510 !important;
 }
-.sign-up:hover{
+.sign-up:hover {
   font-size: 16px !important;
-  color:#000dff !important;
+  color: #000dff !important;
   border: 2.5px solid #000dff !important;
   font-weight: 510 !important;
 }
@@ -164,49 +164,47 @@ Header {
   border: 1px solid var(--yellow, #ffc426) !important;
 }
 
-.login-modal-heading{
-  border:none !important;
+.login-modal-heading {
+  border: none !important;
 }
-.login-text{
+.login-text {
   font-size: 1.5rem;
-  padding:20px
+  padding: 20px;
 }
-.login-modal{
+.login-modal {
   /* border: 2px solid #ffc426 !important; */
   border-radius: 30px;
 }
-.login-link{
+.login-link {
   text-decoration: none;
-  color: black
+  color: black;
 }
 
-.student-login-detail{
+.student-login-detail {
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .student-login-image {
   padding-bottom: 20px;
 }
-.school-login-image{
+.school-login-image {
   padding-bottom: 20px;
-
 }
-.school-login-detail{
+.school-login-detail {
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.login-detail-btns{
+.login-detail-btns {
   display: flex;
-  text-decoration:none!important; ;
-  gap:25px;
-
+  text-decoration: none !important;
+  gap: 25px;
 }
-.login-modal-footer{
-  justify-content:space-evenly   !important;
+.login-modal-footer {
+  justify-content: space-evenly !important;
   padding-bottom: 30px !important;
 }

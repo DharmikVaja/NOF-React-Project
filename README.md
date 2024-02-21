@@ -68,20 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-<!-- in useEffect for scroll to the beginning of routes
-// ScrollToTop.js
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
-const ScrollToTop = () => {
-  const location = useLocation();
+<!-- harshalpagar@questglt.org -->
+<!-- Vk@12345678 -->
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
-
-  return null;
-};
-
-export default ScrollToTop;
- -->
+<!-- stu503924@misdoha.com -->
+<!-- stu@123 -->

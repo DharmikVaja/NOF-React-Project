@@ -24,7 +24,7 @@ const Syllabus = () => {
     <div>
       <Header />
       <ScrollToTop/>
-      <div className="set-top-margin-all spacer-y"></div>
+      <div className="set-top-margin-all "></div>
       <div className="head-practice-test">
         <div className="container">
           <div className="justify-content-center row">

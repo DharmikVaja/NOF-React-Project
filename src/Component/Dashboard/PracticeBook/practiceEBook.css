@@ -1,0 +1,65 @@
+.show1.right {
+    right: -10px;
+    left: auto;
+}.set-student-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 0.4px solid #ddd;
+}.set-student-btn .select-student-btn {
+    background-color: transparent;
+    border: none;
+    color: #434343;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+    min-width: 120px;
+    padding: 12px 30px;
+}
+.test-box-inner img {
+    width: 100%;
+    max-height: 175px;
+    object-fit: contain;
+}
+.test-box-inner h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #597ad1;
+    margin: 15px 0;
+}
+.addtocartbtndisable {
+    text-align: center;
+    padding: 12px 8px;
+    gap: 12px;
+    background: gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff !important;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 100px;
+}
+.addtocartbtn {
+    text-align: center;
+    padding: 12px 8px;
+    gap: 12px;
+    background: #597ad1;
+    border: 1px solid #597ad1;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff !important;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 100px;
+}
