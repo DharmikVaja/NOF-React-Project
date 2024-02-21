@@ -15,12 +15,12 @@ const Cart = () => {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
 
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
 
   // Function to add a product to the cart
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  }
+  // const addToCart = (product) => {
+  //   setCartItems([...cartItems, product]);
+  // }
 
   return (
     <div>
