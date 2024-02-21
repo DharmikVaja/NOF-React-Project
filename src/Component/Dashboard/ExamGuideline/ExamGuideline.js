@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../SelectTest/instruction.css"
+import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ExamGuideline = () => {
   return (
@@ -11,6 +12,7 @@ const ExamGuideline = () => {
             <div className="inner-dash-bpx ">
               <header className="main-header login-header-home">
                 <NavbarDashboard />
+                <ScrollToTop/>
               </header>
               <section className="dash-outer-box">
                 <div className="row">

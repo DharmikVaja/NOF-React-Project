@@ -1,0 +1,62 @@
+.account-set-inner {
+  background: #f5f5f5;
+  border-radius: 6px;
+  border-left: 9px solid #597ad1;
+  padding: 10px 25px;
+  border-bottom: 1px solid rgba(36, 36, 46, 0.1);
+}
+.account-set-inner h4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #597ad1;
+  margin-bottom: 0px;
+}
+.account-set-inner a {
+  color: #597ad1 !important;
+  cursor: pointer;
+  min-width: 30px;
+  text-align: center;
+}
+.account-set-inner .user {
+  color: #fff;
+  background: #597ad1;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account-links {
+  text-decoration: none;
+}
+.account-tabs .nav-tabs .nav-link.active {
+  color: #597ad1;
+}
+.account-tabs .nav-tabs {
+  background-color: transparent;
+  border-color: transparent;
+}
+.edit-image input{
+  position: absolute;
+}
+.dashboard-layout .input-group {
+  border: 1px solid #597AD1 !important;
+  border-radius: 8px;
+}.dashboard-layout .input-group .input-group-text {
+  background-color: transparent !important;
+  color: #597AD1;
+  border: none !important;
+}.dashboard-layout .input-group .input-group-text img {
+  height: 16px;
+}.dashboard-layout .input-group .input-group-text {
+  background-color: transparent !important;
+  color: #597AD1;
+  border: none !important;
+}
+.dashboard-layout .delivery-form .form-control {
+  background-color: #F5F5F5 !important;
+  border: none !important;
+}
