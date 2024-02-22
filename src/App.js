@@ -31,6 +31,9 @@ import FAQs from "./Component/Dashboard/FAQs/FAQs";
 import OlymSyllabus from "./Component/Dashboard/OlymSyllabus/OlymSyllabus";
 import AccountSettings from "./Component/Dashboard/AccountSettings/AccountSettings";
 import DashUserProfile from "./Component/Dashboard/UserAccountComp/DashUserProfile";
+import DashNotification from "./Component/Dashboard/UserAccountComp/DashNotification";
+import OrderSummary from "./Component/Dashboard/PracticeBook/OrderSummary";
+import Ticket from "./Component/Dashboard/FAQs/Ticket";
 
 function App() {
   return (
@@ -61,13 +64,15 @@ function App() {
         <Route path="/exam-guideline" element={<ExamGuideline />} />
         <Route path="/result-and-report" element={<ResultReport />} />
         <Route path="/practice-books" element={<PracticeEBook />} />
+        <Route path="/order-summary" element={<OrderSummary />} />
         <Route path="/after-report" element={<AfterReport />} />
         <Route path="/activity-logs" element={<ActivityLog />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/faqs-ticket" element={<Ticket />} />
         <Route path="/olympiad-syllabus" element={<OlymSyllabus />} />
         <Route path="/account-setting" element={<AccountSettings />} />
         <Route path="/user-profile" element={<DashUserProfile />} />
-        <Route path="/user-notification" element={<DashUserProfile />} />
+        <Route path="/user-notification" element={<DashNotification />} />
         <Route path="/address-manager" element={<DashUserProfile />} />
         <Route path="/user-orders" element={<DashUserProfile />} />
         <Route path="/transaction-history" element={<DashUserProfile />} />

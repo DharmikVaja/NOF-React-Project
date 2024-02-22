@@ -3,6 +3,7 @@ import "../dashboard.css";
 import UserProfile from "../../../../src/assets/Dashboard/edit-user-dash-profile.png";
 import CSgif from "../../../../src/assets/Dashboard/coming-soon-gif.gif";
 import NavbarDashboard from "./NavbarDashboard";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -66,9 +67,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="text-end">
-                    <a className="view-all" href="/dashboard">
+                    <Link className="view-all" to="/user-notification">
                       View all
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -108,9 +109,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="text-end">
-                    <a className="view-all" href="/dashboard">
+                    <Link className="view-all" to="/activity-logs">
                       View all
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

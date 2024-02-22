@@ -6,6 +6,9 @@ import { MdOutlineManageSearch } from "react-icons/md";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ActivityLog = () => {
+  function clearFilter() {
+    document.querySelector(".search-data").value = "";
+  }
   return (
     <>
       <div>
@@ -13,7 +16,7 @@ const ActivityLog = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
-              <ScrollToTop/>
+              <ScrollToTop />
             </header>
             <div className="dash-outer-box">
               <div className="row">
@@ -41,13 +44,18 @@ const ActivityLog = () => {
                             placeholder="Search"
                             name="search"
                             type="text"
-                            className="search_data play-search1 form-control"
+                            className="search-data play-search1 form-control"
                             defaultValue=""
                           />
                         </div>
                       </div>
                       <div>
-                        <button className="common-all-btn">Clear Filter</button>
+                        <button
+                          className="common-all-btn"
+                          onClick={clearFilter}
+                        >
+                          Clear Filter
+                        </button>
                       </div>
                     </div>
                   </div>

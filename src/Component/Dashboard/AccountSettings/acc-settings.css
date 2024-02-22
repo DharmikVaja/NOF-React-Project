@@ -12,7 +12,7 @@
   line-height: 20px;
   color: #597ad1;
   margin-bottom: 0px;
-}
+} 
 .account-set-inner a {
   color: #597ad1 !important;
   cursor: pointer;
@@ -57,6 +57,10 @@
   border: none !important;
 }
 .dashboard-layout .delivery-form .form-control {
-  background-color: #F5F5F5 !important;
-  border: none !important;
+  background-color: #F5F5F5 ;
+  border: none ;
+}
+.set-marg h4{text-decoration: none !important ;}
+.acc-settings-h4{
+  text-decoration: none !important;
 }

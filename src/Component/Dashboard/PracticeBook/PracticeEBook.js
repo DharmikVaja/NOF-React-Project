@@ -2,6 +2,7 @@ import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css"
 import "./practiceEBook.css"
+import { Link } from "react-router-dom";
 
 const PracticeEBook = () => {
   return (
@@ -28,9 +29,9 @@ const PracticeEBook = () => {
                       </p>
                     </div>
                   </div>
-                  <button className="common-btn show-number">
+                  <Link className="common-btn show-number" to="/order-summary">
                     <span className="show1 right">0</span>View Cart
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

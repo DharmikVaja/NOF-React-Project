@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./instruction.css";
+import { Link } from "react-router-dom";
 
 const Instruction = () => {
   return (
@@ -124,8 +125,8 @@ const Instruction = () => {
                       </ul>
                     </div>
                     <div className="d-flex mt-4 gap-2 justify-content-center">
-                      <button className="common-all-btn">Take Test</button>
-                      <button className="common-all-btn">Back</button>
+                      <Link className="common-all-btn" to="/">Take Test</Link>
+                      <Link className="common-all-btn" to="/demo-test">Back</Link>
                     </div>
                   </div>
                 </div>

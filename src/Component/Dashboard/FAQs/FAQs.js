@@ -4,6 +4,7 @@ import "../dashboard.css";
 import "./faq.css";
 import Accordion from "react-bootstrap/Accordion";
 import { AccordionBody } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const FAQs = () => {
   return (
@@ -29,7 +30,7 @@ const FAQs = () => {
               </div>
               <div className="pad-set ">
                 <div className="faq-btn gap-4 d-flex justify-content-end">
-                  <button className="common-all-btn">Create a ticket</button>
+                  <Link to="/faqs-ticket" className="common-all-btn">Create a ticket</Link>
                   <button className="border-all-btn">Ticket History</button>
                 </div>
                 <div className="inter-grey-box shadow-set pad-set mt-5">

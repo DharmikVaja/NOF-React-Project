@@ -97,3 +97,8 @@
   --bs-accordion-border-color: transparent;
   border-left: 8px solid #597ad1;
 }
+.faq-inputs{
+  background: #ffffff !important;
+  border: 1px solid #597ad1 !important;
+}
+

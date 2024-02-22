@@ -3,6 +3,8 @@ import Arrowicon from "../../../assets/Dashboard/dashboard-test-arrow-img.png";
 import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png";
 import { Link } from "react-router-dom";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
+import "../dashboard.css";
+import "./result-report.css";
 
 const ResultReport = () => {
   return (
@@ -13,11 +15,10 @@ const ResultReport = () => {
             <header className="main-header login-header-home">
               <NavbarDashboard />
             </header>
-
-            <div classname="dash-outer-box">
+            <section classname="dash-outer-box pad-set register-border">
               <div className="row">
                 <div className="col-md-12">
-                  <div className="pad-set register-border">
+                  <div className="pad-set register-border ">
                     <div className="head-for-all-page">
                       <img src={AssesmentIcon} className="head-icon" alt="" />
                       <div>
@@ -40,7 +41,7 @@ const ResultReport = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>

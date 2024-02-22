@@ -7,3 +7,16 @@
   font-weight: 500;
   margin: 15px 0;
 }
+.dashboard-layout .dash-outer-box {
+  background-color: #ffffff;
+}
+.dash-outer-box .test-box-inner {
+  padding: 20px 25px 25px;
+}
+.dash-outer-box .test-box-inner p {
+  font-size: 14px;
+  font-weight: 700;
+}
+.dashboard-layout .dash-outer-box .pad-set {
+  padding: 20px 32px;
+}

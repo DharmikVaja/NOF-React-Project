@@ -63,3 +63,20 @@
     display: inline-block;
     min-width: 100px;
 }
+.order-table tr {
+    border: transparent !important;
+}
+.dashboard-layout .dash-outer-box .pad-set {
+    padding: 20px 32px;
+}
+.order-head {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #24242E;
+    margin-bottom: 16px;
+}
+.order-total .table-order .order-total{
+    border-top:  1px solid black !important;
+}

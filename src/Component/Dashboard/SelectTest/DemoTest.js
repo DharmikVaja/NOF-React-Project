@@ -31,7 +31,7 @@ const DemoTest = () => {
                       <p>You can see your all Tests here</p>
                     </div>
                   </div>
-                  <button className="common-btn">Back</button>
+                  <Link className="common-btn" to="/select-test">Back</Link>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./acc-settings.css";
-
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
@@ -46,7 +45,7 @@ const AccountSettings = () => {
                               <FaUser className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4>User Profile</h4>
+                              <h4 className="acc-settings-h4">User Profile</h4>
                             </div>
                           </div>
                           <FaAngleRight className="fs-4" />
@@ -61,7 +60,7 @@ const AccountSettings = () => {
                               <IoIosNotifications className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4>Notifications</h4>
+                              <h4 className="acc-settings-h4">Notifications</h4>
                             </div>
                           </div>
                           <FaAngleRight className="fs-4" />
@@ -76,7 +75,7 @@ const AccountSettings = () => {
                               <IoLocationSharp className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4>Address Manager</h4>
+                              <h4 className="acc-settings-h4">Address Manager</h4>
                             </div>
                           </div>
                           <FaAngleRight className="fs-4" />
@@ -91,7 +90,7 @@ const AccountSettings = () => {
                               <IoCartSharp className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4>My Orders</h4>
+                              <h4 className="acc-settings-h4">My Orders</h4>
                             </div>
                           </div>
 
@@ -107,7 +106,7 @@ const AccountSettings = () => {
                               <AiOutlineSwap className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4>Transactions History</h4>
+                              <h4 className="acc-settings-h4">Transactions History</h4>
                             </div>
                           </div>
 
