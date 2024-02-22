@@ -2,7 +2,11 @@ import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./activity-log.css";
-import { MdOutlineManageSearch } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdOutlineManageSearch,
+} from "react-icons/md";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ActivityLog = () => {
@@ -92,6 +96,23 @@ const ActivityLog = () => {
                         </td>
                       </tr>
                     </table>
+                  </div>
+                  <div className="d-flex justify-content-center paginate-register">
+                    <div className="d-flex">
+                      <div className="d-flex justify-content-center paginate-register">
+                        <div className="d-flex align-items-center">
+                          <button className="common-btn">
+                            <MdKeyboardArrowLeft />
+                          </button>
+                          <button className="common-btn m-2">
+                            Page 1 of 1
+                          </button>
+                          <button className="common-btn">
+                            <MdKeyboardArrowRight />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

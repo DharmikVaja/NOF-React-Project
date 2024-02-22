@@ -85,7 +85,7 @@ const NavbarDashboard = () => {
                       className="nav-link"
                       tabIndex={0}
                       to="/practice-books"
-                      // 
+                      //
                     >
                       <img
                         src={PBook1}
@@ -160,12 +160,9 @@ const NavbarDashboard = () => {
                       <FaPlus className="fs-4 me-4" /> Add New Student
                     </Link>
                     {/*  */}
-                    <Button
-                      className="nav-link "
-                      onClick={() => setSmShow(true)}
-                    >
+                    <Link className="nav-link " onClick={() => setSmShow(true)}>
                       <FaSignOutAlt className="fs-4 me-4 " /> Logout
-                    </Button>
+                    </Link>
                     <Link
                       role="button"
                       className="nav-link me-2"
@@ -203,16 +200,16 @@ const NavbarDashboard = () => {
                       <Dropdown.Item
                         className="dropdown-item"
                         role="button"
-                        href="//user-dashboard"
+                        href="/user-dashboard"
                       >
-                        LogOut
+                        Switch User
                       </Dropdown.Item>
                       <Dropdown.Item
                         className="dropdown-item"
                         role="button"
-                        href="/dashboard"
+                        href="/"
                       >
-                        Switch User
+                        LogOut
                       </Dropdown.Item>
                     </div>
                   </Dropdown.Menu>

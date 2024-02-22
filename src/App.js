@@ -34,6 +34,10 @@ import DashUserProfile from "./Component/Dashboard/UserAccountComp/DashUserProfi
 import DashNotification from "./Component/Dashboard/UserAccountComp/DashNotification";
 import OrderSummary from "./Component/Dashboard/PracticeBook/OrderSummary";
 import Ticket from "./Component/Dashboard/FAQs/Ticket";
+import AddressManager from "./Component/Dashboard/AccountSettings/AddressManager";
+import MyOrdersComp from "./Component/Dashboard/AccountSettings/MyOrdersComp";
+import TransactionHistory from "./Component/Dashboard/AccountSettings/TransactionHistory";
+import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
 
 function App() {
   return (
@@ -73,10 +77,10 @@ function App() {
         <Route path="/account-setting" element={<AccountSettings />} />
         <Route path="/user-profile" element={<DashUserProfile />} />
         <Route path="/user-notification" element={<DashNotification />} />
-        <Route path="/address-manager" element={<DashUserProfile />} />
-        <Route path="/user-orders" element={<DashUserProfile />} />
-        <Route path="/transaction-history" element={<DashUserProfile />} />
-        
+        <Route path="/address-manager" element={<AddressManager />} />
+        <Route path="/user-orders" element={<MyOrdersComp />} />
+        <Route path="/transaction-history" element={<TransactionHistory />} />
+        <Route path="/add-student" element={<AddStudent />} />
       </Routes>
     </>
   );

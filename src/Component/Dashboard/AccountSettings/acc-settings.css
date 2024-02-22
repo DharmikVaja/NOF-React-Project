@@ -12,7 +12,7 @@
   line-height: 20px;
   color: #597ad1;
   margin-bottom: 0px;
-} 
+}
 .account-set-inner a {
   color: #597ad1 !important;
   cursor: pointer;
@@ -39,28 +39,45 @@
   background-color: transparent;
   border-color: transparent;
 }
-.edit-image input{
+.edit-image input {
   position: absolute;
 }
 .dashboard-layout .input-group {
-  border: 1px solid #597AD1 !important;
+  border: 1px solid #597ad1 !important;
   border-radius: 8px;
-}.dashboard-layout .input-group .input-group-text {
+}
+.dashboard-layout .input-group .input-group-text {
   background-color: transparent !important;
-  color: #597AD1;
+  color: #597ad1;
   border: none !important;
-}.dashboard-layout .input-group .input-group-text img {
+}
+.dashboard-layout .input-group .input-group-text img {
   height: 16px;
-}.dashboard-layout .input-group .input-group-text {
+}
+.dashboard-layout .input-group .input-group-text {
   background-color: transparent !important;
-  color: #597AD1;
+  color: #597ad1;
   border: none !important;
 }
 .dashboard-layout .delivery-form .form-control {
-  background-color: #F5F5F5 ;
-  border: none ;
+  background-color: #f5f5f5;
+  border: none;
 }
-.set-marg h4{text-decoration: none !important ;}
-.acc-settings-h4{
+.set-marg h4 {
+  text-decoration: none !important ;
+}
+.acc-settings-h4 {
   text-decoration: none !important;
+}
+.dash-order-btn {
+  background: #597ad1 !important;
+  font-size: 17px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 18px !important;
+}
+.transaction-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

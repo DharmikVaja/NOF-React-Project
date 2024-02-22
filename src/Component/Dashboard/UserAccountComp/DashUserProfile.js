@@ -1,17 +1,7 @@
 import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard.js";
-import UserProfile from "../../../assets/Dashboard/edit-user-dash-profile.png";
-import UserProfileEdit from "../../../assets/Dashboard/user-edit-rightbottom.png";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 import "../dashboard.css";
-import { FaUser } from "react-icons/fa";
-import { FaAddressCard } from "react-icons/fa";
-import { FaSchool } from "react-icons/fa6";
-import { IoSchool } from "react-icons/io5";
-import { BsGenderAmbiguous } from "react-icons/bs";
-import { FaCalendarAlt } from "react-icons/fa";
-import Form from "react-bootstrap/Form";
-import { IoMdMail } from "react-icons/io";
 import DashUser1Student from "./DashUser1Student.js";
 import DashUser2Parent from "./DashUser2Parent.js";
 import DashUser3Add from "./DashUser3Add.js";
@@ -44,22 +34,22 @@ const DashUserProfile = () => {
                   </div>
                 </div>
                 <Tabs
-                  defaultActiveKey="profile"
+                  defaultActiveKey="Student Details"
                   id="fill-tab-example"
                   className="mb-3 "
                   fill
                 >
-                  <Tab eventKey="home" title="Student Details">
+                  <Tab eventKey="student" title="Student Details">
                     <DashUser1Student />
                   </Tab>
-                  <Tab eventKey="profile" title="Parent Details">
+                  <Tab eventKey="parent" title="Parent Details">
                     <DashUser2Parent />
                   </Tab>
-                  <Tab eventKey="longer-tab" title="Add Students">
+                  <Tab eventKey="add" title="Add Students">
                     <DashUser3Add />
                   </Tab>
-                  <Tab eventKey="contact" title="Change Password">
-                    <DashUser4ChangePsd/>
+                  <Tab eventKey="change" title="Change Password">
+                    <DashUser4ChangePsd />
                   </Tab>
                 </Tabs>
               </div>

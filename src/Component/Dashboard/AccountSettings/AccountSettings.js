@@ -3,7 +3,6 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./acc-settings.css";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 import { Link } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
 import { FaUser } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
@@ -38,81 +37,81 @@ const AccountSettings = () => {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="account-set-inner cursorPointerClass">
-                      <Link to="/user-profile" className="dash-links">
-                        <div className=" d-flex justify-content-between align-items-center">
-                          <div className="d-flex align-items-center">
-                            <div className="user">
-                              <FaUser className="fs-5" />
-                            </div>
-                            <div className="set-marg ps-4">
-                              <h4 className="acc-settings-h4">User Profile</h4>
-                            </div>
+                      <div className=" d-flex justify-content-between align-items-center">
+                        <div className="d-flex align-items-center">
+                          <div className="user">
+                            <FaUser className="fs-5" />
                           </div>
-                          <FaAngleRight className="fs-4" />
+                          <div className="set-marg ps-4">
+                            <h4> User Profile</h4>
+                          </div>
                         </div>
-                      </Link>
+                        <Link to="/user-profile" className="dash-links">
+                          <FaAngleRight className="fs-4" />
+                        </Link>
+                      </div>
                     </div>
                     <div className="account-set-inner cursorPointerClass">
-                      <Link to="/user-notification" className="dash-links">
                         <div className=" d-flex justify-content-between align-items-center">
                           <div className="d-flex align-items-center">
                             <div className="user">
                               <IoIosNotifications className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4 className="acc-settings-h4">Notifications</h4>
+                              <h4>Notifications</h4>
                             </div>
                           </div>
+                      <Link to="/user-notification" className="dash-links">
                           <FaAngleRight className="fs-4" />
-                        </div>
                       </Link>
+                        </div>
                     </div>
                     <div className="account-set-inner cursorPointerClass">
-                      <Link to="/address-manager" className="dash-links">
                         <div className=" d-flex justify-content-between align-items-center">
                           <div className="d-flex align-items-center">
                             <div className="user">
                               <IoLocationSharp className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4 className="acc-settings-h4">Address Manager</h4>
+                              <h4>Address Manager</h4>
                             </div>
                           </div>
+                      <Link to="/address-manager" className="dash-links">
                           <FaAngleRight className="fs-4" />
-                        </div>
                       </Link>
+                        </div>
                     </div>
                     <div className="account-set-inner cursorPointerClass">
-                      <Link to="/user-orders" className="dash-links">
                         <div className=" d-flex justify-content-between align-items-center">
                           <div className="d-flex align-items-center">
                             <div className="user">
                               <IoCartSharp className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4 className="acc-settings-h4">My Orders</h4>
+                              <h4>My Orders</h4>
                             </div>
                           </div>
+                      <Link to="/user-orders" className="dash-links">
 
                           <FaAngleRight className="fs-4" />
-                        </div>
                       </Link>
+                        </div>
                     </div>
                     <div className="account-set-inner cursorPointerClass">
-                      <Link to="/transaction-history" className="dash-links">
                         <div className=" d-flex justify-content-between align-items-center">
                           <div className="d-flex align-items-center">
                             <div className="user">
                               <AiOutlineSwap className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4 className="acc-settings-h4">Transactions History</h4>
+                              <h4>Transactions History</h4>
                             </div>
                           </div>
+                      <Link to="/transaction-history" className="dash-links">
 
                           <FaAngleRight className="fs-4" />
-                        </div>
                       </Link>
+                        </div>
                     </div>
                   </div>
                 </div>
