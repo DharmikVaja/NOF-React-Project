@@ -8,7 +8,6 @@ import ExamG1 from "../../../../src/assets/Dashboard/exam-guideline.png";
 import PBook1 from "../../../../src/assets/Dashboard/pending-exam.png";
 import Report1 from "../../../../src/assets/Dashboard/reports.png";
 import Activity1 from "../../../../src/assets/Dashboard/activity-log.png";
-import { FaQuestionCircle } from "react-icons/fa";
 import Syl1 from "../../../../src/assets/Dashboard/Syllabus.png";
 import { FaCog } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
@@ -16,16 +15,10 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { FaQuestion } from "react-icons/fa6";
 
 const NavbarDashboard = () => {
-  const [activeNavItem, setActiveNavItem] = useState(null);
-
-  const handleNavItemClick = (index) => {
-    setActiveNavItem(index);
-  };
   const [smShow, setSmShow] = useState(false);
 
   return (
@@ -40,24 +33,22 @@ const NavbarDashboard = () => {
                 </a>
                 <div className="navbar-collapse collapse" id="basic-navbar-nav">
                   <div className="me-auto navbar-nav navBars">
-                    <a
+                    <Link
                       role="button"
-                      href="/user-dashboard"
-                      className={`nav-link ${
-                        activeNavItem === 0 ? "active" : ""
-                      }`}
+                      to="/user-dashboard"
+                      className="nav-link"
                       tabIndex={0}
-                      onClick={() => handleNavItemClick(0)}
                     >
-                      <RxDashboard className="fs-4 me-4" />
+                      <RxDashboard
+                        className="fs-4 me-4"
+                        style={{ color: "#333333" }}
+                      />
                       Dashboard
-                    </a>
+                    </Link>
                     <Link
                       role="button"
                       to="/select-test"
-                      className={`nav-link ${
-                        activeNavItem === 0 ? "active" : ""
-                      }`}
+                      className="nav-link"
                       tabIndex={0}
                     >
                       <img
@@ -126,7 +117,7 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/faqs"
                     >
-                      <FaQuestionCircle className="fs-4 me-4" />
+                      <FaQuestion className="fs-4 me-4" />
                       FAQs
                     </Link>
                     <Link

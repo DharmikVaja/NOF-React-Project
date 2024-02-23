@@ -31,7 +31,7 @@ const FAQs = () => {
               <div className="pad-set ">
                 <div className="faq-btn gap-4 d-flex justify-content-end">
                   <Link to="/faqs-ticket" className="common-all-btn">Create a ticket</Link>
-                  <button className="border-all-btn">Ticket History</button>
+                  <Link to="/ticket-history" className="border-all-btn">Ticket History</Link>
                 </div>
                 <div className="inter-grey-box shadow-set pad-set mt-5">
                   <Accordion>

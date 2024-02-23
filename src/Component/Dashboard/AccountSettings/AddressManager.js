@@ -38,9 +38,9 @@ const AddressManager = () => {
               id="uncontrolled-tab-example"
               className="mb-3 "
             >
-              <Tab eventKey="home" title="Address Details">
+              {/* <Tab eventKey="home" title="Address Details">
                 <AddressComp1/>
-              </Tab>
+              </Tab> */}
               <Tab eventKey="profile" title="Edit Address">
                 <AddressComp2/>
               </Tab>

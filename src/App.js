@@ -38,6 +38,7 @@ import AddressManager from "./Component/Dashboard/AccountSettings/AddressManager
 import MyOrdersComp from "./Component/Dashboard/AccountSettings/MyOrdersComp";
 import TransactionHistory from "./Component/Dashboard/AccountSettings/TransactionHistory";
 import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
+import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
         <Route path="/activity-logs" element={<ActivityLog />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/faqs-ticket" element={<Ticket />} />
+        <Route path="/ticket-history" element={<TicketHistory />} />
         <Route path="/olympiad-syllabus" element={<OlymSyllabus />} />
         <Route path="/account-setting" element={<AccountSettings />} />
         <Route path="/user-profile" element={<DashUserProfile />} />
