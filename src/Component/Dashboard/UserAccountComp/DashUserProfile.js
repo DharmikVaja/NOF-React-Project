@@ -34,12 +34,12 @@ const DashUserProfile = () => {
                   </div>
                 </div>
                 <Tabs
-                  defaultActiveKey="Student Details"
+                  defaultActiveKey="student"
                   id="fill-tab-example"
                   className="mb-3 "
                   fill
                 >
-                  <Tab eventKey="student" title="Student Details">
+                  <Tab eventKey="student" title="Student Details" className="">
                     <DashUser1Student />
                   </Tab>
                   <Tab eventKey="parent" title="Parent Details">

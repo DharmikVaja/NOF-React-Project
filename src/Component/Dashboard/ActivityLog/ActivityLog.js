@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./activity-log.css";
@@ -10,6 +10,12 @@ import {
 import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ActivityLog = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchChange = (e) => {
+    // Update the search value on every key press
+    setSearchValue(e.target.value);
+  };
   function clearFilter() {
     document.querySelector(".search-data").value = "";
   }
@@ -49,7 +55,8 @@ const ActivityLog = () => {
                             name="search"
                             type="text"
                             className="search-data play-search1 form-control"
-                            defaultValue=""
+                            value={searchValue}
+                            onChange={handleSearchChange}
                           />
                         </div>
                       </div>

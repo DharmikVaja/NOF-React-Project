@@ -6,6 +6,7 @@
 .spacer-y {
   padding: 70px 0;
 }
+
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -50,4 +51,1191 @@
   right: 0px !important;
 }
 
-/* window.scrollTo- in useEffect for scroll to the beginning of routes */
+@media (max-width: 992px){
+  .homepage-banner h1 {
+      font-size: 20px;
+      line-height: 25px;
+  }
+  .homepage-banner {
+      padding: 40px 0 60px;
+      min-height: auto;
+      background-repeat: no-repeat;
+  }
+  .banner-img{
+      width: 100%;
+      margin-top: 30px;
+  }
+  .main-header-home .logo-img {
+      height: 30px;
+  }
+  .main-header-home .common-btn {
+      padding: 4px 7px;
+      font-size: 12px;
+      line-height: 18px;
+  }
+  .homepage-banner .common-btn {
+      border: 1px solid #fff;
+      font-size: 10px;
+      padding: 5px;
+  }
+  .homepage-banner p {
+      line-height: 18px;
+      font-size: 12px;
+  }
+  .footer-top .single-footer-top p a {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  .footer-home {
+      padding-top: 10px;
+  }
+  .copy-bg .content p {
+      font-size: 10px;
+      text-align: center;
+  }
+  .footer-home ul.link-list li a {
+      line-height: 18px;
+      font-size: 12px;
+      margin: 0 8px;
+  }
+  .footer-home ul.link-list {
+      justify-content: center;
+  }
+}
+
+@media (max-width: 1270px) {
+  .shadow-box-dash p {
+      min-height: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-layout {
+      padding-left: 0px;
+      padding-top: 60px;
+  }
+  .shadow-box-dash p {
+      min-height: auto;
+  }
+  .shadow-box-dash {
+      min-height: 110px;
+      margin: 10px 0;
+  }
+  .inner-dash-bpx {
+      padding: 15px 0;
+  }
+  .dashboard-layout .login-header-home .navbar-brand img {
+      height: 30px;
+  }
+  .dashboard-layout .login-header-home .profile-dropdown img {
+      height: 20px;
+      width: 20px;
+  }
+  .profile-dropdown {
+      font-size: 12px;
+      margin-right: 3px;
+  }
+  .main-header.login-header-home .border-btn {
+      padding: 2px 5px;
+      font-size: 12px;
+      margin: 3px;
+      display: flex;
+      align-items: center;
+  }
+  .dashboard-layout .navbar-collapse {
+      position: absolute !important;
+      top: 70px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      padding: 20px 15px;
+  }
+  .dashboard-layout .login-header-home .navbar-collapse .navbar-nav{
+      height: calc(100vh - 56px) !important;
+  }
+  .dashboard-layout .navbar-collapse .navbar-nav {
+      top: 56px !important;
+      left: -290px !important;
+      transition: all ease-in-out .5s;
+  }
+  .dashboard-layout .navbar-collapse.show .navbar-nav {
+      left: 0px !important;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .outer-show-table {
+      flex-wrap: wrap;
+  }
+  .outer-show-table .d-flex {
+      margin: 10px 0;
+      font-size: 12px;
+  }
+  .table-box-new tr td, .table-box-new tr th {
+      font-size: 12px;
+  }
+  .outer-show-table .pagination .page-item .page-link {
+      padding: 0px 2px;
+      height: 22px;
+      width: 22px;
+      font-size: 10px;
+      line-height: 22px;
+  }
+  .outer-show-table .d-flex .form-select, .outer-show-table .d-flex .form-control {
+      height: 24px !important;
+  }
+  .table-box-new .table {
+      min-width: 700px;
+  }
+  .dashboard-layout .form-control, .dashboard-layout .form-select {
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+}
+@media (min-width:1349px) and (max-width:1450px){
+  .action-icon,.table-exam-schedule tr td .certificate-icon  {
+      gap: 10px;
+  }
+}
+@media (max-width:1350px){
+  .order-table .big-content td,.order-table .small-content td{
+      padding: 12px 5px;
+  }
+  .order-table .small-content td.padding-less{
+      padding: 5px 5px;
+  }
+  .common-all-btn, .green-all-btn, .border-all-btn {
+      padding: 8px 10px;
+      font-size: 14px;
+  }
+}
+@media (min-width:991px) and (max-width:1200px){
+  .questions-box .question-content .answer-option ul li{
+      width: 100%;
+  }
+}
+@media (max-width:991px){
+  /* .grad-box-inner .time-analysis-sec li:nth-child(16) {
+      border-bottom-left-radius: 0px;
+  }
+  .grad-box-inner .time-analysis-sec li:nth-child(30) {
+      border-bottom-right-radius: 0px;
+  }
+  .grad-box-inner .time-analysis-sec li:nth-child(11) {
+      border-bottom-left-radius: 10px;
+  }
+  .grad-box-inner .time-analysis-sec li:nth-child(20) {
+      border-bottom-right-radius: 10px;
+  } */
+  .grad-box-inner .time-analysis-sec li p{
+      font-size: 14px;
+  }
+  .grad-box-inner .time-analysis-sec li{
+      width: 10%;
+      padding: 6px;
+  }
+  .responsive-end{
+      text-align: center;
+  }
+  /* .dashboard-layout .pre-test-schedule li{
+      width: 44%;
+  } */
+  .dashboard-layout .dash-outer-box .result-detail ul li{
+      width: 30%;
+  }
+.dashboard-layout .login-header-home .navbar-expand-lg .bell-icon{
+  margin-right: 5px;
+
+}
+.dashboard-layout .input-group.search{
+  margin-right: 10px;
+}
+.table-exam-schedule {
+  overflow-x: scroll;
+}
+.table-exam-schedule .table{
+  min-width: 1000px;
+}
+.result-section .accordion-header button{
+  font-size: 16px;
+  padding: 12px;
+}
+.table-exam-schedule .admin-calculate {
+  min-width: 2000px;
+}
+}
+@media (max-width:768px){
+  .exam-question-banner {
+      height: auto;
+      max-height: 50vh;
+  }
+  .response-order{
+      order: 1;
+  }
+  .dispatch-right-border{
+      border: none;
+  }
+  .dashboard-layout .dash-outer-box .table-dispatch .table {
+      margin-bottom: 0;
+  }
+  .dashboard-layout .dash-outer-box .table-dispatch .table tr td{
+      font-size: 10px;
+  line-height: 14px;
+  margin-bottom: 10px;
+  padding-left: 0px;
+  width: 50%;
+  padding: 4px 4px 0;
+  }
+.set-student-btn .select-student-btn{
+  font-size: 14px;
+}
+.multi-upload-files-sec{
+  padding: 18px 10px;
+}
+.multi-upload-files-sec .close-file {
+  top: -10px;
+  right: -10px;
+}
+  .table-head-drop .common-all-btn{
+      margin-bottom: 5px;
+  }
+  .account-tabs .nav-tabs .nav-link{
+      padding: 7px 7px;
+      font-size: 14px;
+  }
+  .border-account .order-head{
+      font-size: 14px;
+  }
+  .order-table .big-content td{
+      font-size: 14px;
+      padding: 10px 5px;
+  }
+  .order-table .small-content td{
+      font-size: 12px;
+      padding: 10px 4px;
+  }
+  .account-set-inner{
+      padding: 10px;
+  }
+  .account-set-inner .set-marg{
+      margin-left: 10px;
+  }
+  .account-set-inner .user{
+      width: 50px;
+      height: 50px;
+  }
+  .account-set-inner h4{
+      font-size: 14px;
+  }
+  .questions-box.back-set-image{
+      background-size: 100%;
+  }
+  .questions-box .heading{
+      font-size: 24px;
+      line-height: 28px;
+  }
+  .questions-box .question-content .answer-option ul li button span{
+      font-size: 16px;
+      padding: 11px 20px;
+  }
+  .questions-box .question-head{
+      padding: 5px;
+  }
+  .questions-box .question-head .blue-index h3{
+      font-size: 16px;
+      line-height: 20px;
+      width: 50px;
+      height: 50px;
+  }
+  .questions-box .question-content .answer-option ul li{
+      width: 100%;
+      padding: 8px;
+  }
+  .questions-box .question-head .ques-content p,.questions-box .question-head .ques-hint a{
+      font-size: 16px;
+      line-height: 20px;
+  }
+  .questions-box .question-content{
+      padding: 5px;
+      margin: 10px;
+  }
+  .questions-box .question-content .answer-option ul li button{
+      font-size: 16px;
+      line-height: 20px;
+      height: 50px;
+      padding: 0 0 0 55px;
+  }
+.table-exam-schedule tr td {
+  padding: 20px 15px;
+}
+.dashboard-layout .input-group.search{
+  display: none;
+}
+.dashboard-layout .login-header-home .navbar-expand-lg .bell-icon{
+  font-size: 20px;
+  line-height: 20px;
+  padding: 7px;
+}
+.dashboard-layout .grey-dash-box{
+  min-height: auto;
+}
+.paginate-register .pagination .page-item .page-link{
+  height: 30px;
+  width: 30px;
+}
+.table-head-drop {
+  gap: 10px;
+  align-items: center;
+}
+.table-head-drop > div {
+  margin: 0;
+}
+.table-head-drop .dropdown button, .table-head-drop .dropdown button:hover, .table-head-drop .dropdown button:focus,.table-head-drop .input-group .form-control{
+  padding: 6px 10px;
+}
+.table-exam-schedule.less-padding tr .table-space-btn button{
+  height: 50px;
+}
+.table-exam-schedule.less-padding tr td {
+  padding: 8px 15px;
+}
+.same-para-dash{
+  margin-bottom: 10px;
+}
+.header-exam-login .exam-head-profile{
+  gap: 3px;
+  padding-left: 0;
+}
+.header-exam-login .exam-head-profile img {
+  width: 20px;
+  height: 20px;
+}
+.header-exam-login .exam-head-profile h4{
+  font-size: 14px;
+  line-height: 14px;
+}
+.header-exam-login .exam-head-profile p{
+  font-size: 12px;
+  line-height: 12px;
+}
+.header-exam-login .main-head h3{
+  font-size: 14px;
+  line-height: 14px;
+}
+.header-exam-login .timer h5{
+  font-size: 13px;
+  line-height: 13px;
+}
+.header-exam-login .timer-count p{
+  font-size: 14px;
+  line-height: 14px;
+}
+.header-exam-login .timer-count span{
+  font-size: 12px;
+  line-height: 12px;
+}
+.header-exam-login .timer-inner{
+  height: 40px;
+  width: 40px;
+}
+.dashboard-layout .dash-outer-box .pad-set{
+  padding: 15px 10px !important;
+}
+.common-all-btn, .green-all-btn, .border-all-btn, .outer-btn-export a {
+  font-size: 12px;
+  padding: 7px 9px;
+  letter-spacing: 0;
+}
+}
+@media (max-width:580px){
+  .table-head-drop > div {
+      margin: 10px 0;
+  }
+  .grad-box-inner .lower-heading{
+      min-height: 110px;
+  }
+  .lower-heading .accurant-head{
+      margin-bottom: 12px;
+  }
+  .grid-container .grid-item {
+      grid-column: span 3;
+  }
+  .grad-box-inner .time-analysis-sec li{
+      width: 20%;
+  }
+  .multi-upload-files-sec video{
+      width: 100%;
+  }
+  .dashboard-layout .for-dash-h4 {
+      margin-bottom: 5px;
+  }
+  /* .dashboard-layout .pre-test-schedule li {
+      width: 100%;
+  } */
+  .personal-radio-line.question {
+      margin: 1px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul{
+      display: block;
+      margin-bottom: 0px;
+      padding-top: 0px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul li {
+      width: 100%;
+      margin-bottom: 18px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul li p{
+      margin-bottom: 10px;
+      font-size: 13px;
+  }
+  .table-head-drop .dropdown button, .table-head-drop .dropdown button:hover, .table-head-drop .dropdown button:focus,.table-head-drop .input-group{
+     margin-bottom: 8px;
+     width: 100%;
+  }
+  
+  .dashboard-layout .inter-grey-box.shadow-set:before{
+      display: none;
+  }
+  .dashboard-layout .inter-grey-box.shadow-set{
+      border-left: 11px solid #597AD1;
+  }
+  .dashboard-layout .instruct-inner-content{
+      padding-left: 1rem;
+  }
+  .header-exam-login .exam-head-profile{
+      gap: 3px;
+      padding-left: 0;
+  }
+  .header-exam-login .exam-head-profile img {
+      width: 16px;
+      height: 16px;
+  }
+  .header-exam-login .exam-head-profile h4{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .exam-head-profile p{
+      font-size: 10px;
+      line-height: 12px;
+  }
+  .header-exam-login .main-head h3{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .timer h5{
+      font-size: 11px;
+      line-height: 13px;
+  }
+  .header-exam-login .timer-count p{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .timer-count span{
+      font-size: 10px;
+      line-height: 12px;
+  }
+  .header-exam-login .timer-inner{
+      height: 40px;
+      width: 40px;
+  }
+}
+@media (max-width:360px){
+  .welcome-modal .modal-dialog {
+      min-width: 296px;
+  }
+  .dashboard-layout .login-header-home .navbar-expand-lg .bell-icon {
+      font-size: 15px;
+      padding: 4px;
+  }
+  .dashboard-layout .navbar-toggler{
+      font-size: 14px;
+      padding: 5px;
+  }
+}
+.dashboard-layout .border-transparent{
+  border-color: transparent !important;
+}
+
+.react-tel-input .form-control {
+  margin-left: 40px !important;
+} 
+.edit-phoneNumber .react-tel-input .form-control {
+  margin-left: 0px !important;
+} 
+.edit-phoneNumber .center-data{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.edit-phoneNumber .edit-button-phone{
+  display: flex !important;
+  margin: 0 auto !important;
+}
+
+.grayed-out{
+  opacity: 0.5;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 23px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 14px;
+  border: 2px solid #00B400;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #00B400;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color:transparent;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(21px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.strip-to-top{
+  border-radius: 10px;
+  background: #F5F5F5;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.strip-to-top p{
+  color: rgba(36, 36, 46, 0.80);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.dropdown-switch .dropdown-menu{
+  right: 0;
+  left: auto !important;
+}
+.word-break-all{
+  word-break: break-all;
+}
+/* video,image start */
+.questions-box .question-content .answer-option ul li button{
+  min-height: 58px;
+  height: auto;
+  overflow: hidden;
+}
+.questions-box .question-content .answer-option ul li button img,.questions-box .question-content .answer-option ul li button video{
+  object-fit: contain;
+  height: 110px;
+  width: auto;
+  padding: 4px;
+  display: flex;
+}
+.questions-box .question-content .answer-option ul li button img{
+  object-position: left;
+}
+.questions-box .question-content .answer-option ul li button audio{
+  width: -webkit-fill-available;
+  margin: 4px;
+  height: 43px;
+  display: flex;
+}
+.for-all-type audio{
+  width: -webkit-fill-available;
+}
+.for-all-type video,.for-all-type img{
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+.questions-box .question-content .answer-option ul li .zoom-out{
+  position: relative;
+}
+.questions-box .question-content .answer-option ul li .zoom-out .zoom-icon{
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  cursor: pointer;
+}
+.questions-box .question-content .answer-option ul li .zoom-out .zoom-icon i{
+  font-size: 20px;
+  color: #587ad1;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+  border: 1px solid #597ad1;
+}
+.modal-image-content img,.modal-image-content video{
+  max-height: 415px;
+  width: 100%;
+  object-fit: contain;
+}
+@media (max-width:768px){
+  .questions-box .question-content .answer-option ul li button {
+      min-height: 50px;
+  }
+  .for-all-type video, .for-all-type img{
+      height: 200px;
+  }
+}
+@media (max-width:580px){
+  .table-head-drop > div {
+      margin: 10px 0;
+  }
+  .grad-box-inner .lower-heading{
+      min-height: 110px;
+  }
+  .lower-heading .accurant-head{
+      margin-bottom: 12px;
+  }
+  .grid-container .grid-item {
+      grid-column: span 3;
+  }
+  .grad-box-inner .time-analysis-sec li{
+      width: 20%;
+  }
+  .multi-upload-files-sec video{
+      width: 100%;
+  }
+  .dashboard-layout .for-dash-h4 {
+      margin-bottom: 5px;
+  }
+  /* .dashboard-layout .pre-test-schedule li {
+      width: 100%;
+  } */
+  .personal-radio-line.question {
+      margin: 1px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul{
+      display: block;
+      margin-bottom: 0px;
+      padding-top: 0px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul li {
+      width: 100%;
+      margin-bottom: 18px;
+  }
+  .dashboard-layout .dash-outer-box .result-detail ul li p{
+      margin-bottom: 10px;
+      font-size: 13px;
+  }
+  .table-head-drop .dropdown button, .table-head-drop .dropdown button:hover, .table-head-drop .dropdown button:focus,.table-head-drop .input-group{
+     margin-bottom: 8px;
+     width: 100%;
+  }
+  
+  .dashboard-layout .inter-grey-box.shadow-set:before{
+      display: none;
+  }
+  .dashboard-layout .inter-grey-box.shadow-set{
+      border-left: 11px solid #597AD1;
+  }
+  .dashboard-layout .instruct-inner-content{
+      padding-left: 1rem;
+  }
+  .header-exam-login .exam-head-profile{
+      gap: 3px;
+      padding-left: 0;
+  }
+  .header-exam-login .exam-head-profile img {
+      width: 16px;
+      height: 16px;
+  }
+  .header-exam-login .exam-head-profile h4{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .exam-head-profile p{
+      font-size: 10px;
+      line-height: 12px;
+  }
+  .header-exam-login .main-head h3{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .timer h5{
+      font-size: 11px;
+      line-height: 13px;
+  }
+  .header-exam-login .timer-count p{
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .header-exam-login .timer-count span{
+      font-size: 10px;
+      line-height: 12px;
+  }
+  .header-exam-login .timer-inner{
+      height: 40px;
+      width: 40px;
+  }
+}
+@media (max-width:360px){
+  .welcome-modal .modal-dialog {
+      min-width: 296px;
+  }
+  .dashboard-layout .login-header-home .navbar-expand-lg .bell-icon {
+      font-size: 15px;
+      padding: 4px;
+  }
+  .dashboard-layout .navbar-toggler{
+      font-size: 14px;
+      padding: 5px;
+  }
+}@media (max-width:768px){
+  .questions-box .question-content .answer-option ul li button {
+      min-height: 50px;
+  }
+  .for-all-type video, .for-all-type img{
+      height: 200px;
+  }
+}@media  (max-width:768px) {
+  .multi-select-group .multiSelectContainer {
+      padding: 0px 9px;
+  }
+}@media (max-width:768px) {
+  .coming-soon-text{
+      min-height: 40vh;
+  }
+  .coming-soon-text h2{
+      font-size: 26px;
+  }
+}
+
+@media (max-width:1350px){
+  .grad-box-inner .upper-heading.height1{
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .grad-box-inner .lower-heading .small-font.setheight{
+      min-height: 145px;
+  }
+  .dashboard-layout .dash-outer-box .pad-set {
+      padding: 20px ;
+    }
+}
+@media (max-width:991px){
+  .grad-box-inner .lower-heading .small-font.setheight{
+      min-height: 160px;
+  }
+}
+@media (max-width:768px){
+  .cs-sm-lg-2{
+      margin-right: 5px;
+  }
+}
+@media (max-width:580px){
+  .grad-box-inner .lower-heading .small-font.setheight{
+      min-height: auto;
+  }
+}
+@media (max-width: 1500px){
+  .common-all-btn img {
+      height: 18px;
+  }
+}
+@media (max-width: 992px){
+  .result-table .common-all-btn {
+      font-size: 12px;
+      padding: 10px 10px;
+  }
+  .common-all-btn img {
+      height: 16px;
+      margin-right: 4px;
+  }  
+  .paginate-input input {
+      text-align: center;
+      padding: 7px 5px;
+      font-size: 10px;
+      line-height: 14px;
+  }
+  .table-exam-schedule  tr td {
+      padding: 10px 5px;
+      font-size: 12px;
+      line-height: 16px;
+      word-break: break-word;
+  }
+  .dashboard-layout .dash-outer-box .pad-set .table-exam-schedule  .report-small  tr th {
+      padding: 10px 5px;
+      font-size: 12px;
+  line-height: 16px;
+  }
+}@media (max-width:1199px){
+  .get-touch-info h2 {
+      font-size: 37px;
+  }
+  .get-touch-bg {
+      padding: 79px 96px 60px;
+  }
+  .product-detail-btn a {
+      width: 238px;
+      height: 60px;
+  }
+  .product-detail-btn a i {
+      margin-right: 20px;
+  }
+      .coupon-code-input .form-control {
+             width: 225px;
+             margin-right: 17px;
+         }
+         .coupon-code-input img {
+             margin-left: 8px;
+             margin-right: 20px;
+         }
+         .coupon-code-input .form-control.coupon-input {
+             width: 230px;
+         }
+         .coupon-code-input .form-control {
+             padding: 15px 15px;
+         }
+}
+
+@media (max-width:1023px){
+  .get-touch-bg .react-tel-input{
+      padding: 6px 18px;
+      overflow: hidden ;
+  }
+  .product-detail-review ul li {
+      padding: 12px;
+  }
+  .product-detail-info {
+      margin-left: 0;
+  }
+  .product-detail-btn a {
+      width: 205px;
+      height: 55px;
+      font-size: 17px;
+  }
+  .product-detail-btn a i {
+      margin-right: 12px;
+  }
+  .product-description {
+      font-size: 19px;
+  }
+  .get-touch-info h2 {
+      font-size: 27px;
+  }
+  .get-touch-info ul {
+      gap: 12px;
+  }
+  .get-touch-info ul {
+      flex-wrap: wrap;
+  }
+  .get-touch-bg {
+      padding: 76px 80px 60px;
+  }
+  .get-touch-bg h2 {
+      font-size: 25px;
+  }
+  .get-touch-bg .form-control {
+      font-size: 14px;
+      padding: 6px 18px;
+      /* height: 37px; */
+  }
+  .get-touch-bg .form-label{
+      margin-bottom: 4px;
+  }
+  .get-touch-bg .form-group{
+      margin-bottom: 12px;
+  }
+  .testimonial-section .testimonial-heading {
+      margin-bottom: 55px;
+  }
+  .testimonial-heading h1{
+      font-size: 26px;
+  }   
+      .coupon-code {
+             display: block;
+         }
+         .coupon-code-input {
+             margin-bottom: 15px;
+         }
+         .coupon-code-input .form-control.coupon-input {
+             width: unset;
+         }
+         .cart-table .table>tbody tr td {
+             padding: 40px 44px 30px;
+         }
+         .cart-total .table>tbody tr td {
+             padding: 33px 44px 17px;
+         }
+         .coupon-code-box h4{
+          margin-top: 15px;
+          font-size: 16px;
+         }
+  
+}
+
+@media (max-width:767px){
+  .get-touch-bg .form-control{
+      padding: 6px 10px;
+  }
+  .get-touch-bg .react-tel-input{
+      padding: 3px 10px;
+  }
+  .testimonial-section .slick-prev,.testimonial-section .slick-next{
+      bottom: -79px !important;
+  }
+  .slick-dots{
+      width: 100% !important;
+  }
+      .cart-table .table>tbody tr td {
+             padding: 25px 35px 25px;
+             font-size: 14px;
+         }
+         .cart-table .table>thead tr th {
+             font-size: 16px;
+             padding: 20px 35px 20px;
+         }
+         .coupon-code-box {
+             padding: 0 35px;
+         }
+         .coupon-code-input {
+             display: block;
+             margin-bottom: 8px;
+         }
+         .coupon-code-input .form-control {
+             margin: auto auto 8px;
+             width: 100%;
+             height: 35px;
+         }
+         .coupon-code-input button{
+          font-size: 14px;
+          line-height: 20px;
+          height: auto;
+          padding: 7px 30px;
+         }
+         
+         .coupon-code-input .form-control.coupon-input {
+             width: 100%;
+         }
+         .coupon-code-input img {
+             display: none;
+         }
+         .back-to-product {
+             margin-bottom: 20px;
+         }
+     
+      .product-detail-img {
+              margin-bottom: 30px;
+          }
+          .product-detail-info h2 {
+              margin-bottom: 20px;
+          }
+          .product-detail-info span {
+              margin-bottom: 15px;
+          }
+          .product-olympiad-rating {
+              margin-bottom: 22px;
+          }
+          .product-description {
+              font-size: 18px;
+          }
+          .quantity-input-group {
+              margin-bottom: 25px;
+          }
+          .product-detail-btn {
+              display: block;
+          }
+          .product-detail-btn a {
+              width: 210px;
+              margin: auto auto 15px;
+          }
+      
+   .testimonial-heading h1 {
+      font-size: 24px;
+  }
+  .testimonial-section .testimonial-heading h2{
+      font-size: 18px;
+  }
+  .olympiad-info h2{
+      font-size: 16px;
+  }
+ 
+  .get-touch-info {
+      padding: 0 15px;
+      margin-bottom: 35px;
+  }
+  .get-touch-info p{
+      font-size: 14px;
+  }
+  .get-touch-bg {
+      padding: 76px 55px 60px;
+  }
+  .get-in-touch-section {
+      padding: 0px 0 60px;
+  }
+  .testimonial-section{
+      padding: 60px 0 120px;
+  }
+  .olympiad-info h2, .olympiad-info span {
+      margin-bottom: 9px;
+  }
+  .olympiad-amount {
+      margin-bottom: 18px;
+  }
+  .olympiad-box {
+      margin-bottom: 35px;
+  }
+  .get-touch-bg,.get-touch-bg::before {
+      border-radius: 100px 0px 0px 0px;
+      margin-left: 15px;
+  }
+  .get-touch-bg::before{
+      left: -25px;
+  }
+  .get-touch-bg button{
+      padding: 8px 30px;
+      font-size: 14px;
+  }
+  .get-touch-bg .form-label{
+      font-size: 14px;
+  }
+  .nof-same-font h3 {
+      font-size: 16px;
+  }
+  .quantity-input-group .input-group button,.cart-table .table>tbody tr td i{
+      font-size: 16px;
+  }
+  .quantity-input-group .input-group button{
+      padding: 8px 15px;
+  }
+  .cart-table{
+      margin-bottom: 40px;
+  }
+  .back-to-product a {
+      padding: 7px 30px;
+      font-size: 16px;
+  }
+  .cart-total button {
+      padding: 10px 30px;
+      font-size: 14px;
+      line-height: 20px;
+  }
+  .cart-section{
+      padding: 30px 0;
+  }
+  .get-touch-info ul {
+      gap: 9px;
+  }
+}
+
+@media (max-width:320px){
+      .cart-table .table>tbody tr td {
+             padding: 20px 25px 20px;
+             font-size: 12px;
+         }
+         .cart-table .table>thead tr th {
+             font-size: 14px;
+             padding: 20px 25px 20px;
+         }
+         
+         .coupon-code-box {
+             padding: 0 15px;
+         }
+  .get-touch-info h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+  }
+  .get-touch-bg {
+      padding: 76px 35px 40px;
+  }
+  .get-touch-bg .form-control {
+      font-size: 12px;
+  }
+  .get-touch-bg h2 {
+      font-size: 18px;
+      margin-bottom: 24px;
+  }
+      .testimonial-img img {
+          width: 61%;
+      }
+      .testimonial-heading h1 {
+          font-size: 22px;
+      }
+      .testimonial-heading {
+          margin-bottom: 40px;
+      }
+          .product-detail-info h2 {
+                  font-size: 22px;
+                  margin-bottom: 15px;
+              }
+              .product-detail-info span {
+                  margin-bottom: 13px;
+                  font-size: 17px;
+              }
+              .product-olympiad-rating {
+                  margin-bottom: 17px;
+              }
+              .quantity-input-group {
+                  margin-bottom: 20px;
+              }
+              .product-description {
+                  font-size: 17px;
+              }
+              .quantity-input-group p {
+                  margin-right: 20px;
+              }
+              .quantity-input-group .input-group {
+                  width: 155px;
+              }
+              .nof-img {
+                  margin-bottom: 30px;
+              }
+              .product-detail-img {
+                  margin-bottom: 25px;
+              }
+              .class-country-heading p {
+                  font-size: 10px;
+                  
+              }
+          
+}

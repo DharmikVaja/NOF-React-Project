@@ -51,9 +51,8 @@ const HowItWork = () => {
 
   return (
     <>
-
       <Header />
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="set-top-margin-all"></div>
       <div className="how-it-work-page" style={containerStyle}>
         <div className="head-practice-test p-0">
@@ -77,24 +76,6 @@ const HowItWork = () => {
         </div>
 
         <Slider {...settings}>
-          {/* {[...Array(6).keys()].map((index) => (
-            <div key={index}>
-              <div className="how-work-box">
-                <div className="image">
-                  <img
-                    src={slider1}
-                    className="img-fluid"
-                    alt={`img-${index}`}
-                  />
-                </div>
-                <h4>{index + 1}. Slide Title</h4>
-                <p>
-                  Slide content goes here. You can customize it based on your
-                  needs.
-                </p>
-              </div>
-            </div>
-          ))} */}
           <div className="slick-slide slick-active">
             <div className="how-work-box" tabIndex="-1">
               <div className="image">

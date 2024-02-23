@@ -38,17 +38,17 @@ const Header = () => {
   };
   return (
     <>
-      <div className="homeHeader ">
+      <header className="homeHeader ">
         <div className="container ">
           <div className="row">
-            <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom sticky-top">
+            <nav className="justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
               <div className="col-md-3 mb-2 mb-md-0">
                 <span className="navbar-brand" href="/">
                   <img src={logoImg} className="logoImg" alt="logo" />
                 </span>
               </div>
 
-              <div className="col-md-7 d-flex justify-content-end align-items-center">
+              <div className="d-flex justify-content-end header-side align-items-center">
                 <div className="me-3">
                   <Link role="button" className="cart-wl-btn" to="/wishlist">
                     <img
@@ -218,7 +218,7 @@ const Header = () => {
                   </Modal.Body>
                 </Modal>
               </div>
-            </header>
+            </nav>
           </div>
         </div>
         <div className="container-fluid navBar">
@@ -372,7 +372,7 @@ const Header = () => {
             </div>
           </nav>
         </div>
-      </div>
+      </header>
     </>
   );
 };

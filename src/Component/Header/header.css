@@ -23,7 +23,7 @@ Header {
   background-color: #ffc426 !important;
 }
 .new-header-home .yellow-no-border {
-  color: var #ffc426 !important;
+  color: #ffc426 !important;
   font-size: 16px;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 500;
@@ -39,7 +39,7 @@ Header {
   padding: 12px 36px;
   background-color: #597ad1;
   border-radius: 8px;
-  border: 1px solid var(--yellow, #ffc426);
+  border: 1px solid  #ffc426;
 }
 .gap-2 {
   gap: 0.5rem !important;
@@ -84,7 +84,7 @@ Header {
   text-decoration: none;
 }
 .navbarClass li a:hover {
-  color: #ffc426  !important;
+  color: #ffc426 !important;
 }
 
 .navbar-nav {
@@ -93,16 +93,12 @@ Header {
 }
 .nav-link {
   display: block;
-  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
-  font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
   text-decoration: none;
 }
 
-@media (max-width: 767px) {
-  .navbar-nav {
-    display: block;
+@media (max-width: 992px) {
+  .new-header-home .logo-img {
+    height: 30px;
   }
 }
 .cart-wl-btn {
@@ -134,7 +130,7 @@ Header {
   justify-content: center;
 }
 .login-btn {
-  color: var(--yellow, #ffc426) !important;
+  color:  #ffc426 !important;
   font-size: 16px !important;
   font-family: "Montserrat Alternates", sans-serif !important;
   font-weight: 500 !important;
@@ -154,14 +150,14 @@ Header {
   font-weight: 510 !important;
 }
 .sign-up {
-  color: var(--yellow, #ffc426) !important;
+  color:  #ffc426 !important;
   font-size: 16px !important;
   font-family: "Montserrat Alternates", sans-serif !important;
   font-weight: 600 !important;
   padding: 12px 26px !important;
   background-color: #597ad1 !important;
   border-radius: 8px !important;
-  border: 1px solid var(--yellow, #ffc426) !important;
+  border: 1px solid  #ffc426 !important;
 }
 
 .login-modal-heading {
