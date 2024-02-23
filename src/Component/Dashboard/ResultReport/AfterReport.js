@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./result-report.css";
 import "../dashboard.css";
-
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 const AfterReport = () => {
   const [smShow, setSmShow] = useState(false);
   return (
@@ -16,6 +16,7 @@ const AfterReport = () => {
         <div className="inner-dash-bpx ">
           <header className="main-header login-header-home">
             <NavbarDashboard />
+            <ScrollToTop/>
           </header>
           <div className="dash-outer-box">
             <div className="row">

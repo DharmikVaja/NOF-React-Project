@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMapPin } from "react-icons/fa";
 import { FaLocationDot, FaMapLocationDot } from "react-icons/fa6";
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const AddressComp3 = () => {
   return (
@@ -10,6 +11,7 @@ const AddressComp3 = () => {
       aria-labelledby="uncontrolled-tab-example-tab-editaddress"
       className="fade tab-pane active show"
     >
+    <ScrollToTop/>
       <div className="pad-set">
         <div className="delivery-form mt-4">
           <div className="row">

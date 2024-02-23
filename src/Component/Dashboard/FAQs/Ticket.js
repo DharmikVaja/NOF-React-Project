@@ -3,6 +3,7 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./faq.css"
 import { FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const Ticket = () => {
   return (
@@ -12,6 +13,7 @@ const Ticket = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
+              <ScrollToTop/>
             </header>
             <div className="dash-outer-box">
               <div className="row">

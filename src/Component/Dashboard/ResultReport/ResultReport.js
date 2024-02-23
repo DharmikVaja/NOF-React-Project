@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./result-report.css";
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const ResultReport = () => {
   return (
@@ -14,6 +15,7 @@ const ResultReport = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
+              <ScrollToTop/>
             </header>
             <section classname="dash-outer-box pad-set register-border">
               <div className="row">

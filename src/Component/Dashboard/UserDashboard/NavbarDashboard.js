@@ -17,12 +17,14 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { FaQuestion } from "react-icons/fa6";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const NavbarDashboard = () => {
   const [smShow, setSmShow] = useState(false);
 
   return (
     <div>
+    <ScrollToTop/>
       <nav className="navbar navbar-expand-lg navbar-light sticky-top">
         <div className="container-fluid">
           <div className="w-100 m-auto row">

@@ -5,6 +5,7 @@ import "./select-test.css"
 import Arrowicon from "../../../assets/Dashboard/dashboard-test-arrow-img.png"
 import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png"
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const SelectTest = () => {
   return (
@@ -13,6 +14,7 @@ const SelectTest = () => {
         <div className="inner-dash-bpx ">
           <header className="main-header login-header-home">
             <NavbarDashboard />
+            <ScrollToTop/>
           </header>
       
           <div classname="dash-outer-box">

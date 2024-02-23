@@ -3,8 +3,9 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./faq.css";
 import Accordion from "react-bootstrap/Accordion";
-import { AccordionBody } from "react-bootstrap";
+// import { AccordionBody } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const FAQs = () => {
   return (
@@ -14,6 +15,7 @@ const FAQs = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
+              <ScrollToTop/>
             </header>
             <div className="dash-outer-box">
               <div className="row">

@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 // import DashUser2 from "./DashUser2.json";
 import countriesData from "./DashUser2.json";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser2Parent = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -15,6 +16,7 @@ const DashUser2Parent = () => {
   return (
     <>
       <div className="pad-set">
+      <ScrollToTop/>
         <div className="delivery-form mt-4">
           <div className="row">
             <div className="col-md-5">

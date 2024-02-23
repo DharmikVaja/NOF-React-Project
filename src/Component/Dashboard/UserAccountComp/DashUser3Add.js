@@ -2,10 +2,12 @@ import React from "react";
 import { FaCalendarAlt, FaRegIdCard, FaSchool, FaUser } from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
 import { BsGenderAmbiguous } from "react-icons/bs";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser3Add = () => {
   return (
     <div>
+  <ScrollToTop/>
       <div className="pad-set">
         <div className="delivery-form mt-4">
           <div className="row">

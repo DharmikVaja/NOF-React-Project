@@ -2,6 +2,7 @@ import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./practiceEBook.css"
 import { Link } from "react-router-dom";
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const OrderSummary = () => {
   return (
@@ -11,6 +12,7 @@ const OrderSummary = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
+              <ScrollToTop/>
             </header>
             <section className="dash-outer-box">
               <div className="row">

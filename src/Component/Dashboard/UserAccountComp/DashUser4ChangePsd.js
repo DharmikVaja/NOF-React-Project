@@ -1,9 +1,11 @@
 import React from "react";
 import { IoIosLock, IoMdEyeOff } from "react-icons/io";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser4ChangePsd = () => {
   return (
     <div>
+    <ScrollToTop/>
       <div className="pad-set">
         <div className="delivery-form mt-4">
           <div className="row">

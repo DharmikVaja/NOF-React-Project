@@ -8,10 +8,12 @@ import { IoSchool } from "react-icons/io5";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
 import Form from "react-bootstrap/Form";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser1Student = () => {
   return (
     <div>
+    <ScrollToTop/>
       <div className="pad-set">
         <div className="right-image">
           <div id="preview" className="preview-box-new right-image">

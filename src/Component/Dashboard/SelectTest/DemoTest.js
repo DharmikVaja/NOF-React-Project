@@ -6,6 +6,7 @@ import DemoTest2 from "../../../assets/Dashboard/demo-test-2.png"
 import DemoTest3 from "../../../assets/Dashboard/demo-test-3.png"
 import "./demo-test.css"
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DemoTest = () => {
   return (
@@ -14,6 +15,7 @@ const DemoTest = () => {
         <div className="inner-dash-bpx ">
           <header className="main-header login-header-home">
             <NavbarDashboard />
+            <ScrollToTop/>
           </header>
           {/*  */}
           <section className="dash-outer-box">

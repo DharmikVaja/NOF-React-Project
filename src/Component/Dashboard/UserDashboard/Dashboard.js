@@ -4,6 +4,7 @@ import UserProfile from "../../../../src/assets/Dashboard/edit-user-dash-profile
 import CSgif from "../../../../src/assets/Dashboard/coming-soon-gif.gif";
 import NavbarDashboard from "./NavbarDashboard";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <div className="inner-dash-bpx ">
         <header className="main-header login-header-home">
           <NavbarDashboard/>
+          <ScrollToTop/>
         </header>
         <section className="dash-outer-box">
           <div className="pad-set">

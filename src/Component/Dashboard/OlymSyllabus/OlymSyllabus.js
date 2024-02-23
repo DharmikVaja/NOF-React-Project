@@ -15,6 +15,7 @@ import SyPDF12 from "../../../assets/pdf/syllabus/Syllabus_Class_9.pdf";
 import SyPDF13 from "../../../assets/pdf/syllabus/Syllabus_Class_10.pdf";
 import "./olympSyllabus.css"
 import "../dashboard.css"
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const OlymSyllabus = () => {
   return (
@@ -23,6 +24,7 @@ const OlymSyllabus = () => {
         <div className="inner-dash-bpx ">
           <header className="main-header login-header-home">
             <NavbarDashboard />
+            <ScrollToTop/>
           </header>
           <div className="dash-outer-box">
             <div className="row">

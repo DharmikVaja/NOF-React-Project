@@ -10,6 +10,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { IoCartSharp } from "react-icons/io5";
 import { AiOutlineSwap } from "react-icons/ai";
 
+
 const AccountSettings = () => {
   return (
     <div>

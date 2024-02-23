@@ -2,6 +2,7 @@ import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./instruction.css";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const Instruction = () => {
   return (
@@ -11,6 +12,7 @@ const Instruction = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
+              <ScrollToTop/>
             </header>
             <section className="dash-outer-box">
               <div className="row">
@@ -125,7 +127,7 @@ const Instruction = () => {
                       </ul>
                     </div>
                     <div className="d-flex mt-4 gap-2 justify-content-center">
-                      <Link className="common-all-btn" to="/">Take Test</Link>
+                      <Link className="common-all-btn" to="/instructions">Take Test</Link>
                       <Link className="common-all-btn" to="/demo-test">Back</Link>
                     </div>
                   </div>
