@@ -127,3 +127,12 @@ textarea.submitform-control {
   padding: 0 0 0 8px;
   border-radius: 3px 0 0 3px;
 }
+
+@media (max-width: 767px){
+.get-touch-info ul {
+    gap: 3px;
+}}
+@media (max-width: 1023px){
+.get-touch-info ul {
+    flex-wrap: wrap;
+}}

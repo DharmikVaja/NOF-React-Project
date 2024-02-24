@@ -85,10 +85,10 @@ const SubmitForm = () => {
   return (
     <>
       <footer className="footer-home-new" id="footer">
-        <div className="container">
-          <div className="row align-items-center d-flex justify-content-between">
-            <div className="offset-md-1 col-md-3">
-              <div className="get-touch-info">
+      <div className="container">
+        <div className="row align-items-center d-flex justify-content-between">
+          <div className="offset-md-1 col-md-5 col-lg-3">
+            <div className="get-touch-info ">
                 <h2>National Olympiad Foundation</h2>
                 <p>
                   NOF Edtech Private Limited G-1, 108, Saket Nagar Indore,
@@ -97,7 +97,7 @@ const SubmitForm = () => {
                 <p>Helpline :</p>
                 <p>junior@groupnof.com</p>
                 <p>+91 93011 95542</p>
-                <ul className="social-icons">
+                <ul className="social-icons d-flex">
                   <li>
                     <a
                       href="https://www.facebook.com/NOF-Junior-105382224526859/"
@@ -147,8 +147,8 @@ const SubmitForm = () => {
               </div>
             </div>
 
-            <div className="p-0 col-xl-7 col-lg-7 col-md-7">
-              <div className="get-touch-bg">
+            <div className="col-md-6 col-lg-7">
+            <div className="get-touch-bg">
                 <h2>Get in touch with us...</h2>
                 <div>
                   <form onSubmit={handleSubmit}>

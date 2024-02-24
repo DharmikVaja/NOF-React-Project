@@ -8,250 +8,117 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
-import CountryData from "../../../src/CountryData.json";
+import CountryData from "../../../src/CountryData.json"; 
 
-const Header = () => {
-  // Signup
-  const [show2, setShow2] = useState(false);
-
-  const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
-  // Login
+const YourComponent = () => {
   const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
 
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
-  // signup country and class
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedClass, setSelectedClass] = useState("");
-
-  //Product
-  const [show3, setShow3] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   const handleClose3 = () => setShow3(false);
   const handleShow3 = () => setShow3(true);
 
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+
   const handleFormSubmit = () => {
-    console.log("Selected Country:", selectedCountry);
-    console.log("Selected Class:", selectedClass);
+    // Handle form submission logic
+    // You can add your logic for form submission here
   };
+
   return (
-    <>
-      <header className="homeHeader ">
-        <div className="container ">
-          <div className="row">
-            <nav className="justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
-              <div className="col-md-3 mb-2 mb-md-0">
-                <span className="navbar-brand" href="/">
-                  <img src={logoImg} className="logoImg" alt="logo" />
-                </span>
+    <header className="homeHeader">
+      <div className="container">
+        <div className="row">
+          <nav className="justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
+            <div className="col-md-3 mb-2 mb-md-0">
+              <span className="navbar-brand" href="/">
+                <img
+                  src={logoImg}
+                  className="logoImg"
+                  alt="logo"
+                />
+              </span>
+            </div>
+
+            <div className="col-md-5 d-flex justify-content-end header-side align-items-center">
+             
+              <div className="me-3">
+                <Link role="button" className="cart-wl-btn" to="/wishlist">
+                  <img src={wishlist} alt="wishlist" className="wl-cart-img" />
+                  Wishlist
+                </Link>
               </div>
-
-              <div className="d-flex justify-content-end header-side align-items-center">
-                <div className="me-3">
-                  <Link role="button" className="cart-wl-btn" to="/wishlist">
-                    <img
-                      src={wishlist}
-                      alt="wishlist"
-                      className="wl-cart-img"
-                    />
-                    Wishlist
-                  </Link>
-                </div>
-                <div className="position-relative me-3">
-                  <Link
-                    role="button"
-                    className="show-number cart-wl-btn"
-                    to="/cart"
-                  >
-                    <div class="show1"> 0</div>
-                    <img src={cart} alt="cart" className="wl-cart-img" />
-                    View Cart
-                  </Link>
-                </div>
+            
+              <div className="position-relative me-3">
+                <Link
+                  role="button"
+                  className="show-number cart-wl-btn"
+                  to="/cart"
+                >
+                  <div className="show1"> 0</div>
+                  <img src={cart} alt="cart" className="wl-cart-img" />
+                  View Cart
+                </Link>
               </div>
+            </div>
 
-              <div className="col-md-2 text-md-end  d-md-flex">
-                <Button
-                  type="button"
-                  className="login-btn"
-                  onClick={handleShow2}
-                >
-                  Login
-                </Button>
-                <Button
-                  type="button"
-                  className="sign-up btn"
-                  onClick={handleShow1}
-                >
-                  Signup
-                </Button>
-
-                {/* Login */}
-                <Modal
-                  show={show2}
-                  onHide={handleClose2}
-                  backdrop="static"
-                  keyboard={false}
-                  aria-labelledby="contained-modal-title-vcenter"
-                  centered
-                >
-                  <div className="login-modal">
-                    <Modal.Header
-                      closeButton
-                      className="login-modal-heading"
-                    ></Modal.Header>
-
-                    <Modal.Footer className="login-modal-footer">
-                      <div className="login-text">
-                        Please select the Login type
-                      </div>
-
-                      <div className="login-detail-btns">
-                        <div className="student-login-detail">
-                          <div className="student-login-image">
-                            <HiMiniUserGroup className="fs-1" />
-                          </div>
-                          <Button variant="primary" className="new-white-btn ">
-                            <div>
-                              <Link to="student-login" className="login-link">
-                                <h6>Student Login </h6>
-                              </Link>
-                            </div>
-                          </Button>
-                        </div>
-
-                        <div className="school-login-detail">
-                          <div className="school-login-image">
-                            <FaSchool className="fs-1" />
-                          </div>
-                          <Button variant="primary" className="new-white-btn ">
-                            <div>
-                              <Link to="school-login" className="login-link">
-                                <h6>School Login</h6>
-                              </Link>
-                            </div>
-                          </Button>
-                        </div>
-                      </div>
-                    </Modal.Footer>
-                  </div>
-                </Modal>
-                {/* Signup */}
-                <Modal show={show1} onHide={handleClose1}>
-                  <Modal.Header closeButton>
-                    <Modal.Title></Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <div className="reg-modal-text modal-body">
-                      <h3>Please give your details to Register</h3>
-
-                      <div className="form-modal">
-                        <div className="mb-3">
-                          <div className="modal-form-country">
-                            <label
-                              className="form-label"
-                              for="exampleForm.ControlInput1"
-                            >
-                              Country
-                            </label>
-                            <select
-                              name="country"
-                              id="exampleForm.ControlInput1"
-                              className="modal-form-select"
-                              onChange={(e) =>
-                                setSelectedCountry(e.target.value)
-                              }
-                              value={selectedCountry}
-                            >
-                              <option value="">Select your Country</option>
-                              {CountryData.map((country, index) => (
-                                <option key={index} value={country.code}>
-                                  {country.name}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-                        <div className="mb-3">
-                          <div className="modal-form-class">
-                            <label
-                              className="form-label"
-                              for="exampleForm.ControlInput1"
-                            >
-                              Class
-                            </label>
-                            <select
-                              name="form-select"
-                              className="modal-form-select"
-                              id="exampleForm.ControlInput2"
-                              onChange={(e) => setSelectedClass(e.target.value)}
-                              value={selectedClass}
-                            >
-                              <option value>Select your Class</option>
-                              <option value="LKG">LKG</option>
-                              <option value="UKG">UKG</option>
-                              <option value="class 1">class 1</option>
-                              <option value="class 2">class 2</option>
-                              <option value="class 3">class 3</option>
-                              <option value="class 4">class 4</option>
-                              <option value="class 5">class 5</option>
-                              <option value="class 6">class 6</option>
-                              <option value="class 7">class 7</option>
-                              <option value="class 8">class 8</option>
-                              <option value="class 9">class 9</option>
-                              <option value="class 10">class 10</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <Button
-                        variant="primary"
-                        className="new-yellow-btn content-sav-btn"
-                        onClick={handleFormSubmit}
-                      >
-                        Submit
-                      </Button>
-                    </div>
-                  </Modal.Body>
-                </Modal>
-              </div>
-            </nav>
-          </div>
+            <div className="col-md-4 text-md-end d-md-flex justify-content-md-end">
+              <Button
+                type="button"
+                className="login-btn me-md-3"
+                onClick={handleShow2}
+              >
+                Login
+              </Button>
+              <Button
+                type="button"
+                className="sign-up btn"
+                onClick={handleShow1}
+              >
+                Signup
+              </Button>
+            </div>
+          </nav>
         </div>
-        <div className="container-fluid navBar">
-          <nav className="navbar navbar-expand-lg ">
-            <button
-              className="navbar-toggler"
-              type="button"
-              style={{ backgroundColor: "white" }}
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon "></span>
-            </button>
-            <div
-              className="collapse navbar-collapse justify-content-center"
-              id="navbarNav"
-            >
-              <ul className="nav navbarClass">
-                <li className="nav-item ">
-                  <Link to="/" className="nav-link listNames">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item ">
-                  <Link onClick={handleShow3} className="nav-link listNames">
-                    Product
-                    {/*  */}
-                  </Link>
+      </div>
 
-                  <Modal show={show3} onHide={handleClose3}>
+      <div className="container-fluid navBar">
+        <nav className="navbar navbar-expand-lg">
+          <button
+            className="navbar-toggler"
+            type="button"
+            style={{ backgroundColor: "white" }}
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon "></span>
+          </button>
+          <div
+            className="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul className="nav navbarClass">
+              <li className="nav-item">
+                <Link to="/" className="nav-link listNames">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link onClick={handleShow3} className="nav-link listNames">
+                  Product
+                </Link>
+                {/* Product Modal */}
+                <Modal show={show3} onHide={handleClose3}>
                     <Modal.Header closeButton>
                       <Modal.Title></Modal.Title>
                     </Modal.Header>
@@ -338,43 +205,38 @@ const Header = () => {
                       </div>
                     </Modal.Body>
                   </Modal>
-                </li>
-                {/*  */}
-                <li className="nav-item">
-                  <Link to="/how-it-works" className="nav-link listNames">
-                    How it works
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/reports-and-analysis"
-                    className="nav-link listNames"
-                  >
-                    Reports & Analysis
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/syllabus" className="nav-link listNames">
-                    Syllabus
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/downloads" className="nav-link listNames">
-                    Downloads
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/contact" className="nav-link listNames">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-    </>
+              </li>
+              <li className="nav-item">
+                <Link to="/how-it-works" className="nav-link listNames">
+                  How it works
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/reports-and-analysis" className="nav-link listNames">
+                  Reports & Analysis
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/syllabus" className="nav-link listNames">
+                  Syllabus
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/downloads" className="nav-link listNames">
+                  Downloads
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link listNames">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
   );
 };
 
-export default Header;
+export default YourComponent;

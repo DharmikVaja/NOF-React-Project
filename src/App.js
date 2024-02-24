@@ -47,7 +47,10 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<Home />} />
-        <Route path="/product" element={<Product country={"India"} class={"6"} />}/>
+        <Route
+          path="/product"
+          element={<Product country={"India"} class={"6"} />}
+        />
         <Route path="/how-it-works" element={<HowItWork />} />
         <Route path="/reports-and-analysis" element={<ReportAnalysis />} />
         <Route path="/syllabus" element={<Syllabus />} />

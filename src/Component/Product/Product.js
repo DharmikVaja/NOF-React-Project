@@ -72,14 +72,14 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a
+                        <Link
                           className="olympiad-cart cursorPointerClass"
-                          href="/product"
+                          to="/product"
                           onClick={props.onAddToCart}
                         >
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -88,11 +88,11 @@ const Product = (props) => {
                       </h2>
                       <span>CLASS: {props.class}</span>
                       <div className="olympiad-rating">
-                        <Rating
+                      <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          //   onPointerEnter={onPointerEnter}
-                          //   onPointerLeave={onPointerLeave}
+                          onPointerEnter={onPointerEnter}
+                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -100,12 +100,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -118,10 +118,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -142,12 +142,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -160,15 +160,15 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
                       <h2 className="cursorPointerClass">
-                        International Junior Science Olympiad
+                      International Math Olympiad
                       </h2>
                       <span>CLASS: {props.class}</span>
                       <div className="olympiad-rating">
@@ -184,12 +184,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -202,10 +202,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -226,12 +226,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -244,10 +244,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -268,12 +268,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -286,10 +286,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -310,12 +310,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -328,10 +328,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -352,12 +352,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -370,10 +370,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -394,12 +394,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -412,10 +412,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -436,12 +436,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -454,10 +454,10 @@ const Product = (props) => {
                         alt="img"
                       />
                       <div className="olympiad-heart-icon">
-                        <a className="cursorPointerClass" href="/product">
+                        <Link className="cursorPointerClass" to="/product">
                           <FaHeart />
                           {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="olympiad-info">
@@ -478,12 +478,12 @@ const Product = (props) => {
                       {/* <button onClick={handleReset}>reset</button> */}
 
                       <p className="olympiad-amount">$ &nbsp;10.00</p>
-                      <a
+                      <Link
                         className="olympiad-cart cursorPointerClass"
-                        href="/product"
+                        to="/product"
                       >
                         Add To Cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

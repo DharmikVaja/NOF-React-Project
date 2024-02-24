@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { FaQuestion } from "react-icons/fa6";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import LogoImgUp from "../../../assets/Dashboard/menu-icon-dashboard-up.png";
 
 const NavbarDashboard = () => {
   const [smShow, setSmShow] = useState(false);
@@ -214,7 +215,7 @@ const NavbarDashboard = () => {
                   aria-label="Toggle navigation"
                   className="navbar-toggler collapsed"
                 >
-                  <img src="" className="img-fluid" alt="" />
+                  <img src={LogoImgUp} className="img-fluid" alt="" />
                 </button>
               </div>
             </div>

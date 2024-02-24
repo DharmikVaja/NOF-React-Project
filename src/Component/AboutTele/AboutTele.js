@@ -2,7 +2,7 @@ import React from "react";
 import aboutTSImage from "../../assets/about-telescope-image.png";
 import "./about-tele.css";
 
-const AboutTele = () => {
+const  AboutTele = () => {
   return (
     <div>
       <div className="about-use-sec spacer-y">

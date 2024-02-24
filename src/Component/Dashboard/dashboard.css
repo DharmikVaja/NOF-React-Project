@@ -14,6 +14,25 @@
   min-height: 100vh;
   background-color: #eef6ff;
 }
+@media (max-width: 992px){
+.dashboard-layout {
+    padding-left: 0px;
+    padding-top: 60px;
+}}
+@media (max-width: 768px){
+.dashboard-layout .grey-dash-box {
+    min-height: auto;
+}}
+@media (max-width: 768px){
+.dashboard-layout h5 span {
+    font-size: 10px !important;
+    line-height: 16px !important;
+}}
+@media (max-width: 768px){
+.dashboard-layout h5 {
+    display: block;
+    line-height: 18px;
+}}
 .dashboard-layout .login-header-home .navbar-brand img {
   height: 49px;
 }
