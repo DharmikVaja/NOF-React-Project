@@ -25,3 +25,9 @@ li a {
 .copyright-text {
   font-size: 10px !important;
 }
+@media (max-width: 992px){
+.copy-bg1 ul.link-list li a {
+    line-height: 18px;
+    font-size: 12px;
+    margin: 0 8px;
+}}

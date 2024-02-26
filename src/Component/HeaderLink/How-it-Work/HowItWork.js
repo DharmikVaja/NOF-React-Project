@@ -53,7 +53,7 @@ const HowItWork = () => {
     <>
       <Header />
       <ScrollToTop />
-      <div className="set-top-margin-all"></div>
+      {/* <div className="set-top-margin-all"></div> */}
       <div className="how-it-work-page" style={containerStyle}>
         <div className="head-practice-test p-0">
           <div className="container">

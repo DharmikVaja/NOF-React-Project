@@ -18,7 +18,7 @@ const Footer = () => {
                 |
                 <li>
                   <Link to="/terms-of-service" className="footer-links">
-                    Terms Of Service
+                    Terms Of Service 
                   </Link>
                 </li>
                 |

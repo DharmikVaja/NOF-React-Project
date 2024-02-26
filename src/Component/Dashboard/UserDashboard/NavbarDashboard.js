@@ -3,15 +3,9 @@ import "../dashboard.css";
 import NavLogo from "../../../../src/assets/logo.png";
 import "../dashboard.css";
 import NOFUserLogo from "../../../../src/assets/Dashboard/NOF-top-right.png";
-import Exam1 from "../../../../src/assets/Dashboard/register-student.png";
-import ExamG1 from "../../../../src/assets/Dashboard/exam-guideline.png";
-import PBook1 from "../../../../src/assets/Dashboard/pending-exam.png";
-import Report1 from "../../../../src/assets/Dashboard/reports.png";
-import Activity1 from "../../../../src/assets/Dashboard/activity-log.png";
-import Syl1 from "../../../../src/assets/Dashboard/Syllabus.png";
-import { FaCog } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
+import { HiOutlineLogout } from "react-icons/hi";
+import { GrDocumentPerformance } from "react-icons/gr";
+import { FaRegPlusSquare } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
@@ -19,6 +13,11 @@ import Modal from "react-bootstrap/Modal";
 import { FaQuestion } from "react-icons/fa6";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import LogoImgUp from "../../../assets/Dashboard/menu-icon-dashboard-up.png";
+import {  IoSchoolOutline, IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { BsJournalText } from "react-icons/bs";
+import { AiOutlinePieChart } from "react-icons/ai";
+import { MdListAlt } from "react-icons/md";
 
 const NavbarDashboard = () => {
   const [smShow, setSmShow] = useState(false);
@@ -44,7 +43,7 @@ const NavbarDashboard = () => {
                     >
                       <RxDashboard
                         className="fs-4 me-4"
-                        style={{ color: "#333333" }}
+                        
                       />
                       Dashboard
                     </Link>
@@ -54,11 +53,7 @@ const NavbarDashboard = () => {
                       className="nav-link"
                       tabIndex={0}
                     >
-                      <img
-                        src={Exam1}
-                        className="img-fluid dark me-4"
-                        alt="icon"
-                      />
+                     <IoSchoolOutline  className="fs-4 me-4" />
                       NOF Olympiad Exams
                     </Link>
                     <Link
@@ -67,11 +62,7 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/exam-guideline"
                     >
-                      <img
-                        src={ExamG1}
-                        className="img-fluid dark me-4"
-                        alt="icon"
-                      />
+                      <HiOutlineClipboardDocumentList  className="fs-4 me-4" />
                       Exam Guidelines
                     </Link>
                     <Link
@@ -81,11 +72,7 @@ const NavbarDashboard = () => {
                       to="/practice-books"
                       //
                     >
-                      <img
-                        src={PBook1}
-                        className="img-fluid dark me-4"
-                        alt="icon"
-                      />
+                      <BsJournalText  className="fs-4 me-4" />
                       NOF-Practice E-books
                     </Link>
                     <Link
@@ -94,11 +81,8 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/result-and-report"
                     >
-                      <img
-                        src={Report1}
-                        className="img-fluid dark me-4"
-                        alt="icon"
-                      />
+                      {/* <RiPieChart2Line /> */}
+                      <AiOutlinePieChart className="fs-4 me-4"/>
                       Results and Reports
                     </Link>
                     <Link
@@ -107,11 +91,7 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/activity-logs"
                     >
-                      <img
-                        src={Activity1}
-                        className="img-fluid dark me-4 "
-                        alt="icon"
-                      />
+                      <GrDocumentPerformance className="fs-4 me-4"/>
                       Activity Logs
                     </Link>
                     <Link
@@ -129,11 +109,7 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/olympiad-syllabus"
                     >
-                      <img
-                        src={Syl1}
-                        className="img-fluid dark me-4"
-                        alt="icon"
-                      />
+                      <MdListAlt className="fs-4 me-4" />
                       Olympiads Syllabus
                     </Link>
                     <Link
@@ -142,7 +118,7 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/account-setting"
                     >
-                      <FaCog className="fs-4 me-4" />
+                      <IoSettingsOutline className="fs-4 me-4" />
                       Account Settings
                     </Link>
                     <Link
@@ -151,11 +127,11 @@ const NavbarDashboard = () => {
                       tabIndex={0}
                       to="/add-student"
                     >
-                      <FaPlus className="fs-4 me-4" /> Add New Student
+                      <FaRegPlusSquare className="fs-4 me-4" /> Add New Student
                     </Link>
                     {/*  */}
                     <Link className="nav-link " onClick={() => setSmShow(true)}>
-                      <FaSignOutAlt className="fs-4 me-4 " /> Logout
+                      <HiOutlineLogout className="fs-4 me-4 " /> Logout
                     </Link>
                     <Link
                       role="button"
@@ -178,12 +154,13 @@ const NavbarDashboard = () => {
                     {/*  */}
                   </div>
                 </div>
+                
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="success"
-                    id="dropdown-basic"
+                    id="dropdown-basic-button"
                     type="button"
-                    aria-expanded="false"
+                    
                     className="profile-dropdown bottom dropdown-toggle btn btn-primary bg-transparent"
                   >
                     <img src={NOFUserLogo} alt="Nof User Logo" />
@@ -208,6 +185,7 @@ const NavbarDashboard = () => {
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
+                
 
                 <button
                   aria-controls="basic-navbar-nav"

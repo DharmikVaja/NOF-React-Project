@@ -128,7 +128,7 @@ textarea.submitform-control {
   border-radius: 3px 0 0 3px;
 }
 
-@media (max-width: 767px){
+/* @media (max-width: 767px){
 .get-touch-info ul {
     gap: 3px;
 }}
@@ -136,3 +136,20 @@ textarea.submitform-control {
 .get-touch-info ul {
     flex-wrap: wrap;
 }}
+@media (max-width: 767px){
+.get-touch-bg, .get-touch-bg::before {
+    border-radius: 100px 0px 0px 0px;
+    margin-left: 15px;
+}
+}
+@media (max-width: 767px){.get-touch-bg {
+    padding: 76px 55px 60px;
+}}
+@media (max-width: 1023px){
+.get-touch-bg {
+    padding: 76px 80px 60px;
+}}
+@media (max-width: 1199px){
+.get-touch-bg {
+    padding: 79px 96px 60px;
+}} */

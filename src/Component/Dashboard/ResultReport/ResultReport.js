@@ -17,7 +17,7 @@ const ResultReport = () => {
               <NavbarDashboard />
               <ScrollToTop/>
             </header>
-            <section classname="dash-outer-box pad-set register-border">
+            <section className="dash-outer-box pad-set register-border">
               <div className="row">
                 <div className="col-md-12">
                   <div className="pad-set register-border ">

@@ -17,10 +17,10 @@ const SelectTest = () => {
             <ScrollToTop/>
           </header>
       
-          <div classname="dash-outer-box">
+          <div className="dash-outer-box">
             <div className="row">
               <div className="col-md-12">
-                <div className="pad-set register-border">
+                <div className="pad-set register-border d-flex justify-content-between">
                   <div className="head-for-all-page">
                     <img
                       src={AssesmentIcon}

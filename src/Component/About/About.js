@@ -28,10 +28,9 @@ const About = () => {
               </p>
             </div>
             <div className="col-lg-7 col-md-6 d-flex justify-content-end">
-            <a href="https://youtu.be/FDj1eEHOF_E?si=MSEu_00iK5gqBm26">
-
-              <img src={AboutImage} className="img-fluid" alt="icon" />
-            </a>
+              <a href="https://youtu.be/FDj1eEHOF_E?si=MSEu_00iK5gqBm26">
+                <img src={AboutImage} className="img-fluid" alt="icon" />
+              </a>
             </div>
           </div>
         </div>
@@ -41,7 +40,9 @@ const About = () => {
         <div className="container">
           <div className="row about-details align-items-center">
             <div className="col-lg-7 col-md-6 ">
-              <img src={WhyNOF2} className="img-fluid" alt="icon" />
+              <a href="https://youtu.be/nm_bm15X2d8?si=qhjDiarmiIGdzlrt">
+                <img src={WhyNOF2} className="img-fluid" alt="icon" />
+              </a>
             </div>
             <div className="col-lg-5 col-md-6 d-flex flex-column">
               <div className="about-heading">
@@ -78,7 +79,7 @@ const About = () => {
         </div>
       </div>
       <div className="video-calls-sec w-100">
-        <img className="img-fluid" src={ImgVideoCall} alt=""/>
+        <img className="img-fluid" src={ImgVideoCall} alt="" />
       </div>
     </>
   );
