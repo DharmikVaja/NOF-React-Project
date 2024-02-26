@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
-import CountryData from "../../../src/CountryData.json"; 
+import CountryData from "../../../src/CountryData.json";
 
 const YourComponent = () => {
   const [show1, setShow1] = useState(false);
@@ -39,23 +39,18 @@ const YourComponent = () => {
           <nav className="justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
             <div className="col-md-3 mb-2 mb-md-0">
               <span className="navbar-brand" href="/">
-                <img
-                  src={logoImg}
-                  className="logoImg"
-                  alt="logo"
-                />
+                <img src={logoImg} className="logoImg" alt="logo" />
               </span>
             </div>
 
             <div className="col-md-5 d-flex justify-content-end header-side align-items-center">
-             
               <div className="me-3">
                 <Link role="button" className="cart-wl-btn" to="/wishlist">
                   <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                   Wishlist
                 </Link>
               </div>
-            
+
               <div className="position-relative me-3">
                 <Link
                   role="button"
@@ -84,6 +79,127 @@ const YourComponent = () => {
               >
                 Signup
               </Button>
+              <Modal
+                show={show2}
+                onHide={handleClose2}
+                backdrop="static"
+                keyboard={false}
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+              >
+                <div className="login-modal">
+                  <Modal.Header
+                    closeButton
+                    className="login-modal-heading"
+                  ></Modal.Header>
+                  <Modal.Footer className="login-modal-footer">
+                    <div className="login-text">
+                      Please select the Login type
+                    </div>
+                    <div className="login-detail-btns">
+                      <div className="student-login-detail">
+                        <div className="student-login-image">
+                          <HiMiniUserGroup className="fs-1" />
+                        </div>
+                        <Button variant="primary" className="new-white-btn ">
+                          <div>
+                            <Link to="student-login" className="login-link">
+                              <h6>Student Login </h6>
+                            </Link>
+                          </div>
+                        </Button>
+                      </div>
+                      <div className="school-login-detail">
+                        <div className="school-login-image">
+                          <FaSchool className="fs-1" />
+                        </div>
+                        <Button variant="primary" className="new-white-btn ">
+                          <div>
+                            <Link to="school-login" className="login-link">
+                              <h6>School Login</h6>
+                            </Link>
+                          </div>
+                        </Button>
+                      </div>
+                    </div>
+                  </Modal.Footer>
+                </div>
+              </Modal>
+              {/* Signup */}
+              <Modal show={show1} onHide={handleClose1}>
+                <Modal.Header closeButton>
+                  <Modal.Title></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="reg-modal-text modal-body">
+                    <h3>Please give your details to Register</h3>
+                    <div className="form-modal">
+                      <div className="mb-3">
+                        <div className="modal-form-country">
+                          <label
+                            className="form-label"
+                            for="exampleForm.ControlInput1"
+                          >
+                            Country
+                          </label>
+                          <select
+                            name="country"
+                            id="exampleForm.ControlInput1"
+                            className="modal-form-select"
+                            onChange={(e) => setSelectedCountry(e.target.value)}
+                            value={selectedCountry}
+                          >
+                            <option value="">Select your Country</option>
+                            {CountryData.map((country, index) => (
+                              <option key={index} value={country.code}>
+                                {country.name}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                      <div className="mb-3">
+                        <div className="modal-form-class">
+                          <label
+                            className="form-label"
+                            for="exampleForm.ControlInput1"
+                          >
+                            Class
+                          </label>
+                          <select
+                            name="form-select"
+                            className="modal-form-select"
+                            id="exampleForm.ControlInput2"
+                            onChange={(e) => setSelectedClass(e.target.value)}
+                            value={selectedClass}
+                          >
+                            <option value>Select your Class</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="class 1">class 1</option>
+                            <option value="class 2">class 2</option>
+                            <option value="class 3">class 3</option>
+                            <option value="class 4">class 4</option>
+                            <option value="class 5">class 5</option>
+                            <option value="class 6">class 6</option>
+                            <option value="class 7">class 7</option>
+                            <option value="class 8">class 8</option>
+                            <option value="class 9">class 9</option>
+                            <option value="class 10">class 10</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                      variant="primary"
+                      className="new-yellow-btn content-sav-btn"
+                      onClick={handleFormSubmit}
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </Modal.Body>
+              </Modal>
             </div>
           </nav>
         </div>
@@ -119,92 +235,90 @@ const YourComponent = () => {
                 </Link>
                 {/* Product Modal */}
                 <Modal show={show3} onHide={handleClose3}>
-                    <Modal.Header closeButton>
-                      <Modal.Title></Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <div className="reg-modal-text modal-body">
-                        <div className="mb-5">
-                          <h3>Your Learning, Your Way!</h3>
-                          <p>
-                            Select Your Region and Class Preference for the
-                            Products...
-                          </p>
-                        </div>
-
-                        <div className="form-modal">
-                          <div className="mb-3">
-                            <div className="modal-form-country">
-                              <label
-                                className="form-label"
-                                for="exampleForm.ControlInput1"
-                              >
-                                Country
-                              </label>
-                              <select
-                                name="country"
-                                id="exampleForm.ControlInput1"
-                                className="modal-form-select"
-                                onChange={(e) =>
-                                  setSelectedCountry(e.target.value)
-                                }
-                                value={selectedCountry}
-                              >
-                                <option value="">Select your Country</option>
-                                {CountryData.map((country, index) => (
-                                  <option key={index} value={country.code}>
-                                    {country.name}
-                                  </option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                          <div className="mb-3">
-                            <div className="modal-form-class">
-                              <label
-                                className="form-label"
-                                for="exampleForm.ControlInput1"
-                              >
-                                Class
-                              </label>
-                              <select
-                                name="form-select"
-                                className="modal-form-select"
-                                id="exampleForm.ControlInput2"
-                                onChange={(e) =>
-                                  setSelectedClass(e.target.value)
-                                }
-                                value={selectedClass}
-                              >
-                                <option value>Select your Class</option>
-                                <option value="LKG">LKG</option>
-                                <option value="UKG">UKG</option>
-                                <option value="class 1">class 1</option>
-                                <option value="class 2">class 2</option>
-                                <option value="class 3">class 3</option>
-                                <option value="class 4">class 4</option>
-                                <option value="class 5">class 5</option>
-                                <option value="class 6">class 6</option>
-                                <option value="class 7">class 7</option>
-                                <option value="class 8">class 8</option>
-                                <option value="class 9">class 9</option>
-                                <option value="class 10">class 10</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <Link to="/product">
-                          <Button
-                            variant="primary"
-                            className="new-yellow-btn content-sav-btn"
-                            onClick={handleFormSubmit}
-                          >
-                            Submit
-                          </Button>
-                        </Link>
+                  <Modal.Header closeButton>
+                    <Modal.Title></Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <div className="reg-modal-text modal-body">
+                      <div className="mb-5">
+                        <h3>Your Learning, Your Way!</h3>
+                        <p>
+                          Select Your Region and Class Preference for the
+                          Products...
+                        </p>
                       </div>
-                    </Modal.Body>
-                  </Modal>
+
+                      <div className="form-modal">
+                        <div className="mb-3">
+                          <div className="modal-form-country">
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
+                            >
+                              Country
+                            </label>
+                            <select
+                              name="country"
+                              id="exampleForm.ControlInput1"
+                              className="modal-form-select"
+                              onChange={(e) =>
+                                setSelectedCountry(e.target.value)
+                              }
+                              value={selectedCountry}
+                            >
+                              <option value="">Select your Country</option>
+                              {CountryData.map((country, index) => (
+                                <option key={index} value={country.code}>
+                                  {country.name}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <div className="modal-form-class">
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
+                            >
+                              Class
+                            </label>
+                            <select
+                              name="form-select"
+                              className="modal-form-select"
+                              id="exampleForm.ControlInput2"
+                              onChange={(e) => setSelectedClass(e.target.value)}
+                              value={selectedClass}
+                            >
+                              <option value>Select your Class</option>
+                              <option value="LKG">LKG</option>
+                              <option value="UKG">UKG</option>
+                              <option value="class 1">class 1</option>
+                              <option value="class 2">class 2</option>
+                              <option value="class 3">class 3</option>
+                              <option value="class 4">class 4</option>
+                              <option value="class 5">class 5</option>
+                              <option value="class 6">class 6</option>
+                              <option value="class 7">class 7</option>
+                              <option value="class 8">class 8</option>
+                              <option value="class 9">class 9</option>
+                              <option value="class 10">class 10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <Link to="/product">
+                        <Button
+                          variant="primary"
+                          className="new-yellow-btn content-sav-btn"
+                          onClick={handleFormSubmit}
+                        >
+                          Submit
+                        </Button>
+                      </Link>
+                    </div>
+                  </Modal.Body>
+                </Modal>
               </li>
               <li className="nav-item">
                 <Link to="/how-it-works" className="nav-link listNames">
