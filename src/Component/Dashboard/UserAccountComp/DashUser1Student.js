@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UserProfile from "../../../assets/Dashboard/edit-user-dash-profile.png";
 import UserProfileEdit from "../../../assets/Dashboard/user-edit-rightbottom.png";
 import { FaUser } from "react-icons/fa";
@@ -11,9 +11,18 @@ import Form from "react-bootstrap/Form";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser1Student = () => {
+  const [selectedClass, setSelectedClass] = useState("Class 8");
+  const [selectedGender, setSelectedGender] = useState("Male");
+
+  const handleClassChange = (e) => {
+    setSelectedClass(e.target.value);
+  };
+  const handleGenderChange = (e) => {
+    setSelectedGender(e.target.value);
+  };
   return (
     <div>
-    <ScrollToTop/>
+      <ScrollToTop />
       <div className="pad-set">
         <div className="right-image">
           <div id="preview" className="preview-box-new right-image">
@@ -39,7 +48,7 @@ const DashUser1Student = () => {
                   name="studentname"
                   type="text "
                   value="Hibba"
-                  readonly
+                  readOnly
                 />
               </div>
             </div>
@@ -53,7 +62,7 @@ const DashUser1Student = () => {
                   name="studentname"
                   type="text "
                   value="DO777"
-                  readonly
+                  readOnly
                 />
               </div>
             </div>
@@ -70,6 +79,7 @@ const DashUser1Student = () => {
                   name="studentname"
                   type="text "
                   value="DPS Monarch International School, Doha, Qatar"
+                  readOnly
                 />
               </div>
             </div>
@@ -78,12 +88,13 @@ const DashUser1Student = () => {
                 <span className="input-group-text">
                   <IoSchool />
                 </span>
-                <label for="exampleFormControlSelect1"></label>
+                <label htmlFor="exampleFormControlSelect1"></label>
                 <select
                   className=" dash-input form-control ms-1"
                   id="exampleFormControlSelect1"
                   type="text "
-                  value="CLASS 8"
+                  value={selectedClass}
+                  onChange={handleClassChange}
                 >
                   <option>Class 1</option>
                   <option>Class 2</option>
@@ -105,12 +116,13 @@ const DashUser1Student = () => {
                 <span className="input-group-text">
                   <BsGenderAmbiguous />
                 </span>
-                <label for="exampleFormControlSelect1"></label>
+                <label htmlFor="exampleFormControlSelect1"></label>
                 <select
                   className="dash-input form-control ms-1"
                   id="exampleFormControlSelect1"
                   type="text "
-                  value="Select Gender"
+                  value={selectedGender}
+                  onChange={handleGenderChange}
                 >
                   <option>Male </option>
                   <option>Female</option>

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
-import { FaUser } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { FaUser,FaLock,FaEyeSlash } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const StudentLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -48,12 +49,13 @@ const StudentLogin = () => {
                     <span className="input-group-text">
                       <FaUser />
                     </span>
-                    <input
+                     <input
                       placeholder="Email"
                       name="email"
                       type="email"
                       className="form-control"
-                      // value=""
+                      defaultValue={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -66,17 +68,22 @@ const StudentLogin = () => {
                       type="password"
                       id="id_pass"
                       className="form-control"
-                      value=""
+                      defaultValue={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <span className="input-group-text">
                       <FaEyeSlash />
                     </span>
                   </div>
-                  
+
                   <p className="error-msg"></p>
-                  
+
                   {/*  */}
-                  <Button className="common-btn w-100" variant="primary" onClick={handleShow}>
+                  <Button
+                    className="common-btn w-100"
+                    variant="primary"
+                    onClick={handleShow}
+                  >
                     Login
                   </Button>
 
@@ -85,12 +92,16 @@ const StudentLogin = () => {
                       <Modal.Title></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                     Please Register your school first !!
+                      Please Register your school first !!
                     </Modal.Body>
-                    
+
                     <Modal.Footer>
-                      <Button variant="primary" className="w-20" onClick={handleClose}>
-                        Understood 
+                      <Button
+                        variant="primary"
+                        className="w-20"
+                        onClick={handleClose}
+                      >
+                        Understood
                       </Button>
                     </Modal.Footer>
                   </Modal>

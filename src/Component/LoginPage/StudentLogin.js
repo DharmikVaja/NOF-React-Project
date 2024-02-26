@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
@@ -7,6 +7,17 @@ import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 const SchoolLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    console.log("User Data:", userData);
+  };
   return (
     <div>
       <header className="header-main-login">
@@ -46,7 +57,8 @@ const SchoolLogin = () => {
                       name="email"
                       type="email"
                       className="form-control"
-                      value=""
+                      defaultValue={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -59,7 +71,8 @@ const SchoolLogin = () => {
                       type="password"
                       id="id_pass"
                       className="form-control"
-                      value=""
+                      defaultValue={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <span className="input-group-text">
                       <FaEyeSlash />
@@ -69,7 +82,9 @@ const SchoolLogin = () => {
                     <a href="/forgot-pass">Forgot Password?</a>
                   </p>
                   <p className="error-msg"></p>
-                  <button className="common-btn w-100">Login</button>
+                  <button className="common-btn w-100" onClick={handleLogin}>
+                    Login
+                  </button>
                   <button className="common-btn w-100 m-0">Back</button>
                 </div>
               </div>
