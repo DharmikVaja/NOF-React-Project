@@ -7,7 +7,6 @@ import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 const SchoolLogin = () => {
-   
   return (
     <div>
       <header className="header-main-login">
@@ -77,7 +76,7 @@ const SchoolLogin = () => {
             </div>
           </div>
         </div>
-        </section>
+      </section>
     </div>
   );
 };

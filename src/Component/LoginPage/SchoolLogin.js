@@ -72,9 +72,7 @@ const StudentLogin = () => {
                       <FaEyeSlash />
                     </span>
                   </div>
-                  <p className="forgot-link">
-                    <a href="/forgot-pass">Forgot Password?</a>
-                  </p>
+                  
                   <p className="error-msg"></p>
                   
                   {/*  */}

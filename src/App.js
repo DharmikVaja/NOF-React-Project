@@ -39,6 +39,7 @@ import MyOrdersComp from "./Component/Dashboard/AccountSettings/MyOrdersComp";
 import TransactionHistory from "./Component/Dashboard/AccountSettings/TransactionHistory";
 import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
 import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
+import Signup from "./Component/LoginPage/Signup";
 
 function App() {
   return (
@@ -64,7 +65,8 @@ function App() {
         <Route path="/refund-and-cancellation" element={<RefundCancel />} />
         <Route path="modal" element={<RegModal />} />
         <Route path="/student-login" element={<StudentLogin />} />
-        <Route path="/school-login" element={<SchoolLogin />} />
+        <Route path="/student-login" element={<StudentLogin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/user-dashboard" element={<Dashboard />} />
         <Route path="/select-test" element={<SelectTest />} />
         <Route path="/demo-test" element={<DemoTest />} />

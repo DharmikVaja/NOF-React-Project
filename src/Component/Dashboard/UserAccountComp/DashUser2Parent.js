@@ -54,7 +54,7 @@ const DashUser2Parent = () => {
                 <select
                   aria-label="Default select example"
                   name="countryCode"
-                  className="form-select"
+                  className="form-select d-flex"
                   onChange={handleCountryChange}
                   value={selectedCountry}
                 >
