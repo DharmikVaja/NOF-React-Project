@@ -72,7 +72,7 @@ const AccountSettings = () => {
                           <div className="d-flex align-items-center">
                             <div className="user">
                               <IoLocationSharp className="fs-5" />
-                                  </div>
+                            </div>
                             <div className="set-marg ps-4">
                               <h4>Address Manager</h4>
                             </div>

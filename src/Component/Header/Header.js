@@ -35,23 +35,23 @@ const YourComponent = () => {
   return (
     <header className="homeHeader">
       <div className="container">
-        <div className="row">
-          <nav className="justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
-            <div className="col-md-3 mb-2 mb-md-0">
-              <span className="navbar-brand" href="/">
-                <img src={logoImg} className="logoImg" alt="logo" />
-              </span>
-            </div>
+        <div className="row justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
+          <div className="col-md-3 ">
+            <span className="navbar-brand" href="/">
+              <img src={logoImg} className="logoImg" alt="logo" />
+            </span>
+          </div>
 
-            <div className="col-md-5 d-flex justify-content-end header-side align-items-center">
-              <div className="me-3">
+          <div className="d-flex col-md-6  col-sm-12 justify-content-end  align-items-center gap-2">
+            <div className="d-flex justify-content-start m-1">
+              
                 <Link role="button" className="cart-wl-btn" to="/wishlist">
                   <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                   Wishlist
                 </Link>
-              </div>
+              
 
-              <div className="position-relative me-3">
+              <div className="position-relative ">
                 <Link
                   role="button"
                   className="show-number cart-wl-btn"
@@ -59,15 +59,15 @@ const YourComponent = () => {
                 >
                   <div className="show1"> 0</div>
                   <img src={cart} alt="cart" className="wl-cart-img" />
-                  View Cart
+                  Cart
                 </Link>
               </div>
             </div>
 
-            <div className="col-md-4 text-md-end d-md-flex justify-content-md-end">
+            <div className="col-md-4 text-end d-flex justify-content-end ">
               <Button
                 type="button"
-                className="login-btn me-md-3"
+                className="login-btn "
                 onClick={handleShow2}
               >
                 Login
@@ -201,7 +201,7 @@ const YourComponent = () => {
                 </Modal.Body>
               </Modal>
             </div>
-          </nav>
+          </div>
         </div>
       </div>
 

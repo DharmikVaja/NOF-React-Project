@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../dashboard.css";
 import NavLogo from "../../../../src/assets/logo.png";
-import "../dashboard.css";
 import NOFUserLogo from "../../../../src/assets/Dashboard/NOF-top-right.png";
 import { HiOutlineLogout } from "react-icons/hi";
 import { GrDocumentPerformance } from "react-icons/gr";
@@ -20,21 +19,28 @@ import { AiOutlinePieChart } from "react-icons/ai";
 import { MdListAlt } from "react-icons/md";
 
 const NavbarDashboard = () => {
+  const [isNavBarsVisible, setNavBarsVisible] = useState(false);
   const [smShow, setSmShow] = useState(false);
 
+  const handleToggleNavBars = () => {
+    setNavBarsVisible(!isNavBarsVisible);
+  };
+
+  // const [smShow, setSmShow] = useState(false);
+
   return (
-    <div>
+    <div className="">
     <ScrollToTop/>
-      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div className="container-fluid ">
           <div className="w-100 m-auto row">
             <div className="col">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center ">
                 <a href="/" className="navbar-brand">
                   <img src={NavLogo} alt="logo " />
                 </a>
-                <div className="navbar-collapse collapse" id="basic-navbar-nav">
-                  <div className="me-auto navbar-nav navBars">
+                 <div className={`navbar-collapse ${isNavBarsVisible ? 'show' : 'collapse'}`} id="basic-navbar-nav">
+        <div className="me-auto navbar-nav navBars">
                     <Link
                       role="button"
                       to="/user-dashboard"
@@ -191,7 +197,9 @@ const NavbarDashboard = () => {
                   aria-controls="basic-navbar-nav"
                   type="button"
                   aria-label="Toggle navigation"
-                  className="navbar-toggler collapsed"
+                
+                  className={`navbar-toggler collapsed ${isNavBarsVisible ? 'active' : ''}`}
+        onClick={handleToggleNavBars}
                 >
                   <img src={LogoImgUp} className="img-fluid" alt="" />
                 </button>

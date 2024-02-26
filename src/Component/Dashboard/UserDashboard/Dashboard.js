@@ -11,8 +11,8 @@ const Dashboard = () => {
     <div className="dashboard-layout ">
       <div className="inner-dash-bpx ">
         <header className="main-header login-header-home">
-          <NavbarDashboard/>
-          <ScrollToTop/>
+          <NavbarDashboard />
+          <ScrollToTop />
         </header>
         <section className="dash-outer-box">
           <div className="pad-set">
@@ -56,7 +56,6 @@ const Dashboard = () => {
                     <div className=" left-content">
                       <h4 className="for-dash-h4">Notifications</h4>
                       <h5>
-                        
                         <span>
                           Don't miss your last chance to take the missed NOF
                           examinations. The exam window will open from January

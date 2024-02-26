@@ -58,8 +58,8 @@ const MyOrdersComp = () => {
                     </div>
                   </div>
                 </div>
-                <div className="d-flex align-items-center mx-5">
-                  <table className=" table table-responsive w-100 act-table gap-2">
+                <div className="d-flex align-items-center table-exam-schedule">
+                  <table className=" table table-responsive w-100 act-table ">
                     <tr>
                       <th>S.No</th>
                       <th>Name </th>

@@ -81,3 +81,12 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 991px){
+.act-table {
+    overflow-x: scroll;
+    min-width: auto;
+}}
+@media (max-width: 991px){
+.table-exam-schedule {
+    overflow-x: scroll;
+}}

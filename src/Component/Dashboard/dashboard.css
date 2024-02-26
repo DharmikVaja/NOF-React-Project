@@ -33,6 +33,44 @@
     display: block;
     line-height: 18px;
 }}
+@media (max-width: 992px){
+.dashboard-layout .navbar-collapse {
+    position: absolute !important;
+    top: 70px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px 15px;
+}}
+@media (max-width: 992px){
+.dashboard-layout .navbar-collapse.show .navbar-nav {
+    left: 0px !important;
+}}
+@media (max-width: 360px){
+.navbar-toggler {
+    font-size: 14px;
+    padding: 5px;
+}}
+@media (max-width: 560px){
+.border-box-new iframe {
+    height: auto;
+    min-height: 185px;
+    width: 100% !important;
+}}
+@media (max-width: 992px){
+.border-box-new iframe {
+    height: auto;
+    min-height: 300px;
+    width: 100% !important;
+}}
+.navbar-toggler {
+  border: 1px solid #fff !important;
+  
+}
+.navbar-toggler img {
+ max-height: 15px;
+  
+}
 .dashboard-layout .login-header-home .navbar-brand img {
   height: 49px;
 }
