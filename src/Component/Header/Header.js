@@ -107,7 +107,7 @@ const YourComponent = () => {
                         </div>
                         <Button variant="primary" className="new-white-btn ">
                           <div>
-                            <Link to="student-login" className="login-link">
+                            <Link to="login" className="login-link">
                               <h6>Student Login </h6>
                             </Link>
                           </div>
@@ -195,6 +195,7 @@ const YourComponent = () => {
                                 setSelectedCountry(e.target.value)
                               }
                               value={selectedCountry}
+                              
                             >
                               <option value="">Select your Country</option>
                               {CountryData.map((country, index) => (

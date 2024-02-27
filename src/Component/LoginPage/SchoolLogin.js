@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
-import { FaUser,FaLock,FaEyeSlash } from "react-icons/fa";
+import { FaUser, FaLock, FaEyeSlash } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 const StudentLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const [show, setShow] = useState(false);
 
@@ -49,7 +50,7 @@ const StudentLogin = () => {
                     <span className="input-group-text">
                       <FaUser />
                     </span>
-                     <input
+                    <input
                       placeholder="Email"
                       name="email"
                       type="email"
@@ -106,7 +107,9 @@ const StudentLogin = () => {
                     </Modal.Footer>
                   </Modal>
                   {/*  */}
-                  <button className="common-btn w-100 m-0">Back</button>
+                  <Link to="/">
+                    <button className="common-btn w-100 m-0">Back</button>
+                  </Link>
                 </div>
               </div>
             </div>

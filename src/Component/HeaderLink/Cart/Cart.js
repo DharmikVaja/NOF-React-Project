@@ -4,6 +4,7 @@ import CouponImg from "../../../assets/cart-coupon.png";
 import "./cart.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [show1, setShow1] = useState(false);
@@ -49,7 +50,6 @@ const Cart = () => {
                         </h4>
                       </div>
                       <div className="card-body">
-                      
                         <h3 className="card-title ">Cart is Empty</h3>
                         <div className="card-detail">
                           <h5 className="card-coupon">Coupon</h5>
@@ -133,24 +133,32 @@ const Cart = () => {
                     keyboard={false}
                   >
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal title</Modal.Title>
+                      
                     </Modal.Header>
-                    <Modal.Body>
-                      I will not close if you click outside me. Do not even try
-                      to press escape key.
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose2}>
-                        Close
+                    <Modal.Body className="d-flex justify-content-center">Please contact with our team</Modal.Body>
+                    <div className="d-flex justify-content-center gap-3 mb-3">
+                      <Link to="/contact">
+                        <Button
+                          variant="primary"
+                          className="new-yellow-btn  w-20"
+                        >
+                          Continue
+                        </Button>
+                      </Link>
+                      <Button
+                        variant="secondary"
+                        className="new-yellow-btn  w-20"
+                        onClick={handleClose2}
+                      >
+                        Cancel
                       </Button>
-                      <Button variant="primary">Understood</Button>
-                    </Modal.Footer>
+                    </div>
                   </Modal>
                 </div>
                 <div className="back-to-product responsive-end px-4 py-2">
-                  <a href="/#" className="cursorPointerClass">
+                  <Link to="/product" className="cursorPointerClass">
                     Back to product
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

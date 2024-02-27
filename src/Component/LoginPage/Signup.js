@@ -1,38 +1,52 @@
 import React, { useState, useEffect } from "react";
-import { FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
+import { handleAPI } from "../../Service/api";
+import { Modal } from "react-bootstrap";
+// import { Modal } from "react-bootstrap";
 
 const Signup = () => {
-//   const [countryList, setCountryList] = useState([]);
-//   const [selectedCountry, setSelectedCountry] = useState(null);
-//   const [phoneNumber, setPhoneNumber] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [otpModalOpen, setOtpModalOpen] = useState(false);
 
-//   useEffect(() => {
-//     // Fetch country data from the JSON file
-//     fetch("../../Component/LoginPage/countries.json") // Replace with the correct path
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setCountryList(data);
-//         // Set the initial selected country and phone number (e.g., India)
-//         const defaultCountry = data.find((country) => country.code === "IN");
-//         setSelectedCountry(defaultCountry);
-//         setPhoneNumber(defaultCountry.dial_code);}).catch((error) => console.error("Error fetching country data:", error));
-//   }, []);
+  const [userData, setUserData] = useState({
+    studentName: "",
+    email: "",
+    phoneNumber: "9876543213",
+    password: "",
+    countryCode: "+91",
+  });
 
-//   const handleCountrySelect = (country) => {
-//     setSelectedCountry(country);
-//     setPhoneNumber(country.dial_code);
-//   };
-const [selectedCountry, setSelectedCountry] = useState("");
+  const handleSignup = async () => {
+    await handleAPI("signup", null, userData)
+      .then((res) => {
+        console.log("res::", res);
+        if (res.status === true) {
+          setOtpModalOpen(true);
+        }
+      })
 
-  const handleCountryChange = (e) => {
-    setSelectedCountry(e.target.value);
+      .catch((error) => {
+        console.log("error::", error);
+      });
   };
+  const handleChange = (e) => {
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const closeModal = () => {
+    setOtpModalOpen(false);
+  };
+
+  //   const [smShow, setSmShow] = useState(false);
   return (
     <div>
       <header className="header-main-login">
@@ -72,41 +86,43 @@ const [selectedCountry, setSelectedCountry] = useState("");
                     </span>
                     <input
                       placeholder="Student Name"
-                      name="user_name"
+                      name="studentName"
                       type="text"
                       className="form-control"
-                      defaultValue=""
+                      value={userData.studentName}
+                      onChange={handleChange}
                     />
                   </div>
                   {/*  */}
-                  
+
                   <div className="mb-2 input-group">
-                  <select
-                  aria-label="Default select example"
-                  name="countryCode"
-                  className="form-select"
-                  onChange={handleCountryChange}
-                  value={selectedCountry}
-                >
-                  {countriesData.map((country, index) => (
-                    <option
-                      key={index}
-                      value={country.code}
-                      data-phonecode={country.dial_code}
+                    <select
+                      aria-label="Default select example"
+                      name="countryCode"
+                      className="form-select"
+                      value={selectedCountry || "IN"}
+                      onChange={handleChange}
                     >
-                      {country.name} ({country.dial_code})
-                    </option>
-                  ))}
-                </select>
-                <input
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  type="number"
-                  readOnly=""
-                  className="form-control"
-                  defaultValue={97430087421}
-                />
-                </div>
+                      {countriesData.map((country, index) => (
+                        <option
+                          key={index}
+                          value={country.code}
+                          data-phonecode={country.dial_code}
+                        >
+                          {country.name} ({country.dial_code})
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      name="phoneNumber"
+                      placeholder="Phone Number"
+                      type="number"
+                      readOnly=""
+                      className="form-control"
+                      defaultValue={97430087421}
+                      onChange={handleChange}
+                    />
+                  </div>
                   {/*  */}
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
@@ -118,6 +134,7 @@ const [selectedCountry, setSelectedCountry] = useState("");
                       type="email"
                       className="form-control"
                       defaultValue=""
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -127,39 +144,56 @@ const [selectedCountry, setSelectedCountry] = useState("");
                     <input
                       name="password"
                       placeholder="Password"
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       id="id_pass"
                       className="form-control"
                       defaultValue=""
+                      onChange={handleChange}
                     />
-                    <span className="input-group-text">
-                      <FaEyeSlash />
+                    <span
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
-                  <div className="mb-3 input-group">
+                  {/* <div className="mb-3 input-group">
                     <span className="input-group-text">
                       <FaLock />
                     </span>
                     <input
                       name="confirm_password"
                       placeholder="Confirm Password"
-                      type="password"
+                      type={showPassword1 ? "text" : "password"}
                       id="id_pass1"
                       className="form-control"
                       defaultValue=""
                     />
-                    <span className="input-group-text">
-                      <FaEyeSlash />
+                    <span
+                      className="input-group-text"
+                      onClick={() => setShowPassword1(!showPassword1)}
+                    >
+                      {showPassword1 ? <FaEye /> : <FaEyeSlash />}
                     </span>
-                  </div>
+                  </div> */}
                   <p className="error-msg" />
                   <p className="success-msg" />
                   <p className="error-msg" />
-                  <button className="common-btn w-100">Next</button>
+                  <button className="common-btn w-100" onClick={handleSignup}>
+                    Next
+                  </button>
+                  <Modal show={otpModalOpen} onHide={closeModal}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Enter 6-digit OTP</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <input type="text" maxLength="6" />
+                      {/* Additional OTP modal content and actions */}
+                    </Modal.Body>
+                  </Modal>
                   <p>
                     <small>
-                      Already have account?{" "}
-                      <Link to="/student-login">Login here</Link>
+                      Already have account? <Link to="/login">Login here</Link>
                     </small>
                   </p>
                 </div>

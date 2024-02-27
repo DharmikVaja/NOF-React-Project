@@ -5,6 +5,7 @@ import logoImg from "../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
@@ -85,7 +86,10 @@ const SchoolLogin = () => {
                   <button className="common-btn w-100" onClick={handleLogin}>
                     Login
                   </button>
+                  <Link to="/">
+
                   <button className="common-btn w-100 m-0">Back</button>
+                  </Link>
                 </div>
               </div>
             </div>
