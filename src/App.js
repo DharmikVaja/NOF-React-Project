@@ -40,6 +40,7 @@ import TransactionHistory from "./Component/Dashboard/AccountSettings/Transactio
 import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
 import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
 import Signup from "./Component/LoginPage/Signup";
+import Admin from "./Component/LoginPage/Admin";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         <Route path="/login" element={<StudentLogin />} />
         <Route path="/school-login" element={<SchoolLogin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/user-dashboard" element={<Dashboard />} />
         <Route path="/select-test" element={<SelectTest />} />
         <Route path="/demo-test" element={<DemoTest />} />

@@ -18,7 +18,7 @@ const Signup = () => {
   const [userData, setUserData] = useState({
     studentName: "",
     email: "",
-    phoneNumber: "9876543213",
+    phoneNumber: "",
     password: "",
     countryCode: "+91",
   });
@@ -91,6 +91,7 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   {/*  */}
@@ -119,7 +120,7 @@ const Signup = () => {
                       type="number"
                       readOnly=""
                       className="form-control"
-                      defaultValue={97430087421}
+                      value={userData.phoneNumber}
                       onChange={handleChange}
                     />
                   </div>
@@ -146,6 +147,7 @@ const Signup = () => {
                       placeholder="Password"
                       type={showPassword ? "text" : "password"}
                       id="id_pass"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       className="form-control"
                       defaultValue=""
                       onChange={handleChange}
