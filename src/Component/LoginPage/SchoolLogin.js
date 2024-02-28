@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
-import { FaUser, FaLock, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
+import { useNavigate } from "react-router-dom";
 
 const StudentLogin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -20,15 +21,16 @@ const StudentLogin = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const handleLogin = async () => {
     try {
-      const response = await handleLoginAPI({ email, password });
+      const response = await handleLoginAPI( loginData);
 
       // Handle successful login, set tokens, redirect, etc.
       console.log("Login successful", response);
 
       // For example, redirect to a different page on successful login
-      // history.push("/dashboard");
+      navigate("/user-dashboard");
     } catch (error) {
       // Handle login error, show error message, etc.
       console.error("Login error", error);
@@ -36,6 +38,13 @@ const StudentLogin = () => {
       // Show error message to the user, display modal, etc.
       handleShow();
     }
+  };
+
+  const handleChange = (e) => {
+    setLoginData({
+      ...loginData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -77,8 +86,8 @@ const StudentLogin = () => {
                       name="email"
                       type="email"
                       className="form-control"
-                      defaultValue={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      defaultValue={loginData.email}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -91,17 +100,21 @@ const StudentLogin = () => {
                       type="password"
                       id="id_pass"
                       className="form-control"
-                      defaultValue={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={loginData.password}
+                      onChange={handleChange}
                     />
-                    <span className="input-group-text">
-                      <FaEyeSlash />
+                    <span
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
 
                   <p className="error-msg"></p>
 
                   {/*  */}
+
                   <Button
                     className="common-btn w-100"
                     variant="primary"

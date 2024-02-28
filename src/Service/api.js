@@ -15,7 +15,15 @@ export const handleLoginAPI = async (body) => {
   };
 
   try {
-    const response = await axios.post(`${BASEURL}login`, encryptedData);
+    console.log("logged");
+    const encryptedLoginData = await APIEncryption(
+      "login",
+      null,
+      encryptedData
+    );
+
+    // Make the encrypted API request
+    const response = await axios.post(`${BASEURL}login`, encryptedLoginData);
 
     // Assuming the response contains necessary data
     console.log(response.data);
@@ -28,8 +36,8 @@ export const handleLoginAPI = async (body) => {
     throw error;
   }
 };
-//
 
+//signup
 export const handleSignupAPI = async (URLS, param, body) => {
   const encryptedData = {};
   for (const key in body) {
