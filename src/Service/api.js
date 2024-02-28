@@ -4,21 +4,44 @@ const BASEURL = process.env.REACT_APP_BASE_URL_API;
 const secretKey = process.env.REACT_APP_SECRET_KEY;
 
 function encryptValue(value) {
-    return CryptoJS.AES.encrypt(value, secretKey).toString();
+  return CryptoJS.AES.encrypt(value, secretKey).toString();
 }
 
-export const handleAPI = async (URLS ,param, body) => {
-    const encryptedData = {};
-    for (const key in body) {
-        encryptedData[key] = encryptValue(body[key]);
-    }
+// Login
+export const handleLoginAPI = async (body) => {
+  const encryptedData = {
+    email: encryptValue(body.email),
+    password: encryptValue(body.password),
+  };
 
-  console.log("encryptedData",encryptedData)
+  try {
+    const response = await axios.post(`${BASEURL}login`, encryptedData);
+
+    // Assuming the response contains necessary data
+    console.log(response.data);
+
+    return response.data;
+  } catch (error) {
+    console.error("Error during login:", error);
+
+    // Handle error, show error message, etc.
+    throw error;
+  }
+};
+//
+
+export const handleSignupAPI = async (URLS, param, body) => {
+  const encryptedData = {};
+  for (const key in body) {
+    encryptedData[key] = encryptValue(body[key]);
+  }
+
+  console.log("encryptedData", encryptedData);
   await axios
-    .post(`${BASEURL}${URLS}`, encryptedData )
+    .post(`${BASEURL}${URLS}`, encryptedData)
     .then((res) => {
       console.log(res.data);
-      return res.data
+      return res.data;
     })
     .catch((error) => {
       console.log("something wrong", error);
@@ -34,7 +57,6 @@ export const APIEncryption = async (url, queryParams, body, headers = {}) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       ...headers,
-
     };
     if (token) {
       headerObj.Authorization = `Bearer ${token}`;
@@ -52,7 +74,9 @@ export const APIEncryption = async (url, queryParams, body, headers = {}) => {
       {
         params: queryParams,
         headers: requestHeaders,
-        mode: "no-cors",
+        validateStatus: function (status) {
+          return status >= 200 && status < 400; // Resolve only if the status is between 200 and 399
+        },
       }
     );
     if (isProduction === "true") {

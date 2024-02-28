@@ -6,15 +6,37 @@ import { FaUser, FaLock, FaEyeSlash } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
+import { handleLoginAPI } from "../../Service/api";
 
 const StudentLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [show, setShow] = useState(false);
+
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleLogin = async () => {
+    try {
+      const response = await handleLoginAPI({ email, password });
+
+      // Handle successful login, set tokens, redirect, etc.
+      console.log("Login successful", response);
+
+      // For example, redirect to a different page on successful login
+      // history.push("/dashboard");
+    } catch (error) {
+      // Handle login error, show error message, etc.
+      console.error("Login error", error);
+
+      // Show error message to the user, display modal, etc.
+      handleShow();
+    }
+  };
 
   return (
     <div>
@@ -83,7 +105,7 @@ const StudentLogin = () => {
                   <Button
                     className="common-btn w-100"
                     variant="primary"
-                    onClick={handleShow}
+                    onClick={handleLogin}
                   >
                     Login
                   </Button>

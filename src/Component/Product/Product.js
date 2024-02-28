@@ -21,11 +21,7 @@ const Product = (props) => {
   };
   const onPointerEnter = () => console.log("Enter");
   const onPointerLeave = () => console.log("Leave");
-  //   const onPointerMove = (value, index) => console.log(value, index)
-  //   const handleReset = () => {
-  //     // Set the initial value
-  //     setRating(0)
-  //   }
+
   return (
     <div>
       <div className="set-top-margin-all"></div>
@@ -46,7 +42,7 @@ const Product = (props) => {
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
-              <Link to="/home">
+              <Link to="/">
                 <button className="common-btn">Clear filter</button>
               </Link>
             </div>

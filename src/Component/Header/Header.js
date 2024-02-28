@@ -49,7 +49,6 @@ const YourComponent = () => {
                   <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                   Wishlist
                 </Link>
-              
 
               <div className="position-relative ">
                 <Link
@@ -73,14 +72,13 @@ const YourComponent = () => {
                 Login
               </Button>
               <Link to="/signup">
-
-              <Button
-                type="button"
-                className="sign-up btn"
-                // onClick={handleShow1}
-              >
-                Signup
-              </Button>
+                <Button
+                  type="button"
+                  className="sign-up btn"
+                  // onClick={handleShow1}
+                >
+                  Signup
+                </Button>
               </Link>
               {/* Login modal */}
               <Modal
@@ -129,7 +127,6 @@ const YourComponent = () => {
                   </Modal.Footer>
                 </div>
               </Modal>
-              
             </div>
           </div>
         </div>
@@ -163,7 +160,7 @@ const YourComponent = () => {
                 <Link onClick={handleShow3} className="nav-link listNames">
                   Product
                 </Link>
-                {/* Product Modal */}
+
                 <Modal show={show3} onHide={handleClose3}>
                   <Modal.Header closeButton>
                     <Modal.Title></Modal.Title>
@@ -195,7 +192,6 @@ const YourComponent = () => {
                                 setSelectedCountry(e.target.value)
                               }
                               value={selectedCountry}
-                              
                             >
                               <option value="">Select your Country</option>
                               {CountryData.map((country, index) => (

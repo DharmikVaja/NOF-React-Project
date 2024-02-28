@@ -6,9 +6,8 @@ import logoImg from "../../assets/logo.png";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
-import { handleAPI } from "../../Service/api";
+import { handleSignupAPI } from "../../Service/api";
 import { Modal } from "react-bootstrap";
-// import { Modal } from "react-bootstrap";
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -24,7 +23,7 @@ const Signup = () => {
   });
 
   const handleSignup = async () => {
-    await handleAPI("signup", null, userData)
+    await handleSignupAPI("signup", null, userData)
       .then((res) => {
         console.log("res::", res);
         if (res.status === true) {
@@ -33,7 +32,7 @@ const Signup = () => {
       })
 
       .catch((error) => {
-        console.log("error::", error);
+        // console.log("error::", error);
       });
   };
   const handleChange = (e) => {

@@ -10,7 +10,6 @@ import ProImg3 from "../../../src/assets/product/pro3.png";
 import ProImg4 from "../../../src/assets/product/pro4.png";
 import ProImg5 from "../../../src/assets/product/pro5.png";
 
-
 const ContentMiddle = () => {
   const [show1, setShow1] = useState(false);
 
@@ -38,85 +37,53 @@ const ContentMiddle = () => {
             <div className="row">
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg4}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International GK Olympiad</p>
+                  <img src={ProImg5} className="img-fluid" alt="img" />
+                  <p>International Junior Hindi Olympiad</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg3}
-                    className="img-fluid"
-                    alt="img"
-                  />
+                  <img src={ProImg3} className="img-fluid" alt="img" />
                   <p>International Commerce Olympiad</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg1}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International Biology Olympiad</p>
+                  <img src={ProImg1} className="img-fluid" alt="img" />
+                  <p>International Junior Science Olympiad</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg4}
-                    className="img-fluid"
-                    alt="img"
-                  />
+                  <img src={ProImg4} className="img-fluid" alt="img" />
                   <p>MTSE-Marathi</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg1}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International English Olympiad</p>
+                  <img src={ProImg1} className="img-fluid" alt="img" />
+                  <p>International Science Olympiad</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg5}
-                    className="img-fluid"
-                    alt="img"
-                  />
+                  <img src={ProImg4} className="img-fluid" alt="img" />
+                  <p>MTSE-English</p>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="international-box">
+                  <img src={ProImg5} className="img-fluid" alt="img" />
                   <p>MTSE-Hindi</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg2}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International Math Olympiad</p>
+                  <img src={ProImg2} className="img-fluid" alt="img" />
+                  <p>International Junior English Olympiad</p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="international-box">
-                  <img
-                    src={ProImg4}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>MTSE-English</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
+              {/* <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
                   <img
                     src={ProImg1}
@@ -125,34 +92,11 @@ const ContentMiddle = () => {
                   />
                   <p>International Hindi Olympiad</p>
                 </div>
-              </div>
+              </div> */}
+
               <div className="col-lg-3 col-md-4 col-sm-6">
                 <div className="international-box">
-                  <img
-                    src={ProImg5}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International Science Olympiad</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="international-box">
-                  <img
-                    src={ProImg3}
-                    className="img-fluid"
-                    alt="img"
-                  />
-                  <p>International French Olympiad</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="international-box">
-                  <img
-                    src={ProImg2}
-                    className="img-fluid"
-                    alt="img"
-                  />
+                  <img src={ProImg3} className="img-fluid" alt="img" />
                   <p>International Aptitude Olympiad</p>
                 </div>
               </div>
