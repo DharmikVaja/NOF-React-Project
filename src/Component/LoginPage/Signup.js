@@ -13,7 +13,7 @@ const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   // const [otpModalOpen, setOtpModalOpen] = useState(false);
-  
+
   const navigate = useNavigate;
 
   const [userData, setUserData] = useState({
@@ -31,7 +31,42 @@ const Signup = () => {
   });
 
   const handleSignup = async () => {
+    try {
+      const response = await handleSignupAPI("signup", null, userData);
 
+      console.log("res::", response);
+
+      if (response.data.status === true) {
+        console.log("Signup successful");
+        navigate("/login");
+        // Clear errors state on successful signup
+        setErrors({
+          phoneNumber: "",
+          email: "",
+          password: "",
+        });
+      }
+    } catch (error) {
+      console.log("Signup failed. Please fix the errors.");
+
+      // Display an alert with the error message
+      // window.alert(error.response.data.message);
+
+      // Handle backend validation errors
+      if (error.response && error.response.data && error.response.data.errors) {
+        const backendErrors = error.response.data.errors;
+
+        // Update errors state based on backend errors
+        setErrors({
+          phoneNumber: backendErrors.phoneNumber || "",
+          email: backendErrors.email || "",
+          password: backendErrors.password || "",
+        });
+      } else {
+        // Handle other types of errors
+        console.error(error);
+      }
+    }
   };
 
   const handleChange = (e) => {
@@ -88,6 +123,7 @@ const Signup = () => {
                       onChange={handleChange}
                     />
                   </div>
+                  <p className="error-msg">{errors.studentName} </p>
                   {/*  */}
 
                   <div className="mb-2 input-group">
@@ -118,6 +154,7 @@ const Signup = () => {
                       onChange={handleChange}
                     />
                   </div>
+                  <p className="error-msg">{errors.phoneNumber}</p>
                   {/*  */}
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
@@ -132,6 +169,7 @@ const Signup = () => {
                       onChange={handleChange}
                     />
                   </div>
+                  <p className="error-msg">{errors.email}</p>
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
                       <FaLock />
@@ -153,15 +191,9 @@ const Signup = () => {
                       {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
+                  <p className="error-msg">{errors.password}</p>
 
-                  <p className="error-msg">
-                    {errors.studentName ||
-                      errors.phoneNumber ||
-                      errors.email ||
-                      errors.password}
-                  </p>
                   <p className="success-msg" />
-                  {/* <p className="error-msg" /> */}
                   <button className="common-btn w-100" onClick={handleSignup}>
                     Next
                   </button>
