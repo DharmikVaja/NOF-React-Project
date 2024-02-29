@@ -7,12 +7,11 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
-// import { Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  // const [otpModalOpen, setOtpModalOpen] = useState(false);
 
   const navigate = useNavigate;
 
@@ -36,19 +35,12 @@ const Signup = () => {
 
       console.log("res::", response);
 
-      if (response.data.status === true) {
+      if (response.status === true) {
         console.log("Signup successful");
         navigate("/login");
-        // Clear errors state on successful signup
-        setErrors({
-          phoneNumber: "",
-          email: "",
-          password: "",
-        });
       }
     } catch (error) {
       console.log("Signup failed. Please fix the errors.");
-
       // Display an alert with the error message
       // window.alert(error.response.data.message);
 
@@ -66,17 +58,17 @@ const Signup = () => {
         // Handle other types of errors
         console.error(error);
       }
-    }
+    } 
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
+      [e.target.name]: e.target.value,
       [name]: value,
     });
   };
-
   return (
     <div>
       <header className="header-main-login">
@@ -121,11 +113,10 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
+                      required
                     />
                   </div>
-                  <p className="error-msg">{errors.studentName} </p>
                   {/*  */}
-
                   <div className="mb-2 input-group">
                     <select
                       aria-label="Default select example"
@@ -154,7 +145,6 @@ const Signup = () => {
                       onChange={handleChange}
                     />
                   </div>
-                  <p className="error-msg">{errors.phoneNumber}</p>
                   {/*  */}
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
@@ -169,7 +159,6 @@ const Signup = () => {
                       onChange={handleChange}
                     />
                   </div>
-                  <p className="error-msg">{errors.email}</p>
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
                       <FaLock />
@@ -179,6 +168,7 @@ const Signup = () => {
                       placeholder="Password"
                       type={showPassword ? "text" : "password"}
                       id="id_pass"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       className="form-control"
                       defaultValue=""
@@ -190,19 +180,26 @@ const Signup = () => {
                     >
                       {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
+
+                    <p className="error-msg">
+                      {errors.studentName ||
+                        errors.phoneNumber ||
+                        errors.email ||
+                        errors.password}
+                    </p>
+                    <p className="success-msg" />
+
+                    <button className="common-btn w-100" onClick={handleSignup}>
+                      Next
+                    </button>
+
+                    <p>
+                      <small>
+                        Already have account?{" "}
+                        <Link to="/login">Login here</Link>
+                      </small>
+                    </p>
                   </div>
-                  <p className="error-msg">{errors.password}</p>
-
-                  <p className="success-msg" />
-                  <button className="common-btn w-100" onClick={handleSignup}>
-                    Next
-                  </button>
-
-                  <p>
-                    <small>
-                      Already have account? <Link to="/login">Login here</Link>
-                    </small>
-                  </p>
                 </div>
               </div>
             </div>
