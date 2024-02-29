@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const StudentLogin = () => {
   const [show, setShow] = useState(false);
+
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ const StudentLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await handleLoginAPI( loginData);
+      const response = await handleLoginAPI(loginData);
 
       // Handle successful login, set tokens, redirect, etc.
       console.log("Login successful", response);
@@ -95,12 +96,13 @@ const StudentLogin = () => {
                       <FaLock />
                     </span>
                     <input
-                      placeholder="Password"
                       name="password"
-                      type="password"
+                      placeholder="Password"
+                      type={showPassword ? "text" : "password"}
                       id="id_pass"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       className="form-control"
-                      value={loginData.password}
+                      defaultValue=""
                       onChange={handleChange}
                     />
                     <span

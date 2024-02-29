@@ -4,48 +4,125 @@ import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
-import { Modal } from "react-bootstrap";
+// import { Modal } from "react-bootstrap";
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [otpModalOpen, setOtpModalOpen] = useState(false);
+  // const [otpModalOpen, setOtpModalOpen] = useState(false);
+
+  const navigate = useNavigate;
 
   const [userData, setUserData] = useState({
     studentName: "",
     email: "",
     phoneNumber: "",
     password: "",
-    countryCode: "+91",
+    countryCode: "IN",
+  });
+
+  const [errors, setErrors] = useState({
+    phoneNumber: "",
+    email: "",
+    password: "",
   });
 
   const handleSignup = async () => {
-    await handleSignupAPI("signup", null, userData)
-      .then((res) => {
-        console.log("res::", res);
-        if (res.status === true) {
-          setOtpModalOpen(true);
-        }
-      })
+    try {
+      const response = await handleSignupAPI("signup", null, userData);
 
-      .catch((error) => {
-        // console.log("error::", error);
-      });
+      console.log("res::", response);
+
+      if (response.status === true) {
+        console.log("Signup successful");
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log("Signup failed. Please fix the errors."); 
+    }
+
+    // if (
+    //   validatestudentName() &&
+    //   validatePhoneNumber() &&
+    //   validateEmail() &&
+    //   validatePassword()
+    // ) {
+    //   // Perform signup logic here
+    //   console.log("Signup successful");
+    //   navigate("/login")
+    // } else {
+    //   console.log("Signup failed. Please fix the errors.");
+    // }
   };
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setUserData({
       ...userData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
-  const closeModal = () => {
-    setOtpModalOpen(false);
-  };
 
-  //   const [smShow, setSmShow] = useState(false);
+  // const validatestudentName = () => {
+  //   if (!userData.studentName || userData.studentName.trim() === "") {
+  //     setErrors({
+  //       studentName: "Username cannot be empty",
+  //       phoneNumber: errors.phoneNumber,
+  //       email: errors.email,
+  //       password: errors.password,
+  //     });
+  //     return false;
+  //   } else {
+  //     setErrors({
+  //       ...errors,
+  //       studentName: "",
+  //     });
+  //     return true;
+  //   }
+  // };
+
+  // const validatePhoneNumber = () => {
+  //   if (!userData.phoneNumber || userData.phoneNumber.length !== 10) {
+  //     setErrors({
+  //       ...errors,
+  //       phoneNumber: "Mobile number should be 10 digits.",
+  //     });
+  //     return false;
+  //   }
+  //   setErrors({
+  //     ...errors,
+  //     phoneNumber: "",
+  //   });
+  //   return true;
+  // };
+  // const validatePassword = () => {
+  //   if (userData.password.length < 8) {
+  //     setErrors({
+  //       ...errors,
+  //       password: "Password should contains atleast 8 digits",
+  //     });
+  //   }
+  //   return true;
+  // };
+  // const validateEmail = () => {
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!userData.email || !emailRegex.test(userData.email)) {
+  //     setErrors({
+  //       ...errors,
+  //       email: "Please enter a valid email.",
+  //     });
+  //     return false;
+  //   }
+  //   setErrors({
+  //     ...errors,
+  //     email: "",
+  //   });
+  //   return true;
+  // };
+ 
   return (
     <div>
       <header className="header-main-login">
@@ -90,7 +167,7 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
-                      required
+                      
                     />
                   </div>
                   {/*  */}
@@ -146,7 +223,7 @@ const Signup = () => {
                       placeholder="Password"
                       type={showPassword ? "text" : "password"}
                       id="id_pass"
-                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       className="form-control"
                       defaultValue=""
                       onChange={handleChange}
@@ -158,40 +235,19 @@ const Signup = () => {
                       {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
-                  {/* <div className="mb-3 input-group">
-                    <span className="input-group-text">
-                      <FaLock />
-                    </span>
-                    <input
-                      name="confirm_password"
-                      placeholder="Confirm Password"
-                      type={showPassword1 ? "text" : "password"}
-                      id="id_pass1"
-                      className="form-control"
-                      defaultValue=""
-                    />
-                    <span
-                      className="input-group-text"
-                      onClick={() => setShowPassword1(!showPassword1)}
-                    >
-                      {showPassword1 ? <FaEye /> : <FaEyeSlash />}
-                    </span>
-                  </div> */}
-                  <p className="error-msg" />
+
+                  <p className="error-msg">
+                    {errors.studentName ||
+                      errors.phoneNumber ||
+                      errors.email ||
+                      errors.password}
+                  </p>
                   <p className="success-msg" />
-                  <p className="error-msg" />
+                  {/* <p className="error-msg" /> */}
                   <button className="common-btn w-100" onClick={handleSignup}>
                     Next
                   </button>
-                  <Modal show={otpModalOpen} onHide={closeModal}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Enter 6-digit OTP</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <input type="text" maxLength="6" />
-                      {/* Additional OTP modal content and actions */}
-                    </Modal.Body>
-                  </Modal>
+
                   <p>
                     <small>
                       Already have account? <Link to="/login">Login here</Link>
