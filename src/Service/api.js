@@ -4,10 +4,7 @@ const BASEURL = process.env.REACT_APP_BASE_URL_API;
 // Login
 export const handleLoginAPI = async (body) => {
   try {
-    // Make the API request without encrypting login data
     const response = await axios.post(`${BASEURL}login`, body);
-
-    // Assuming the response contains necessary data
     console.log("Login successful", response.data);
 
     return response.data;

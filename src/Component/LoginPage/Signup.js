@@ -13,7 +13,7 @@ const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   // const [otpModalOpen, setOtpModalOpen] = useState(false);
-
+  
   const navigate = useNavigate;
 
   const [userData, setUserData] = useState({
@@ -31,31 +31,7 @@ const Signup = () => {
   });
 
   const handleSignup = async () => {
-    try {
-      const response = await handleSignupAPI("signup", null, userData);
 
-      console.log("res::", response);
-
-      if (response.status === true) {
-        console.log("Signup successful");
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log("Signup failed. Please fix the errors."); 
-    }
-
-    // if (
-    //   validatestudentName() &&
-    //   validatePhoneNumber() &&
-    //   validateEmail() &&
-    //   validatePassword()
-    // ) {
-    //   // Perform signup logic here
-    //   console.log("Signup successful");
-    //   navigate("/login")
-    // } else {
-    //   console.log("Signup failed. Please fix the errors.");
-    // }
   };
 
   const handleChange = (e) => {
@@ -66,63 +42,6 @@ const Signup = () => {
     });
   };
 
-  // const validatestudentName = () => {
-  //   if (!userData.studentName || userData.studentName.trim() === "") {
-  //     setErrors({
-  //       studentName: "Username cannot be empty",
-  //       phoneNumber: errors.phoneNumber,
-  //       email: errors.email,
-  //       password: errors.password,
-  //     });
-  //     return false;
-  //   } else {
-  //     setErrors({
-  //       ...errors,
-  //       studentName: "",
-  //     });
-  //     return true;
-  //   }
-  // };
-
-  // const validatePhoneNumber = () => {
-  //   if (!userData.phoneNumber || userData.phoneNumber.length !== 10) {
-  //     setErrors({
-  //       ...errors,
-  //       phoneNumber: "Mobile number should be 10 digits.",
-  //     });
-  //     return false;
-  //   }
-  //   setErrors({
-  //     ...errors,
-  //     phoneNumber: "",
-  //   });
-  //   return true;
-  // };
-  // const validatePassword = () => {
-  //   if (userData.password.length < 8) {
-  //     setErrors({
-  //       ...errors,
-  //       password: "Password should contains atleast 8 digits",
-  //     });
-  //   }
-  //   return true;
-  // };
-  // const validateEmail = () => {
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (!userData.email || !emailRegex.test(userData.email)) {
-  //     setErrors({
-  //       ...errors,
-  //       email: "Please enter a valid email.",
-  //     });
-  //     return false;
-  //   }
-  //   setErrors({
-  //     ...errors,
-  //     email: "",
-  //   });
-  //   return true;
-  // };
- 
   return (
     <div>
       <header className="header-main-login">
@@ -167,7 +86,6 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
-                      
                     />
                   </div>
                   {/*  */}

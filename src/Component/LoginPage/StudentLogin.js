@@ -5,19 +5,37 @@ import logoImg from "../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {handleLoginAPI} from "../../Service/api"
+
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState("");
 
-  const handleLogin = () => {
-    const userData = {
-      email: email,
-      password: password,
-    };
+  const navigate= useNavigate;
 
-    console.log("User Data:", userData);
+  const handleLogin = async () => {
+    try {
+      const response = await handleLoginAPI("login", null, userData);
+
+      console.log("res::", response.status);
+
+      if (response.status === true) {
+        console.log("Login successful");
+        navigate("/user-dashboard");
+      }
+    } catch (error) {
+      console.log("Login failed, enter valid credentials");
+    }
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
   };
   return (
     <div>
@@ -59,7 +77,7 @@ const SchoolLogin = () => {
                       type="email"
                       className="form-control"
                       defaultValue={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -73,7 +91,7 @@ const SchoolLogin = () => {
                       id="id_pass"
                       className="form-control"
                       defaultValue={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={handleChange}
                     />
                     <span className="input-group-text">
                       <FaEyeSlash />
