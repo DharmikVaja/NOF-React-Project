@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
@@ -7,7 +7,6 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
-import { Modal } from "react-bootstrap";
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -31,43 +30,29 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await handleSignupAPI("signup", null, userData);
+      const response = await handleSignupAPI(userData);
 
       console.log("res::", response);
+  
 
-      if (response.status === true) {
-        console.log("Signup successful");
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log("Signup failed. Please fix the errors.");
+       if (response.status === true) {
+      navigate("/login");
+      // console.log("Signup successful");
+    }
+  } catch (error) {
+    console.log("Signup failed. Please fix the errors.")
       // Display an alert with the error message
       // window.alert(error.response.data.message);
-
-      // Handle backend validation errors
-      if (error.response && error.response.data && error.response.data.errors) {
-        const backendErrors = error.response.data.errors;
-
-        // Update errors state based on backend errors
-        setErrors({
-          phoneNumber: backendErrors.phoneNumber || "",
-          email: backendErrors.email || "",
-          password: backendErrors.password || "",
-        });
-      } else {
-        // Handle other types of errors
-        console.error(error);
-      }
     } 
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value,
+    setUserData((prevUserData) =>({
+      ...prevUserData,
+      
       [name]: value,
-    });
+    }));
   };
   return (
     <div>
@@ -113,7 +98,7 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
-                      required
+                      
                     />
                   </div>
                   {/*  */}
@@ -180,6 +165,7 @@ const Signup = () => {
                     >
                       {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
+                  </div>
 
                     <p className="error-msg">
                       {errors.studentName ||
@@ -199,7 +185,6 @@ const Signup = () => {
                         <Link to="/login">Login here</Link>
                       </small>
                     </p>
-                  </div>
                 </div>
               </div>
             </div>

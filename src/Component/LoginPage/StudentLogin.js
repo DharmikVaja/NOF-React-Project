@@ -6,20 +6,23 @@ import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import {handleLoginAPI} from "../../Service/api"
-
+import { handleLoginAPI } from "../../Service/api";
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userData, setUserData] = useState("");
 
-  const navigate= useNavigate;
+  const navigate = useNavigate;
 
   const handleLogin = async () => {
     try {
-      const response = await handleLoginAPI("login", null, userData);
-
+      const userData = {
+        email: email,
+        password: password
+      };
+      const response = await handleLoginAPI("login", userData);
+  
       console.log("res::", response.status);
 
       if (response.status === true) {
@@ -105,13 +108,12 @@ const SchoolLogin = () => {
                     Login
                   </button>
                   <Link to="/">
-
-                  <button className="common-btn w-100 m-0">Back</button>
+                    <button className="common-btn w-100 m-0">Back</button>
                   </Link>
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
         </div>
       </section>
     </div>
