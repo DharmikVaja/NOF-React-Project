@@ -41,7 +41,7 @@ const Admin = () => {
             <div className="ms-auto col-lg-6">
               <div className="login-side-box">
                 <div className="inner-box-login">
-                  <h2>School Login</h2>
+                  <h2>Admin Login</h2>
                   <p>Please login to continue</p>
                   <div className="mb-3 input-group">
                     <span className="input-group-text">

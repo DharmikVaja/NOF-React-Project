@@ -9,7 +9,7 @@ export const handleLoginAPI = async (URLS, body) => {
   try {
     const response = await axios.post(`${BASEURL}${URLS}`, body);
     console.log("Login successful", response.data);
-
+    
     return response.data;
   } catch (error) {
     console.error("Error during login:", error.response.data);
@@ -25,7 +25,7 @@ export const handleSignupAPI = async ( body) => {
     // Make the API request
     const response = await axios.post(`${BASEURL}signup`, body);
     if (response.data.status) {
-      navigate("/login");
+      console.log("Signup successful")
     } else{
       console.error("signup failed:", response.data.message);
     }

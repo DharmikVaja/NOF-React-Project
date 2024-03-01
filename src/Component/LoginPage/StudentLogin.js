@@ -24,10 +24,10 @@ const SchoolLogin = () => {
       const response = await handleLoginAPI("login", userData);
   
       console.log("res::", response.status);
-
+      
       if (response.status === true) {
-        console.log("Login successful");
         navigate("/user-dashboard");
+        console.log("Login successful");
       }
     } catch (error) {
       console.log("Login failed, enter valid credentials");
