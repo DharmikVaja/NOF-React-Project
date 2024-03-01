@@ -7,6 +7,10 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Toast from 'react-bootstrap/Toast';
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -45,6 +49,9 @@ const Signup = () => {
       // window.alert(error.response.data.message);
     } 
   };
+
+  const [showA, setShowA] = useState(true);
+  const toggleShowA = () => setShowA(!showA);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

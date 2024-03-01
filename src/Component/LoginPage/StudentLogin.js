@@ -4,12 +4,14 @@ import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [userData, setUserData] = useState("");
 
@@ -17,20 +19,16 @@ const SchoolLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const userData = {
-        email: email,
-        password: password
-      };
       const response = await handleLoginAPI("login", userData);
-  
+
       console.log("res::", response.status);
-      
+
       if (response.status === true) {
-        navigate("/user-dashboard");
         console.log("Login successful");
+        navigate("/user-dashboard");
       }
     } catch (error) {
-      console.log("Login failed, enter valid credentials");
+      console.log("Login failed, enter valid credentials", error);
     }
   };
   const handleChange = (e) => {
@@ -40,6 +38,8 @@ const SchoolLogin = () => {
       [name]: value,
     });
   };
+
+  console.log("hello", userData);
   return (
     <div>
       <header className="header-main-login">
@@ -90,14 +90,17 @@ const SchoolLogin = () => {
                     <input
                       placeholder="Password"
                       name="password"
-                      type="password"
+                      type={showPassword ? "password" : "text"}
                       id="id_pass"
                       className="form-control"
                       defaultValue={password}
                       onChange={handleChange}
                     />
-                    <span className="input-group-text">
-                      <FaEyeSlash />
+                    <span
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
                   <p className="forgot-link">
@@ -113,7 +116,7 @@ const SchoolLogin = () => {
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </section>
     </div>
