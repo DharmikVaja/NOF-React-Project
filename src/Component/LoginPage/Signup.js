@@ -7,14 +7,16 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast';
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Toast from "react-bootstrap/Toast";
 
 const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const [showA, setShowA] = useState(false);
 
   const navigate = useNavigate;
 
@@ -31,33 +33,29 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  // const toggleShowA = () => setShowA(!showA);
 
-  const handleSignup = async () => {
+ const handleSignup = async () => {
     try {
       const response = await handleSignupAPI(userData);
 
-      console.log("res::", response);
-  
-
-       if (response.status === true) {
-      navigate("/login");
-      // console.log("Signup successful");
+      if (response.status === true) {
+        navigate("/login");
+      } else {
+        console.log("Signup failed. Please try again");
+        setShowA(true); // Show the Toast on error
+      }
+    } catch (error) {
+      console.log("Signup API failed, Please fix the errors.", error);
+      setShowA(true); // Show the Toast on error
     }
-  } catch (error) {
-    console.log("Signup failed. Please fix the errors.")
-      // Display an alert with the error message
-      // window.alert(error.response.data.message);
-    } 
   };
-
-  const [showA, setShowA] = useState(true);
-  const toggleShowA = () => setShowA(!showA);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData((prevUserData) =>({
+    setUserData((prevUserData) => ({
       ...prevUserData,
-      
+
       [name]: value,
     }));
   };
@@ -105,7 +103,6 @@ const Signup = () => {
                       className="form-control"
                       value={userData.studentName}
                       onChange={handleChange}
-                      
                     />
                   </div>
                   {/*  */}
@@ -174,24 +171,39 @@ const Signup = () => {
                     </span>
                   </div>
 
-                    <p className="error-msg">
-                      {errors.studentName ||
-                        errors.phoneNumber ||
-                        errors.email ||
-                        errors.password}
-                    </p>
-                    <p className="success-msg" />
+                  <p className="error-msg">
+                    {errors.studentName ||
+                      errors.phoneNumber ||
+                      errors.email ||
+                      errors.password}
+                  </p>
+                  <p className="success-msg" />
 
-                    <button className="common-btn w-100" onClick={handleSignup}>
-                      Next
-                    </button>
+                  <Button className="common-btn w-100" onClick={handleSignup}>
+                    Next
+                  </Button>
+                  <Row>
+                    <Col className="mb-2">
+                      <Toast show={showA} onClose={()=>setShowA(false)}>
+                        <Toast.Header>
+                          <img
+                            src="holder.js/20x20?text=%20"
+                            className="rounded me-2"
+                            alt=""
+                          />
+                          <strong className="me-auto">
+                            Signup Failed, Please try again
+                          </strong>
+                        </Toast.Header>
+                      </Toast>
+                    </Col>
+                  </Row>
 
-                    <p>
-                      <small>
-                        Already have account?{" "}
-                        <Link to="/login">Login here</Link>
-                      </small>
-                    </p>
+                  <p>
+                    <small>
+                      Already have account? <Link to="/login">Login here</Link>
+                    </small>
+                  </p>
                 </div>
               </div>
             </div>

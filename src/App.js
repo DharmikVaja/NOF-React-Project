@@ -18,7 +18,7 @@ import RefundCancel from "./Component/FooterLinks/RefundCancel/RefundCancel";
 import StudentLogin from "./Component/LoginPage/StudentLogin";
 import SchoolLogin from "./Component/LoginPage/SchoolLogin";
 import Product from "./Component/Product/Product";
-// import Dashboard from "./Component/Dashboard/UserDashboard/Dashboard";
+import Dashboard from "./Component/Dashboard/UserDashboard/Dashboard";
 // import SelectTest from "./Component/Dashboard/SelectTest/SelectTest";
 // import DemoTest from "./Component/Dashboard/SelectTest/DemoTest";
 // import Instruction from "./Component/Dashboard/SelectTest/Instruction";
@@ -42,6 +42,7 @@ import Product from "./Component/Product/Product";
 import Signup from "./Component/LoginPage/Signup";
 import Admin from "./Component/LoginPage/Admin";
 import ProtectedRoute from "./Component/ProtectedRoute.js/ProtectedRoute";
+import AdminPanel from "./Component/Admin Panel/AdminPanel";
 
 function App() {
   return (
@@ -69,8 +70,9 @@ function App() {
         <Route path="/school-login" element={<SchoolLogin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-dashboard" element={<AdminPanel />} />
         <Route path="/login" element={<StudentLogin />} />
-        <Route path="/user-dashboard" element={<ProtectedRoute Comp={StudentLogin} />} />
+        <Route path="/user-dashboard" element={<Dashboard/>} />
         <Route path="/select-test" element={<ProtectedRoute Comp={StudentLogin} />} />
         <Route path="/demo-test" element={<ProtectedRoute Comp={StudentLogin} />} />
         <Route path="/instructions" element={<ProtectedRoute Comp={StudentLogin} />} />

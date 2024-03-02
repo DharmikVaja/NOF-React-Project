@@ -1,7 +1,7 @@
 import React from "react";
-import NavbarDashboard from "../Dashboard/UserDashboard/NavbarDashboard.js"
-import ScrollToTop from "../ScrollToTop/ScrollToTop.js"
-import Link from "react-router-dom"
+import NavbarDashboard from "../Dashboard/UserDashboard/NavbarDashboard.js";
+import ScrollToTop from "../ScrollToTop/ScrollToTop.js";
+import { Link } from "react-router-dom";
 
 const AdminPanel = () => {
   return (
@@ -10,7 +10,7 @@ const AdminPanel = () => {
         <div className="inner-dash-bpx ">
           <header className="main-header login-header-home">
             <NavbarDashboard />
-            <ScrollToTop/>
+            <ScrollToTop />
           </header>
           <section className="dash-outer-box">
             <div className="pad-set">
@@ -39,11 +39,11 @@ const AdminPanel = () => {
                         </ul>
                       </div>
                       <div className="right-image">
-                        <img
+                        {/* <img
                         //   src={UserProfile}
                           className="img-fluid logo"
                           alt="user profile"
-                        />
+                        /> */}
                       </div>
                     </div>
                   </div>

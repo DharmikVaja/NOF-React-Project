@@ -7,6 +7,11 @@ import { FaLock } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Toast from "react-bootstrap/Toast";
+// import { toast } from "react-toastify";
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
@@ -14,21 +19,25 @@ const SchoolLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [userData, setUserData] = useState("");
+  const [error, setError] = useState(false);
+
+  const [showA, setShowA] = useState(true);
+  const toggleShowA = () => setShowA(false);
 
   const navigate = useNavigate;
 
   const handleLogin = async () => {
     try {
-      const response = await handleLoginAPI("login", userData);
+      setError(false);
+      co  nst response = await handleLoginAPI("login",userData);
 
-      console.log("res::", response.status);
-
-      if (response.status === true) {
-        console.log("Login successful");
-        navigate("/user-dashboard");
-      }
+      console.log("Login successful");
+      navigate("/user-dashboard");
+      
     } catch (error) {
-      console.log("Login failed, enter valid credentials", error);
+      setError(true);
+      console.log("Login failed, please try again ", error);
+      setShowA(true);
     }
   };
   const handleChange = (e) => {
@@ -39,7 +48,7 @@ const SchoolLogin = () => {
     });
   };
 
-  console.log("hello", userData);
+  // console.log("hello", userData);
   return (
     <div>
       <header className="header-main-login">
@@ -107,9 +116,26 @@ const SchoolLogin = () => {
                     <a href="/forgot-pass">Forgot Password?</a>
                   </p>
                   <p className="error-msg"></p>
-                  <button className="common-btn w-100" onClick={handleLogin}>
+
+                  <Button onClick={handleLogin} className="common-btn w-100">
                     Login
-                  </button>
+                  </Button>
+                  <Row>
+                    <Col className="mb-2">
+                      <Toast show={showA} onClose={toggleShowA}>
+                        <Toast.Header>
+                          <img
+                            src="holder.js/20x20?text=%20"
+                            className="rounded me-2"
+                            alt=""
+                          />
+                          <strong className="me-auto">
+                            Login Failed, Please try again
+                          </strong>
+                        </Toast.Header>
+                      </Toast>
+                    </Col>
+                  </Row>
                   <Link to="/">
                     <button className="common-btn w-100 m-0">Back</button>
                   </Link>
