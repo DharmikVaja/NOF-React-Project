@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
@@ -8,7 +8,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
-import Toast from "react-bootstrap/Toast";
+import { Toast } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
@@ -23,23 +27,31 @@ const SchoolLogin = () => {
     const { name, value } = e.target;
     if (name === "email") setEmail(value);
     else if (name === "password") setPassword(value);
-    
   };
 
+  const [showToast, setShowToast] = useState(false);
+  // const toggleShowA = () => setShowToast(!showToast);
   const handleLogin = async () => {
     try {
-      const response = await handleLoginAPI({email, password});
-      if (response.status ) {
-        // console.log("Login successful");  
-        alert("Login successful");
+      const response = await handleLoginAPI({ email, password });
+      if (response.status) {
+        // console.log("Login successful");
+        alert("Login Successful")
+        toast.success("Login Successful");
         navigate("/user-dashboard");
       } else {
         console.error("Login failed:", response.message);
-        setErrorMessage("Login failed. Please check your credentials and try again.");
+        setErrorMessage(
+          "Login failed. Please check your credentials and try again."
+        );
+        toast.error("Login failed. Please check your credentials and try again.")
       }
     } catch (error) {
       console.error("Error during login:", error.response?.data.message);
-      setErrorMessage("Login failed. Please check your credentials and try again.");
+      setErrorMessage(
+        "Login failed. Please check your credentials and try again."
+        );
+        toast.error("Login failed. Please check your credentials and try again.")
     }
   };
 
@@ -135,6 +147,7 @@ const SchoolLogin = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </section>
     </div>
   );

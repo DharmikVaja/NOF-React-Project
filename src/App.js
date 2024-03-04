@@ -72,7 +72,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-dashboard" element={<AdminPanel />} />
         <Route path="/login" element={<StudentLogin />} />
-        <Route path="/user-dashboard" element={<Dashboard/>} />
+        <Route path="/user-dashboard" element={<Dashboard />} />
         <Route path="/select-test" element={<ProtectedRoute Comp={StudentLogin} />} />
         <Route path="/demo-test" element={<ProtectedRoute Comp={StudentLogin} />} />
         <Route path="/instructions" element={<ProtectedRoute Comp={StudentLogin} />} />

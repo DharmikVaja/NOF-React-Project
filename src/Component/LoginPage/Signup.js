@@ -8,8 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
 import { handleSignupAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Toast from "react-bootstrap/Toast";
 
 const Signup = () => {
@@ -27,7 +25,7 @@ const Signup = () => {
   const [showA, setShowA] = useState(false);
   const [toastMessage, setToastMessage] = useState(false);
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
 
@@ -37,12 +35,15 @@ const Signup = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVlNTg2NWJkMjljZWM4YWRmYTMwMzY1IiwiZW1haWwiOiJ2YWphZGhhcm1pa2tAZ21haWwuY29tIiwiaWF0IjoxNzA5NTQwOTU1LCJleHAiOjE3MDk2MjczNTV9.eqtYtImkCDOFRz1vm58EViFEGwPTaNR2_vD4epomCLA";
   const handleSignup = async () => {
     try {
       const response = await handleSignupAPI(userData);
       if (response && response.data) {
-        if (response.data.status) {
+        if (response.status) {
           console.log("Signup successful");
+          localStorage.setItem("token", token);
           navigate("/login");
         } else {
           console.error("Signup failed:", response.data.message);
