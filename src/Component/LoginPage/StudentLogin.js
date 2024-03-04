@@ -5,47 +5,42 @@ import logoImg from "../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Toast from "react-bootstrap/Toast";
-// import { toast } from "react-toastify";
 
 const SchoolLogin = () => {
   const [email, setEmail] = useState("");
-
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState("");
-  const [error, setError] = useState(false);
 
-  const [showA, setShowA] = useState(true);
-  const toggleShowA = () => setShowA(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "email") setEmail(value);
+    else if (name === "password") setPassword(value);
+    
+  };
 
   const handleLogin = async () => {
     try {
-      setError(false);
-      co  nst response = await handleLoginAPI("login",userData);
-
-      console.log("Login successful");
-      navigate("/user-dashboard");
-      
+      const response = await handleLoginAPI({email, password});
+      if (response.status ) {
+        // console.log("Login successful");  
+        alert("Login successful");
+        navigate("/user-dashboard");
+      } else {
+        console.error("Login failed:", response.message);
+        setErrorMessage("Login failed. Please check your credentials and try again.");
+      }
     } catch (error) {
-      setError(true);
-      console.log("Login failed, please try again ", error);
-      setShowA(true);
+      console.error("Error during login:", error.response?.data.message);
+      setErrorMessage("Login failed. Please check your credentials and try again.");
     }
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
   };
 
   // console.log("hello", userData);
@@ -120,25 +115,21 @@ const SchoolLogin = () => {
                   <Button onClick={handleLogin} className="common-btn w-100">
                     Login
                   </Button>
-                  <Row>
-                    <Col className="mb-2">
-                      <Toast show={showA} onClose={toggleShowA}>
-                        <Toast.Header>
-                          <img
-                            src="holder.js/20x20?text=%20"
-                            className="rounded me-2"
-                            alt=""
-                          />
-                          <strong className="me-auto">
-                            Login Failed, Please try again
-                          </strong>
-                        </Toast.Header>
-                      </Toast>
-                    </Col>
-                  </Row>
-                  <Link to="/">
-                    <button className="common-btn w-100 m-0">Back</button>
-                  </Link>
+
+                  <Toast
+                    show={!!errorMessage}
+                    onClose={() => setErrorMessage("")}
+                    delay={5000}
+                    autohide
+                    bg="danger"
+                    text="white"
+                    style={{ position: "absolute", top: 10, right: 10 }}
+                  >
+                    <Toast.Header>
+                      <strong className="me-auto">Error</strong>
+                    </Toast.Header>
+                    <Toast.Body>{errorMessage}</Toast.Body>
+                  </Toast>
                 </div>
               </div>
             </div>

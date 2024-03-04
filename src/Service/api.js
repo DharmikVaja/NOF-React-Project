@@ -1,21 +1,18 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 const BASEURL = process.env.REACT_APP_BASE_URL_API;
-const navigate= useNavigate
 
 // Login
-export const handleLoginAPI = async (URLS, body) => {
+export const handleLoginAPI = async ({email, password},URLS, body) => {
   try {
-    console.log("UserData:", body);
+    console.log("UserData:", {email, password});
 
-    const response = await axios.post(`${BASEURL}login`, body);
+    const response = await axios.post(`${BASEURL}login`, {email, password});
     const { status, message, data: userData } = response.data;
     // console.log("response", response);
-    if (status) {
+    if (response.data.status) {
       console.log('Login successful');
-      navigate('/user-dashboard');
     } else {
-      throw new Error(message);
+      console.error(response.data.message);
     }
 
     return { status, message, userData };
