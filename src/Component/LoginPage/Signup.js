@@ -16,48 +16,58 @@ const Signup = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const [userData, setUserData] = useState({
+    studentName: "",
+    countryCode: "IN",
+    phoneNumber: "",
+    email: "",
+    password: "",
+  });
+
   const [showA, setShowA] = useState(false);
+  const [toastMessage, setToastMessage] = useState(false);
 
   const navigate = useNavigate;
 
-  const [userData, setUserData] = useState({
-    studentName: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
-    countryCode: "IN",
-  });
-
-  const [errors, setErrors] = useState({
-    phoneNumber: "",
-    email: "",
-    password: "",
-  });
-  // const toggleShowA = () => setShowA(!showA);
-
- const handleSignup = async () => {
-    try {
-      const response = await handleSignupAPI(userData);
-
-      if (response.status === true) {
-        navigate("/login");
-      } else {
-        console.log("Signup failed. Please try again");
-        setShowA(true); // Show the Toast on error
-      }
-    } catch (error) {
-      console.log("Signup API failed, Please fix the errors.", error);
-      setShowA(true); // Show the Toast on error
-    }
-  };
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData((prevUserData) => ({
-      ...prevUserData,
+    setUserData((prevData) => ({ ...prevData, [name]: value }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+  };
 
-      [name]: value,
-    }));
+  const handleSignup = async () => {
+    try {
+      const response = await handleSignupAPI(userData);
+      if (response && response.data) {
+        if (response.data.status) {
+          console.log("Signup successful");
+          navigate("/login");
+        } else {
+          console.error("Signup failed:", response.data.message);
+          setErrors(
+            response.data.errors || { serverError: response.data.message }
+          );
+          setToastMessage(response.data.message);
+        }
+      } else {
+        console.error("Signup response is undefined or missing data property");
+        setToastMessage("unexpected response from the server");
+      }
+    } catch (error) {
+      console.error(
+        "Error during signup:",
+        error.response?.data || error.message
+      );
+      setToastMessage("Error during signup, please try again");
+      // Handle network errors or other unexpected errors
+      // Display a general error message or take appropriate action
+    }
+  };
+
+  const handleToastClose = () => {
+    setToastMessage("");
   };
   return (
     <div>
@@ -182,22 +192,17 @@ const Signup = () => {
                   <Button className="common-btn w-100" onClick={handleSignup}>
                     Next
                   </Button>
-                  <Row>
-                    <Col className="mb-2">
-                      <Toast show={showA} onClose={()=>setShowA(false)}>
-                        <Toast.Header>
-                          <img
-                            src="holder.js/20x20?text=%20"
-                            className="rounded me-2"
-                            alt=""
-                          />
-                          <strong className="me-auto">
-                            Signup Failed, Please try again
-                          </strong>
-                        </Toast.Header>
-                      </Toast>
-                    </Col>
-                  </Row>
+                  <Toast
+                    show={!!toastMessage}
+                    onClose={handleToastClose}
+                    delay={5000}
+                    autohide
+                  >
+                    <Toast.Header>
+                      <strong className="me-auto ">Validation Error</strong>
+                    </Toast.Header>
+                    <Toast.Body>{toastMessage}</Toast.Body>
+                  </Toast>
 
                   <p>
                     <small>

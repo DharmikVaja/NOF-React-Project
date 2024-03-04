@@ -6,25 +6,26 @@ const navigate= useNavigate
 // Login
 export const handleLoginAPI = async (URLS, body) => {
   try {
-    console.log("UserData", body);
+    console.log("UserData:", body);
 
     const response = await axios.post(`${BASEURL}login`, body);
+    const { status, message, data: userData } = response.data;
     // console.log("response", response);
-    if (response.data.status) {
-
-      console.log("Login successful", );
-      navigate("/user-dashboard")
+    if (status) {
+      console.log('Login successful');
+      navigate('/user-dashboard');
     } else {
+      throw new Error(message);
     }
 
-    return response.data;
+    return { status, message, userData };
   } catch (error) {
-    console.error("Error during login:", error.response.data);
+    console.error('Error during login:', error.message);
 
     // Handle error, show error message, etc.
     throw error;
   }
-};
+}
 
 // Signup
 export const handleSignupAPI = async (body) => {
@@ -42,15 +43,10 @@ export const handleSignupAPI = async (body) => {
     // return response.data;
   } catch (error) {
     console.error("Error during signup:", error.response.data);
-
+    // console.log(error.response.data.message)
     // Handle error, show error message, etc.
     throw error;
   }
 };
 
-// admin
-export const handleAdminAPI = async (body) => {
-  // try{
-  //   const response = await
-  // }
-};
+
