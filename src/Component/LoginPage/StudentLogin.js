@@ -34,9 +34,9 @@ const SchoolLogin = () => {
   const handleLogin = async () => {
     try {
       const response = await handleLoginAPI({ email, password });
+      console.log(response);
       if (response.status) {
-        // console.log("Login successful");
-        alert("Login Successful")
+        localStorage.setItem("token",response.userData.token)
         toast.success("Login Successful");
         navigate("/user-dashboard");
       } else {
@@ -58,6 +58,7 @@ const SchoolLogin = () => {
   // console.log("hello", userData);
   return (
     <div>
+    <ToastContainer />
       <header className="header-main-login">
         <div className="container">
           <div className="row">
@@ -147,7 +148,7 @@ const SchoolLogin = () => {
             </div>
           </div>
         </div>
-        <ToastContainer />
+        
       </section>
     </div>
   );
