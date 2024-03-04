@@ -14,31 +14,30 @@ import PrivacyPolicy from "./Component/FooterLinks/PrivacyPolicy/PrivacyPolicy";
 import TermsService from "./Component/FooterLinks/TermsService/TermsService";
 import Disclaimer from "./Component/FooterLinks/Disclaimer/Disclaimer";
 import RefundCancel from "./Component/FooterLinks/RefundCancel/RefundCancel";
-// import RegModal from "./Component/Modal/RegisterModal/RegModal";
 import StudentLogin from "./Component/LoginPage/StudentLogin";
 import SchoolLogin from "./Component/LoginPage/SchoolLogin";
 import Product from "./Component/Product/Product";
 import Dashboard from "./Component/Dashboard/UserDashboard/Dashboard";
-// import SelectTest from "./Component/Dashboard/SelectTest/SelectTest";
-// import DemoTest from "./Component/Dashboard/SelectTest/DemoTest";
-// import Instruction from "./Component/Dashboard/SelectTest/Instruction";
-// import ExamGuideline from "./Component/Dashboard/ExamGuideline/ExamGuideline";
-// import ResultReport from "./Component/Dashboard/ResultReport/ResultReport";
-// import PracticeEBook from "./Component/Dashboard/PracticeBook/PracticeEBook";
-// import AfterReport from "./Component/Dashboard/ResultReport/AfterReport";
-// import ActivityLog from "./Component/Dashboard/ActivityLog/ActivityLog";
-// import FAQs from "./Component/Dashboard/FAQs/FAQs";
-// import OlymSyllabus from "./Component/Dashboard/OlymSyllabus/OlymSyllabus";
-// import AccountSettings from "./Component/Dashboard/AccountSettings/AccountSettings";
-// import DashUserProfile from "./Component/Dashboard/UserAccountComp/DashUserProfile";
-// import DashNotification from "./Component/Dashboard/UserAccountComp/DashNotification";
-// import OrderSummary from "./Component/Dashboard/PracticeBook/OrderSummary";
-// import Ticket from "./Component/Dashboard/FAQs/Ticket";
-// import AddressManager from "./Component/Dashboard/AccountSettings/AddressManager";
-// import MyOrdersComp from "./Component/Dashboard/AccountSettings/MyOrdersComp";
-// import TransactionHistory from "./Component/Dashboard/AccountSettings/TransactionHistory";
-// import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
-// import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
+import SelectTest from "./Component/Dashboard/SelectTest/SelectTest";
+import DemoTest from "./Component/Dashboard/SelectTest/DemoTest";
+import Instruction from "./Component/Dashboard/SelectTest/Instruction";
+import ExamGuideline from "./Component/Dashboard/ExamGuideline/ExamGuideline";
+import ResultReport from "./Component/Dashboard/ResultReport/ResultReport";
+import PracticeEBook from "./Component/Dashboard/PracticeBook/PracticeEBook";
+import AfterReport from "./Component/Dashboard/ResultReport/AfterReport";
+import ActivityLog from "./Component/Dashboard/ActivityLog/ActivityLog";
+import FAQs from "./Component/Dashboard/FAQs/FAQs";
+import OlymSyllabus from "./Component/Dashboard/OlymSyllabus/OlymSyllabus";
+import AccountSettings from "./Component/Dashboard/AccountSettings/AccountSettings";
+import DashUserProfile from "./Component/Dashboard/UserAccountComp/DashUserProfile";
+import DashNotification from "./Component/Dashboard/UserAccountComp/DashNotification";
+import OrderSummary from "./Component/Dashboard/PracticeBook/OrderSummary";
+import Ticket from "./Component/Dashboard/FAQs/Ticket";
+import AddressManager from "./Component/Dashboard/AccountSettings/AddressManager";
+import MyOrdersComp from "./Component/Dashboard/AccountSettings/MyOrdersComp";
+import TransactionHistory from "./Component/Dashboard/AccountSettings/TransactionHistory";
+import AddStudent from "./Component/Dashboard/AddStudent/AddStudent";
+import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
 import Signup from "./Component/LoginPage/Signup";
 import Admin from "./Component/LoginPage/Admin";
 import ProtectedRoute from "./Component/ProtectedRoute.js/ProtectedRoute";
@@ -72,27 +71,27 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-dashboard" element={<AdminPanel />} />
         <Route path="/login" element={<StudentLogin />} />
-        <Route path="/user-dashboard" element={<Dashboard />} />
-        <Route path="/select-test" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/demo-test" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/instructions" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/exam-guideline" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/result-and-report" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/practice-books" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/order-summary" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/after-report" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/activity-logs" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/faqs" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/faqs-ticket" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/ticket-history" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/olympiad-syllabus" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/account-setting" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/user-profile" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/user-notification" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/address-manager" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/user-orders" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/transaction-history" element={<ProtectedRoute Comp={StudentLogin} />} />
-        <Route path="/add-student" element={<ProtectedRoute Comp={StudentLogin} />} />
+        <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
+        <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />
+        <Route path="/demo-test" element={<ProtectedRoute><DemoTest/></ProtectedRoute>} />
+        <Route path="/instructions" element={<ProtectedRoute><Instruction/></ProtectedRoute>} />
+        <Route path="/exam-guideline" element={<ProtectedRoute><ExamGuideline/></ProtectedRoute>}/>
+        <Route path="/result-and-report" element={<ProtectedRoute><ResultReport/></ProtectedRoute>} />
+        <Route path="/practice-books" element={<ProtectedRoute><PracticeEBook/></ProtectedRoute>} />
+        <Route path="/order-summary" element={<ProtectedRoute><OrderSummary/></ProtectedRoute>} />
+        <Route path="/after-report" element={<ProtectedRoute><AfterReport/></ProtectedRoute>} />
+        <Route path="/activity-logs" element={<ProtectedRoute><ActivityLog/></ProtectedRoute>} />
+        <Route path="/faqs" element={<ProtectedRoute><FAQs/></ProtectedRoute>}/>
+        <Route path="/faqs-ticket" element={<ProtectedRoute><Ticket/></ProtectedRoute>}/>
+        <Route path="/ticket-history" element={<ProtectedRoute><TicketHistory/></ProtectedRoute>} />
+        <Route path="/olympiad-syllabus" element={<ProtectedRoute><OlymSyllabus/></ProtectedRoute>} />
+        <Route path="/account-setting" element={<ProtectedRoute><AccountSettings/></ProtectedRoute>} />
+        <Route path="/user-profile" element={<ProtectedRoute><DashUserProfile/></ProtectedRoute>} />
+        <Route path="/user-notification" element={<ProtectedRoute><DashNotification/></ProtectedRoute>} />
+        <Route path="/address-manager" element={<ProtectedRoute><AddressManager/></ProtectedRoute>} />
+        <Route path="/user-orders" element={<ProtectedRoute><MyOrdersComp/></ProtectedRoute>} />
+        <Route path="/transaction-history" element={<ProtectedRoute><TransactionHistory/></ProtectedRoute>} />
+        <Route path="/add-student" element={<ProtectedRoute><AddStudent/></ProtectedRoute>} />
       </Routes>
     </>
   );

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const ProtectedRoute = ({role, children, path}) => {
- 
+const ProtectedRoute = ({ children}) => {
+
  const login = localStorage.getItem('token');
  console.log("login",login)
 if(!login){
 return <Navigate to= "/" />
 }
-return<Navigate to="/user-dashboard"/>
- 
+return children
+
 }
 export default ProtectedRoute;
