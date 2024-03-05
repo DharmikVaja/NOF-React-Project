@@ -215,8 +215,8 @@
   margin: 6px 0;
 }
 .dashboard-layout .right-image .logo {
-  height: 87px;
-  width: 87px;
+  /* height: 87px;
+  width: 87px; */
   border-radius: 50%;
   border: 2px solid #597ad1;
 }
@@ -375,6 +375,21 @@
   text-transform: uppercase;
   color: #597ad1;
 }
+.Dash-user-tabs{
+  background-color: #ebebeb72;
+  
+  color:#597ad1 ;
+  font-weight: 450;
+  font-size: 17px;
+  /* margin: 5px 0; */
+  height:43px;
+  
+}
+.dash-user1-update{
+  font-weight: 600;
+  font-size: 20px;
+}
+
 .same-para-dash {
   font-style: normal;
   font-weight: 500;

@@ -42,6 +42,7 @@ import Signup from "./Component/LoginPage/Signup";
 import Admin from "./Component/LoginPage/Admin";
 import ProtectedRoute from "./Component/ProtectedRoute.js/ProtectedRoute";
 import AdminPanel from "./Component/Admin Panel/AdminPanel";
+import ForgotPassword from "./Component/LoginPage/ForgotPassword";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-dashboard" element={<AdminPanel />} />
+        <Route path="/forgot-psd" element={<ForgotPassword />} />
         <Route path="/login" element={<StudentLogin />} />
         <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
         <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />

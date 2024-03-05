@@ -9,10 +9,15 @@ import { BsGenderAmbiguous } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
 import Form from "react-bootstrap/Form";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 const DashUser1Student = () => {
   const [selectedClass, setSelectedClass] = useState("Class 8");
   const [selectedGender, setSelectedGender] = useState("Male");
+
+  const [smShow, setSmShow] = useState(false);
 
   const handleClassChange = (e) => {
     setSelectedClass(e.target.value);
@@ -36,7 +41,7 @@ const DashUser1Student = () => {
           </div>
         </div>
         {/*  */}
-        <div className="delivery-form mt-4 p-5">
+        <div className="delivery-form pt-5">
           <div className="row">
             <div className="col md-5">
               <div className="input-group mb-3">
@@ -142,9 +147,28 @@ const DashUser1Student = () => {
 
           <p className="error-msg"></p>
           <div className="d-flex mt-3 gap-2">
-            <button className="common-all-btn">Request Change</button>
-            <button className="common-all-btn">Update</button>
-            <button className="common-all-btn">Back</button>
+            <Link to="/faqs-ticket">
+              <button className="common-all-btn">Request Change</button>
+            </Link>
+            <Link onClick={() => setSmShow(true)}>
+              <button className="common-all-btn">Update</button>
+            </Link>
+            <Modal
+              size="sm"
+              show={smShow}
+              onHide={() => setSmShow(false)}
+              aria-labelledby="example-modal-sizes-title-sm"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="example-modal-sizes-title-sm">
+                </Modal.Title>
+                <Modal.Body className="dash-user1-update">Student Details Updated Successfully!!</Modal.Body>
+
+              </Modal.Header>
+            </Modal>
+            <Link to="/account-setting">
+              <button className="common-all-btn">Back</button>
+            </Link>
           </div>
         </div>
       </div>

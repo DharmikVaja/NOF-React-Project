@@ -16,7 +16,7 @@ const DashUser2Parent = () => {
   return (
     <>
       <div className="pad-set">
-      <ScrollToTop/>
+        <ScrollToTop />
         <div className="delivery-form mt-4">
           <div className="row">
             <div className="col-md-5">
@@ -96,7 +96,7 @@ const DashUser2Parent = () => {
           </div>
           <p className="error-msg" />
           <div className="d-flex mt-3 gap-2">
-            <button className="common-all-btn">Save</button>
+            <input type="submit" value={"Save"} className="common-all-btn" />
           </div>
         </div>
       </div>

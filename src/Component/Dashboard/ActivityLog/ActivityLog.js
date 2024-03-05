@@ -44,20 +44,23 @@ const ActivityLog = () => {
               <div className="row">
                 <div className="col-md-12">
                   <div className="pad-set">
-                    <div className="d-flex align-items-center table-head-drop">
-                      <div className="mx-5">
-                        <MdOutlineManageSearch className="fs-3" />
-                      </div>
-                      <div className="search-div">
-                        <div className="input-group activity-search-input">
-                          <input
-                            placeholder="Search"
-                            name="search"
-                            type="text"
-                            className="search-data play-search1 form-control"
-                            value={searchValue}
-                            onChange={handleSearchChange}
-                          />
+                    <div className="d-flex align-items-center justify-content-between table-head-drop">
+                      <div className="d-flex justify-content-start align-items-center">
+                        <div>
+                          <MdOutlineManageSearch className="fs-3" />
+                        </div>
+
+                        <div className="search-div ms-3">
+                          <div className="input-group activity-search-input">
+                            <input
+                              placeholder="Search"
+                              name="search"
+                              type="text"
+                              className="search-data play-search1 form-control"
+                              value={searchValue}
+                              onChange={handleSearchChange}
+                            />
+                          </div>
                         </div>
                       </div>
                       <div>
@@ -70,40 +73,38 @@ const ActivityLog = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex align-items-center mx-5">
-                    <table className=" table w-100 act-table">
-                      <tr>
-                        <th>S.No</th>
-                        <th>Date & Time</th>
-                        <th>Activity</th>
-                        <th>Activity Description</th>
-                      </tr>
-                      <tr>
-                        <td>1 </td>
-                        <td>Feb 20, 2024 10:12 PM</td>
-                        <td>LOGGED OUT</td>
-                        <td>
-                          You have logged out Tue Feb 20 2024 at 10:12:23 PM
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Feb 20, 2024 10:12 PM</td>
-                        <td>LOGGED OUT</td>
-                        <td>
-                          You have logged out Tue Feb 20 2024 at 10:12:23 PM
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3 </td>
-                        <td>Feb 20, 2024 10:12 PM</td>
-                        <td>LOGGED OUT</td>
-                        <td>
-                          You have logged out Tue Feb 20 2024 at 10:12:23 PM
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
+                  <table className=" table act-table table-responsive w-max-width ">
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Date & Time</th>
+                      <th scope="col">Activity</th>
+                      <th scope="col">Activity Description</th>
+                    </tr>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Feb 20, 2024 10:12 PM</td>
+                      <td>LOGGED OUT</td>
+                      <td>
+                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Feb 20, 2024 10:12 PM</td>
+                      <td>LOGGED OUT</td>
+                      <td>
+                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Feb 20, 2024 10:12 PM</td>
+                      <td>LOGGED OUT</td>
+                      <td>
+                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
+                      </td>
+                    </tr>
+                  </table>
                   <div className="d-flex justify-content-center paginate-register">
                     <div className="d-flex">
                       <div className="d-flex justify-content-center paginate-register">

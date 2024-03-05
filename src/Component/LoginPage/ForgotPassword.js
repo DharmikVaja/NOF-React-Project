@@ -1,4 +1,9 @@
 import React from "react";
+import LoginBGImg from "../../assets/login-after-btn-bg.png";
+import logoImg from "../../assets/logo.png";
+import { FaUser } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -9,7 +14,7 @@ const ForgotPassword = () => {
             <div className="row">
               <div className="col-md-3 mb-2 mb-md-0">
                 <div>
-                  <img alt="LogoImg" className="logoImg" />
+                  <img src={logoImg} alt="LogoImg" className="logoImg" />
                 </div>
               </div>
             </div>
@@ -20,42 +25,35 @@ const ForgotPassword = () => {
             <div className="align-items-center row">
               <div className="ms-auto col-lg-4 ">
                 <div>
-                  <img alt="Login" className="img-fluid img-login-side" />
+                  <img
+                    src={LoginBGImg}
+                    alt="Login"
+                    className="img-fluid img-login-side"
+                  />
                 </div>
               </div>
               <div className="ms-auto col-lg-6">
                 <div className="login-side-box">
                   <div className="inner-box-login">
-                    <h2>Student Login</h2>
-                    <p>Please login to continue</p>
+                    <h2>Forgot Password</h2>
+                    <p>Enter your register email ID to reset your password</p>
                     <div className="mb-3 input-group">
-                      <span className="input-group-text"></span>
+                      <span className="input-group-text">
+                      <IoMdMail />
+                      </span>
                       <input
                         placeholder="Email"
                         name="email"
                         type="email"
                         className="form-control"
-                        value=""
+                        defaultValue=""
                       />
                     </div>
-                    <div className="mb-3 input-group">
-                      <span className="input-group-text"></span>
-                      <input
-                        placeholder="Password"
-                        name="password"
-                        type="password"
-                        id="id_pass"
-                        className="form-control"
-                        value=""
-                      />
-                      <span className="input-group-text"></span>
-                    </div>
-                    <p className="forgot-link">
-                      <a href="/forgot-pass">Forgot Password?</a>
-                    </p>
+                    
+                   
                     <p className="error-msg"></p>
-                    <button className="common-btn w-100">Login</button>
-                    <button className="common-btn w-100 m-0">Back</button>
+                    <button className="common-btn w-100" >Submit</button>
+                    <p>Back to <Link to="/login">login</Link></p>
                   </div>
                 </div>
               </div>

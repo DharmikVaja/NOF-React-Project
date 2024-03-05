@@ -5,7 +5,7 @@ import logoImg from "../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
 import { Toast } from "react-bootstrap";
@@ -38,6 +38,7 @@ const SchoolLogin = () => {
       if (response.status) {
         localStorage.setItem("token",response.userData.token)
         toast.success("Login Successful");
+        alert("Login Successfully")
         navigate("/user-dashboard");
       } else {
         console.error("Login failed:", response.message);
@@ -48,9 +49,9 @@ const SchoolLogin = () => {
       }
     } catch (error) {
       console.error("Error during login:", error.response?.data.message);
-      setErrorMessage(
-        "Login failed. Please check your credentials and try again."
-        );
+      // setErrorMessage(
+      //   "Login failed. Please check your credentials and try again."
+      //   );
         toast.error("Login failed. Please check your credentials and try again.")
     }
   };
@@ -121,7 +122,7 @@ const SchoolLogin = () => {
                     </span>
                   </div>
                   <p className="forgot-link">
-                    <a href="/forgot-pass">Forgot Password?</a>
+                    <Link to="/forgot-psd">Forgot Password?</Link>
                   </p>
                   <p className="error-msg"></p>
 
