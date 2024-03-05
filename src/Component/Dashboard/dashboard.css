@@ -14,62 +14,69 @@
   min-height: 100vh;
   background-color: #eef6ff;
 }
-@media (max-width: 992px){
-.dashboard-layout {
+@media (max-width: 992px) {
+  .dashboard-layout {
     padding-left: 0px;
     padding-top: 60px;
-}}
-@media (max-width: 768px){
-.dashboard-layout .grey-dash-box {
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-layout .grey-dash-box {
     min-height: auto;
-}}
-@media (max-width: 768px){
-.dashboard-layout h5 span {
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-layout h5 span {
     font-size: 10px !important;
     line-height: 16px !important;
-}}
-@media (max-width: 768px){
-.dashboard-layout h5 {
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-layout h5 {
     display: block;
     line-height: 18px;
-}}
-@media (max-width: 992px){
-.dashboard-layout .navbar-collapse {
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-layout .navbar-collapse {
     position: absolute !important;
     top: 70px;
     width: 100%;
     left: 0;
     right: 0;
     padding: 20px 15px;
-}}
-@media (max-width: 992px){
-.dashboard-layout .navbar-collapse.show .navbar-nav {
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-layout .navbar-collapse.show .navbar-nav {
     left: 0px !important;
-}}
-@media (max-width: 360px){
-.navbar-toggler {
+  }
+}
+@media (max-width: 360px) {
+  .navbar-toggler {
     font-size: 14px;
     padding: 5px;
-}}
-@media (max-width: 560px){
-.border-box-new iframe {
+  }
+}
+@media (max-width: 560px) {
+  .border-box-new iframe {
     height: auto;
     min-height: 185px;
     width: 100% !important;
-}}
-@media (max-width: 992px){
-.border-box-new iframe {
+  }
+}
+@media (max-width: 992px) {
+  .border-box-new iframe {
     height: auto;
     min-height: 300px;
     width: 100% !important;
-}}
+  }
+}
 .navbar-toggler {
   border: 1px solid #fff !important;
-  
 }
 .navbar-toggler img {
- max-height: 15px;
-  
+  max-height: 15px;
 }
 .dashboard-layout .login-header-home .navbar-brand img {
   height: 49px;
@@ -297,25 +304,23 @@
   border-radius: 10px;
   position: relative;
 }
-.nav-link.active {
-  color: blue;
-}
-.dashboard-layout
-  .login-header-home
-  .navbar-expand-lg
-  .navbar-nav
-  .nav-link:active,
-.dashboard-layout
-  .login-header-home
-  .navbar-expand-lg
-  .navbar-nav
-  .nav-link.active {
-  background: #597ad1;
-  box-shadow: 4px 4px 32px rgba(103, 90, 255, 0.07);
-  border-radius: 9px;
-  color: #fff;
-}
 
+.dashboard-links {
+  padding: 15px  ;
+  width: 100%;
+  font-weight: 500 ;
+}
+.dashboard-links:visited {
+  color: #000 ;
+}
+.dashboard-links:active,
+.dashboard-links:hover,  
+.dashboard-links:focus {
+  padding: 15px 0px ;
+  color: #fff ;
+  background-color: #597ad1  ;
+  font-weight: 500 ;
+}
 .table-exam-schedule tr th {
   padding: 2px 18px;
   vertical-align: middle;
@@ -357,13 +362,7 @@
   color: #44475b;
   margin-bottom: 0;
 }
-.dashboard-layout .login-header-home .navbar-expand-lg .navbar-nav .nav-link {
-  margin: 4px 0px;
-  color: #000;
-  border-radius: 10px;
-  padding: 10px 10px;
-  font-size: 15px;
-}
+
 .edit-image {
   position: absolute !important;
   bottom: 0 !important;

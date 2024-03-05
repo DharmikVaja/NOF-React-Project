@@ -12,25 +12,31 @@ import Modal from "react-bootstrap/Modal";
 import { FaQuestion } from "react-icons/fa6";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import LogoImgUp from "../../../assets/Dashboard/menu-icon-dashboard-up.png";
-import {  IoSchoolOutline, IoSettingsOutline } from "react-icons/io5";
+import { IoSchoolOutline, IoSettingsOutline } from "react-icons/io5";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { BsJournalText } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { MdListAlt } from "react-icons/md";
+import Stack from "react-bootstrap/Stack";
 
 const NavbarDashboard = () => {
   const [isNavBarsVisible, setNavBarsVisible] = useState(false);
   const [smShow, setSmShow] = useState(false);
 
+  const [activeMenuItem, setActiveMenuItem] = useState("");
+
   const handleToggleNavBars = () => {
     setNavBarsVisible(!isNavBarsVisible);
+  };
+  const handleMenuItemClick = (menuItem) => {
+    setActiveMenuItem(menuItem);
   };
 
   // const [smShow, setSmShow] = useState(false);
 
   return (
     <div className="">
-    <ScrollToTop/>
+      <ScrollToTop />
       <nav className="navbar navbar-expand-lg navbar-light sticky-top ">
         <div className="container-fluid ">
           <div className="w-100 m-auto row">
@@ -39,134 +45,146 @@ const NavbarDashboard = () => {
                 <a href="/" className="navbar-brand">
                   <img src={NavLogo} alt="logo " />
                 </a>
-                 <div className={`navbar-collapse ${isNavBarsVisible ? 'show' : 'collapse'}`} id="basic-navbar-nav">
-        <div className="me-auto navbar-nav navBars">
-                    <Link
-                      role="button"
-                      to="/user-dashboard"
-                      className="nav-link"
-                      tabIndex={0}
+                <div
+                  className={`navbar-collapse ${
+                    isNavBarsVisible ? "show" : "collapse"
+                  }`}
+                  id="basic-navbar-nav"
+                >
+                  <div className="me-auto navbar-nav navBars">
+                    <Stack
+                      direction="vertical"
+                      gap={0.9}
+                      className="col-md-12 mx-auto"
                     >
-                      <RxDashboard
-                        className="fs-4 me-4"
-                        
-                      />
-                      Dashboard
-                    </Link>
-                    <Link
-                      role="button"
-                      to="/select-test"
-                      className="nav-link"
-                      tabIndex={0}
-                    >
-                     <IoSchoolOutline  className="fs-4 me-4" />
-                      NOF Olympiad Exams
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/exam-guideline"
-                    >
-                      <HiOutlineClipboardDocumentList  className="fs-4 me-4" />
-                      Exam Guidelines
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/practice-books"
-                      //
-                    >
-                      <BsJournalText  className="fs-4 me-4" />
-                      NOF-Practice E-books
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/result-and-report"
-                    >
-                      {/* <RiPieChart2Line /> */}
-                      <AiOutlinePieChart className="fs-4 me-4"/>
-                      Results and Reports
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/activity-logs"
-                    >
-                      <GrDocumentPerformance className="fs-4 me-4"/>
-                      Activity Logs
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/faqs"
-                    >
-                      <FaQuestion className="fs-4 me-4" />
-                      FAQs
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/olympiad-syllabus"
-                    >
-                      <MdListAlt className="fs-4 me-4" />
-                      Olympiads Syllabus
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/account-setting"
-                    >
-                      <IoSettingsOutline className="fs-4 me-4" />
-                      Account Settings
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link"
-                      tabIndex={0}
-                      to="/add-student"
-                    >
-                      <FaRegPlusSquare className="fs-4 me-4" /> Add New Student
-                    </Link>
-                    {/*  */}
-                    <Link className="nav-link " onClick={() => setSmShow(true)}>
-                      <HiOutlineLogout className="fs-4 me-4 " /> Logout
-                    </Link>
-                    <Link
-                      role="button"
-                      className="nav-link me-2"
-                      tabIndex={0}
-                      to="/"
-                    >
-                      <Modal
-                        size="sm"
-                        show={smShow}
-                        onHide={() => setSmShow(false)}
-                        aria-labelledby="example-modal-sizes-title-sm"
+                      <Link
+                        role="button12"
+                        to="/user-dashboard"
+                        className={`nav-link dashboard-links`}
+                        tabIndex={0}
+                        onClick={() => handleMenuItemClick("dashboard")}
                       >
-                        <Modal.Header closeButton>
-                          <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
-                          <Modal.Body>Logout successfully!!</Modal.Body>
-                        </Modal.Header>
-                      </Modal>
-                    </Link>
-                    {/*  */}
+                        <RxDashboard className="fs-4 me-4" />
+                        Dashboard
+                      </Link>
+                      <Link
+                        role="button"
+                        to="/select-test"
+                        className={`nav-link dashboard-links`}
+                        tabIndex={0}
+                      >
+                        <IoSchoolOutline className="fs-4 me-4" />
+                        NOF Olympiad Exams
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/exam-guideline"
+                      >
+                        <HiOutlineClipboardDocumentList className="fs-4 me-4" />
+                        Exam Guidelines
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/practice-books"
+                        //
+                      >
+                        <BsJournalText className="fs-4 me-4" />
+                        NOF-Practice E-books
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/result-and-report"
+                      >
+                        {/* <RiPieChart2Line /> */}
+                        <AiOutlinePieChart className="fs-4 me-4" />
+                        Results and Reports
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/activity-logs"
+                      >
+                        <GrDocumentPerformance className="fs-4 me-4" />
+                        Activity Logs
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/faqs"
+                      >
+                        <FaQuestion className="fs-4 me-4" />
+                        FAQs
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/olympiad-syllabus"
+                      >
+                        <MdListAlt className="fs-4 me-4" />
+                        Olympiads Syllabus
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/account-setting"
+                      >
+                        <IoSettingsOutline className="fs-4 me-4" />
+                        Account Settings
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link dashboard-links"
+                        tabIndex={0}
+                        to="/add-student"
+                      >
+                        <FaRegPlusSquare className="fs-4 me-4" /> Add New
+                        Student
+                      </Link>
+                      {/*  */}
+                      <Link
+                        className="nav-link dashboard-links "
+                        onClick={() => setSmShow(true)}
+                      >
+                        <HiOutlineLogout className="fs-4 me-4 " /> Logout
+                      </Link>
+                      <Link
+                        role="button"
+                        className="nav-link me-2"
+                        tabIndex={0}
+                        to="/"
+                      >
+                        <Modal
+                          size="sm"
+                          show={smShow}
+                          onHide={() => setSmShow(false)}
+                          aria-labelledby="example-modal-sizes-title-sm"
+                        >
+                          <Modal.Header closeButton>
+                            <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
+                            <Modal.Body>Logout successfully!!</Modal.Body>
+                          </Modal.Header>
+                        </Modal>
+                      </Link>
+                      {/*  */}
+                    </Stack>
                   </div>
                 </div>
-                
+
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="success"
                     id="dropdown-basic-button"
                     type="button"
-                    
                     className="profile-dropdown bottom dropdown-toggle btn btn-primary bg-transparent"
                   >
                     <img src={NOFUserLogo} alt="Nof User Logo" />
@@ -191,15 +209,15 @@ const NavbarDashboard = () => {
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
-                
 
                 <button
                   aria-controls="basic-navbar-nav"
                   type="button"
                   aria-label="Toggle navigation"
-                
-                  className={`navbar-toggler collapsed ${isNavBarsVisible ? 'active' : ''}`}
-        onClick={handleToggleNavBars}
+                  className={`navbar-toggler collapsed ${
+                    isNavBarsVisible ? "active" : ""
+                  }`}
+                  onClick={handleToggleNavBars}
                 >
                   <img src={LogoImgUp} className="img-fluid" alt="" />
                 </button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
@@ -11,7 +11,7 @@ import { FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
 
 const YourComponent = () => {
-  // const [show1, setShow1] = useState(false); 
+  // const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
 
@@ -26,6 +26,11 @@ const YourComponent = () => {
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
+
+  const [isToken, setIsToken] = useState(false);
+  useEffect(() => {
+    setIsToken(localStorage.getItem("token"));
+  }, []);
 
   const handleFormSubmit = () => {
     // Handle form submission logic
@@ -44,11 +49,10 @@ const YourComponent = () => {
 
           <div className="d-flex col-md-6  col-sm-12 justify-content-end  align-items-center gap-2">
             <div className="d-flex justify-content-start m-1">
-              
-                <Link role="button" className="cart-wl-btn" to="/wishlist">
-                  <img src={wishlist} alt="wishlist" className="wl-cart-img" />
-                  Wishlist
-                </Link>
+              <Link role="button" className="cart-wl-btn" to="/wishlist">
+                <img src={wishlist} alt="wishlist" className="wl-cart-img" />
+                Wishlist
+              </Link>
 
               <div className="position-relative ">
                 <Link
@@ -64,22 +68,33 @@ const YourComponent = () => {
             </div>
 
             <div className="col-md-4 text-end d-flex justify-content-end ">
-              <Button
-                type="button"
-                className="login-btn "
-                onClick={handleShow2}
-              >
-                Login
-              </Button>
-              <Link to="/signup">
-                <Button
-                  type="button"
-                  className="sign-up btn"
-                  // onClick={handleShow1}
-                >
-                  Signup
-                </Button>
-              </Link>
+              {isToken ? (
+                <Link to="/user-dashboard">
+                  <Button type="button" className="sign-up btn">
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <Button
+                    type="button"
+                    className="login-btn "
+                    onClick={handleShow2}
+                  >
+                    Login
+                  </Button>
+                  <Link to="/signup">
+                    <Button
+                      type="button"
+                      className="sign-up btn"
+                      // onClick={handleShow1}
+                    >
+                      Signup
+                    </Button>
+                  </Link>
+                </>
+              )}
+
               {/* Login modal */}
               <Modal
                 show={show2}
