@@ -9,27 +9,27 @@ const Footer = () => {
         <div className="container">
           <div className="row ">
             <div className="col-lg-6">
-              <ul className="link-list d-flex align-items-center">
+              <ul className="link-list d-flex align-items-center container-fluid">
                 <li>
-                  <Link to="/privacy-policy" className="footer-links">
+                  <Link to="/privacy-policy" className="">
                     Privacy Policy
                   </Link>
                 </li>
                 |
                 <li>
-                  <Link to="/terms-of-service" className="footer-links">
+                  <Link to="/terms-of-service" className="">
                     Terms Of Service 
                   </Link>
                 </li>
                 |
                 <li>
-                  <Link to="/disclaimer" className="footer-links">
+                  <Link to="/disclaimer" className="">
                     Disclaimer
                   </Link>
                 </li>
                 |
                 <li>
-                  <Link to="/refund-and-cancellation" className="footer-links">
+                  <Link to="/refund-and-cancellation" className="">
                     Refund &amp; Cancellation
                   </Link>
                 </li>

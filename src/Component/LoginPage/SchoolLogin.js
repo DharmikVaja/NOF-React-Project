@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 import { useNavigate } from "react-router-dom";
 
-const StudentLogin = () => {
+const SchoolLogin = () => {
   const [show, setShow] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -157,4 +157,4 @@ const StudentLogin = () => {
   );
 };
 
-export default StudentLogin;
+export default SchoolLogin;

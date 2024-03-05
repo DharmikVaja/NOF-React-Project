@@ -63,7 +63,7 @@ const DemoTest = () => {
                     />
                     <h4>International Math Olympiad</h4>
                     <div className="d-flex justify-content-center gap-2">
-                    <Link className="common-btn start-exam-btn" to="/instructions">
+                    <Link className="common-btn start-exam-btn" to="/purchase-course">
                         Start Demo test
                       </Link>
                     </div>
@@ -78,7 +78,7 @@ const DemoTest = () => {
                     />
                     <h4>International Science Olympiad</h4>
                     <div className="d-flex justify-content-center gap-2">
-                    <Link className="common-btn start-exam-btn" to="/instructions">
+                    <Link className="common-btn start-exam-btn" to="/purchase-course">
                         Start Demo test
                       </Link>
                     </div>

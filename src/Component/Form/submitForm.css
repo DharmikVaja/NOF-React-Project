@@ -38,8 +38,19 @@ footer {
 .get-touch-bg {
   border-radius: 215px 0px 0px 0px;
   background: #ffc426;
-  padding: 60px 55px 50px 95px;
+  padding: 48px 59px 21px 76px;
+  margin-top: 25px;
   position: relative;
+}
+.nof-get-info-heading{
+  font-family: "Montserrat Alternates", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .get-touch-bg{
+    padding: 60px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
 }
 .get-touch-info h2 {
   color: #ffc426;
@@ -128,28 +139,3 @@ textarea.submitform-control {
   border-radius: 3px 0 0 3px;
 }
 
-/* @media (max-width: 767px){
-.get-touch-info ul {
-    gap: 3px;
-}}
-@media (max-width: 1023px){
-.get-touch-info ul {
-    flex-wrap: wrap;
-}}
-@media (max-width: 767px){
-.get-touch-bg, .get-touch-bg::before {
-    border-radius: 100px 0px 0px 0px;
-    margin-left: 15px;
-}
-}
-@media (max-width: 767px){.get-touch-bg {
-    padding: 76px 55px 60px;
-}}
-@media (max-width: 1023px){
-.get-touch-bg {
-    padding: 76px 80px 60px;
-}}
-@media (max-width: 1199px){
-.get-touch-bg {
-    padding: 79px 96px 60px;
-}} */

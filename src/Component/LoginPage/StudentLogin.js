@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import Col from 'react-bootstrap/Col';
 // import Row from 'react-bootstrap/Row';
 
-const SchoolLogin = () => {
+const StudentLogin = () => {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -156,4 +156,4 @@ const SchoolLogin = () => {
   );
 };
 
-export default SchoolLogin;
+export default StudentLogin;

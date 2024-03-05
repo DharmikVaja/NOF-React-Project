@@ -6,6 +6,7 @@ import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
+// import CountryFlag from "./flag&countrycode.json";
 
 const SubmitForm = () => {
   const [formData, setFormData] = useState({
@@ -78,18 +79,18 @@ const SubmitForm = () => {
       // Perform your submit logic here
       console.log("Form submitted:", formData);
     } else {
-      console.log("Form validation failed");
+      console.log("Form validation failed");  
     }
   };
 
   return (
     <>
       <footer className="footer-home-new" id="footer">
-      <div className="container">
-        <div className="row align-items-center d-flex justify-content-between">
-          <div className="offset-md-1 col-md-5 col-lg-3">
-            <div className="get-touch-info ">
-                <h2>National Olympiad Foundation</h2>
+        <div className="container">
+          <div className="row align-items-center d-flex justify-content-between ">
+            <div className="offset-md-1 col-md-5 col-lg-3">
+              <div className="get-touch-info ">
+                <h2 className="nof-get-info-heading">National Olympiad Foundation</h2>
                 <p>
                   NOF Edtech Private Limited G-1, 108, Saket Nagar Indore,
                   452018 ,Madhya Pradesh
@@ -147,8 +148,8 @@ const SubmitForm = () => {
               </div>
             </div>
 
-            <div className="col-md-6 col-lg-7">
-            <div className="get-touch-bg">
+            <div className="col-md-12 col-lg-7">
+              <div className="get-touch-bg">
                 <h2>Get in touch with us...</h2>
                 <div>
                   <form onSubmit={handleSubmit}>
@@ -185,31 +186,51 @@ const SubmitForm = () => {
 
                     <div className="form-group">
                       <label className="form-label">Phone Number</label>
-                      <div className="react-tel-input flag-phone">
-                        <input
-                          className="form-control"
-                          placeholder="Phone Number"
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
-                        <div className="flag-dropdown">
-                          <div
-                            className="selected-flag open"
-                            title="India: +91"
-                            tabIndex="0"
-                            role="button"
-                            aria-haspopup="listbox"
+
+                      {/* <select
+                        className="form-control"
+                        name="countryCode"
+                        value={formData}
+                        onChange={handleChange}
+                      >
+                        {Object.entries(CountryFlag).map(([code, country]) => (
+                          <option
+                            key={code}
+                            value={code}
+                            data-image={country.image}
                           >
-                            <div className="flag in">
-                              <div className="arrow"></div>
-                            </div>
+                            {country.emoji} {country.name} ({code})
+                          </option>
+                        ))}
+                      </select> */}
+                      <input
+                        className="form-control"
+                        placeholder="Phone Number"
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        pattern="[0-9]{10}"
+                      />
+                      <div className="flag-dropdown">
+                        <div
+                          className={`selected-flag open ${formData}`}
+                          // title={`${CountryFlag[formData.countryCode].name}: +${
+                          //   CountryFlag[formData.countryCode].callingCode
+                          // }`}
+                          tabIndex="0"
+                          role="button"
+                          aria-haspopup="listbox"
+                        >
+                          <div
+                            className={`flag ${formData}`}
+                          >
+                            <div className="arrow"></div>
                           </div>
                         </div>
                       </div>
-                      <p className="error-msg">{formErrors.phone}</p>
                     </div>
+                    <p className="error-msg">{formErrors.phone}</p>
 
                     <div className="form-group">
                       <label className="form-label">Email Address</label>

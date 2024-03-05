@@ -43,6 +43,7 @@ import Admin from "./Component/LoginPage/Admin";
 import ProtectedRoute from "./Component/ProtectedRoute.js/ProtectedRoute";
 import AdminPanel from "./Component/Admin Panel/AdminPanel";
 import ForgotPassword from "./Component/LoginPage/ForgotPassword";
+import PurchaseCourse from "./Component/Dashboard/SelectTest/PurchaseCourse";
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
         <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
         <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />
         <Route path="/demo-test" element={<ProtectedRoute><DemoTest/></ProtectedRoute>} />
+        <Route path="/purchase-course" element={<ProtectedRoute><PurchaseCourse/></ProtectedRoute>} />
         <Route path="/instructions" element={<ProtectedRoute><Instruction/></ProtectedRoute>} />
         <Route path="/exam-guideline" element={<ProtectedRoute><ExamGuideline/></ProtectedRoute>}/>
         <Route path="/result-and-report" element={<ProtectedRoute><ResultReport/></ProtectedRoute>} />
