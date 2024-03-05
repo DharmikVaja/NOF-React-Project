@@ -29,37 +29,39 @@ const SchoolLogin = () => {
     else if (name === "password") setPassword(value);
   };
 
-  const [showToast, setShowToast] = useState(false);
+  // const [showToast, setShowToast] = useState(false);
   // const toggleShowA = () => setShowToast(!showToast);
   const handleLogin = async () => {
     try {
       const response = await handleLoginAPI({ email, password });
       console.log(response);
       if (response.status) {
-        localStorage.setItem("token",response.userData.token)
+        localStorage.setItem("token", response.userData.token);
         toast.success("Login Successful");
-        alert("Login Successfully")
+        alert("Login Successfully");
         navigate("/user-dashboard");
       } else {
         console.error("Login failed:", response.message);
         setErrorMessage(
           "Login failed. Please check your credentials and try again."
         );
-        toast.error("Login failed. Please check your credentials and try again.")
+        toast.error(
+          "Login failed. Please check your credentials and try again."
+        );
       }
     } catch (error) {
       console.error("Error during login:", error.response?.data.message);
       // setErrorMessage(
       //   "Login failed. Please check your credentials and try again."
       //   );
-        toast.error("Login failed. Please check your credentials and try again.")
+      toast.error("Login failed. Please check your credentials and try again.");
     }
   };
 
   // console.log("hello", userData);
   return (
     <div>
-    <ToastContainer />
+      <ToastContainer />
       <header className="header-main-login">
         <div className="container">
           <div className="row">
@@ -118,7 +120,7 @@ const SchoolLogin = () => {
                       className="input-group-text"
                       onClick={() => setShowPassword(!showPassword)}
                     >
-                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
                     </span>
                   </div>
                   <p className="forgot-link">
@@ -149,7 +151,6 @@ const SchoolLogin = () => {
             </div>
           </div>
         </div>
-        
       </section>
     </div>
   );

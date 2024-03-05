@@ -1,7 +1,6 @@
 import React from "react";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
-import { FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router-dom";
 

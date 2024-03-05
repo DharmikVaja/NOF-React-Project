@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../dashboard.css";
 import NavLogo from "../../../../src/assets/logo.png";
 import NOFUserLogo from "../../../../src/assets/Dashboard/NOF-top-right.png";
@@ -7,7 +7,7 @@ import { GrDocumentPerformance } from "react-icons/gr";
 import { FaRegPlusSquare } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import Dropdown from "react-bootstrap/Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { FaQuestion } from "react-icons/fa6";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
@@ -31,7 +31,19 @@ const NavbarDashboard = () => {
   const handleMenuItemClick = (menuItem) => {
     setActiveMenuItem(menuItem);
   };
+  const [isToken, setIsToken] = useState(false);
 
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    setIsToken(false);
+    setSmShow(true);
+  };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isToken) {
+      navigate("/");
+    }
+  }, [isToken]);
   // const [smShow, setSmShow] = useState(false);
 
   return (
@@ -145,7 +157,7 @@ const NavbarDashboard = () => {
                         role="button"
                         className="nav-link dashboard-links"
                         tabIndex={0}
-                        to="/add-student"
+                        to="/login"
                       >
                         <FaRegPlusSquare className="fs-4 me-4" /> Add New
                         Student
@@ -153,7 +165,7 @@ const NavbarDashboard = () => {
                       {/*  */}
                       <Link
                         className="nav-link dashboard-links "
-                        onClick={() => setSmShow(true)}
+                        onClick={handleLogOut}
                       >
                         <HiOutlineLogout className="fs-4 me-4 " /> Logout
                       </Link>
