@@ -4,6 +4,7 @@ import "./content.css";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import CountryData from "./../../../src/CountryData.json";
+import { useNavigate } from "react-router-dom";
 // import "../Modal/RegisterModal/RegModal.css";
 
 const Content = () => {
@@ -14,11 +15,19 @@ const Content = () => {
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
+  const navigate= useNavigate();
 
   const handleFormSubmit = () => {
-    console.log("Selected Country:", selectedCountry);
-    console.log("Selected Class:", selectedClass);
-  };
+    if(selectedCountry && selectedClass){
+    localStorage.setItem("selectedCountry:", selectedCountry);
+    localStorage.setItem("selectedClass:", selectedClass);
+    navigate("/product")
+    
+  } else{
+    alert("please select a country and class to continue!")
+  }
+}
+
   return (
     <>
       <div className="story-home-sec ">

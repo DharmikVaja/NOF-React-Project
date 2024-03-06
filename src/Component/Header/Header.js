@@ -3,7 +3,7 @@ import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
 import cart from "../../assets/cart.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
@@ -22,21 +22,30 @@ const YourComponent = () => {
   const handleShow2 = () => setShow2(true);
 
   const handleClose3 = () => setShow3(false);
-  const handleShow3 = () => setShow3(true);
-
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedClass, setSelectedClass] = useState("");
 
   const [isToken, setIsToken] = useState(false);
   useEffect(() => {
     setIsToken(localStorage.getItem("token"));
   }, []);
 
-  const handleFormSubmit = () => {
-    // Handle form submission logic
-    // You can add your logic for form submission here
-  };
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
 
+  const handleFormSubmit = () => {
+    // setShow3(true);
+    if (selectedCountry && selectedClass) {
+      localStorage.setItem("selectedCountry:", selectedCountry);
+      localStorage.setItem("selectedClass:", selectedClass);
+      navigate("/product");
+    } else {
+      alert("please select a country and class to continue!");
+    }
+  };
+  const navigate = useNavigate();
+  const handleShow3 = () => {
+    setShow3(true);
+    // handleFormSubmit();
+  };
   return (
     <header className="homeHeader">
       <div className="container">
@@ -172,7 +181,11 @@ const YourComponent = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link onClick={handleShow3} className="nav-link listNames">
+                <Link
+                  onClick={handleShow3}
+                  // to="/product"
+                  className="nav-link listNames"
+                >
                   Product
                 </Link>
 
@@ -228,7 +241,7 @@ const YourComponent = () => {
                             <select
                               name="form-select"
                               className="modal-form-select"
-                              id="exampleForm.ControlInput2"
+                              id="exampleForm.ControlInput1"
                               onChange={(e) => setSelectedClass(e.target.value)}
                               value={selectedClass}
                             >
@@ -249,15 +262,13 @@ const YourComponent = () => {
                           </div>
                         </div>
                       </div>
-                      <Link to="/product">
-                        <Button
+                      <Button
                           variant="primary"
                           className="new-yellow-btn content-sav-btn"
                           onClick={handleFormSubmit}
                         >
                           Submit
                         </Button>
-                      </Link>
                     </div>
                   </Modal.Body>
                 </Modal>

@@ -96,6 +96,8 @@ function App() {
         <Route path="/user-orders" element={<ProtectedRoute><MyOrdersComp/></ProtectedRoute>} />
         <Route path="/transaction-history" element={<ProtectedRoute><TransactionHistory/></ProtectedRoute>} />
         <Route path="/add-student" element={<ProtectedRoute><AddStudent/></ProtectedRoute>} />
+        {/* <Route path="/quiz" element={<ProtectedRoute><Quiz/></ProtectedRoute>} /> */}
+        
       </Routes>
     </>
   );

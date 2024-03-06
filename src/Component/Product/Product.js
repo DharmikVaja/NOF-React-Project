@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Rating } from "react-simple-star-rating";
 import Header from "../Header/Header";
 import ProImg1 from "../../../src/assets/product/pro1.png";
@@ -19,8 +19,23 @@ const Product = (props) => {
   const handleRating = (rate) => {
     setRating(rate);
   };
-  const onPointerEnter = () => console.log("Enter");
-  const onPointerLeave = () => console.log("Leave");
+
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+
+  useEffect(() => {
+    const Scountry = localStorage.getItem("selectedCountry");
+    const Sclass = localStorage.getItem("selectedClass");
+
+    setSelectedCountry(Scountry || "");
+    setSelectedClass(Sclass || "");
+  });
+
+  function clearFilter(){
+
+  localStorage.removeItem("selectedCountry", null)
+  localStorage.removeItem("selectedClass", null)
+ }
 
   return (
     <div>
@@ -37,13 +52,13 @@ const Product = (props) => {
           <div className="mt-5 margin-mobile-box row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="class-country-heading">
-                <p>Country - {props.country}</p>
-                <p>Class - {props.class}</p>
+                <p>Country - {selectedCountry}</p>
+                <p>Class - {selectedClass}</p>
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
               <Link to="/">
-                <button className="common-btn">Clear filter</button>
+                <button className="common-btn" onClick={clearFilter}>Clear filter</button>
               </Link>
             </div>
           </div>
@@ -82,13 +97,11 @@ const Product = (props) => {
                       <h2 className="cursorPointerClass">
                         International Junior Science Olympiad
                       </h2>
-                      <span>CLASS: {props.class}</span>
+                      <span>CLASS: {selectedClass}</span>
                       <div className="olympiad-rating">
-                      <Rating
+                        <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -124,13 +137,11 @@ const Product = (props) => {
                       <h2 className="cursorPointerClass">
                         International Junior Science Olympiad
                       </h2>
-                      <span>CLASS: {props.class}</span>
+                      <span>CLASS: {selectedClass}</span>
                       <div className="olympiad-rating">
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -164,15 +175,13 @@ const Product = (props) => {
                     </div>
                     <div className="olympiad-info">
                       <h2 className="cursorPointerClass">
-                      International Math Olympiad
+                        International Math Olympiad
                       </h2>
                       <span>CLASS: {props.class}</span>
                       <div className="olympiad-rating">
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -213,8 +222,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -255,8 +262,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -297,8 +302,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -339,8 +342,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -381,8 +382,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -423,8 +422,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
@@ -465,8 +462,6 @@ const Product = (props) => {
                         <Rating
                           className="olympiad-rating"
                           onClick={handleRating}
-                          onPointerEnter={onPointerEnter}
-                          onPointerLeave={onPointerLeave}
                           // onPointerMove={onPointerMove}
                           initialValue={rating}
                         />
