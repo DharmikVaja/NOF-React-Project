@@ -10,29 +10,26 @@ import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
 
-const YourComponent = () => {
-  // const [show1, setShow1] = useState(false);
+const Header = ({product}) => {
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
-
-  // const handleClose1 = () => setShow1(false);
-  // const handleShow1 = () => setShow1(true);
-
+  
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
-
+  
   const handleClose3 = () => setShow3(false);
-
+  
   const [isToken, setIsToken] = useState(false);
   useEffect(() => {
     setIsToken(localStorage.getItem("token"));
   }, []);
+  
+ 
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
 
   const handleFormSubmit = () => {
-    // setShow3(true);
     if (selectedCountry && selectedClass) {
       localStorage.setItem("selectedCountry:", selectedCountry);
       localStorage.setItem("selectedClass:", selectedClass);
@@ -44,7 +41,6 @@ const YourComponent = () => {
   const navigate = useNavigate();
   const handleShow3 = () => {
     setShow3(true);
-    // handleFormSubmit();
   };
   return (
     <header className="homeHeader">
@@ -181,11 +177,10 @@ const YourComponent = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  onClick={handleShow3}
-                  // to="/product"
-                  className="nav-link listNames"
-                >
+                <Link 
+                // onClick={handleShow3}
+                to="/product"
+                 className="nav-link listNames">
                   Product
                 </Link>
 
@@ -263,12 +258,12 @@ const YourComponent = () => {
                         </div>
                       </div>
                       <Button
-                          variant="primary"
-                          className="new-yellow-btn content-sav-btn"
-                          onClick={handleFormSubmit}
-                        >
-                          Submit
-                        </Button>
+                        variant="primary"
+                        className="new-yellow-btn content-sav-btn"
+                        onClick={handleFormSubmit}
+                      >
+                        Submit
+                      </Button>
                     </div>
                   </Modal.Body>
                 </Modal>
@@ -306,4 +301,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default Header;

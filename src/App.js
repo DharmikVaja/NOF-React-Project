@@ -54,7 +54,7 @@ function App() {
         <Route path="/*" element={<Home />} />
         <Route
           path="/product"
-          element={<Product country={"India"} class={"6"} />}
+          element={<Product  />}
         />
         <Route path="/how-it-works" element={<HowItWork />} />
         <Route path="/reports-and-analysis" element={<ReportAnalysis />} />
