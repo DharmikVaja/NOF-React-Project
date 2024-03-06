@@ -13,6 +13,7 @@ import SubmitForm from "../Form/SubmitForm";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+import { BookAPI } from "../../Service/api";
 
 const Product = ({ product }) => {
   // const [rating, setRating] = useState(0);
@@ -38,12 +39,27 @@ const Product = ({ product }) => {
     navigate("/");
   }
 
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await BookAPI(/* pass necessary data */);
+        setBooks(response.data.books);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
   // const { id, studentclass, quantity, price } = product;
- 
+
   return (
     <div>
       <div className="set-top-margin-all"></div>
-      <Header />  
+      <Header />
       <ScrollToTop />
       <div className="container spacer-y">
         <div className="row justify-content-center">
@@ -102,9 +118,6 @@ const Product = ({ product }) => {
                       <Link
                         className="olympiad-cart cursorPointerClass"
                         to="/cart"
-                        onClick={() => {
-                          product();
-                        }}
                       >
                         Add To Cart
                       </Link>

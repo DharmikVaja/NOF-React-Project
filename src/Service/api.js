@@ -46,12 +46,14 @@ export const handleSignupAPI = async (body) => {
   }
 };
 
-export const handleProductAPI = async (body) => {
-  try {
-    console.log("--------------------------");
-    const response = await axios.post(`${BASEURL}product`, body);
-    console.log("response", response);
-  } catch {
-    
+export const BookAPI = async (body) => {
+  try{
+    const response = await axios.post(`${BASEURL}product`, body)
+    return response.data;
+
+  }
+  catch(error){
+    console.error("Error in BookAPI",  error);
+    throw error;
   }
 };
