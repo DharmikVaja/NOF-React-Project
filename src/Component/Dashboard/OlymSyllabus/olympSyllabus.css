@@ -2,3 +2,23 @@
     margin: 20px;
   }
   
+.olym-syllabus-text span {
+    background-color: #cccaca;
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 60%;
+}
+.olym-syllabus-text {
+  text-align: left;
+  justify-content: left;
+  padding-bottom: 40px;
+}
+
+.olym-syllabus-text span::before {
+  content: "";
+  position: absolute;
+  background-color: #ffc426;
+  height: 4px;
+  width: 10%;
+}

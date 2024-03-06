@@ -43,7 +43,7 @@ const OlymSyllabus = () => {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="syllabus-text">
+                    <div className="olym-syllabus-text">
                       <h3>NOF Junior Olympiads</h3>
                       <h6>For Classes Nursery to 5</h6>
                       <span></span>
@@ -116,7 +116,7 @@ const OlymSyllabus = () => {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="syllabus-text">
+                    <div className="olym-syllabus-text">
                       <h3>NOF Senior Olympiads</h3>
                       <h6>For Classes 6 to 10</h6>
                       <span></span>

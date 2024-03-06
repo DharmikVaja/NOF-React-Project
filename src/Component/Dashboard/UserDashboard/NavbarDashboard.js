@@ -18,6 +18,7 @@ import { BsJournalText } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { MdListAlt } from "react-icons/md";
 import Stack from "react-bootstrap/Stack";
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const NavbarDashboard = () => {
   const [isNavBarsVisible, setNavBarsVisible] = useState(false);
@@ -63,7 +64,8 @@ const NavbarDashboard = () => {
                   }`}
                   id="basic-navbar-nav"
                 >
-                  <div className="me-auto navbar-nav navBars">
+                <div className="me-auto navbar-nav navBars">
+                  <Scrollbars>
                     <Stack
                       direction="vertical"
                       gap={0.9}
@@ -189,9 +191,12 @@ const NavbarDashboard = () => {
                       </Link>
                       {/*  */}
                     </Stack>
+                  </Scrollbars>
                   </div>
                 </div>
 
+
+                {/* <Scrollbars> */}
                 <Dropdown>
                   <Dropdown.Toggle
                     variant="success"
@@ -201,7 +206,6 @@ const NavbarDashboard = () => {
                   >
                     <img src={NOFUserLogo} alt="Nof User Logo" />
                   </Dropdown.Toggle>
-
                   <Dropdown.Menu>
                     <div className="dropdown-switch dropdown">
                       <Dropdown.Item
@@ -221,6 +225,7 @@ const NavbarDashboard = () => {
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
+                  {/* </Scrollbars> */}
 
                 <button
                   aria-controls="basic-navbar-nav"

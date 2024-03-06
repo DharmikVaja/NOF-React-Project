@@ -36,7 +36,6 @@ export const handleSignupAPI = async (body) => {
     } else {
       console.error("signup failed:", response.data.message);
     }
-
     // return response.data;
   } catch (error) {
     console.error("Error during signup:", error.response.data);
@@ -47,13 +46,11 @@ export const handleSignupAPI = async (body) => {
 };
 
 export const BookAPI = async (body) => {
-  try{
-    const response = await axios.post(`${BASEURL}product`, body)
+  try {
+    const response = await axios.post(`${BASEURL}product`, body);
     return response.data;
-
-  }
-  catch(error){
-    console.error("Error in BookAPI",  error);
+  } catch (error) {
+    console.error("Error in BookAPI", error);
     throw error;
   }
 };
