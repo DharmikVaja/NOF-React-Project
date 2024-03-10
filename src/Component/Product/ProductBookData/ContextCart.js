@@ -49,16 +49,16 @@ const ContextCart = () => {
       <section className="main-cart-section">
         <h1>shopping Cart</h1>
         <p className="total-items">
-          you have <span className="total-items-count">{totalItem} </span> items
-          in shopping cart
+          you have <span className="total-items-count"> {totalItem} </span>
+          items in shopping cart
         </p>
 
         <div className="cart-items">
           <div className="cart-items-container">
             {/* <Scrollbars> */}
-              {item.map((curItem) => {
-                return <Items key={curItem.id} {...curItem} />;
-              })}
+            {item.map((curItem) => {
+              return <Items key={curItem.id} {...curItem} />;
+            })}
             {/* </Scrollbars> */}
           </div>
         </div>

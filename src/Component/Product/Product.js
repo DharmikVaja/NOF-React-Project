@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 // import { Rating } from "react-simple-star-rating";
 import Header from "../Header/Header";
 import ProImg1 from "../../../src/assets/product/pro1.png";
-// import ProImg2 from "../../../src/assets/product/pro2.png";
-// import ProImg3 from "../../../src/assets/product/pro3.png";
-// import ProImg4 from "../../../src/assets/product/pro4.png";
-// import ProImg5 from "../../../src/assets/product/pro5.png";
+import ProImg2 from "../../../src/assets/product/pro2.png";
+import ProImg3 from "../../../src/assets/product/pro3.png";
+import ProImg4 from "../../../src/assets/product/pro4.png";
+import ProImg5 from "../../../src/assets/product/pro5.png";
+import ProImg6 from "../../../src/assets/product/Pro6.png";
 import "./product.css";
 import { FaHeart } from "react-icons/fa";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
@@ -28,20 +29,97 @@ const Product = ({ product }) => {
     navigate("/");
   }
 
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await BookAPI({}); // Replace with your actual API endpoint
-        setBooks(response.data.books);
-      } catch (error) {
-        console.error("Error fetching books:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     try {
+  //       const response = await BookAPI({}); // Replace with your actual API endpoint
+  //       setBooks(response.data.books);
+  //     } catch (error) {
+  //       console.error("Error fetching books:", error);
+  //     }
+  //   };
 
-    fetchBooks();
-  }, []);
+  //   fetchBooks();
+  // }, []);
+
+  // 1-sci, 2-eng hindi 3-math 4-effiel 5-hindi eng 6-gk
+  const olympiadsData = [
+    {
+      id: 1,
+      name: 'International Hindi Olympiad',
+      class: '7',
+      img: ProImg5,      
+      amount: 10,
+    },
+    {
+      id: 2,
+      name: 'International Maths Olympiad',
+      img:ProImg3,
+      class: '7',
+      amount: 10,
+    },
+    {
+      id: 3,
+      name: 'International English Olympiad',
+      class: '7',
+      img: ProImg5,
+      amount: 10,
+    },
+    {
+      id: 4,
+      name: 'International GK Olympiad',
+      class: '7',
+      img: ProImg6,
+      amount: 10,
+    },
+    {
+      id: 5,
+     
+      name: 'MTSE- Hindi ',
+      class: '7',
+      img: ProImg4,
+      amount: 10,
+    },
+    {
+      id: 6,
+      name: 'International Science Olympiad',
+      class: '7',
+      img: ProImg1,
+      amount: 10,
+    },
+    {
+      id: 7,
+      name: 'International Quiz Olympiad',
+      class: '7',
+      img: ProImg6,
+      amount: 10,
+    },
+    {
+      id: 8,
+      name: 'International Aptitude Olympiad',
+      class: '7',
+      img: ProImg3,
+      amount: 10,
+     
+    },
+    {
+      id: 9,
+      name: 'MTSE- English',
+      class: '7',
+      img: ProImg4,
+      amount: 10,
+    },
+    {
+      id: 10,
+      name: 'MTSE- Marathi',
+      class: '7',
+      img: ProImg4,
+      amount: 10,
+    },
+    // Add more olympiads data as needed
+  ];
 
   return (
     <div>
@@ -50,7 +128,7 @@ const Product = ({ product }) => {
       <ScrollToTop />
       <div className="container spacer-y">
         <div className="row justify-content-center">
-          <div className="col-lg-6">  
+          <div className="col-lg-6">
             <div className="testimonial-heading text-center">
               <h1>NOF International Olympiads and Practice books </h1>
             </div>
@@ -71,55 +149,42 @@ const Product = ({ product }) => {
           <section className="olympiad-section">
             <div className="container">
               <div className="row">
-                <div className="col-md-12">
-                  <div className="nof-same-font">
-                    <h3>NOF INTERNATIONAL OLYMPIADS</h3>
-                    <span></span>
-                  </div>
-                  <span></span>
-                </div>
-              </div>
-              <div className="row">
-                
-                    <div key="1" className="col-lg-3 col-md-4">
-                      <div className="olympiad-box">
-                        <div className="olympiad-img">
-                          <img
-                            src={ProImg1}
-                            className="img-fluid list-img"
-                            alt="img"
-                          />
-                          <div className="olympiad-heart-icon">
-                            <Link className="" to="/product">
-                              <FaHeart />
-                            </Link>
-                          </div>
-                        </div>
-                        <div className="olympiad-info">
-                          <h2 className="cursorPointerClass">
-                            International Hindi Olympiad
-                          </h2>
-                          <span>CLASS: {"7"}</span>
-                          <div className="olympiad-rating">
-                            {/* You can display book ratings here */}
-                          </div>
-
-                          <p className="olympiad-amount">
-                            $ &nbsp;{10}
-                          </p>
-                          <Link
-                            className="olympiad-cart cursorPointerClass"
-                            to="/cart"
-                          >
-                            Add To Cart
+                {olympiadsData.map((olympiad) => (
+                  <div key={olympiad.id} className="col-lg-3 col-md-4">
+                    <div className="olympiad-box">
+                      <div className="olympiad-img">
+                        <img
+                          src={olympiad.img} // Use olympiad-specific image if available
+                          className="img-fluid list-img"
+                          alt="img"
+                        />
+                        <div className="olympiad-heart-icon">
+                          <Link className="" to="/product">
+                            <FaHeart />
                           </Link>
                         </div>
                       </div>
+                      <div className="olympiad-info">
+                        <h2 className="cursorPointerClass">{olympiad.name}</h2>
+                        <span>CLASS: {olympiad.class}</span>
+                        <div className="olympiad-rating">
+                        </div>
+                        <p className="olympiad-amount">
+                          $ &nbsp;{olympiad.amount}
+                        </p>
+                        <Link
+                          className="olympiad-cart cursorPointerClass"
+                          to="/cart"
+                        >
+                          Add To Cart
+                        </Link>
+                      </div>
                     </div>
-                 
+                  </div>
+                ))}
 
                 {/*  */}
-                <Cart/>
+                
               </div>
             </div>
           </section>
