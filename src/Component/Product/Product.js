@@ -47,7 +47,7 @@ const Product = () => {
             <div className="container">
               <div className="row">
                   <ProductList product={Product} addToCart={addToCart}/>
-                  <Cart cart={cart}/>
+                  {/* <Cart cart={cart}/> */}
               </div>
             </div>
           </section>

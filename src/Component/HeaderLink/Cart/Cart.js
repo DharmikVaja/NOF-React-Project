@@ -54,7 +54,6 @@ const Cart = ({ cart }) => {
                               <tr>
                                 <td className="text-left">{cartItem.name}</td>
                                 <td className="text-left">{cartItem.class}</td>
-
                                 <td>
                                   <div className="quantity-input-group ">
                                     <div className="input-group">
@@ -97,9 +96,7 @@ const Cart = ({ cart }) => {
                         })}
                       </tbody>
                     </table>
-
                     <div className="card-detail">
-                      {/* <h5 className="card-coupon"></h5> */}
                       <div className="cart-coupon-container col-lg-12 col-md-12">
                         <input
                           placeholder="Enter Coupon Code"
@@ -117,7 +114,6 @@ const Cart = ({ cart }) => {
                           </Button>
                           <img src={CouponImg} alt="Coupon" />
                         </div>
-
                         <Modal
                           show={show1}
                           onHide={handleClose1}
@@ -128,7 +124,7 @@ const Cart = ({ cart }) => {
                         >
                           <Modal.Header closeButton>
                             <Modal.Title></Modal.Title>
-                          <Modal.Body>Invalid Coupon code</Modal.Body>
+                            <Modal.Body>Invalid Coupon code</Modal.Body>
                           </Modal.Header>
                         </Modal>
                       </div>
