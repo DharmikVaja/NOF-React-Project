@@ -72,6 +72,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding-bottom: 51px;
   margin-bottom: 70px;
+  overflow-x: scroll;
 }
 .cart2-table .table > thead {
   border-radius: 8px 8px 0px 0px;
@@ -137,4 +138,39 @@
 }
 .cursorPointerClass {
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .cart2-table {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cart2-table {
+    overflow-x: scroll;
+  }
+}
+.quantity-input-group {
+  position: relative;
+  /* border: 1px solid rgba(0, 0, 0, 0.293); */
+  /* border-radius: 10px; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 200px; /* Set a maximum width if needed */
+  margin: 0 auto;
+}
+.cart-body {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.cart-body tr td {
+  color: gray;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px 0px;
+}
+.cart-quantity-value{
+  text-align: center;
 }

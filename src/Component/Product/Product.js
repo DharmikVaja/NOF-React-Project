@@ -1,125 +1,35 @@
 import React, { useState, useEffect } from "react";
-// import { Rating } from "react-simple-star-rating";
 import Header from "../Header/Header";
-import ProImg1 from "../../../src/assets/product/pro1.png";
-import ProImg2 from "../../../src/assets/product/pro2.png";
-import ProImg3 from "../../../src/assets/product/pro3.png";
-import ProImg4 from "../../../src/assets/product/pro4.png";
-import ProImg5 from "../../../src/assets/product/pro5.png";
-import ProImg6 from "../../../src/assets/product/Pro6.png";
 import "./product.css";
-import { FaHeart } from "react-icons/fa";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
 import SubmitForm from "../Form/SubmitForm";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-import { BookAPI } from "../../Service/api";
-import Cart from "./ProductBookData/Cart";
+import ProductList from "./ProductList";
+import Cart from "../HeaderLink/Cart/Cart";
+// import Cart from "../HeaderLink/Cart/Cart";
+// import { BookAPI } from "../../Service/api";
 // import axios from "axios";
 
-const Product = ({ product }) => {
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedClass, setSelectedClass] = useState("");
+const Product = () => {
+  // const [selectedCountry, setSelectedCountry] = useState("");
+  // const [selectedClass, setSelectedClass] = useState("");
 
-  const navigate = useNavigate();
-  function clearFilter() {
-    localStorage.removeItem("selectedCountry");
-    localStorage.removeItem("selectedClass");
-    navigate("/");
-  }
-
-  // const [books, setBooks] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchBooks = async () => {
-  //     try {
-  //       const response = await BookAPI({}); // Replace with your actual API endpoint
-  //       setBooks(response.data.books);
-  //     } catch (error) {
-  //       console.error("Error fetching books:", error);
-  //     }
-  //   };
-
-  //   fetchBooks();
-  // }, []);
+  // const navigate = useNavigate();
+  // function clearFilter() {
+  //   localStorage.removeItem("selectedCountry");
+  //   localStorage.removeItem("selectedClass");
+  //   navigate("/");
+  // }
 
   // 1-sci, 2-eng hindi 3-math 4-effiel 5-hindi eng 6-gk
-  const olympiadsData = [
-    {
-      id: 1,
-      name: 'International Hindi Olympiad',
-      class: '7',
-      img: ProImg5,      
-      amount: 10,
-    },
-    {
-      id: 2,
-      name: 'International Maths Olympiad',
-      img:ProImg3,
-      class: '7',
-      amount: 10,
-    },
-    {
-      id: 3,
-      name: 'International English Olympiad',
-      class: '7',
-      img: ProImg5,
-      amount: 10,
-    },
-    {
-      id: 4,
-      name: 'International GK Olympiad',
-      class: '7',
-      img: ProImg6,
-      amount: 10,
-    },
-    {
-      id: 5,
-     
-      name: 'MTSE- Hindi ',
-      class: '7',
-      img: ProImg4,
-      amount: 10,
-    },
-    {
-      id: 6,
-      name: 'International Science Olympiad',
-      class: '7',
-      img: ProImg1,
-      amount: 10,
-    },
-    {
-      id: 7,
-      name: 'International Quiz Olympiad',
-      class: '7',
-      img: ProImg6,
-      amount: 10,
-    },
-    {
-      id: 8,
-      name: 'International Aptitude Olympiad',
-      class: '7',
-      img: ProImg3,
-      amount: 10,
-     
-    },
-    {
-      id: 9,
-      name: 'MTSE- English',
-      class: '7',
-      img: ProImg4,
-      amount: 10,
-    },
-    {
-      id: 10,
-      name: 'MTSE- Marathi',
-      class: '7',
-      img: ProImg4,
-      amount: 10,
-    },
-    // Add more olympiads data as needed
-  ];
+
+  const [cart, setCart] = useState([]);
+  console.log(cart);
+  const addToCart = (data) => {
+    // console.log(data)
+    setCart([...cart,{...data, quantity:1}])
+  };
 
   return (
     <div>
@@ -136,12 +46,15 @@ const Product = ({ product }) => {
           <div className="mt-5 margin-mobile-box row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="class-country-heading">
-                <p>Country - {selectedCountry}</p>
-                <p>Class - {selectedClass}</p>
+                <p>Country - {}</p>
+                <p>Class - {}</p>
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
-              <button className="common-btn" onClick={clearFilter}>
+              <button
+                className="common-btn"
+                // onClick={clearFilter}
+              >
                 Clear filter
               </button>
             </div>
@@ -149,42 +62,8 @@ const Product = ({ product }) => {
           <section className="olympiad-section">
             <div className="container">
               <div className="row">
-                {olympiadsData.map((olympiad) => (
-                  <div key={olympiad.id} className="col-lg-3 col-md-4">
-                    <div className="olympiad-box">
-                      <div className="olympiad-img">
-                        <img
-                          src={olympiad.img} // Use olympiad-specific image if available
-                          className="img-fluid list-img"
-                          alt="img"
-                        />
-                        <div className="olympiad-heart-icon">
-                          <Link className="" to="/product">
-                            <FaHeart />
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="olympiad-info">
-                        <h2 className="cursorPointerClass">{olympiad.name}</h2>
-                        <span>CLASS: {olympiad.class}</span>
-                        <div className="olympiad-rating">
-                        </div>
-                        <p className="olympiad-amount">
-                          $ &nbsp;{olympiad.amount}
-                        </p>
-                        <Link
-                          className="olympiad-cart cursorPointerClass"
-                          to="/cart"
-                        >
-                          Add To Cart
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-
-                {/*  */}
-                
+                  <ProductList product={Product} addToCart={addToCart}/>
+                  <Cart cart={cart}/>
               </div>
             </div>
           </section>

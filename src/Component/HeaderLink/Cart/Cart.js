@@ -5,8 +5,10 @@ import "./cart.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
+import { TiDeleteOutline } from "react-icons/ti";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
-const Cart = () => {
+const Cart = ({ cart }) => {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
 
@@ -16,12 +18,17 @@ const Cart = () => {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
 
+  const removeItem = () => {
+    console.log();
+  };
   // const [cartItems, setCartItems] = useState([]);
-
   // Function to add a product to the cart
-  // const addToCart = (product) => {
-  //   setCartItems([...cartItems, product]);
-  // }
+  // const [cart, setCart] = useState([]);
+  // console.log(cart);
+  // const addToCart = (data) => {
+  //   // console.log(data)
+  //   setCart([...cart,{...data, quantity:1}])
+  // };
 
   return (
     <div>
@@ -35,55 +42,103 @@ const Cart = () => {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-lg-12 md-10">
-                <div className="cart-table">
+              <div className="col-md-12">
+                <div className="cart2-table cart2-total">
                   <div className="table-responsive">
-                    <div className="card mb-4 rounded-3 cart-shadow">
-                      <div className="card-header py-3">
-                        <h4 className="my-0 fw-normal">
-                          <ul className="cart-list">
-                            <li>Product </li>
-                            <li>Class</li>
-                            <li>Quantity </li>
-                            <li>Price</li>
-                          </ul>
-                        </h4>
-                      </div>
-                      <div className="card-body">
-                        <h3 className="card-title ">Cart is Empty</h3>
-                        <div className="card-detail">
-                          <h5 className="card-coupon">Coupon</h5>
-                          <div className="cart-coupon-container col-lg-8">
-                            <input
-                              placeholder="Enter Coupon Code"
-                              type="text"
-                              className="cart-from-control form-control"
-                            />
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Product </th>
+                          <th>Class</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody className="cart-body">
+                        {cart.map((cartItem) => {
+                          return (
+                            <>
+                              <tr>
+                                <td className="text-left">{cartItem.name}</td>
+                                <td className="text-left">{cartItem.class}</td>
 
-                            <Button
-                              variant="primary"
-                              type="submit"
-                              className="cart-btn btn btn-lg btn-primary"
-                              onClick={handleShow1}
-                            >
-                              Apply Coupon
-                            </Button>
-                            <Modal
-                              show={show1}
-                              onHide={handleClose1}
-                              backdrop="static"
-                              keyboard={false}
-                              aria-labelledby="contained-modal-title-vcenter"
-                              centered
-                            >
-                              <Modal.Header closeButton>
-                                <Modal.Title></Modal.Title>
-                              </Modal.Header>
-                              <Modal.Body>Invalid Coupon code</Modal.Body>
-                            </Modal>
-                            <img src={CouponImg} alt="Coupon" />
-                          </div>
+                                <td>
+                                  <div className="quantity-input-group ">
+                                    <div className="input-group">
+                                      <button
+                                        type="button"
+                                        disabled=""
+                                        className="btn btn-outline-secondary"
+                                      >
+                                        <FaMinus />
+                                      </button>
+                                      <input
+                                        type="text"
+                                        readonly=""
+                                        className="form-control cart-quantity-value"
+                                        defaultValue="1"
+                                      />
+                                      <button
+                                        type="button"
+                                        disabled=""
+                                        className="btn btn-outline-secondary"
+                                      >
+                                        <FaPlus />
+                                      </button>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>{cartItem.amount} $</td>
+                                <td>
+                                  <Link className="cursorPointerClass">
+                                    <TiDeleteOutline
+                                      className="fs-2"
+                                      color="#AC0606"
+                                      onClick={removeItem}
+                                    />
+                                  </Link>
+                                </td>
+                              </tr>
+                            </>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+
+                    <div className="card-detail">
+                      {/* <h5 className="card-coupon"></h5> */}
+                      <div className="cart-coupon-container col-lg-12 col-md-12">
+                        <input
+                          placeholder="Enter Coupon Code"
+                          type="text"
+                          className="cart-from-control form-control"
+                        />
+                        <div>
+                          <Button
+                            variant="primary"
+                            type="submit"
+                            className="cart-btn btn btn-lg btn-primary"
+                            onClick={handleShow1}
+                          >
+                            Apply Coupon
+                          </Button>
+                          <img src={CouponImg} alt="Coupon" />
                         </div>
+
+                        <Modal
+                          show={show1}
+                          onHide={handleClose1}
+                          backdrop="static"
+                          keyboard={false}
+                          aria-labelledby="contained-modal-title-vcenter"
+                          centered
+                        >
+                          <Modal.Header closeButton>
+                            <Modal.Title></Modal.Title>
+                          <Modal.Body>Invalid Coupon code</Modal.Body>
+                          </Modal.Header>
+                        </Modal>
                       </div>
                     </div>
                   </div>
@@ -132,10 +187,10 @@ const Cart = () => {
                     backdrop="static"
                     keyboard={false}
                   >
-                    <Modal.Header closeButton>
-                      
-                    </Modal.Header>
-                    <Modal.Body className="d-flex justify-content-center">Please contact with our team</Modal.Body>
+                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Body className="d-flex justify-content-center">
+                      Please contact with our team
+                    </Modal.Body>
                     <div className="d-flex justify-content-center gap-3 mb-3">
                       <Link to="/contact">
                         <Button
