@@ -7,23 +7,8 @@ import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
 import ProductList from "./ProductList";
 import Cart from "../HeaderLink/Cart/Cart";
-// import Cart from "../HeaderLink/Cart/Cart";
-// import { BookAPI } from "../../Service/api";
-// import axios from "axios";
 
 const Product = () => {
-  // const [selectedCountry, setSelectedCountry] = useState("");
-  // const [selectedClass, setSelectedClass] = useState("");
-
-  // const navigate = useNavigate();
-  // function clearFilter() {
-  //   localStorage.removeItem("selectedCountry");
-  //   localStorage.removeItem("selectedClass");
-  //   navigate("/");
-  // }
-
-  // 1-sci, 2-eng hindi 3-math 4-effiel 5-hindi eng 6-gk
-
   const [cart, setCart] = useState([]);
   console.log(cart);
   const addToCart = (data) => {
@@ -34,7 +19,7 @@ const Product = () => {
   return (
     <div>
       <div className="set-top-margin-all"></div>
-      <Header />
+      <Header count={cart.length} />
       <ScrollToTop />
       <div className="container spacer-y">
         <div className="row justify-content-center">
@@ -53,7 +38,6 @@ const Product = () => {
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
               <button
                 className="common-btn"
-                // onClick={clearFilter}
               >
                 Clear filter
               </button>

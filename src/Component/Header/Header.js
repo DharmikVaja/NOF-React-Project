@@ -10,21 +10,19 @@ import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
 
-const Header = ({product}) => {
+const Header = (props) => {
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
-  
+
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
-  
+
   const handleClose3 = () => setShow3(false);
-  
+
   const [isToken, setIsToken] = useState(false);
   useEffect(() => {
     setIsToken(localStorage.getItem("token"));
   }, []);
-  
- 
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
@@ -65,7 +63,7 @@ const Header = ({product}) => {
                   className="show-number cart-wl-btn"
                   to="/cart"
                 >
-                  <div className="show1"> 0</div>
+                  <div className="show1"> {props.count} </div>
                   <img src={cart} alt="cart" className="wl-cart-img" />
                   Cart
                 </Link>
@@ -177,10 +175,11 @@ const Header = ({product}) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link 
-                // onClick={handleShow3}
-                to="/product"
-                 className="nav-link listNames">
+                <Link
+                  // onClick={handleShow3}
+                  to="/product"
+                  className="nav-link listNames"
+                >
                   Product
                 </Link>
 

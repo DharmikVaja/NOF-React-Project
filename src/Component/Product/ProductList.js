@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 
-const ProductList = ({ olympiad, addToCart }) => {
+const ProductList = ({ product, addToCart }) => {
   const olympiadsData = [
     {
       id: 1,
@@ -42,7 +42,6 @@ const ProductList = ({ olympiad, addToCart }) => {
     },
     {
       id: 5,
-
       name: "MTSE- Hindi ",
       class: "7",
       img: ProImg4,
@@ -84,7 +83,7 @@ const ProductList = ({ olympiad, addToCart }) => {
       amount: 10,
     },
   ];
-  
+
   return (
     <>
       {olympiadsData.map((olympiad) => (
@@ -92,7 +91,7 @@ const ProductList = ({ olympiad, addToCart }) => {
           <div className="olympiad-box">
             <div className="olympiad-img">
               <img
-                src={olympiad.img} // Use olympiad-specific image if available
+                src={olympiad.img}
                 className="img-fluid w-auto list-img"
                 alt="img"
               />

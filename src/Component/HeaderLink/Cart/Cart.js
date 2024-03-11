@@ -21,14 +21,6 @@ const Cart = ({ cart }) => {
   const removeItem = () => {
     console.log();
   };
-  // const [cartItems, setCartItems] = useState([]);
-  // Function to add a product to the cart
-  // const [cart, setCart] = useState([]);
-  // console.log(cart);
-  // const addToCart = (data) => {
-  //   // console.log(data)
-  //   setCart([...cart,{...data, quantity:1}])
-  // };
 
   return (
     <div>
@@ -75,7 +67,7 @@ const Cart = ({ cart }) => {
                                       </button>
                                       <input
                                         type="text"
-                                        readonly=""
+                                        readOnly=""
                                         className="form-control cart-quantity-value"
                                         defaultValue="1"
                                       />
