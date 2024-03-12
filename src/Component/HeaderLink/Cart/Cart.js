@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../Header/Header";
 import CouponImg from "../../../assets/cart-coupon.png";
-import "./cart.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 
-const Cart = ({ cart: Cart, addToCart }) => {
+const Cart = ({ cart }) => {
+  const [CART, setCART] = useState([]);
+  const [localCart, setLocalCart] = useState([]);
+
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
 
@@ -18,21 +20,13 @@ const Cart = ({ cart: Cart, addToCart }) => {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
 
-  const [localCart, setLocalCart] = useState([]);
-
-  const removeItem = (itemId) => {
-    const updatedCart = localCart.filter((item) => item.id !== itemId);
-    setLocalCart(updatedCart);
-    // Update local storage
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
-  // Function to update quantity or add item to the cart
+  useEffect(() => {
+    setCART(cart);
+  }, [cart]);
   const updateQuantity = (itemId, newQuantity) => {
     const itemIndex = localCart.findIndex((item) => item.id === itemId);
 
     if (itemIndex !== -1) {
-      // If item already exists, update the quantity
       const updatedCart = [...localCart];
       updatedCart[itemIndex] = {
         ...updatedCart[itemIndex],
@@ -40,7 +34,6 @@ const Cart = ({ cart: Cart, addToCart }) => {
       };
       setLocalCart(updatedCart);
     } else {
-      // If item doesn't exist, add it to the cart
       const newItem = Cart.find((item) => item.id === itemId);
       setLocalCart([...localCart, { ...newItem, quantity: newQuantity }]);
     }
@@ -48,13 +41,7 @@ const Cart = ({ cart: Cart, addToCart }) => {
     // Update local storage
     localStorage.setItem("cart", JSON.stringify(localCart));
   };
-
-  useEffect(() => {
-    // Retrieve cart items from local storage on component mount
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setLocalCart(storedCart);
-  }, []);
-
+  const removeItem = () => {};
   return (
     <>
       <div className="set-top-margin-all"></div>
@@ -82,7 +69,7 @@ const Cart = ({ cart: Cart, addToCart }) => {
                         </tr>
                       </thead>
                       <tbody className="cart-body">
-                        {Cart.map((cartItem) => (
+                        {cart?.map((cartItem, cartindex) => (
                           <tr key={cartItem.id}>
                             <td className="text-left">{cartItem.name}</td>
                             <td className="text-left">{cartItem.class}</td>
@@ -92,12 +79,20 @@ const Cart = ({ cart: Cart, addToCart }) => {
                                   <button
                                     type="button"
                                     className="btn btn-outline-secondary"
-                                    onClick={() =>
-                                      updateQuantity(
-                                        cartItem.id,
-                                        cartItem.quantity - 1
-                                      )
-                                    }
+                                    onClick={() => {
+                                      const _CART = CART.map((item, index) => {
+                                        return cartindex === index
+                                          ? {
+                                              ...item,
+                                              quantity:
+                                                item.quantity > 0
+                                                  ? item.quantity - 1
+                                                  : 0,
+                                            }
+                                          : item;
+                                      });
+                                      setCART(_CART);
+                                    }}
                                   >
                                     <FaMinus />
                                   </button>
@@ -110,19 +105,24 @@ const Cart = ({ cart: Cart, addToCart }) => {
                                   <button
                                     type="button"
                                     className="btn btn-outline-secondary"
-                                    onClick={() =>
-                                      updateQuantity(
-                                        cartItem.id,
-                                        cartItem.quantity + 1
-                                      )
-                                    }
+                                    onClick={() => {
+                                      const _CART = CART.map((item, index) => {
+                                        return cartindex === index
+                                          ? {
+                                              ...item,
+                                              quantity: item.quantity + 1,
+                                            }
+                                          : item;
+                                      });
+                                      setCART(_CART);
+                                    }}
                                   >
                                     <FaPlus />
                                   </button>
                                 </div>
                               </div>
                             </td>
-                            <td>{cartItem.amount} $</td>
+                            <td>{cartItem.amount} ₹</td>
                             <td>
                               <Link className="cursorPointerClass">
                                 <TiDeleteOutline
@@ -192,10 +192,10 @@ const Cart = ({ cart: Cart, addToCart }) => {
                     </thead>
                     <tbody className="table">
                       <td>Price</td>
-                      <td>$&nbsp;0</td>
-                      <td>$&nbsp;00.00</td>
-                      <td>$&nbsp;00.00</td>
-                      <td>$&nbsp;0</td>
+                      <td>₹&nbsp;0</td>
+                      <td>₹&nbsp;00.00</td>
+                      <td>₹&nbsp;00.00</td>
+                      <td>₹&nbsp;0</td>
                     </tbody>
                   </table>
                 </div>

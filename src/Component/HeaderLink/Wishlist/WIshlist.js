@@ -8,7 +8,7 @@ import "./wishlist.css";
 const WIshlist = () => {
   return (
     <div>
-      <div className="set-top-margin-all "></div>
+      <div className="spacer-y"></div>
       <Header />
       <section class="olympaid-section mt-3">
         <div class="container">

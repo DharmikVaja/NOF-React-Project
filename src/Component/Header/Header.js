@@ -9,6 +9,7 @@ import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
+import MenuBtn from "../../assets/Dashboard/menu-icon-dashboard-up.png";
 
 const Header = (props) => {
   const [show2, setShow2] = useState(false);
@@ -50,24 +51,25 @@ const Header = (props) => {
             </span>
           </div>
 
-          <div className="d-flex col-md-6  col-sm-12 justify-content-end  align-items-center gap-2">
-            <div className="d-flex justify-content-start m-1">
+          <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center gap-2">
+            <div className="d-flex justify-content-start gap-2 m-1">
               <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
-                Wishlist
+               <div className="text-center heading-wc"> Wishlist</div>
               </Link>
 
-              <div className="position-relative ">
+              
                 <Link
                   role="button"
-                  className="show-number cart-wl-btn"
+                  // onClick={() => props.handleShow(true)}
+                  className="show-number cart-wl-btn position-relative "
                   to="/cart"
                 >
-                  <div className="show1"> {props.count || 0} </div>
+                  <span className="show1"> {props.count || 0} </span>
                   <img src={cart} alt="cart" className="wl-cart-img" />
-                  Cart
+                  <div className="text-start heading-wc">Cart</div>
                 </Link>
-              </div>
+              
             </div>
 
             <div className="col-md-4 text-end d-flex justify-content-end ">
@@ -146,24 +148,17 @@ const Header = (props) => {
                 </div>
               </Modal>
             </div>
+            <button className="navbar-toggler collapsed ">
+              <img className="img-fluid nav-menu" src={MenuBtn} alt="menu" />
+            </button>
+
+            {/*  */}
           </div>
         </div>
       </div>
 
       {/* <div className="container-fluid navBar"> */}
       <nav className="navbar navbar-expand-lg bg-dark header-nav">
-        <button
-          className="navbar-toggler"
-          type="button"
-          style={{ backgroundColor: "white" }}
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon "></span>
-        </button>
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarNav"
@@ -176,9 +171,9 @@ const Header = (props) => {
             </li>
             <li className="nav-item">
               <Link
-                // onClick={handleShow3}
-                to="/product"
                 className="nav-link listNames"
+                // onClick={() => props.handleShow(false)}
+                to="/product"
               >
                 Product
               </Link>

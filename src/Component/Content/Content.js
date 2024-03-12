@@ -4,7 +4,7 @@ import "./content.css";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import CountryData from "./../../../src/CountryData.json";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import "../Modal/RegisterModal/RegModal.css";
 
 const Content = () => {
@@ -26,6 +26,7 @@ const Content = () => {
   } else{
     alert("please select a country and class to continue!")
   }
+  
 }
 
   return (
@@ -50,13 +51,15 @@ const Content = () => {
                   transforming education.
                 </p>
                 <div className="banner-story-btn">
-                  <Button
+                  <Link
                     className="new-yellow-btn "
                     variant="primary"
-                    onClick={handleShow}
+                    to="/signup"
+                    // onClick={handleShow}
+
                   >
                     Click Here to Register
-                  </Button>
+                  </Link>
                   <Button
                     className="new-white-btn "
                     variant="primary"
