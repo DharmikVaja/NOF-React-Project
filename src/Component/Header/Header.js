@@ -41,7 +41,7 @@ const Header = (props) => {
     setShow3(true);
   };
   return (
-    <header className="homeHeader">
+    <header className="homeHeader ">
       <div className="container">
         <div className="row justify-content-between navbar navbar-expand-lg navbar-light sticky-top">
           <div className="col-md-3 ">
@@ -150,152 +150,151 @@ const Header = (props) => {
         </div>
       </div>
 
-      <div className="container-fluid navBar">
-        <nav className="navbar navbar-expand-lg">
-          <button
-            className="navbar-toggler"
-            type="button"
-            style={{ backgroundColor: "white" }}
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon "></span>
-          </button>
-          <div
-            className="collapse navbar-collapse justify-content-center"
-            id="navbarNav"
-          >
-            <ul className="nav navbarClass">
-              <li className="nav-item">
-                <Link to="/" className="nav-link listNames">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  // onClick={handleShow3}
-                  to="/product"
-                  className="nav-link listNames"
-                >
-                  Product
-                </Link>
+      {/* <div className="container-fluid navBar"> */}
+      <nav className="navbar navbar-expand-lg bg-dark header-nav">
+        <button
+          className="navbar-toggler"
+          type="button"
+          style={{ backgroundColor: "white" }}
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon "></span>
+        </button>
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul className="nav navbarClass">
+            <li className="nav-item">
+              <Link to="/" className="nav-link listNames">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                // onClick={handleShow3}
+                to="/product"
+                className="nav-link listNames"
+              >
+                Product
+              </Link>
 
-                <Modal show={show3} onHide={handleClose3}>
-                  <Modal.Header closeButton>
-                    <Modal.Title></Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <div className="reg-modal-text modal-body">
-                      <div className="mb-5">
-                        <h3>Your Learning, Your Way!</h3>
-                        <p>
-                          Select Your Region and Class Preference for the
-                          Products...
-                        </p>
-                      </div>
-
-                      <div className="form-modal">
-                        <div className="mb-3">
-                          <div className="modal-form-country">
-                            <label
-                              className="form-label"
-                              for="exampleForm.ControlInput1"
-                            >
-                              Country
-                            </label>
-                            <select
-                              name="country"
-                              id="exampleForm.ControlInput1"
-                              className="modal-form-select"
-                              onChange={(e) =>
-                                setSelectedCountry(e.target.value)
-                              }
-                              value={selectedCountry}
-                            >
-                              <option value="">Select your Country</option>
-                              {CountryData.map((country, index) => (
-                                <option key={index} value={country.code}>
-                                  {country.name}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-                        <div className="mb-3">
-                          <div className="modal-form-class">
-                            <label
-                              className="form-label"
-                              for="exampleForm.ControlInput1"
-                            >
-                              Class
-                            </label>
-                            <select
-                              name="form-select"
-                              className="modal-form-select"
-                              id="exampleForm.ControlInput1"
-                              onChange={(e) => setSelectedClass(e.target.value)}
-                              value={selectedClass}
-                            >
-                              <option value>Select your Class</option>
-                              <option value="LKG">LKG</option>
-                              <option value="UKG">UKG</option>
-                              <option value="class 1">class 1</option>
-                              <option value="class 2">class 2</option>
-                              <option value="class 3">class 3</option>
-                              <option value="class 4">class 4</option>
-                              <option value="class 5">class 5</option>
-                              <option value="class 6">class 6</option>
-                              <option value="class 7">class 7</option>
-                              <option value="class 8">class 8</option>
-                              <option value="class 9">class 9</option>
-                              <option value="class 10">class 10</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <Button
-                        variant="primary"
-                        className="new-yellow-btn content-sav-btn"
-                        onClick={handleFormSubmit}
-                      >
-                        Submit
-                      </Button>
+              <Modal show={show3} onHide={handleClose3}>
+                cart
+                <Modal.Header closeButton>
+                  <Modal.Title></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="reg-modal-text modal-body">
+                    <div className="mb-5">
+                      <h3>Your Learning, Your Way!</h3>
+                      <p>
+                        Select Your Region and Class Preference for the
+                        Products...
+                      </p>
                     </div>
-                  </Modal.Body>
-                </Modal>
-              </li>
-              <li className="nav-item">
-                <Link to="/how-it-works" className="nav-link listNames">
-                  How it works
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/reports-and-analysis" className="nav-link listNames">
-                  Reports & Analysis
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/syllabus" className="nav-link listNames">
-                  Syllabus
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/downloads" className="nav-link listNames">
-                  Downloads
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link listNames">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+
+                    <div className="form-modal">
+                      <div className="mb-3">
+                        <div className="modal-form-country">
+                          <label
+                            className="form-label"
+                            for="exampleForm.ControlInput1"
+                          >
+                            Country
+                          </label>
+                          <select
+                            name="country"
+                            id="exampleForm.ControlInput1"
+                            className="modal-form-select"
+                            onChange={(e) => setSelectedCountry(e.target.value)}
+                            value={selectedCountry}
+                          >
+                            <option value="">Select your Country</option>
+                            {CountryData.map((country, index) => (
+                              <option key={index} value={country.code}>
+                                {country.name}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                      <div className="mb-3">
+                        <div className="modal-form-class">
+                          <label
+                            className="form-label"
+                            for="exampleForm.ControlInput1"
+                          >
+                            Class
+                          </label>
+                          <select
+                            name="form-select"
+                            className="modal-form-select"
+                            id="exampleForm.ControlInput1"
+                            onChange={(e) => setSelectedClass(e.target.value)}
+                            value={selectedClass}
+                          >
+                            <option value>Select your Class</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="class 1">class 1</option>
+                            <option value="class 2">class 2</option>
+                            <option value="class 3">class 3</option>
+                            <option value="class 4">class 4</option>
+                            <option value="class 5">class 5</option>
+                            <option value="class 6">class 6</option>
+                            <option value="class 7">class 7</option>
+                            <option value="class 8">class 8</option>
+                            <option value="class 9">class 9</option>
+                            <option value="class 10">class 10</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                      variant="primary"
+                      className="new-yellow-btn content-sav-btn"
+                      onClick={handleFormSubmit}
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </Modal.Body>
+              </Modal>
+            </li>
+            <li className="nav-item">
+              <Link to="/how-it-works" className="nav-link listNames">
+                How it works
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/reports-and-analysis" className="nav-link listNames">
+                Reports & Analysis
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/syllabus" className="nav-link listNames">
+                Syllabus
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/downloads" className="nav-link listNames">
+                Downloads
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link listNames">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {/* </div> */}
     </header>
   );
 };

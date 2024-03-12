@@ -1,11 +1,14 @@
 .homeHeader {
   background-color: #597ad1;
-  padding: 8px 0;
+  padding: 0px 0;
   left: 0;
   right: 0;
   top: 0;
   z-index: 10 !important;
   position: fixed;
+}
+.header-nav{
+  margin: 0px 0px -10px 0px !important
 }
 Header {
   background-color: "#0000FF";
@@ -43,9 +46,6 @@ Header {
 }
 .gap-2 {
   gap: 0.5rem !important;
-}
-.d-flex {
-  display: flex !important;
 }
 
 .new-header-home .header-side a {

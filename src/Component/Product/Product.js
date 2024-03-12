@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import "./product.css";
+
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
 import SubmitForm from "../Form/SubmitForm";
 import Map from "../Map/Map";
@@ -13,14 +14,14 @@ const Product = () => {
   console.log(cart);
   const addToCart = (data) => {
     // console.log(data)
-    setCart([...cart,{...data, quantity:1}])
+    setCart([...cart, { ...data, quantity: 1 }]);
   };
 
   return (
     <div>
-      <div className="set-top-margin-all"></div>
       <Header count={cart.length} />
       <ScrollToTop />
+      <div className="set-top-margin-all"></div>
       <div className="container spacer-y">
         <div className="row justify-content-center">
           <div className="col-lg-6">
@@ -36,18 +37,14 @@ const Product = () => {
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
-              <button
-                className="common-btn"
-              >
-                Clear filter
-              </button>
+              <button className="common-btn">Clear filter</button>
             </div>
           </div>
           <section className="olympiad-section">
             <div className="container">
               <div className="row">
-                  <ProductList product={Product} addToCart={addToCart}/>
-                  {/* <Cart cart={cart}/> */}
+                <ProductList product={Product} addToCart={addToCart} />
+                <Cart cart={cart} />
               </div>
             </div>
           </section>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProImg1 from "../../../src/assets/product/pro1.png";
 import ProImg2 from "../../../src/assets/product/pro2.png";
 import ProImg3 from "../../../src/assets/product/pro3.png";
@@ -6,7 +6,7 @@ import ProImg4 from "../../../src/assets/product/pro4.png";
 import ProImg5 from "../../../src/assets/product/pro5.png";
 import ProImg6 from "../../../src/assets/product/Pro6.png";
 import "./product.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 
@@ -84,6 +84,18 @@ const ProductList = ({ product, addToCart }) => {
     },
   ];
 
+  const [addedToCart, setAddedToCart] = useState({});
+  // const navigate = useNavigate();
+
+  const handleAddToCart = (olympiad) => {
+    addToCart(olympiad);
+    setAddedToCart((prevMap) => ({
+      ...prevMap,
+      [olympiad.id]: true,
+    }));
+   
+  };
+
   return (
     <>
       {olympiadsData.map((olympiad) => (
@@ -108,9 +120,9 @@ const ProductList = ({ product, addToCart }) => {
               <p className="olympiad-amount">$ &nbsp;{olympiad.amount}</p>
               <Button
                 className="olympiad-cart cursorPointerClass"
-                onClick={() => addToCart(olympiad)}
+                onClick={() => handleAddToCart(olympiad)}
               >
-                Add To Cart
+                {addedToCart[olympiad.id] ? "Go To Cart" : "Add to Cart"}
               </Button>
             </div>
           </div>
