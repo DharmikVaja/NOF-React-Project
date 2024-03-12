@@ -63,7 +63,7 @@ const Header = (props) => {
                   className="show-number cart-wl-btn"
                   to="/cart"
                 >
-                  <div className="show1"> {props.count} </div>
+                  <div className="show1"> {props.count || 0} </div>
                   <img src={cart} alt="cart" className="wl-cart-img" />
                   Cart
                 </Link>

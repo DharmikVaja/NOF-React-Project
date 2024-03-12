@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../app.css";
 import Header from "../Header/Header";
 import Content from "../Content/Content";
@@ -11,9 +11,21 @@ import Footer from "../Footer/Footer";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
 
 const Home = () => {
+  // const [cart, setCart] = useState([]);
+  // const [showCart, setShowCart] = useState(false);
+
+  // const addToCart = (data) => {
+  //   setCart([...cart, { ...data, quantity: 1 }]);
+  // };
+
+  // const handleShow = (value) => {
+  //   setShowCart(value);
+  // };
   return (
     <div>
-      <Header />
+      <Header 
+      // count={cart.length} handleShow={handleShow}
+      />
       <ScrollToTop />
       <Content />
       <AboutTele />
