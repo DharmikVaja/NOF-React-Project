@@ -159,7 +159,7 @@ const NavbarDashboard = () => {
                         role="button"
                         className="nav-link dashboard-links"
                         tabIndex={0}
-                        to="/login"
+                        to="/signup"
                       >
                         <FaRegPlusSquare className="fs-4 me-4" /> Add New
                         Student

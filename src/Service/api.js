@@ -14,12 +14,9 @@ export const handleLoginAPI = async ({ email, password }, URLS, body) => {
     } else {
       console.error(response.data.message);
     }
-
     return { status, message, userData };
   } catch (error) {
     console.error("Error during login:", error.message);
-
-    // Handle error, show error message, etc.
     throw error;
   }
 };
@@ -38,19 +35,27 @@ export const handleSignupAPI = async (body) => {
     }
     // return response.data;
   } catch (error) {
-    console.error("Error during signup:", error.response.data);
+    console.error("Error during signup:", error.response);
     // console.log(error.response.data.message)
     // Handle error, show error message, etc.
     throw error;
   }
 };
 
-export const BookAPI = async (body) => {
-  try {
-    const response = await axios.post(`${BASEURL}product`, body);
-    return response.data;
-  } catch (error) {
-    console.error("Error in BookAPI", error);
-    throw error;
+export const handleActLogAPI = async (body)=>{
+  try{
+    console.log("----------------------");
   }
-};
+  catch{
+    
+  }
+}
+// export const BookAPI = async (body) => {
+//   try {
+//     const response = await axios.post(`${BASEURL}product`, body);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error in BookAPI", error);
+//     throw error;
+//   }
+// };

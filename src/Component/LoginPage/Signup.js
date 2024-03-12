@@ -53,8 +53,8 @@ const Signup = () => {
           setToastMessage(response.data.message);
         }
       } else {
-        console.error("Signup response is undefined or missing data property");
-        setToastMessage("unexpected response from the server");
+        console.error("unexpected response from the server");
+        setToastMessage("Signup failed, Please try again!");
       }
     } catch (error) {
       console.error(

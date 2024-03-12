@@ -82,19 +82,17 @@ const ActivityLog = () => {
                     </tr>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Feb 20, 2024 10:12 PM</td>
+                      <td>Mar 12, 2024 10:43 AM</td>
                       <td>LOGGED OUT</td>
                       <td>
-                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
+                        You have logged out Tue Mar 12 2024 at 10:43:43 AM
                       </td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>Feb 20, 2024 10:12 PM</td>
+                      <td>Mar 8, 2024 2:30 PM</td>
                       <td>LOGGED OUT</td>
-                      <td>
-                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
-                      </td>
+                      <td>You have logged out Fri Mar 08 2024 at 2:30:33 PM</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>

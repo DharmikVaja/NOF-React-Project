@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Button, Modal, ModalHeader } from "react-bootstrap";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
-import { FaEyeSlash, FaLock, FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [show, setShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [smShow, setSmShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClose = () => setSmShow(false);
+  const handleAdminLog = () =>{
+   
+  }
   return (
     <div>
       <header className="header-main-login">
@@ -63,14 +67,17 @@ const Admin = () => {
                     <input
                       placeholder="Password"
                       name="password"
-                      type="password"
+                      type={showPassword? "text":"password" }
                       id="id_pass"
                       className="form-control"
                       defaultValue={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
-                    <span className="input-group-text">
-                      <FaEyeSlash />
+                    <span
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                   </div>
 
@@ -80,28 +87,35 @@ const Admin = () => {
                   <Button
                     className="common-btn w-100"
                     variant="primary"
-                    onClick={handleShow}
+                    // onClick={() => setSmShow(true)}
+                    onClick={handleAdminLog}
                   >
                     Login
                   </Button>
 
-                  <Modal show={show} onHide={handleClose}>
+                  <Modal
+                    size="sm"
+                    show={smShow}
+                    onHide={() => setSmShow(false)}
+                    aria-labelledby="example-modal-sizes-title-sm"
+                    style={{ border: "0" }}
+                  >
                     <Modal.Header closeButton>
-                      <Modal.Title></Modal.Title>
+                      <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       Please Register your school first !!
-                    </Modal.Body>
-
-                    <Modal.Footer>
                       <Button
-                        variant="primary"
-                        className="w-20"
+                        className="common-btn "
+                        style={{
+                          display: "flex",
+                          marginLeft: "auto",
+                        }}
                         onClick={handleClose}
                       >
                         Understood
                       </Button>
-                    </Modal.Footer>
+                    </Modal.Body>
                   </Modal>
                   {/*  */}
                   <Link to="/">
@@ -114,7 +128,7 @@ const Admin = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Admin
+export default Admin;
