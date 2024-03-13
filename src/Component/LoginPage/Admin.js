@@ -4,19 +4,29 @@ import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
 import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [smShow, setSmShow] = useState(false);
-
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClose = () => setSmShow(false);
-  const handleAdminLog = () =>{
-   
-  }
+
+  const navigate = useNavigate();
+  const handleAdminLog = () => {
+    const adminEmail = "nof123@gmail.com";
+    const adminPassword = "admin123";
+    if (email === adminEmail && password === adminPassword) {
+      alert("Successfully Login");
+      navigate("/admin-panel")
+    } else {
+      setSmShow(true);
+      setError("Invalid Credentials");
+    }
+  };
   return (
     <div>
       <header className="header-main-login">
@@ -67,7 +77,7 @@ const Admin = () => {
                     <input
                       placeholder="Password"
                       name="password"
-                      type={showPassword? "text":"password" }
+                      type={showPassword ? "text" : "password"}
                       id="id_pass"
                       className="form-control"
                       defaultValue={password}
@@ -104,7 +114,7 @@ const Admin = () => {
                       <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      Please Register your school first !!
+                      Please Create an Account first !!
                       <Button
                         className="common-btn "
                         style={{

@@ -46,7 +46,7 @@ const Cart = ({ cart }) => {
     <>
       <div className="set-top-margin-all"></div>
       <Header />
-      <div className="container spacer-y">
+      <div className="container spacer-y cart-comp">
         <div className="row">
           <div className="cart">
             <h3>Cart</h3>

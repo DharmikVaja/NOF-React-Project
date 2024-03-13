@@ -41,15 +41,34 @@ export const handleSignupAPI = async (body) => {
     throw error;
   }
 };
+// export const handleAdminAPI = async ({ email, password }, URLS, body) => {
+//   try {
+//     console.log("---------------");
+//     console.log("UserData:", { email, password });
 
-export const handleActLogAPI = async (body)=>{
-  try{
-    console.log("----------------------");
-  }
-  catch{
+//     const response = await axios.post(`${BASEURL}admin`, { email, password });
+//     const { status, message, data: userData } = response.data;
+//     // console.log("response", response);
+//     if (response.data.status) {
+//       console.log("Login successful");
+//     } else {
+//       console.error(response.data.message);
+//     }
+//     return { status, message, userData };
+//   } catch (error) {
+//     console.error("Error during login:", error.message);
+//     throw error;
+//   }
+// };
+
+// export const handleActLogAPI = async (body)=>{
+//   try{
+//     console.log("----------------------");
+//   }
+//   catch{
     
-  }
-}
+//   }
+// }
 // export const BookAPI = async (body) => {
 //   try {
 //     const response = await axios.post(`${BASEURL}product`, body);

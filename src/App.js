@@ -41,9 +41,10 @@ import TicketHistory from "./Component/Dashboard/FAQs/TicketHistory";
 import Signup from "./Component/LoginPage/Signup";
 import Admin from "./Component/LoginPage/Admin";
 import ProtectedRoute from "./Component/ProtectedRoute.js/ProtectedRoute";
-import AdminPanel from "./Component/Admin Panel/AdminPanel";
 import ForgotPassword from "./Component/LoginPage/ForgotPassword";
 import PurchaseCourse from "./Component/Dashboard/SelectTest/PurchaseCourse";
+import AdminPanel from "./Component/LoginPage/AdminPanelComp/AdminPanel";
+import NOFInterNatExam from "./Component/Dashboard/SelectTest/NOFInterNatExam";
 
 function App() {
   return (
@@ -62,7 +63,7 @@ function App() {
         <Route path="/wishlist" element={<WIshlist />} />
         <Route path="/downloads" element={<Download />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/cart" element={<Product />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsService />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
@@ -71,12 +72,13 @@ function App() {
         <Route path="/school-login" element={<SchoolLogin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/admin-dashboard" element={<AdminPanel />} />
+        <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/forgot-psd" element={<ForgotPassword />} />
         <Route path="/login" element={<StudentLogin />} />
         <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
         <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />
         <Route path="/demo-test" element={<ProtectedRoute><DemoTest/></ProtectedRoute>} />
+        <Route path="/nof-exam" element={<ProtectedRoute><NOFInterNatExam/></ProtectedRoute>} />
         <Route path="/purchase-course" element={<ProtectedRoute><PurchaseCourse/></ProtectedRoute>} />
         <Route path="/instructions" element={<ProtectedRoute><Instruction/></ProtectedRoute>} />
         <Route path="/exam-guideline" element={<ProtectedRoute><ExamGuideline/></ProtectedRoute>}/>

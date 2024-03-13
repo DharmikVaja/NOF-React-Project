@@ -3,14 +3,14 @@ import "./product.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { Button } from "react-bootstrap";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const ProductList = ({ product, addToCart}) => {
+const ProductList = ({ product, addToCart }) => {
   const [addedToCart, setAddedToCart] = useState({});
   const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     if (addedToCart[product.id]) {
-      navigate("/cart");
     } else {
       setAddedToCart((prev) => ({ ...prev, [product.id]: true }));
       addToCart(product);

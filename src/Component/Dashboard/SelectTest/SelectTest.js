@@ -48,7 +48,7 @@ const SelectTest = () => {
                 <div className="col-md-4">
                   <div className="test-box-new">
                     <h4>NOF International Olympiad</h4>
-                    <Link className="cursorPointerClass" to="/demo-test">
+                    <Link className="cursorPointerClass" to="/nof-exam">
                       <img src={Arrowicon} alt="" />
                     </Link>
                   </div>

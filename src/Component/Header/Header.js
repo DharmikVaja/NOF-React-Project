@@ -51,7 +51,7 @@ const Header = (props) => {
             </span>
           </div>
 
-          <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center gap-2">
+          <div className="d-flex col-md-6  col-sm-12 justify-content-end header-list align-items-center gap-2">
             <div className="d-flex justify-content-start gap-2 m-1">
               <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
@@ -63,7 +63,8 @@ const Header = (props) => {
                   role="button"
                   // onClick={() => props.handleShow(true)}
                   className="show-number cart-wl-btn position-relative "
-                  to="/cart"
+                  to="/product"
+                  name="navtocart"
                 >
                   <span className="show1"> {props.count || 0} </span>
                   <img src={cart} alt="cart" className="wl-cart-img" />

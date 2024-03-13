@@ -155,7 +155,7 @@ const NavbarDashboard = () => {
                         <IoSettingsOutline className="fs-4 me-4" />
                         Account Settings
                       </Link>
-                      <Link
+                      {/* <Link
                         role="button"
                         className="nav-link dashboard-links"
                         tabIndex={0}
@@ -163,7 +163,7 @@ const NavbarDashboard = () => {
                       >
                         <FaRegPlusSquare className="fs-4 me-4" /> Add New
                         Student
-                      </Link>
+                      </Link> */}
                       {/*  */}
                       <Link
                         className="nav-link dashboard-links "
@@ -173,6 +173,7 @@ const NavbarDashboard = () => {
                       </Link>
                       <Link
                         role="button"
+                        
                         className="nav-link me-2"
                         tabIndex={0}
                         to="/"

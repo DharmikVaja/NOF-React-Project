@@ -146,7 +146,6 @@ const Product = () => {
                   ></ProductList>
                 )}
                 <Cart cart={cart} />
-                {/*  */}
               </div>
             </div>
           </section>
