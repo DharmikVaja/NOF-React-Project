@@ -4,13 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 import { Button } from "react-bootstrap";
-// import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const ProductList = ({ product, addToCart }) => {
   const [addedToCart, setAddedToCart] = useState({});
   const [likedProducts, setLikedProducts] = useState([]);
-
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     if (addedToCart[product.id]) {
@@ -19,6 +17,7 @@ const ProductList = ({ product, addToCart }) => {
       addToCart(product);
     }
   };
+  const SClass = localStorage.getItem("selectedClass:");
 
   const isProductLiked = (productId) => likedProducts.includes(productId);
 
@@ -56,7 +55,7 @@ const ProductList = ({ product, addToCart }) => {
             </div>
             <div className="olympiad-info">
               <h2 className="cursorPointerClass">{product.name}</h2>
-              {/* <span>CLASS: {product.class}</span> */}
+              <span>CLASS: {SClass}</span>
               <p className="olympiad-amount">₹ &nbsp;{product.amount}</p>
               <Button
                 className="olympiad-cart cursorPointerClass"

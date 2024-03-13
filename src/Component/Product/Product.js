@@ -14,6 +14,7 @@ import ProImg3 from "../../../src/assets/product/pro3.png";
 import ProImg4 from "../../../src/assets/product/pro4.png";
 import ProImg5 from "../../../src/assets/product/pro5.png";
 import ProImg6 from "../../../src/assets/product/Pro6.png";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
   //
@@ -93,24 +94,29 @@ const Product = () => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
-  console.log(cart);
   const addToCart = (data) => {
     // console.log(data)
     setCart([...cart, { ...data, quantity: 1 }]);
   };
 
+  // console.log(cart);
   const handleShow = (value) => {
     setShowCart(value);
   };
   //
 
-  const [localCart, setLocalCart] = useState([]);
+  // const [localCart, setLocalCart] = useState([]);
+  const navigate = useNavigate();
+  const SCountry = localStorage.getItem("selectedCountry:");
+  const SClass = localStorage.getItem("selectedClass:");
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setLocalCart(storedCart);
-  }, []);
-  //
+  const removeItem = () => {
+    // console.log("----")
+    localStorage.removeItem("selectedCountry:");
+    localStorage.removeItem("selectedClass:");
+    navigate("/");
+  };
+
   return (
     <div>
       <Header count={cart.length} handleShow={handleShow}></Header>
@@ -126,12 +132,14 @@ const Product = () => {
           <div className="mt-5 margin-mobile-box row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="class-country-heading">
-                <p>Country - {}</p>
-                <p>Class - {}</p>
+                <p>Country - {SCountry}</p>
+                <p>Class - {SClass}</p>
               </div>
             </div>
             <div className="text-end col-lg-6 col-md-6 col-sm-6 col-12">
-              <button className="common-btn">Clear filter</button>
+              <button className="common-btn" onClick={removeItem}>
+                Clear filter
+              </button>
             </div>
           </div>
           <section className="olympiad-section">

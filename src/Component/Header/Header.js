@@ -62,9 +62,9 @@ const Header = (props) => {
                 role="button"
                 // onClick={() => props.handleShow(true)}
                 className="show-number cart-wl-btn position-relative "
-                to="/cart"
+                to="/product"
               >
-                <span className="show1"> {props.count || 0} </span>
+                {/* <span className="show1"> {props.count || 0} </span> */}
                 <img src={cart} alt="cart" className="wl-cart-img" />
                 <div className="text-start heading-wc">Cart</div>
               </Link>
