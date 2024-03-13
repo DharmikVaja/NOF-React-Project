@@ -68,7 +68,6 @@ function App() {
         <Route path="/terms-of-service" element={<TermsService />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/refund-and-cancellation" element={<RefundCancel />} />
-        {/* <Route path="modal" element={<RegModal />} /> */}
         <Route path="/school-login" element={<SchoolLogin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<Admin />} />

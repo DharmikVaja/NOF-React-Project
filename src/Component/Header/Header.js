@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
+import PhoneCall from "../../assets/phone-call.png";
 import cart from "../../assets/cart.png";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiMiniUserGroup } from "react-icons/hi2";
-import { FaSchool } from "react-icons/fa";
+import { FaPhoneVolume, FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
 import MenuBtn from "../../assets/Dashboard/menu-icon-dashboard-up.png";
 
@@ -55,22 +56,20 @@ const Header = (props) => {
             <div className="d-flex justify-content-start gap-2 m-1">
               <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
-               <div className="text-center heading-wc"> Wishlist</div>
+                <div className="text-center heading-wc"> Wishlist</div>
               </Link>
 
-              
-                <Link
-                  role="button"
-                  // onClick={() => props.handleShow(true)}
-                  className="show-number cart-wl-btn position-relative "
-                  to="/product"
-                  name="navtocart"
-                >
-                  <span className="show1"> {props.count || 0} </span>
-                  <img src={cart} alt="cart" className="wl-cart-img" />
-                  <div className="text-start heading-wc">Cart</div>
-                </Link>
-              
+              <Link
+                role="button"
+                // onClick={() => props.handleShow(true)}
+                className="show-number cart-wl-btn position-relative "
+                to="/product"
+                name="navtocart"
+              >
+                <span className="show1"> {props.count || 0} </span>
+                <img src={cart} alt="cart" className="wl-cart-img" />
+                <div className="text-start heading-wc">Cart</div>
+              </Link>
             </div>
 
             <div className="col-md-4 text-end d-flex justify-content-end ">
@@ -101,7 +100,6 @@ const Header = (props) => {
                 </>
               )}
 
-              {/* Login modal */}
               <Modal
                 show={show2}
                 onHide={handleClose2}

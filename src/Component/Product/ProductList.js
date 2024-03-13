@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "./product.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
+import { FcLike } from "react-icons/fc";
 import { Button } from "react-bootstrap";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+// import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const ProductList = ({ product, addToCart }) => {
   const [addedToCart, setAddedToCart] = useState({});
+  const [likedProducts, setLikedProducts] = useState([]);
+
   const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
@@ -17,6 +20,15 @@ const ProductList = ({ product, addToCart }) => {
     }
   };
 
+  const isProductLiked = (productId) => likedProducts.includes(productId);
+
+  const toggleWishlist = (productId) => {
+    setLikedProducts((prev) =>
+      isProductLiked(productId)
+        ? prev.filter((id) => id !== productId)
+        : [...prev, productId]
+    );
+  };
   return (
     <>
       {product.map((product) => (
@@ -29,8 +41,16 @@ const ProductList = ({ product, addToCart }) => {
                 alt={product.name}
               />
               <div className="olympiad-heart-icon">
-                <Link className="" to="/product">
-                  <FaHeart />
+                <Link
+                  className=""
+                  to="/product"
+                  onClick={() => toggleWishlist(product.id)}
+                >
+                  {isProductLiked(product.id) ? (
+                    <FcLike className="fs-4" />
+                  ) : (
+                    <FaHeart className="fs-5" />
+                  )}
                 </Link>
               </div>
             </div>
@@ -51,5 +71,4 @@ const ProductList = ({ product, addToCart }) => {
     </>
   );
 };
-
 export default ProductList;
