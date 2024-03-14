@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../Header/Header";
 import "./product.css";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
@@ -92,29 +92,40 @@ const Product = () => {
   ]);
   //
   const [cart, setCart] = useState([]);
+
+  // Cart visibility state
   const [showCart, setShowCart] = useState(false);
 
-  const addToCart = (data) => {
-    // console.log(data)
-    setCart([...cart, { ...data, quantity: 1 }]);
-  };
-
-  // console.log(cart);
-  const handleShow = (value) => {
-    setShowCart(value);
-  };
-  //
-
-  // const [localCart, setLocalCart] = useState([]);
-  const navigate = useNavigate();
   const SCountry = localStorage.getItem("selectedCountry:");
   const SClass = localStorage.getItem("selectedClass:");
 
+  // Add product to cart
+  const addToCart = (data) => {
+    setCart([...cart, { ...data, quantity: 1 }]); // Add quantity property
+  };
+
+  // Show/hide cart
+  const handleShow = (value) => {
+    setShowCart(value);
+  };
+
+  // Remove selected country and class filters from localStorage and navigate back
+  const navigate = useNavigate();
+
   const removeItem = () => {
-    // console.log("----")
     localStorage.removeItem("selectedCountry:");
     localStorage.removeItem("selectedClass:");
     navigate("/");
+  };
+
+  // Ref for smooth scrolling to cart component (optional)
+  const targetRef = useRef(null);
+
+  // Function to scroll to cart component (optional)
+  const scrollToCart = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -146,14 +157,12 @@ const Product = () => {
             <div className="container">
               <div className="row">
                 {showCart ? (
-                  <Cart cart={cart}></Cart>
+                  <Cart cart={cart} />
                 ) : (
-                  <ProductList
-                    product={product}
-                    addToCart={addToCart}
-                  ></ProductList>
+                  <ProductList product={product} addToCart={addToCart} />
                 )}
-                <Cart cart={cart} />
+                <Cart cart={cart} ref={targetRef} />{" "}
+                {/* Add ref to Cart component */}
               </div>
             </div>
           </section>

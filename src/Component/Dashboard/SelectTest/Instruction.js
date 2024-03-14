@@ -127,7 +127,7 @@ const Instruction = () => {
                       </ul>
                     </div>
                     <div className="d-flex mt-4 gap-2 justify-content-center">
-                      <Link className="common-all-btn" to="/instructions">Take Test</Link>
+                      <Link className="common-all-btn" to="/demo-quiz">Take Test</Link>
                       <Link className="common-all-btn" to="/demo-test">Back</Link>
                     </div>
                   </div>

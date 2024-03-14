@@ -51,11 +51,11 @@ const Header = (props) => {
             </span>
           </div>
 
-          <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center gap-2">
-            <div className="d-flex justify-content-start gap-2 m-1">
+          <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center ">
+            <div className="d-flex wl-ct justify-content-start gap-2 m-1">
               <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
-                <div className="text-center heading-wc"> Wishlist</div>
+                <div className="text-center "> Wishlist</div>
               </Link>
 
               <Link
@@ -66,7 +66,7 @@ const Header = (props) => {
               >
                 {/* <span className="show1"> {props.count || 0} </span> */}
                 <img src={cart} alt="cart" className="wl-cart-img" />
-                <div className="text-start heading-wc">Cart</div>
+                <div className="text-start ">Cart</div>
               </Link>
             </div>
 

@@ -9,7 +9,7 @@ import Syllabus from "./Component/HeaderLink/Syllabus/Syllabus";
 import WIshlist from "./Component/HeaderLink/Wishlist/WIshlist";
 import Download from "./Component/HeaderLink/Download/Download";
 import Contact from "./Component/HeaderLink/Contact/Contact";
-import Cart from "./Component/HeaderLink/Cart/Cart";
+// import Cart from "./Component/HeaderLink/Cart/Cart";
 import PrivacyPolicy from "./Component/FooterLinks/PrivacyPolicy/PrivacyPolicy";
 import TermsService from "./Component/FooterLinks/TermsService/TermsService";
 import Disclaimer from "./Component/FooterLinks/Disclaimer/Disclaimer";
@@ -20,6 +20,7 @@ import Product from "./Component/Product/Product";
 import Dashboard from "./Component/Dashboard/UserDashboard/Dashboard";
 import SelectTest from "./Component/Dashboard/SelectTest/SelectTest";
 import DemoTest from "./Component/Dashboard/SelectTest/DemoTest";
+import DemoQuiz from "./Component/Dashboard/SelectTest/Quiz/DemoQuiz";
 import Instruction from "./Component/Dashboard/SelectTest/Instruction";
 import ExamGuideline from "./Component/Dashboard/ExamGuideline/ExamGuideline";
 import ResultReport from "./Component/Dashboard/ResultReport/ResultReport";
@@ -77,6 +78,7 @@ function App() {
         <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
         <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />
         <Route path="/demo-test" element={<ProtectedRoute><DemoTest/></ProtectedRoute>} />
+        <Route path="/demo-quiz" element={<ProtectedRoute><DemoQuiz/></ProtectedRoute>} />
         <Route path="/nof-exam" element={<ProtectedRoute><NOFInterNatExam/></ProtectedRoute>} />
         <Route path="/purchase-course" element={<ProtectedRoute><PurchaseCourse/></ProtectedRoute>} />
         <Route path="/instructions" element={<ProtectedRoute><Instruction/></ProtectedRoute>} />

@@ -71,10 +71,16 @@ Header {
 
   .header-list {
     display: flex;
-    justify-content: space-evenly;
-    align-items: space-evenly;
+    justify-content: space-between !important;
+    /* align-content:; */
+    
+  }
+  .header-list .wl-ct{
+    /* margin-right: 30px !important; */
+
   }
 }
+
 .show-number {
   position: relative !important;
 }

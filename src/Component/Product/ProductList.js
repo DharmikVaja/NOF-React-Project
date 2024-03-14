@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./product.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
@@ -8,15 +8,24 @@ import { Button } from "react-bootstrap";
 const ProductList = ({ product, addToCart }) => {
   const [addedToCart, setAddedToCart] = useState({});
   const [likedProducts, setLikedProducts] = useState([]);
-  // const navigate = useNavigate();
+
+  const targetRef = useRef(null);
 
   const handleAddToCart = (product) => {
     if (addedToCart[product.id]) {
+      scrollToCart();
     } else {
       setAddedToCart((prev) => ({ ...prev, [product.id]: true }));
       addToCart(product);
     }
   };
+
+  const scrollToCart = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const SClass = localStorage.getItem("selectedClass:");
 
   const isProductLiked = (productId) => likedProducts.includes(productId);
