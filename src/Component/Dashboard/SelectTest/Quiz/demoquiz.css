@@ -7,22 +7,24 @@
   flex-direction: column;
   text-align: center;
   background-color: #597ad1;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 .quiz-h1 {
-  color: #00008b;
-  font-size: 40px;
+  color: #ffc426;
+  font-size: 45px;
 }
 .quiz-score {
   color: #00008b;
 }
 .question-card {
   position: relative;
-  width: 40%;
+  width: 50%;
   background-color: #6b92ff;
   padding: 26px;
+  font-weight: 500;
   border-radius: 16px;
   color: #ffff;
-  margin-bottom: 170px;
+  margin-bottom: 60px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
@@ -32,7 +34,7 @@
   }
 }
 .question-card h2 {
-  font-size: 30px;
+  font-size: 28px;
 }
 .answer-list {
   list-style: none;
@@ -47,15 +49,22 @@
   border-radius: 20px;
   font-size: 20px;
 }
-
+.answer-option:hover {
+  background-color: #00008b;
+  color: #ffc426;
+}
+.leave-btn {
+  margin-bottom: 70px;
+}
 .question-text {
   color: darkblue;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  
 }
 
 .final-results {
-    
   margin-bottom: 400px !important;
   margin: auto;
   height: auto;

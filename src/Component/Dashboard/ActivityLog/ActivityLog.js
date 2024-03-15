@@ -11,7 +11,7 @@ import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ActivityLog = () => {
   const [searchValue, setSearchValue] = useState("");
-
+  const [searchItem, setSearchItem] = useState("");
   const handleSearchChange = (e) => {
     // Update the search value on every key press
     setSearchValue(e.target.value);
@@ -19,6 +19,15 @@ const ActivityLog = () => {
   function clearFilter() {
     document.querySelector(".search-data").value = "";
   }
+  const handleInputChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm);
+  };
+  const ActLog=[
+    {id:1,  date:"Mar 12, 2024 10:43 AM",activity:"LOGGED OUT" , description:" You have logged out Tue Mar 12 2024 at 10:43:43 AM"},
+    {id:2, date:"Mar 8, 2024 2:30 PM", activity:"LOGGED OUT" ,description:"You have logged out Fri Mar 08 2024 at 2:30:33 PM"},
+    {id:3, date:"Feb 20, 2024 10:12 PM",activity:"LOGGED OUT" , description:" You have logged out Tue Feb 20 2024 at 10:12:23 PM"},
+  ]
   return (
     <>
       <div>
@@ -53,12 +62,12 @@ const ActivityLog = () => {
                         <div className="search-div ms-3">
                           <div className="input-group activity-search-input">
                             <input
-                              placeholder="Search"
-                              name="search"
-                              type="text"
                               className="search-data play-search1 form-control"
-                              value={searchValue}
-                              onChange={handleSearchChange}
+                              type="text"
+                              name="search"
+                              value={searchItem}
+                              onChange={handleInputChange}
+                              placeholder="Type to search"
                             />
                           </div>
                         </div>

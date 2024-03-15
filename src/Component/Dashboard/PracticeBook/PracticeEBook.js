@@ -55,7 +55,7 @@ const PracticeEBook = () => {
                     <h4>International GK Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtndisable" disabled="">
                       Already paid
@@ -72,7 +72,7 @@ const PracticeEBook = () => {
                     <h4>International Math Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtndisable" disabled="">
                       Already paid
@@ -89,7 +89,7 @@ const PracticeEBook = () => {
                     <h4>International Science Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtndisable" disabled="">
                       Already paid
@@ -106,7 +106,7 @@ const PracticeEBook = () => {
                     <h4>International French Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -121,7 +121,7 @@ const PracticeEBook = () => {
                     <h4>MTSE-English</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -136,7 +136,7 @@ const PracticeEBook = () => {
                     <h4>MTSE-Hindi</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -151,7 +151,7 @@ const PracticeEBook = () => {
                     <h4>International Hindi Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -166,7 +166,7 @@ const PracticeEBook = () => {
                     <h4>International Aptitude Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -181,7 +181,7 @@ const PracticeEBook = () => {
                     <h4>International English Olympiad</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
@@ -196,7 +196,7 @@ const PracticeEBook = () => {
                     <h4>MTSE-Marathi</h4>
                     <div className="d-flex gap-5 justify-content-between">
                       <p>CLASS 8</p>
-                      <p>Price : $&nbsp; 10</p>
+                      <p>Price : ₹&nbsp; 300</p>
                     </div>
                     <button className="addtocartbtn">Add to cart</button>
                   </div>
