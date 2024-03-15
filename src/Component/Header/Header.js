@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logoImg from "../../assets/logo.png";
 import "./header.css";
 import wishlist from "../../assets/wishlist.png";
@@ -41,6 +41,14 @@ const Header = (props) => {
   const handleShow3 = () => {
     setShow3(true);
   };
+
+  const targetRef = useRef(null);
+  const scrollToCart = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="homeHeader ">
       <div className="container">
@@ -61,8 +69,10 @@ const Header = (props) => {
               <Link
                 role="button"
                 // onClick={() => props.handleShow(true)}
+                onClick={scrollToCart}
                 className="show-number cart-wl-btn position-relative "
                 to="/product"
+                
               >
                 {/* <span className="show1"> {props.count || 0} </span> */}
                 <img src={cart} alt="cart" className="wl-cart-img" />
@@ -185,7 +195,7 @@ const Header = (props) => {
                   // onClick={() => props.handleShow(false)}
                   to="/product"
                 >
-                  Product
+                  Buy Product
                 </Link>
 
                 <Modal show={show3} onHide={handleClose3}>

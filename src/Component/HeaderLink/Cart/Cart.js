@@ -20,9 +20,12 @@ const Cart = ({ cart }) => {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
 
-  useEffect(() => {
-    setCART(cart);
-  }, [cart]);
+  const removeItem = (itemId) => {
+    const updatedCart = CART.filter((item) => item.id !== itemId);
+    setCART(updatedCart);
+    localStorage.setItem("cartList", JSON.stringify(updatedCart));
+  };
+
   const updateQuantity = (itemId, newQuantity) => {
     const itemIndex = localCart.findIndex((item) => item.id === itemId);
 
@@ -41,7 +44,15 @@ const Cart = ({ cart }) => {
     // Update local storage
     localStorage.setItem("cart", JSON.stringify(localCart));
   };
-  const removeItem = () => {};
+
+  const storedCart = JSON.parse(localStorage.getItem("cartList"));
+  useEffect(() => {
+    if (storedCart) {
+      setCART(storedCart);
+      // setLocalCart(storedCart); 
+    }
+  }, []);
+
   return (
     <>
       <div className="set-top-margin-all"></div>

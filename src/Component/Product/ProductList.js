@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./product.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 import { Button } from "react-bootstrap";
@@ -37,6 +37,7 @@ const ProductList = ({ product, addToCart }) => {
         : [...prev, productId]
     );
   };
+
   return (
     <>
       {product.map((product) => (
@@ -66,6 +67,7 @@ const ProductList = ({ product, addToCart }) => {
               <h2 className="cursorPointerClass">{product.name}</h2>
               <span>CLASS: {SClass}</span>
               <p className="olympiad-amount">₹ &nbsp;{product.amount}</p>
+              <div ref={targetRef} />
               <Button
                 className="olympiad-cart cursorPointerClass"
                 onClick={() => handleAddToCart(product)}
