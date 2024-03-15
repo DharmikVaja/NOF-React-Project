@@ -99,18 +99,13 @@ const Product = () => {
   const SCountry = localStorage.getItem("selectedCountry:");
   const SClass = localStorage.getItem("selectedClass:");
 
-  const addToCart = ( data) => {
-    setCART([...CART, { ...data, quantity: 1 }]); 
+  const addToCart = (data) => {
+    setCART([...CART, { ...data, quantity: 1 }]);
 
     const updatedCart = [...CART];
     localStorage.setItem("cartList", JSON.stringify(updatedCart));
     // setCART(updatedCart);
-
   };
-
-  // const addToCart = (data) => {
-  //   setCart([...cart, { ...data, quantity: 1 }]); // Add quantity property
-  // };
 
   const handleShow = (value) => {
     setShowCart(value);
@@ -159,7 +154,7 @@ const Product = () => {
                 ) : (
                   <ProductList product={product} addToCart={addToCart} />
                 )}
-                <Cart cart={CART} ref={targetRef} />{" "}
+                <Cart cart={CART} ref={targetRef} />
               </div>
             </div>
           </section>

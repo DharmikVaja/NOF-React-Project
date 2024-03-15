@@ -49,7 +49,7 @@ const Cart = ({ cart }) => {
   useEffect(() => {
     if (storedCart) {
       setCART(storedCart);
-      // setLocalCart(storedCart); 
+      // setLocalCart(storedCart);
     }
   }, []);
 
@@ -90,43 +90,45 @@ const Cart = ({ cart }) => {
                                   <button
                                     type="button"
                                     className="btn btn-outline-secondary"
-                                    onClick={() => {
-                                      const _CART = CART.map((item, index) => {
-                                        return cartindex === index
-                                          ? {
-                                              ...item,
-                                              quantity:
-                                                item.quantity > 0
-                                                  ? item.quantity - 1
-                                                  : 0,
-                                            }
-                                          : item;
-                                      });
-                                      setCART(_CART);
-                                    }}
+                                    disabled
+                                    // onClick={() => {
+                                    //   const _CART = CART.map((item, index) => {
+                                    //     return cartindex === index
+                                    //       ? {
+                                    //           ...item,
+                                    //           quantity:
+                                    //             item.quantity > 0
+                                    //               ? item.quantity - 1
+                                    //               : 0,
+                                    //         }
+                                    //       : item;
+                                    //   });
+                                    //   setCART(_CART);
+                                    // }}
                                   >
                                     <FaMinus />
                                   </button>
                                   <input
                                     type="text"
-                                    readOnly=""
+                                    readOnly
                                     className="form-control cart-quantity-value"
                                     defaultValue={cartItem.quantity}
                                   />
                                   <button
                                     type="button"
                                     className="btn btn-outline-secondary"
-                                    onClick={() => {
-                                      const _CART = CART.map((item, index) => {
-                                        return cartindex === index
-                                          ? {
-                                              ...item,
-                                              quantity: item.quantity + 1,
-                                            }
-                                          : item;
-                                      });
-                                      setCART(_CART);
-                                    }}
+                                    disabled
+                                    // onClick={() => {
+                                    //   const _CART = CART.map((item, index) => {
+                                    //     return cartindex === index
+                                    //       ? {
+                                    //           ...item,
+                                    //           quantity: item.quantity + 1,
+                                    //         }
+                                    //       : item;
+                                    //   });
+                                    //   setCART(_CART);
+                                    // }}
                                   >
                                     <FaPlus />
                                   </button>

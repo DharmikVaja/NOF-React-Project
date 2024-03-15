@@ -69,6 +69,7 @@ function DemoQuiz() {
                   className="answer-option"
                   key={option.id}
                   onClick={() => optionClicked(option.isCorrect)}
+                  
                 >
                   {option.text}
                 </li>

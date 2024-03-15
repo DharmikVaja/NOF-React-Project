@@ -38,9 +38,9 @@ const Header = (props) => {
     }
   };
   const navigate = useNavigate();
-  const handleShow3 = () => {
-    setShow3(true);
-  };
+  // const handleShow3 = () => {
+  //   setShow3(true);
+  // };
 
   const targetRef = useRef(null);
   const scrollToCart = () => {
@@ -61,23 +61,19 @@ const Header = (props) => {
 
           <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center ">
             <div className="d-flex wl-ct justify-content-start gap-2 m-1">
-              <Link role="button" className="cart-wl-btn" to="/wishlist">
+              {/* <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                 <div className="text-center "> Wishlist</div>
-              </Link>
-
-              <Link
+              </Link> 
+               <Link
                 role="button"
-                // onClick={() => props.handleShow(true)}
                 onClick={scrollToCart}
                 className="show-number cart-wl-btn position-relative "
-                to="/product"
-                
+                to="/product"     
               >
-                {/* <span className="show1"> {props.count || 0} </span> */}
                 <img src={cart} alt="cart" className="wl-cart-img" />
                 <div className="text-start ">Cart</div>
-              </Link>
+              </Link> */}
             </div>
 
             <div className="col-md-4 text-end d-flex justify-content-end gap-2">
