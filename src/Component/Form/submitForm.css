@@ -42,11 +42,31 @@ footer {
   margin-top: 25px;
   position: relative;
 }
-.nof-get-info-heading{
+.nof-get-info-heading {
   font-family: "Montserrat Alternates", sans-serif;
 }
+.form-phone-field {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  /* border: 1px solid white transparent; */
+  border-radius: var(--bs-border-radius);
+}
+.form-phone-field::-webkit-input-placeholder{
+  border: none !important;
+  outline: none !important;
+}
+.form-submit-btn:hover{
+  background: #333131 !important;
+}
 @media screen and (max-width: 768px) {
-  .get-touch-bg{
+  .get-touch-bg {
     padding: 60px;
     margin-left: 15px;
     margin-top: 10px;
@@ -98,9 +118,9 @@ footer {
 textarea.submitform-control {
   min-height: calc(7.5em + 0.75rem + 2px) !important;
 }
-.submitform-control{
+.submitform-control {
   display: block;
-  width: 100%!important;
+  width: 100% !important;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -138,4 +158,3 @@ textarea.submitform-control {
   padding: 0 0 0 8px;
   border-radius: 3px 0 0 3px;
 }
-

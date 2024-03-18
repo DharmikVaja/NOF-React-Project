@@ -11,7 +11,6 @@ import ScrollToTop from "../../ScrollToTop/ScrollToTop.js";
 
 const ActivityLog = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [searchItem, setSearchItem] = useState("");
   const handleSearchChange = (e) => {
     // Update the search value on every key press
     setSearchValue(e.target.value);
@@ -19,15 +18,27 @@ const ActivityLog = () => {
   function clearFilter() {
     document.querySelector(".search-data").value = "";
   }
-  const handleInputChange = (e) => {
-    const searchTerm = e.target.value;
-    setSearchItem(searchTerm);
-  };
-  const ActLog=[
-    {id:1,  date:"Mar 12, 2024 10:43 AM",activity:"LOGGED OUT" , description:" You have logged out Tue Mar 12 2024 at 10:43:43 AM"},
-    {id:2, date:"Mar 8, 2024 2:30 PM", activity:"LOGGED OUT" ,description:"You have logged out Fri Mar 08 2024 at 2:30:33 PM"},
-    {id:3, date:"Feb 20, 2024 10:12 PM",activity:"LOGGED OUT" , description:" You have logged out Tue Feb 20 2024 at 10:12:23 PM"},
-  ]
+
+  const ActLog = [
+    {
+      id: 1,
+      date: "Mar 12, 2024 10:43 AM",
+      activity: "LOGGED OUT",
+      description: " You have logged out Tue Mar 12 2024 at 10:43:43 AM",
+    },
+    {
+      id: 2,
+      date: "Mar 8, 2024 2:30 PM",
+      activity: "LOGGED OUT",
+      description: "You have logged out Fri Mar 08 2024 at 2:30:33 PM",
+    },
+    {
+      id: 3,
+      date: "Feb 20, 2024 10:12 PM",
+      activity: "LOGGED OUT",
+      description: " You have logged out Tue Feb 20 2024 at 10:12:23 PM",
+    },
+  ];
   return (
     <>
       <div>
@@ -65,8 +76,6 @@ const ActivityLog = () => {
                               className="search-data play-search1 form-control"
                               type="text"
                               name="search"
-                              value={searchItem}
-                              onChange={handleInputChange}
                               placeholder="Type to search"
                             />
                           </div>
@@ -83,34 +92,24 @@ const ActivityLog = () => {
                     </div>
                   </div>
                   <table className=" table act-table table-responsive w-max-width ">
-                    <tr>
-                      <th scope="col">S.No</th>
-                      <th scope="col">Date & Time</th>
-                      <th scope="col">Activity</th>
-                      <th scope="col">Activity Description</th>
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mar 12, 2024 10:43 AM</td>
-                      <td>LOGGED OUT</td>
-                      <td>
-                        You have logged out Tue Mar 12 2024 at 10:43:43 AM
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Mar 8, 2024 2:30 PM</td>
-                      <td>LOGGED OUT</td>
-                      <td>You have logged out Fri Mar 08 2024 at 2:30:33 PM</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Feb 20, 2024 10:12 PM</td>
-                      <td>LOGGED OUT</td>
-                      <td>
-                        You have logged out Tue Feb 20 2024 at 10:12:23 PM
-                      </td>
-                    </tr>
+                    <thead>
+                      <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Date & Time</th>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Activity Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ActLog.map((item) => (
+                        <tr>
+                          <th scope="row">{item.id}</th>
+                          <td>{item.date}</td>
+                          <td>{item.activity}</td>
+                          <td>{item.description}</td>
+                        </tr>
+                      ))}
+                    </tbody>
                   </table>
                   <div className="d-flex justify-content-center paginate-register">
                     <div className="d-flex">

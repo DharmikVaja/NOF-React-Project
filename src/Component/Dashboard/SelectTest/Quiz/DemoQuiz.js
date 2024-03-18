@@ -49,12 +49,15 @@ function DemoQuiz() {
             {score} out of {Questions.length} correct - (
             {Math.round((score / Questions.length) * 100)}%)
           </h2>
+          <div className="d-flex justify-content-around">
+
           <button className="restart-btn" onClick={() => restartGame()}>
             Restart game
           </button>
           <button className="restart-btn" onClick={() => gotoreport()}>
             Go to Report
           </button>
+          </div>
         </div>
       ) : (
         <div className="question-card ">

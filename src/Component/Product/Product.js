@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Header from "../Header/Header";
 import "./product.css";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";

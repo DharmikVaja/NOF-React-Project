@@ -1,14 +1,52 @@
 import React, { useState } from "react";
 import "../../app.css";
 import "./submitForm.css";
-import { FaFacebook } from "react-icons/fa";
+import { FaBorderNone, FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
+import { Form, FormControl, InputGroup } from "react-bootstrap";
 // import CountryFlag from "./flag&countrycode.json";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+// import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 const SubmitForm = () => {
+  const [validated, setValidated] = useState(false);
+
+  const [phoneNum, setPhoneNum] = useState("");
+  // const [validNum, setValidNum] = useState(true);w
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (
+      form.checkValidity() === false ||
+      !validatePhoneNum(phoneNum, formData.phone)
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
+  const handlePhone = (value, country, event, formattedValue) => {
+    setPhoneNum(value);
+  };
+
+  const validatePhoneNum = (phoneNum, country) => {
+    const phoneNumPatterns = {
+      US: /^\d{10}$/,
+      IN: /^\d{10}$/,
+    };
+
+    return phoneNumPatterns[country].test(phoneNum);
+  };
+
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -17,72 +55,6 @@ const SubmitForm = () => {
     comment: "",
   });
 
-  const [formErrors, setFormErrors] = useState({
-    first_name: "",
-    last_name: "",
-    phone: "",
-    email: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-    // Clear the specific error when the user starts typing
-    setFormErrors({
-      ...formErrors,
-      [name]: "",
-    });
-  };
-
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = { ...formErrors };
-
-    // Validate First Name
-    if (!formData.first_name.trim()) {
-      newErrors.first_name = "First Name is required";
-      valid = false;
-    }
-
-    // Validate Last Name
-    if (!formData.last_name.trim()) {
-      newErrors.last_name = "Last Name is required";
-      valid = false;
-    }
-
-    // Validate Phone Number
-    const phoneRegex = /^\+91[0-9]{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Phone Number must be +91 followed by 10 digits";
-      valid = false;
-    }
-
-    // Validate Email Address
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email.trim())) {
-      newErrors.email = "Invalid Email Address";
-      valid = false;
-    }
-
-    setFormErrors(newErrors);
-    return valid;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // Perform your submit logic here
-      console.log("Form submitted:", formData);
-    } else {
-      console.log("Form validation failed");  
-    }
-  };
-
   return (
     <>
       <footer className="footer-home-new" id="footer">
@@ -90,7 +62,9 @@ const SubmitForm = () => {
           <div className="row align-items-center d-flex justify-content-between ">
             <div className="offset-md-1 col-md-5 col-lg-3">
               <div className="get-touch-info ">
-                <h2 className="nof-get-info-heading">National Olympiad Foundation</h2>
+                <h2 className="nof-get-info-heading">
+                  National Olympiad Foundation
+                </h2>
                 <p>
                   NOF Edtech Private Limited G-1, 108, Saket Nagar Indore,
                   452018 ,Madhya Pradesh
@@ -147,12 +121,116 @@ const SubmitForm = () => {
                 </ul>
               </div>
             </div>
-
             <div className="col-md-12 col-lg-7">
+              <Form
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
+                // validated={validated}
+                // onSubmit={handleSubmit}
+                className="get-touch-bg "
+              >
+                <h2>Get in touch with us...</h2>
+                <Row className="mb-3 ">
+                  <Form.Group as={Col} md="6" controlid="validationCustom01">
+                    <Form.Label>First name</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      placeholder="Enter First name"
+                      defaultValue=""
+                    />
+                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  </Form.Group>
+                  <Form.Group as={Col} md="6" controlid="validationCustom02">
+                    <Form.Label>Last name</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      placeholder="Enter Last name"
+                      defaultValue=""
+                    />
+                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Form.Group
+                    as={Col}
+                    md="4"
+                    controlid="validationCustomUsername"
+                  ></Form.Group>
+                </Row>
+                <Row className="mb-3">
+                  <Form.Group as={Col} md="12" controlid="validationCustom03">
+                    <Form.Label>Phone Number</Form.Label>
+                    <PhoneInput
+                      style={{ "::placeholder": { border: "none" } }}
+                      className="form-phone-field"
+                      value={phoneNum}
+                      defaultCountry="IN"
+                      onChange={handlePhone}
+                      placeholder="Enter Phone Number"
+                      pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im"
+                      as={Col}
+                      md="2"
+                      controlid="validationCustom06"
+                      required
+                    />
+                  </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                  <Form.Group
+                    as={Col}
+                    md="12"
+                    controlid="validationCustomUsername"
+                  >
+                    <Form.Label>Email Address</Form.Label>
+                    <InputGroup hasValidation>
+                      {/* <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text> */}
+                      <Form.Control
+                        type="text"
+                        placeholder="Email Address"
+                        aria-describedby="inputGroupPrepend"
+                        required
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please Enter valid Email Address
+                      </Form.Control.Feedback>
+                    </InputGroup>
+                  </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                  <Form.Group as={Col} md="12" controlid="validationCustom">
+                    <Form.Label>Comments</Form.Label>
+                    <InputGroup hasValidation>
+                      <Form.Control
+                        as="textarea"
+                        rows={4}
+                        type="Comments"
+                        placeholder="Write something you want to ask.."
+                        aria-describedby="inputGroupPrepend"
+                        required
+                      />
+                    </InputGroup>
+                  </Form.Group>
+                </Row>
+                <Form.Group className="mb-3">
+                  <Form.Check
+                    required
+                    label="Agree to terms and conditions"
+                    feedback="You must agree before submitting."
+                    feedbackType="invalid"
+                  />
+                </Form.Group>
+                <Button type="submit" className="form-submit-btn">Submit form</Button>
+              </Form>
+            </div>
+            {/*  */}
+            {/* <div className=" needs-validation ">
               <div className="get-touch-bg">
                 <h2>Get in touch with us...</h2>
                 <div>
-                  <form onSubmit={handleSubmit}>
+                  <form 
+                  >
                     <div className="row">
                       <div className="col-sm-6">
                         <div className="form-group">
@@ -186,23 +264,7 @@ const SubmitForm = () => {
 
                     <div className="form-group">
                       <label className="form-label">Phone Number</label>
-
-                      {/* <select
-                        className="form-control"
-                        name="countryCode"
-                        value={formData}
-                        onChange={handleChange}
-                      >
-                        {Object.entries(CountryFlag).map(([code, country]) => (
-                          <option
-                            key={code}
-                            value={code}
-                            data-image={country.image}
-                          >
-                            {country.emoji} {country.name} ({code})
-                          </option>
-                        ))}
-                      </select> */}
+                     
                       <input
                         className="form-control"
                         placeholder="Phone Number"
@@ -215,16 +277,11 @@ const SubmitForm = () => {
                       <div className="flag-dropdown">
                         <div
                           className={`selected-flag open ${formData}`}
-                          // title={`${CountryFlag[formData.countryCode].name}: +${
-                          //   CountryFlag[formData.countryCode].callingCode
-                          // }`}
                           tabIndex="0"
                           role="button"
                           aria-haspopup="listbox"
                         >
-                          <div
-                            className={`flag ${formData}`}
-                          >
+                          <div className={`flag ${formData}`}>
                             <div className="arrow"></div>
                           </div>
                         </div>
@@ -260,7 +317,7 @@ const SubmitForm = () => {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
