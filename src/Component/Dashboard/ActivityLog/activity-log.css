@@ -11,12 +11,23 @@
   width: 100%;
   /* margin: 5px 5px; */
 }
+.table-heading-srnum{
+  padding: 30px 15px !important;
+}
 .search-div {
   padding-right: 10px;
 }
 .activity-table {
   flex-wrap: wrap;
   width: 100%;
+}
+.act-table{
+  /* max-width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  overflow-x: auto;
+
 }
 .act-table tr th,
 .act-table tr td {

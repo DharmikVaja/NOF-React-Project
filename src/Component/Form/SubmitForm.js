@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import "../../app.css";
 import "./submitForm.css";
-import { FaBorderNone, FaFacebook } from "react-icons/fa";
+import {  FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
-import { Form, FormControl, InputGroup } from "react-bootstrap";
-// import CountryFlag from "./flag&countrycode.json";
+import { Form, InputGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-// import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -29,6 +27,7 @@ const SubmitForm = () => {
     ) {
       event.preventDefault();
       event.stopPropagation();
+      setFormData(localStorage.setFormData)
     }
 
     setValidated(true);
@@ -54,6 +53,7 @@ const SubmitForm = () => {
     email: "",
     comment: "",
   });
+
 
   return (
     <>

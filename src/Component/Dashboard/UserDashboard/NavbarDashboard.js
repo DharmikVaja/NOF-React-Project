@@ -18,7 +18,7 @@ import { BsJournalText } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { MdListAlt } from "react-icons/md";
 import Stack from "react-bootstrap/Stack";
-import { Scrollbars } from 'react-custom-scrollbars-2';
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const NavbarDashboard = () => {
   const [isNavBarsVisible, setNavBarsVisible] = useState(false);
@@ -55,107 +55,107 @@ const NavbarDashboard = () => {
           <div className="w-100 m-auto row">
             <div className="col">
               <div className="d-flex justify-content-between align-items-center ">
-                <a href="/" className="navbar-brand">
-                  <img src={NavLogo} alt="logo " />
-                </a>
+                <Link to="/" className="navbar-brand">
+                  <img src={NavLogo} alt="logo" />
+                </Link>
                 <div
                   className={`navbar-collapse ${
                     isNavBarsVisible ? "show" : "collapse"
                   }`}
                   id="basic-navbar-nav"
                 >
-                <div className="me-auto navbar-nav navBars">
-                  <Scrollbars>
-                    <Stack
-                      direction="vertical"
-                      gap={0.9}
-                      className="col-md-12 mx-auto"
-                    >
-                      <Link
-                        role="button12"
-                        to="/user-dashboard"
-                        className={`nav-link dashboard-links`}
-                        tabIndex={0}
-                        onClick={() => handleMenuItemClick("dashboard")}
+                  <div className="me-auto navbar-nav navBars">
+                    <Scrollbars>
+                      <Stack
+                        direction="vertical"
+                        gap={0.9}
+                        className="col-md-12 mx-auto"
                       >
-                        <RxDashboard className="fs-4 me-4" />
-                        Dashboard
-                      </Link>
-                      <Link
-                        role="button"
-                        to="/select-test"
-                        className={`nav-link dashboard-links`}
-                        tabIndex={0}
-                      >
-                        <IoSchoolOutline className="fs-4 me-4" />
-                        NOF Olympiad Exams
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/exam-guideline"
-                      >
-                        <HiOutlineClipboardDocumentList className="fs-4 me-4" />
-                        Exam Guidelines
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/practice-books"
-                        //
-                      >
-                        <BsJournalText className="fs-4 me-4" />
-                        NOF-Practice E-books
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/result-and-report"
-                      >
-                        {/* <RiPieChart2Line /> */}
-                        <AiOutlinePieChart className="fs-4 me-4" />
-                        Results and Reports
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/activity-logs"
-                      >
-                        <GrDocumentPerformance className="fs-4 me-4" />
-                        Activity Logs
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/faqs"
-                      >
-                        <FaQuestion className="fs-4 me-4" />
-                        FAQs
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/olympiad-syllabus"
-                      >
-                        <MdListAlt className="fs-4 me-4" />
-                        Olympiads Syllabus
-                      </Link>
-                      <Link
-                        role="button"
-                        className="nav-link dashboard-links"
-                        tabIndex={0}
-                        to="/account-setting"
-                      >
-                        <IoSettingsOutline className="fs-4 me-4" />
-                        Account Settings
-                      </Link>
-                      {/* <Link
+                        <Link
+                          role="button12"
+                          to="/user-dashboard"
+                          className={`nav-link dashboard-links`}
+                          tabIndex={0}
+                          onClick={() => handleMenuItemClick("dashboard")}
+                        >
+                          <RxDashboard className="fs-4 me-4" />
+                          Dashboard
+                        </Link>
+                        <Link
+                          role="button"
+                          to="/select-test"
+                          className={`nav-link dashboard-links`}
+                          tabIndex={0}
+                        >
+                          <IoSchoolOutline className="fs-4 me-4" />
+                          NOF Olympiad Exams
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/exam-guideline"
+                        >
+                          <HiOutlineClipboardDocumentList className="fs-4 me-4" />
+                          Exam Guidelines
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/practice-books"
+                          //
+                        >
+                          <BsJournalText className="fs-4 me-4" />
+                          NOF-Practice E-books
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/result-and-report"
+                        >
+                          {/* <RiPieChart2Line /> */}
+                          <AiOutlinePieChart className="fs-4 me-4" />
+                          Results and Reports
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/activity-logs"
+                        >
+                          <GrDocumentPerformance className="fs-4 me-4" />
+                          Activity Logs
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/faqs"
+                        >
+                          <FaQuestion className="fs-4 me-4" />
+                          FAQs
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/olympiad-syllabus"
+                        >
+                          <MdListAlt className="fs-4 me-4" />
+                          Olympiads Syllabus
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link dashboard-links"
+                          tabIndex={0}
+                          to="/account-setting"
+                        >
+                          <IoSettingsOutline className="fs-4 me-4" />
+                          Account Settings
+                        </Link>
+                        {/* <Link
                         role="button"
                         className="nav-link dashboard-links"
                         tabIndex={0}
@@ -164,38 +164,36 @@ const NavbarDashboard = () => {
                         <FaRegPlusSquare className="fs-4 me-4" /> Add New
                         Student
                       </Link> */}
-                      {/*  */}
-                      <Link
-                        className="nav-link dashboard-links "
-                        onClick={handleLogOut}
-                      >
-                        <HiOutlineLogout className="fs-4 me-4 " /> Logout
-                      </Link>
-                      <Link
-                        role="button"
-                        
-                        className="nav-link me-2"
-                        tabIndex={0}
-                        to="/"
-                      >
-                        <Modal
-                          size="sm"
-                          show={smShow}
-                          onHide={() => setSmShow(false)}
-                          aria-labelledby="example-modal-sizes-title-sm"
+                        {/*  */}
+                        <Link
+                          className="nav-link dashboard-links "
+                          onClick={handleLogOut}
                         >
-                          <Modal.Header closeButton>
-                            <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
-                            <Modal.Body>Logout successfully!!</Modal.Body>
-                          </Modal.Header>
-                        </Modal>
-                      </Link>
-                      {/*  */}
-                    </Stack>
-                  </Scrollbars>
+                          <HiOutlineLogout className="fs-4 me-4 " /> Logout
+                        </Link>
+                        <Link
+                          role="button"
+                          className="nav-link me-2"
+                          tabIndex={0}
+                          to="/"
+                        >
+                          <Modal
+                            size="sm"
+                            show={smShow}
+                            onHide={() => setSmShow(false)}
+                            aria-labelledby="example-modal-sizes-title-sm"
+                          >
+                            <Modal.Header closeButton>
+                              <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
+                              <Modal.Body>Logout successfully!!</Modal.Body>
+                            </Modal.Header>
+                          </Modal>
+                        </Link>
+                        {/*  */}
+                      </Stack>
+                    </Scrollbars>
                   </div>
                 </div>
-
 
                 {/* <Scrollbars> */}
                 <Dropdown>
@@ -212,21 +210,30 @@ const NavbarDashboard = () => {
                       <Dropdown.Item
                         className="dropdown-item"
                         role="button"
-                        href="/user-dashboard"
+                        href="/login"
                       >
                         Switch User
                       </Dropdown.Item>
+
                       <Dropdown.Item
                         className="dropdown-item"
                         role="button"
                         href="/"
+                      >
+                        Go to Home page
+                      </Dropdown.Item>
+
+                      <Dropdown.Item
+                        className="dropdown-item"
+                        role="button"
+                        onClick={handleLogOut}
                       >
                         LogOut
                       </Dropdown.Item>
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
-                  {/* </Scrollbars> */}
+                {/* </Scrollbars> */}
 
                 <button
                   aria-controls="basic-navbar-nav"

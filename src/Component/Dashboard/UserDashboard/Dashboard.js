@@ -9,7 +9,6 @@ import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 const Dashboard = () => {
   return (
     <div className="dashboard-layout ">
-    
       <div className="inner-dash-bpx ">
         <header className="main-header login-header-home">
           <NavbarDashboard />
@@ -57,14 +56,19 @@ const Dashboard = () => {
                     <div className=" left-content">
                       <h4 className="for-dash-h4">Notifications</h4>
                       <h5>
-                        <span>
-                          Don't miss your last chance to take the missed NOF
-                          examinations. The exam window will open from January
-                          16th to 18th, running from 9 AM to 8 PM (IST) for
-                          three consecutive days. Seize this last opportunity,
-                          as no further chances will be provided under any
-                          circumstances.
-                        </span>
+                        <div className="d-flex flex-column ">
+                          <span>
+                            स्लॉट 𝟭 और 𝟮 स्टूडेंट्स के लिए 𝗟𝗔𝗦𝗧 𝗖𝗛𝗔𝗡𝗖𝗘 जिनकी 𝗡𝗢𝗙
+                            𝗲𝘅𝗮𝗺 𝗺𝗶𝘀𝘀 हो गई थी: ...
+                          </span>
+                          <br />
+                          <span>
+                            𝗟𝗔𝗦𝗧 & 𝗙𝗜𝗡𝗔𝗟 𝗖𝗔𝗟𝗟 𝗳𝗼𝗿 𝗦𝗹𝗼𝘁 𝟭 & 𝟮 𝗽𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 𝘄𝗵𝗼
+                            𝗺𝗶𝘀𝘀𝗲𝗱 𝘁𝗵𝗲𝗶𝗿 𝗡𝗢𝗙 𝗲𝘅𝗮𝗺𝘀: ...
+                          </span>
+                          <br />
+                          <span>Enhancements to Your NOF Dashboard ...</span>
+                        </div>
                       </h5>
                     </div>
                   </div>

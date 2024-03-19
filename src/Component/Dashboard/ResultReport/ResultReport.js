@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./result-report.css";
-import ScrollToTop from '../../ScrollToTop/ScrollToTop';
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import Criteria from "../../../assets/Dashboard/Criteria+Senior.pdf"
 
 const ResultReport = () => {
   return (
@@ -15,7 +16,7 @@ const ResultReport = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
-              <ScrollToTop/>
+              <ScrollToTop />
             </header>
             <section className="dash-outer-box pad-set register-border">
               <div className="row">
@@ -39,6 +40,14 @@ const ResultReport = () => {
                       <Link to="/after-report" className="cursorPointerClass">
                         <img src={Arrowicon} alt="" />
                       </Link>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="test-box-new">
+                      <h4>VIEW AWARD & RECOGNITION CRITERIA</h4>
+                      <a type= "button " target="_blank" href={Criteria} className="cursorPointerClass"  rel="noreferrer">
+                        <img src={Arrowicon} alt="" />
+                      </a>
                     </div>
                   </div>
                 </div>

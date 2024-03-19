@@ -4,7 +4,7 @@ import Questions from "./Questions";
 import ScrollToTop from "../../../ScrollToTop/ScrollToTop";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function DemoQuiz() {
   const [showResults, setShowResults] = useState(false);
@@ -34,8 +34,10 @@ function DemoQuiz() {
     setShowResults(false);
   };
 
+  const Navigate =useNavigate();
   const gotoreport = () => {
-    // Navigate("/")
+    Navigate("/after-report")
+    localStorage.setItem("exam-score", score);
   };
   return (
     <div className="container-fluid Demo-Quiz">
@@ -50,13 +52,12 @@ function DemoQuiz() {
             {Math.round((score / Questions.length) * 100)}%)
           </h2>
           <div className="d-flex justify-content-around">
-
-          <button className="restart-btn" onClick={() => restartGame()}>
-            Restart game
-          </button>
-          <button className="restart-btn" onClick={() => gotoreport()}>
-            Go to Report
-          </button>
+            <button className="restart-btn" onClick={() => restartGame()}>
+              Restart game
+            </button>
+            <button className="restart-btn" onClick={() => gotoreport()}>
+              Go to Report
+            </button>
           </div>
         </div>
       ) : (
@@ -72,7 +73,6 @@ function DemoQuiz() {
                   className="answer-option"
                   key={option.id}
                   onClick={() => optionClicked(option.isCorrect)}
-                  
                 >
                   {option.text}
                 </li>

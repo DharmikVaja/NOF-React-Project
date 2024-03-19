@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -8,6 +8,32 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const DashNotification = () => {
+  const [notif, setNotif] = useState("");
+  const handleNotif = (e) => {
+    setNotif(e.target.value);
+  };
+  const Notifications = [
+    {
+      id: 1,
+      title:
+        "स्लॉट 𝟭 और 𝟮 स्टूडेंट्स के लिए 𝗟𝗔𝗦𝗧 𝗖𝗛𝗔𝗡𝗖𝗘 जिनकी 𝗡𝗢𝗙 𝗲𝘅𝗮𝗺 𝗺𝗶𝘀𝘀 हो गई थी:",
+      notification:
+        "𝗠𝗶𝘀𝘀𝗲𝗱 𝗘𝘅𝗮𝗺 देने का मौका न चूकें। 𝗘𝘅𝗮𝗺 𝟭𝟲 से 𝟭𝟴 जनवरी तक लगातार तीन दिनों तक सुबह 𝟵 बजे से रात 𝟴 बजे (𝗜𝗦𝗧) तक खुली रहेगी। इस आखरी मौके का लाभ उठाएं, क्योंकि किसी भी परिस्थिति में आगे कोई मौका नहीं दिया जाएगा।",
+    },
+    {
+      id: 2,
+      title:
+        "𝗟𝗔𝗦𝗧 & 𝗙𝗜𝗡𝗔𝗟 𝗖𝗔𝗟𝗟 𝗳𝗼𝗿 𝗦𝗹𝗼𝘁 𝟭 & 𝟮 𝗽𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 𝘄𝗵𝗼 𝗺𝗶𝘀𝘀𝗲𝗱 𝘁𝗵𝗲𝗶𝗿 𝗡𝗢𝗙 𝗲𝘅𝗮𝗺𝘀:",
+      notification:
+        "Don't miss your last chance to take the missed NOF examinations. The exam window will open from January 16th to 18th, running from 9 AM to 8 PM (IST) for three consecutive days. Seize this last opportunity, as no further chances will be provided under any circumstances.",
+    },
+    {
+      id: 3,
+      title: "Enhancements to Your NOF Dashboard",
+      notification:
+        '• You can now conveniently view your opted Olympiad exams directly on your dashboard\'s home screen • You can now update your gender and date of birth on your own. Navigate to "Account Settings" > "User Profile" to update your profile • You can now raise your queries in a more categorized and organized manner • To check your exam date, go to "NOF Olympiad Exams" > "NOF International Olympiads" and find the dates located just below each subject',
+    },
+  ];
   return (
     <div>
       <div>
@@ -30,7 +56,9 @@ const DashNotification = () => {
                           <p>You can check out your Notifications here </p>
                         </div>
                       </div>
-                      <Link className="common-btn" to="/user-dashboard">Back</Link>
+                      <Link className="common-btn" to="/user-dashboard">
+                        Back
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -44,6 +72,7 @@ const DashNotification = () => {
                         <input
                           placeholder="Search"
                           name="search"
+                          onChange={handleNotif}
                           type="text"
                           className="search_data play-search1 form-control"
                           defaultValue=""
@@ -51,7 +80,9 @@ const DashNotification = () => {
                       </div>
                     </div>
                     <div>
-                      <button className="common-all-btn ms-4">Clear Filter</button>
+                      <button className="common-all-btn ms-4">
+                        Clear Filter
+                      </button>
                     </div>
                   </div>
                   <div className="table-responsive table-exam-schedule less-padding">
@@ -64,16 +95,19 @@ const DashNotification = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>स्लॉट 𝟭 और 𝟮 स्टूडेंट्स के लिए 𝗟𝗔𝗦𝗧 𝗖𝗛𝗔𝗡𝗖𝗘 जिनकी 𝗡𝗢𝗙 𝗲𝘅𝗮𝗺 𝗺𝗶𝘀𝘀 हो गई थी:</td>
-                          <td>𝗠𝗶𝘀𝘀𝗲𝗱 𝗘𝘅𝗮𝗺 देने का मौका न चूकें। 𝗘𝘅𝗮𝗺 𝟭𝟲 से 𝟭𝟴 जनवरी तक लगातार तीन दिनों तक सुबह 𝟵 बजे से रात 𝟴 बजे (𝗜𝗦𝗧) तक खुली रहेगी। इस आखरी मौके का लाभ उठाएं, क्योंकि किसी भी परिस्थिति में आगे कोई मौका नहीं दिया जाएगा।</td>
-                        </tr>
-                        <tr>
-                          <td>2 </td>
-                          <td>𝗟𝗔𝗦𝗧 & 𝗙𝗜𝗡𝗔𝗟 𝗖𝗔𝗟𝗟 𝗳𝗼𝗿 𝗦𝗹𝗼𝘁 𝟭 & 𝟮 𝗽𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 𝘄𝗵𝗼 𝗺𝗶𝘀𝘀𝗲𝗱 𝘁𝗵𝗲𝗶𝗿 𝗡𝗢𝗙 𝗲𝘅𝗮𝗺𝘀:</td>
-                          <td>Don't miss your last chance to take the missed NOF examinations. The exam window will open from January 16th to 18th, running from 9 AM to 8 PM (IST) for three consecutive days. Seize this last opportunity, as no further chances will be provided under any circumstances.</td>
-                        </tr>
+                        {Notifications
+                        .filter((item)=>{
+                          return notif.toLowerCase() === ""
+                          ? item 
+                          : item.title.toLowerCase().includes(notif) || item.notification.toLowerCase().toLowerCase().includes(notif)
+                        })
+                        .map((item) => (
+                          <tr>
+                            <td>{item.id}</td>
+                            <td>{item.title}</td>
+                            <td>{item.notification}</td>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </div>
