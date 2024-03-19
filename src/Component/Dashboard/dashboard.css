@@ -107,6 +107,7 @@
 }
 .navBars {
   padding: 15px;
+  /* overflow-y: none; */
 }
 
 .dropdown-switch .dropdown-menu {
@@ -277,6 +278,7 @@
   line-height: 22px;
   color: #44475b;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 .dashboard-layout .grey-dash-box .view-all {

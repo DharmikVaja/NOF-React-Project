@@ -12,7 +12,7 @@ import { Form, InputGroup } from "react-bootstrap";
 
 const ActivityLog = () => {
   const [searchValue, setSearchValue] = useState("");
-  console.log(searchValue)
+  console.log(searchValue);
   const handleSearchChange = (e) => {
     // Update the search value on every key press
     setSearchValue(e.target.value);
@@ -119,7 +119,7 @@ const ActivityLog = () => {
                             <InputGroup>
                               <Form.Control
                                 className="search-data play-search1 form-control"
-                                onChange ={handleSearchChange}
+                                onChange={handleSearchChange}
                                 type="text"
                                 name="search"
                                 placeholder="Type to search"
@@ -149,12 +149,11 @@ const ActivityLog = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {ActLog
-                        .filter((item)=>{
+                        {ActLog.filter((item) => {
                           return searchValue.toLowerCase() === ""
-                          ? item : item.date.toLowerCase().includes(searchValue)
-                        })
-                        .map((item) => (
+                            ? item
+                            : item.date.toLowerCase().includes(searchValue);
+                        }).map((item) => (
                           <tr>
                             <td>{item.id}</td>
                             <td>{item.date}</td>

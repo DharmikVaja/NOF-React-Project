@@ -181,8 +181,8 @@ Header {
 .sign-up:hover {
   font-size: 16px !important;
   color: #000dff !important;
-  border: 2.5px solid #000dff !important;
-  font-weight: 510 !important;
+  border: 2px solid #000dff !important;
+  /* font-weight: 600 !important; */
 }
 
 .login-modal-heading {

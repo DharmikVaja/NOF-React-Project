@@ -1,57 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../Header/Header";
-import CouponImg from "../../../assets/cart-coupon.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, cartItem }) => {
   const [CART, setCART] = useState([]);
-  const [localCart, setLocalCart] = useState([]);
-
-  const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
-
-  const handleClose1 = () => setShow1(false);
-  const handleShow1 = () => setShow1(true);
 
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
-
-  const removeItem = (itemId) => {
-    const updatedCart = CART.filter((item) => item.id !== itemId);
-    setCART(updatedCart);
-    localStorage.setItem("cartList", JSON.stringify(updatedCart));
-  };
-
-  const updateQuantity = (itemId, newQuantity) => {
-    const itemIndex = localCart.findIndex((item) => item.id === itemId);
-
-    if (itemIndex !== -1) {
-      const updatedCart = [...localCart];
-      updatedCart[itemIndex] = {
-        ...updatedCart[itemIndex],
-        quantity: newQuantity,
-      };
-      setLocalCart(updatedCart);
-    } else {
-      const newItem = Cart.find((item) => item.id === itemId);
-      setLocalCart([...localCart, { ...newItem, quantity: newQuantity }]);
-    }
-
-    // Update local storage
-    localStorage.setItem("cart", JSON.stringify(localCart));
-  };
 
   const storedCart = JSON.parse(localStorage.getItem("cartList"));
   useEffect(() => {
     if (storedCart) {
       setCART(storedCart);
-      // setLocalCart(storedCart);
     }
   }, []);
+  const removeFromCart = (itemId) => {
+    localStorage.removeItem("cartList")
+  };
 
   return (
     <>
@@ -68,7 +38,6 @@ const Cart = ({ cart }) => {
               <div className="col-md-12">
                 <div className="cart2-table cart2-total">
                   <div className="table-responsive">
-                    {/* */}
                     <table className="table">
                       <thead>
                         <tr>
@@ -80,7 +49,7 @@ const Cart = ({ cart }) => {
                         </tr>
                       </thead>
                       <tbody className="cart-body">
-                        {cart?.map((cartItem, cartindex) => (
+                        {cart.map((cartItem, cartindex) => (
                           <tr key={cartItem.id}>
                             <td className="text-left">{cartItem.name}</td>
                             <td className="text-left">{cartItem.class}</td>
@@ -91,20 +60,6 @@ const Cart = ({ cart }) => {
                                     type="button"
                                     className="btn btn-outline-secondary"
                                     disabled
-                                    // onClick={() => {
-                                    //   const _CART = CART.map((item, index) => {
-                                    //     return cartindex === index
-                                    //       ? {
-                                    //           ...item,
-                                    //           quantity:
-                                    //             item.quantity > 0
-                                    //               ? item.quantity - 1
-                                    //               : 0,
-                                    //         }
-                                    //       : item;
-                                    //   });
-                                    //   setCART(_CART);
-                                    // }}
                                   >
                                     <FaMinus />
                                   </button>
@@ -112,23 +67,12 @@ const Cart = ({ cart }) => {
                                     type="text"
                                     readOnly
                                     className="form-control cart-quantity-value"
-                                    defaultValue={cartItem.quantity}
+                                    defaultValue={cartItem.quantity || 1}
                                   />
                                   <button
                                     type="button"
                                     className="btn btn-outline-secondary"
                                     disabled
-                                    // onClick={() => {
-                                    //   const _CART = CART.map((item, index) => {
-                                    //     return cartindex === index
-                                    //       ? {
-                                    //           ...item,
-                                    //           quantity: item.quantity + 1,
-                                    //         }
-                                    //       : item;
-                                    //   });
-                                    //   setCART(_CART);
-                                    // }}
                                   >
                                     <FaPlus />
                                   </button>
@@ -141,16 +85,18 @@ const Cart = ({ cart }) => {
                                 <TiDeleteOutline
                                   className="fs-2"
                                   color="#AC0606"
-                                  onClick={() => removeItem(cartItem.id)}
+                                  onClick={removeFromCart}
                                 />
                               </Link>
                             </td>
                           </tr>
                         ))}
+                        <div></div>
                       </tbody>
                     </table>
                     <div className="card-detail">
-                      <div className="cart-coupon-container col-lg-12 col-md-12">
+                      {/* <BsCartXFill  onClick={() => removeFullCart}/> */}
+                      {/* <div className="cart-coupon-container col-lg-12 col-md-12">
                         <input
                           placeholder="Enter Coupon Code"
                           type="text"
@@ -180,7 +126,7 @@ const Cart = ({ cart }) => {
                             <Modal.Title>Invalid Coupon code</Modal.Title>
                           </Modal.Header>
                         </Modal>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -204,11 +150,13 @@ const Cart = ({ cart }) => {
                       </tr>
                     </thead>
                     <tbody className="table">
-                      <td>Price</td>
-                      <td>₹&nbsp;0</td>
-                      <td>₹&nbsp;00.00</td>
-                      <td>₹&nbsp;00.00</td>
-                      <td>₹&nbsp;0</td>
+                      <tr>
+                        <td>Price</td>
+                        <td>₹&nbsp;0</td>
+                        <td>₹&nbsp;00.00</td>
+                        <td>₹&nbsp;00.00</td>
+                        <td>₹&nbsp;0</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

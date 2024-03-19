@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../Header/Header";
 import "./product.css";
 import ScrollToTop from "../../Component/ScrollToTop/ScrollToTop";
@@ -92,9 +92,14 @@ const Product = () => {
   ]);
   //
   // const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(
+    localStorage.getItem("showCart") === "true" || false
+  );
   const [CART, setCART] = useState([]);
 
-  const [showCart, setShowCart] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("showCart", showCart);
+  }, [showCart]);;
 
   const SCountry = localStorage.getItem("selectedCountry:");
   const SClass = localStorage.getItem("selectedClass:");
@@ -153,7 +158,7 @@ const Product = () => {
                 ) : (
                   <ProductList product={product} addToCart={addToCart} />
                 )}
-                <Cart cart={CART} ref={targetRef} />{" "}
+                <Cart cart={CART} ref={targetRef} />
               </div>
             </div>
           </section>

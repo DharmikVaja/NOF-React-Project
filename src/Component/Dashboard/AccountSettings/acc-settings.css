@@ -44,7 +44,7 @@
   position: absolute;
 }
 .dashboard-layout .input-group {
-  border: 1px solid #597ad1 !important;
+  /* border: 1px solid #597ad1 !important; */
   border-radius: 8px;
 }
 .dashboard-layout .input-group .input-group-text {
@@ -85,7 +85,8 @@
 @media (max-width: 991px){
 .act-table {
     overflow-x: scroll;
-    min-width: auto;
+    overflow-y: scroll;
+    max-width: 768px
 }}
 @media (max-width: 991px){
 .table-exam-schedule {

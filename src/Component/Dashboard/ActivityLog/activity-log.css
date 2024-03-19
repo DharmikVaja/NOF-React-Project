@@ -43,6 +43,7 @@
 @media screen and (max-width: 768px) {
   .act-table {
     overflow-x: scroll;
+    font-size: 12px;
   }
 }
 .act-table tr {
