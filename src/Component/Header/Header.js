@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import logoImg from "../../assets/logo.png";
 import "./header.css";
-import wishlist from "../../assets/wishlist.png";
-import cart from "../../assets/cart.png";
+// import wishlist from "../../assets/wishlist.png";
+// import cart from "../../assets/cart.png";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -38,16 +38,13 @@ const Header = (props) => {
     }
   };
   const navigate = useNavigate();
-  // const handleShow3 = () => {
-  //   setShow3(true);
-  // };
 
-  const targetRef = useRef(null);
-  const scrollToCart = () => {
-    if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const targetRef = useRef(null);
+  // const scrollToCart = () => {
+  //   if (targetRef.current) {
+  //     targetRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <header className="homeHeader ">
@@ -60,21 +57,21 @@ const Header = (props) => {
           </div>
 
           <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center ">
-            <div className="d-flex wl-ct justify-content-start gap-2 m-1">
-              {/* <Link role="button" className="cart-wl-btn" to="/wishlist">
+            {/* <div className="d-flex wl-ct justify-content-start gap-2 m-1">
+              <Link role="button" className="cart-wl-btn" to="/wishlist">
                 <img src={wishlist} alt="wishlist" className="wl-cart-img" />
                 <div className="text-center "> Wishlist</div>
-              </Link> 
-               <Link
+              </Link>
+              <Link
                 role="button"
                 onClick={scrollToCart}
                 className="show-number cart-wl-btn position-relative "
-                to="/product"     
+                to="/cart"
               >
                 <img src={cart} alt="cart" className="wl-cart-img" />
                 <div className="text-start ">Cart</div>
-              </Link> */}
-            </div>
+              </Link>
+            </div> */}
 
             <div className="col-md-4 text-end d-flex justify-content-end gap-2">
               {isToken ? (
@@ -166,13 +163,9 @@ const Header = (props) => {
                 </div>
               </Modal>
             </div>
-            {/*  */}
-
-            {/*  */}
           </div>
         </div>
       </div>
-
       <div className="container-fluid navBar">
         <nav className="navbar navbar-expand-lg">
           <div

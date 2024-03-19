@@ -46,6 +46,7 @@ import ForgotPassword from "./Component/LoginPage/ForgotPassword";
 import PurchaseCourse from "./Component/Dashboard/SelectTest/PurchaseCourse";
 import AdminPanel from "./Component/LoginPage/AdminPanelComp/AdminPanel";
 import NOFInterNatExam from "./Component/Dashboard/SelectTest/NOFInterNatExam";
+// import Cart from "./Component/HeaderLink/Cart/Cart";
 
 function App() {
   return (
@@ -64,7 +65,7 @@ function App() {
         <Route path="/wishlist" element={<WIshlist />} />
         <Route path="/downloads" element={<Download />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/cart" element={<Product />} /> */}
+        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsService />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
