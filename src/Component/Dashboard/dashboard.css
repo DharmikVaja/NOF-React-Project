@@ -3,6 +3,7 @@
 ::before {
   box-sizing: border-box;
 }
+
 .head-for-all-page {
   display: flex;
   align-items: flex-start;
@@ -13,6 +14,11 @@
   padding-left: 300px;
   min-height: 100vh;
   background-color: #eef6ff;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.dash-navbar{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 15px;
 }
 @media (max-width: 992px) {
   .dashboard-layout {
@@ -310,18 +316,21 @@
 .dashboard-links {
   padding: 15px  ;
   width: 100%;
+  border-radius: 10px ;
   font-weight: 500 ;
 }
 .dashboard-links:visited {
   color: #000 ;
+  border-radius: 10px ;
 }
 .dashboard-links:active,
 .dashboard-links:hover,  
 .dashboard-links:focus {
+  border-radius: 10px;
   padding: 15px 0px ;
   color: #fff ;
   background-color: #597ad1  ;
-  font-weight: 500 ;
+  font-weight: 600 ;
 }
 .table-exam-schedule tr th {
   padding: 2px 18px;

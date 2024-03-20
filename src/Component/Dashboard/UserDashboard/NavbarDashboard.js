@@ -69,7 +69,7 @@ const NavbarDashboard = () => {
                       <Stack
                         direction="vertical"
                         gap={0.9}
-                        className="col-md-12 mx-auto"
+                        className="col-md-12 mx-auto dash-navbar"
                       >
                         <Link
                           role="button12"

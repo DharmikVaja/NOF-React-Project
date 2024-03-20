@@ -41,6 +41,23 @@ export const handleSignupAPI = async (body) => {
     throw error;
   }
 };
+//Submit Form
+export const handleSubmitAPI = async (body) => {
+  // console.log("---------")
+  try {
+    const response = await axios.post(`${BASEURL}contact-us`, body);
+    console.log("response", response);
+    if (response.data.status) {
+      alert("Your Response is saved successfully");
+      console.log("Form is submitted");
+    } else {
+      console.error("Something went wrong:", response.data.message);
+    }
+  } catch (error) {
+    console.error("Something went wrong:", error.response.message);
+    throw error;
+  }
+};
 // export const handleAdminAPI = async ({ email, password }, URLS, body) => {
 //   try {
 //     console.log("---------------");
@@ -66,7 +83,7 @@ export const handleSignupAPI = async (body) => {
 //     console.log("----------------------");
 //   }
 //   catch{
-    
+
 //   }
 // }
 // export const BookAPI = async (body) => {

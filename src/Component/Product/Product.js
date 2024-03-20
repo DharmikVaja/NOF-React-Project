@@ -9,7 +9,6 @@ import Cart from "../HeaderLink/Cart/Cart";
 import "../HeaderLink/Cart/cart.css";
 import productData from "./productData";
 import { useNavigate } from "react-router-dom";
-//
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";

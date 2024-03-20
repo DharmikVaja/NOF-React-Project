@@ -43,12 +43,11 @@ const AfterReport = () => {
                   <div className="col-md-12">
                     <div className="pad-set report-border">
                       <div className="student-report-details">
-                        <p className="report-p">Student Name {}</p>
-                        <p className="report-p">Class {}</p>
-                        <p className="report-p">Email {}</p>
-                        <p className="report-p">Student Code {}</p>
-                        <p className="report-p">Student Name {}</p>
-                        <p className="report-p">Mobile No. {}</p>
+                        <p className="report-p">Student Name: {}Hibba</p>
+                        <p className="report-p">Class: {}8th</p>
+                        <p className="report-p">Email: {}stu503924@misdoha.com</p>
+                         <p className="report-p">Student Code: {} ind23</p>
+                        <p className="report-p">Mobile No.: {}987543210</p>
                       </div>
                     </div>
                     <hr />

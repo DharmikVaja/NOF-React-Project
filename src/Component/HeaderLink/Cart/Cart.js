@@ -6,8 +6,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 const Cart = ({ cart, cartItem }) => {
   const [CART, setCART] = useState([]);
-  
-  
+
   const removeFromCart = (itemId) => {
     setCART((prevCart) => {
       const filteredCart = prevCart.filter((item) => item.id !== itemId);
@@ -18,9 +17,8 @@ const Cart = ({ cart, cartItem }) => {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
     setCART(storedCart || []);
-  }, []);
-  
-  
+  }, [localStorage.getItem("cartList") ]);
+
   return (
     <>
       <div className="set-top-margin-all"></div>
@@ -34,7 +32,7 @@ const Cart = ({ cart, cartItem }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                {CART.length > 0 ? ( // Check if cart has items
+                {CART.length > 0 ? (
                   <div className="cart2-table cart2-total">
                     <div className="table-responsive">
                       <table className="table">
@@ -96,7 +94,6 @@ const Cart = ({ cart, cartItem }) => {
                     </div>
                   </div>
                 ) : (
-                  // Display message if cart is empty
                   <p className="text-center">Your cart is empty.</p>
                 )}
               </div>

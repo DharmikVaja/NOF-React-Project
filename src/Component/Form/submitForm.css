@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
 .footer-home-new {
   padding-top: 80px;
   border: none !important;
@@ -45,8 +46,12 @@ footer {
 .nof-get-info-heading {
   font-family: "Montserrat Alternates", sans-serif;
 }
+.PhoneInputInput{
+  border: none !important;
+}
 .form-phone-field {
   display: block;
+  border: none !important;
   width: 100%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -56,13 +61,12 @@ footer {
   appearance: none;
   background-color: var(--bs-body-bg);
   /* border: 1px solid white transparent; */
-  border-radius: var(--bs-border-radius);
+  border-radius: var(--bs-border-radius); 
 }
-.form-phone-field::-webkit-input-placeholder{
+.form-phone-field::-webkit-input-placeholder {
   border: none !important;
-  outline: none !important;
 }
-.form-submit-btn:hover{
+.form-submit-btn:hover {
   background: #333131 !important;
 }
 @media screen and (max-width: 768px) {

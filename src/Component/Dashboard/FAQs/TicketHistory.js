@@ -66,14 +66,7 @@ const TicketHistory = () => {
                     <tr>
                       <td colSpan="7" className="text-center">
                         No Data found
-                      </td>
-                      {/* <td>1 </td>
-                        <td className="for_capitalize"></td>
-                        <td>Dec 20, 2023 11:49 AM </td>
-                        <td>45 </td>
-                        <td className="text-success fw-bold">COMPLETED </td>
-                        <td>Processing </td>
-                        <td></td> */}
+                       </td>
                     </tr>
                   </table>
                 </div>
