@@ -22,27 +22,27 @@ const DashUser2Parent = () => {
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <FaUser />
+                  <FaUser className="fs-4"/>
                 </span>
                 <input
                   placeholder="Father Name"
                   name="fatherName"
                   type="text"
-                  className="form-control"
-                  defaultValue=""
+                  className="form-control dash-input "
+                  defaultValu e=""
                 />
               </div>
             </div>
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <FaUser />
+                  <FaUser className="fs-4"/>
                 </span>
                 <input
                   placeholder="Mother Name"
                   name="motherName"
                   type="text"
-                  className="form-control"
+                  className="form-control dash-input "
                   defaultValue=""
                 />
               </div>
@@ -54,7 +54,7 @@ const DashUser2Parent = () => {
                 <select
                   aria-label="Default select example"
                   name="countryCode"
-                  className="form-select d-flex"
+                  className="form-select d-flex "
                   onChange={handleCountryChange}
                   value={selectedCountry}
                 >
@@ -73,7 +73,7 @@ const DashUser2Parent = () => {
                   placeholder="Phone Number"
                   type="number"
                   readOnly=""
-                  className="form-control"
+                  className="  form-control"
                   defaultValue={97430087421}
                 />
               </div>
@@ -81,14 +81,14 @@ const DashUser2Parent = () => {
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <IoMdMail />
+                  <IoMdMail className="fs-4"/>
                 </span>
                 <input
                   placeholder="Email Address"
                   name="email"
                   type="email"
                   readOnly=""
-                  className="form-control"
+                  className=" dash-input form-control"
                   defaultValue="stu503924@misdoha.com"
                 />
               </div>

@@ -46,7 +46,7 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <FaUser />
+                  <FaUser className="fs-4" />
                 </span>
                 <input
                   className="dash-input  form-control ms-1"
@@ -60,7 +60,7 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <FaAddressCard />
+                  <FaAddressCard className="fs-4" />
                 </span>
                 <input
                   className="dash-input form-control ms-1"
@@ -77,7 +77,7 @@ const DashUser1Student = () => {
               <div className="input-group mb-3">
                 <span className="input-group-text">
                   {" "}
-                  <FaSchool />
+                  <FaSchool className="fs-4" />
                 </span>
                 <input
                   className="dash-input form-control ms-1"
@@ -91,7 +91,7 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <IoSchool />
+                  <IoSchool className="fs-4"/>
                 </span>
                 <label htmlFor="exampleFormControlSelect1"></label>
                 <select
@@ -119,7 +119,7 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <BsGenderAmbiguous />
+                  <BsGenderAmbiguous className="fs-4" />
                 </span>
                 <label htmlFor="exampleFormControlSelect1"></label>
                 <select
@@ -138,9 +138,9 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <FaCalendarAlt />
+                  <FaCalendarAlt className="fs-4" />
                 </span>
-                <Form.Control type="date" />
+                <Form.Control type="date" className="dash-input" />
               </div>
             </div>
           </div>
@@ -160,10 +160,10 @@ const DashUser1Student = () => {
               aria-labelledby="example-modal-sizes-title-sm"
             >
               <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-sm">
-                </Modal.Title>
-                <Modal.Body className="dash-user1-update">Student Details Updated Successfully!!</Modal.Body>
-
+                <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
+                <Modal.Body className="dash-user1-update">
+                  Student Details Updated Successfully!!
+                </Modal.Body>
               </Modal.Header>
             </Modal>
             <Link to="/account-setting">

@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const BASEURL = process.env.REACT_APP_BASE_URL_API;
 
 // Login
@@ -20,31 +22,49 @@ export const handleLoginAPI = async ({ email, password }, URLS, body) => {
     throw error;
   }
 };
-
 // Signup
-export const handleSignupAPI = async (body) => {
+
+export const handleSignupAPI = async ({
+  studentName,
+  email,
+  password,
+  phoneNumber,
+  countryCode,
+}) => {
   try {
-    console.log("-------------------");
-    // Make the API request
-    const response = await axios.post(`${BASEURL}signup`, body);
+    console.log("userData: ", {
+      studentName,
+      email,
+      password,
+      phoneNumber,
+      countryCode,
+    });
+    // const userData= {studentName, email, password, phoneNumber, countryCode}
+    const response = await axios.post(`${BASEURL}signup`, {
+      studentName,
+      email,
+      password,
+      phoneNumber,
+      countryCode,
+    });
     console.log("response", response);
     if (response.data.status) {
       console.log("Signup successful");
+      localStorage.setItem("token", response.data.data.token);
     } else {
-      console.error("signup failed:", response.data.message);
+      console.error("Signup failed:", response.data.message);
     }
-    // return response.data;
+    return response;
   } catch (error) {
-    console.error("Error during signup:", error.response);
-    // console.log(error.response.data.message)
-    // Handle error, show error message, etc.
+    console.error("Error during signup:", error.response.data);
     throw error;
   }
 };
-//Submit Form
+
 export const handleSubmitAPI = async (body) => {
-  // console.log("---------")
+  console.log("---------");
   try {
+    console.log("---");
     const response = await axios.post(`${BASEURL}contact-us`, body);
     console.log("response", response);
     if (response.data.status) {
@@ -54,7 +74,7 @@ export const handleSubmitAPI = async (body) => {
       console.error("Something went wrong:", response.data.message);
     }
   } catch (error) {
-    console.error("Something went wrong:", error.response.message);
+    console.error("Something went wrong:", error.response);
     throw error;
   }
 };
@@ -74,24 +94,6 @@ export const handleSubmitAPI = async (body) => {
 //     return { status, message, userData };
 //   } catch (error) {
 //     console.error("Error during login:", error.message);
-//     throw error;
-//   }
-// };
-
-// export const handleActLogAPI = async (body)=>{
-//   try{
-//     console.log("----------------------");
-//   }
-//   catch{
-
-//   }
-// }
-// export const BookAPI = async (body) => {
-//   try {
-//     const response = await axios.post(`${BASEURL}product`, body);
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error in BookAPI", error);
 //     throw error;
 //   }
 // };

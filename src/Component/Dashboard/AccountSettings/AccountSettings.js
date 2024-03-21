@@ -44,7 +44,7 @@ const AccountSettings = () => {
                               <FaUser className="fs-5" />
                             </div>
                             <div className="set-marg ps-4">
-                              <h4   > User Profile</h4>
+                              <h4> User Profile</h4>
                             </div>
                           </div>
                           <FaAngleRight className="fs-4" />

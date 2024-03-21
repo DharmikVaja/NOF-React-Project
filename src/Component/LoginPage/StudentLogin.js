@@ -11,8 +11,6 @@ import Button from "react-bootstrap/Button";
 import { Toast } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Col from 'react-bootstrap/Col';
-// import Row from 'react-bootstrap/Row';
 
 const StudentLogin = () => {
   const [email, setEmail] = useState("");
@@ -29,8 +27,6 @@ const StudentLogin = () => {
     else if (name === "password") setPassword(value);
   };
 
-  // const [showToast, setShowToast] = useState(false);
-  // const toggleShowA = () => setShowToast(!showToast);
   const handleLogin = async () => {
     try {
       const response = await handleLoginAPI({ email, password });
@@ -51,14 +47,10 @@ const StudentLogin = () => {
       }
     } catch (error) {
       console.error("Error during login:", error.response?.data.message);
-      // setErrorMessage(
-      //   "Login failed. Please check your credentials and try again."
-      //   );
       toast.error("Login failed. Please check your credentials and try again.");
     }
   };
 
-  // console.log("hello", userData);
   return (
     <div>
       <ToastContainer />
@@ -131,7 +123,9 @@ const StudentLogin = () => {
                   <Button onClick={handleLogin} className="common-btn w-100">
                     Login
                   </Button>
-
+                  <p className="forgot-link">
+                    <Link to="/signup">Dont have account? Signup</Link>
+                  </p>
                   <Toast
                     show={!!errorMessage}
                     onClose={() => setErrorMessage("")}

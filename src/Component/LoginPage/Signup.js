@@ -11,8 +11,12 @@ import Button from "react-bootstrap/Button";
 import Toast from "react-bootstrap/Toast";
 
 const Signup = () => {
-  const [selectedCountry, setSelectedCountry] = useState("");
+  // const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({});
 
   const [userData, setUserData] = useState({
     studentName: "",
@@ -22,12 +26,24 @@ const Signup = () => {
     password: "",
   });
 
-  const [showA, setShowA] = useState(false);
+  const handleSignup = async () => {
+    try {
+      const response = await handleSignupAPI(userData);
+      // console.log("Response", response);
+      if (response.data.status !== true) {
+        console.error("Signup failed:", response && response.data.message);
+      } else {
+        console.log("Signup successful");
+        localStorage.setItem("token", response.data.data.token);
+        alert("Signup Successfully !")
+        navigate("/login");
+        return;
+      }
+    } catch (error) {
+      console.error("Error message:", error);
+    }
+  };
   const [toastMessage, setToastMessage] = useState(false);
-
-  const navigate = useNavigate();
-
-  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,37 +51,22 @@ const Signup = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVlNTg2NWJkMjljZWM4YWRmYTMwMzY1IiwiZW1haWwiOiJ2YWphZGhhcm1pa2tAZ21haWwuY29tIiwiaWF0IjoxNzA5NTQwOTU1LCJleHAiOjE3MDk2MjczNTV9.eqtYtImkCDOFRz1vm58EViFEGwPTaNR2_vD4epomCLA";
-  const handleSignup = async () => {
-    try {
-      const response = await handleSignupAPI(userData);
-      if (response && response.data) {
-        if (response.status) {
-          console.log("Signup successful");
-          localStorage.setItem("token", token);
-          navigate("/login");
-        } else {
-          console.error("Signup failed:", response.data.message);
-          setErrors(
-            response.data.errors || { serverError: response.data.message }
-          );
-          setToastMessage(response.data.message);
-        }
-      } else {
-        console.error("unexpected response from the server");
-        setToastMessage("Signup failed, Please try again!");
-      }
-    } catch (error) {
-      console.error(
-        "Error during signup:",
-        error.response?.data || error.message
-      );
-      setToastMessage("Error during signup, please try again");
-      // Handle network errors or other unexpected errors
-      // Display a general error message or take appropriate action
-    }
-  };
+  //   try {
+  //     const response = await handleSignupAPI(userData);
+  //     if (response.status ) {
+  //       console.log("Signup successful", response.data);
+
+  //       localStorage.setItem("token", response.data.token || token);
+  //       navigate("/login");
+  //     } else {
+  //       console.error("Signup failed: ", response.data.message);
+  //       // ... (display error messages, etc.)
+  //     }
+  //   } catch (error) {
+  //     console.error("Error during signup:", error.message);
+  //     setToastMessage("Signup failed, please try again!");
+  //   }
+  // };
 
   const handleToastClose = () => {
     setToastMessage("");
@@ -122,7 +123,7 @@ const Signup = () => {
                       aria-label="Default select example"
                       name="countryCode"
                       className="form-select"
-                      value={selectedCountry || "IN"}
+                      value={"IN"}
                       onChange={handleChange}
                     >
                       {countriesData.map((country, index) => (
@@ -191,7 +192,7 @@ const Signup = () => {
                   <p className="success-msg" />
 
                   <Button className="common-btn w-100" onClick={handleSignup}>
-                    Next
+                    Signup
                   </Button>
                   <Toast
                     show={!!toastMessage}

@@ -16,9 +16,12 @@
   background-color: #eef6ff;
   font-family: "Montserrat Alternates", sans-serif;
 }
-.dash-navbar{
+.dash-navbar {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 15px;
+}
+.form-dashuser3 {
+  padding: 13px 20px;
 }
 @media (max-width: 992px) {
   .dashboard-layout {
@@ -314,23 +317,23 @@
 }
 
 .dashboard-links {
-  padding: 15px  ;
+  padding: 15px;
   width: 100%;
-  border-radius: 10px ;
-  font-weight: 500 ;
+  border-radius: 10px;
+  font-weight: 500;
 }
 .dashboard-links:visited {
-  color: #000 ;
-  border-radius: 10px ;
+  color: #000;
+  border-radius: 10px;
 }
 .dashboard-links:active,
-.dashboard-links:hover,  
+.dashboard-links:hover,
 .dashboard-links:focus {
   border-radius: 10px;
-  padding: 15px 0px ;
-  color: #fff ;
-  background-color: #597ad1  ;
-  font-weight: 600 ;
+  padding: 15px 0px;
+  color: #fff;
+  background-color: #597ad1;
+  font-weight: 600;
 }
 .table-exam-schedule tr th {
   padding: 2px 18px;
@@ -386,17 +389,16 @@
   text-transform: uppercase;
   color: #597ad1;
 }
-.Dash-user-tabs{
+.Dash-user-tabs {
   background-color: #ebebeb72;
-  
-  color:#597ad1 ;
+
+  color: #597ad1;
   font-weight: 450;
   font-size: 17px;
   /* margin: 5px 0; */
-  height:43px;
-  
+  height: 43px;
 }
-.dash-user1-update{
+.dash-user1-update {
   font-weight: 600;
   font-size: 20px;
 }

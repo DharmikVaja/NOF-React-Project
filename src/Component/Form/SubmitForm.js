@@ -22,47 +22,45 @@ const SubmitForm = () => {
     first_name: "",
     last_name: "",
     phone: "",
-    countryCode: "+91",
+    countryCode: "+",
     email: "",
     comment: "",
   });
 
   useEffect(() => {
-    const input = document.querySelector("#mobile_code");
+    // Initialize intlTelInput when component mounts
+    const input = document.getElementById("mobile_code");
     intlTelInput(input, {
-      initialCountry: "IN",
+      initialCountry: "in",
       separateDialCode: true,
     });
-
-    input.addEventListener("countrychange", handlePhoneChange);
-
-    return () => {
-      input.removeEventListener("countrychange", handlePhoneChange);
-    };
-  }, []);
-
-  const handlePhoneChange = (event) => {
-    const input = event.currentTarget;
+  }, [])
+  const handlePhoneChange = () => {
+    // Update phone number value
+    const input = document.getElementById("mobile_code");
     setPhoneNum(input.value);
   };
 
   const handleForm = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
+
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
-      console.log("-------")
       e.stopPropagation();
     }
 
     setValidated(true);
+
+    // Your form submission logic here
+    console.log(formData);
     try {
       const response = await handleSubmitAPI(formData);
       console.log("Review sent successfully", response);
-  
+
+      setFormData(formData);
       localStorage.setItem("SubmitFormData", JSON.stringify(formData));
-      console.log(formData);
     } catch (error) {
-      console.error("Something went wrong", error.response);
+      console.error("something went wrong", error);
     }
   };
 
@@ -181,16 +179,13 @@ const SubmitForm = () => {
                   >
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control
-                      type="text" // Change type to "tel" for phone number input
+                      type="text"
                       id="mobile_code"
                       className="form-control"
                       placeholder="Phone Number"
-                      defaultValue={phoneNum}
+                      // name="name"
                       required
                     />
-                    {/* <Form.Control.Feedback type="invalid">
-                      Please enter a valid phone number.
-                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </Row>
                 <Row className="mb-3">
@@ -201,7 +196,6 @@ const SubmitForm = () => {
                   >
                     <Form.Label>Email Address</Form.Label>
                     <InputGroup hasValidation>
-                      {/* <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text> */}
                       <Form.Control
                         type="text"
                         placeholder="Email Address"
