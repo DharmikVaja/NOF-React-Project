@@ -61,20 +61,44 @@ export const handleSignupAPI = async ({
   }
 };
 
-export const handleSubmitAPI = async (body) => {
-  console.log("---------");
+// SubmitForm
+
+export const handleSubmitAPI = async ({
+  first_name,
+  last_name,
+  phone,
+  countryCode,
+  email,
+  comment,
+}) => {
   try {
-    console.log("---");
-    const response = await axios.post(`${BASEURL}contact-us`, body);
+    console.log("formData:", {
+      first_name,
+      last_name,
+      phone,
+      countryCode,
+      email,  
+      comment,
+    });
+    const response = await axios.post(`${BASEURL}contact-us`, {
+      first_name,
+      last_name,
+      phone,
+      countryCode,
+      email,
+      comment,
+    });
     console.log("response", response);
     if (response.data.status) {
-      alert("Your Response is saved successfully");
       console.log("Form is submitted");
+      alert("Your Response is saved successfully");
+      // localStorage.setItem("FormData", JSON.stringify(formData));
     } else {
       console.error("Something went wrong:", response.data.message);
     }
+    return response;
   } catch (error) {
-    console.error("Something went wrong:", error.response);
+    console.error("Something went wrong:", error.response.data);
     throw error;
   }
 };

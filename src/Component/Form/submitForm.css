@@ -14,6 +14,12 @@ footer {
 footer {
   display: block;
 }
+.country-code{
+  width:15% !important;
+}
+.phone-field{
+  width: 100% !important;
+}
 
 .get-in-touch-section {
   padding: 0px 0 80px;

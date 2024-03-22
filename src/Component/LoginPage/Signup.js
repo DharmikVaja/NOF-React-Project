@@ -11,7 +11,6 @@ import Button from "react-bootstrap/Button";
 import Toast from "react-bootstrap/Toast";
 
 const Signup = () => {
-  // const [selectedCountry, setSelectedCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -35,7 +34,7 @@ const Signup = () => {
       } else {
         console.log("Signup successful");
         localStorage.setItem("token", response.data.data.token);
-        alert("Signup Successfully !")
+        alert("Signup Successfully !");
         navigate("/login");
         return;
       }
@@ -50,23 +49,6 @@ const Signup = () => {
     setUserData((prevData) => ({ ...prevData, [name]: value }));
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
-
-  //   try {
-  //     const response = await handleSignupAPI(userData);
-  //     if (response.status ) {
-  //       console.log("Signup successful", response.data);
-
-  //       localStorage.setItem("token", response.data.token || token);
-  //       navigate("/login");
-  //     } else {
-  //       console.error("Signup failed: ", response.data.message);
-  //       // ... (display error messages, etc.)
-  //     }
-  //   } catch (error) {
-  //     console.error("Error during signup:", error.message);
-  //     setToastMessage("Signup failed, please try again!");
-  //   }
-  // };
 
   const handleToastClose = () => {
     setToastMessage("");

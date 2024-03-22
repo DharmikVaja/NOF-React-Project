@@ -8,7 +8,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { handleLoginAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
-import { Toast } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -16,8 +15,6 @@ const StudentLogin = () => {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-
-  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -33,14 +30,11 @@ const StudentLogin = () => {
       console.log(response);
       if (response.status) {
         localStorage.setItem("token", response.userData.token);
-        toast.success("Login Successful");
+        console.log("login success");
         alert("Login Successfully");
         navigate("/user-dashboard");
       } else {
         console.error("Login failed:", response.message);
-        setErrorMessage(
-          "Login failed. Please check your credentials and try again."
-        );
         toast.error(
           "Login failed. Please check your credentials and try again."
         );
@@ -126,20 +120,6 @@ const StudentLogin = () => {
                   <p className="forgot-link">
                     <Link to="/signup">Dont have account? Signup</Link>
                   </p>
-                  <Toast
-                    show={!!errorMessage}
-                    onClose={() => setErrorMessage("")}
-                    delay={5000}
-                    autohide
-                    bg="danger"
-                    text="white"
-                    style={{ position: "absolute", top: 10, right: 10 }}
-                  >
-                    <Toast.Header>
-                      <strong className="me-auto">Error</strong>
-                    </Toast.Header>
-                    <Toast.Body>{errorMessage}</Toast.Body>
-                  </Toast>
                 </div>
               </div>
             </div>
