@@ -1,6 +1,4 @@
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-// import { Link } from "react-router-dom";
 const BASEURL = process.env.REACT_APP_BASE_URL_API;
 
 // Login
@@ -77,7 +75,7 @@ export const handleSubmitAPI = async ({
       last_name,
       phone,
       countryCode,
-      email,  
+      email,
       comment,
     });
     const response = await axios.post(`${BASEURL}contact-us`, {
@@ -91,7 +89,7 @@ export const handleSubmitAPI = async ({
     console.log("response", response);
     if (response.data.status) {
       console.log("Form is submitted");
-      alert("Your Response is saved successfully");
+      // alert("Your Response is saved successfully");
       // localStorage.setItem("FormData", JSON.stringify(formData));
     } else {
       console.error("Something went wrong:", response.data.message);
@@ -100,6 +98,19 @@ export const handleSubmitAPI = async ({
   } catch (error) {
     console.error("Something went wrong:", error.response.data);
     throw error;
+  }
+};
+
+// change password
+
+export const handleChangePsdAPI = async ( body) => {
+  try {
+    const response = await axios.post(`${BASEURL}reset-password`)
+    if(response.data.status){
+      console.log("request submitted: ", response.data.status)
+    }
+  } catch (error) {
+    console.log("something went wrong: ", error.response.data)
   }
 };
 // export const handleAdminAPI = async ({ email, password }, URLS, body) => {

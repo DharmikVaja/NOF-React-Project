@@ -171,6 +171,20 @@
   font-size: 18px;
   padding: 20px 0px;
 }
-.cart-quantity-value{
+.cart-quantity-value {
   text-align: center;
+}
+.total-amount {
+  font-weight: 800 !important;
+}
+.place-order {
+  font-size: 18px !important;
+  padding: 20px 40px !important;
+}
+.back-to-product {
+  padding: 15px 40px !important;
+  border: 1px solid #597ad1;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: 600;
 }

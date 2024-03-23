@@ -11,19 +11,12 @@ import { FaSchool } from "react-icons/fa";
 import CountryData from "../../../src/CountryData.json";
 import MenuBtn from "../../assets/Dashboard/menu-icon-dashboard-up.png";
 
-const Header = (props) => {
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
+const Header = () => {
+  const Navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
-  const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
-
-  const handleClose3 = () => setShow3(false);
-
-  const [isToken, setIsToken] = useState(false);
-  useEffect(() => {
-    setIsToken(localStorage.getItem("token"));
-  }, []);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true); 
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
@@ -32,20 +25,34 @@ const Header = (props) => {
     if (selectedCountry && selectedClass) {
       localStorage.setItem("selectedCountry:", selectedCountry);
       localStorage.setItem("selectedClass:", selectedClass);
-      navigate("/product");
+      Navigate("/product");
     } else {
       alert("please select a country and class to continue!");
     }
   };
-  const navigate = useNavigate();
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
 
-  // const targetRef = useRef(null);
-  // const scrollToCart = () => {
-  //   if (targetRef.current) {
-  //     targetRef.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+  const handleClose3 = () => setShow3(false);
 
+  const [isToken, setIsToken] = useState(false);
+  useEffect(() => {
+    setIsToken(localStorage.getItem("token"));
+  }, []);
+
+
+  const SCountry = localStorage.getItem("selectedCountry:");
+  const SClass = localStorage.getItem("selectedClass:");
+  const handleProductheader = () => {
+    if (SCountry && SClass) {
+      Navigate("/product");
+      // <Link to="/product" />;
+    } else {
+      setShow(true);
+    }
+  };
   return (
     <header className="homeHeader ">
       <div className="container">
@@ -55,7 +62,6 @@ const Header = (props) => {
               <img src={logoImg} className="logoImg" alt="logo" />
             </span>
           </div>
-
           <div className="d-flex col-md-8  col-sm-12 justify-content-end header-list align-items-center ">
             {/* <div className="d-flex wl-ct justify-content-start gap-2 m-1">
               <Link role="button" className="cart-wl-btn" to="/wishlist">
@@ -181,12 +187,91 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link
                   className="nav-link listNames"
-                  // onClick={() => props.handleShow(false)}
+                  onClick={handleProductheader}
                   to="/product"
                 >
                   Buy Product
                 </Link>
+                {/*  */}
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title></Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <div className="reg-modal-text modal-body">
+                      <h2>Your Learning, Your Way!</h2>
+                      <p>Select Your Region and Class Preference.</p>
+                      <div className="form-modal">
+                        <div className="mb-3">
+                          <div className="modal-form-country">
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
+                            >
+                              Country
+                            </label>
+                            <select
+                              name="country"
+                              id="exampleForm.ControlInput1"
+                              className="modal-form-select"
+                              onChange={(e) =>
+                                setSelectedCountry(e.target.value)
+                              }
+                              value={selectedCountry}
+                            >
+                              <option value="">Select your Country</option>
+                              {CountryData.map((country, index) => (
+                                <option key={index} value={country.code}>
+                                  {country.name}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <div className="modal-form-class">
+                            <label
+                              className="form-label"
+                              for="exampleForm.ControlInput1"
+                            >
+                              Class
+                            </label>
+                            <select
+                              name="form-select"
+                              className="modal-form-select"
+                              id="exampleForm.ControlInput1"
+                              onChange={(e) => setSelectedClass(e.target.value)}
+                              value={selectedClass}
+                            >
+                              <option value>Select your Class</option>
+                              <option value="LKG">LKG</option>
+                              <option value="UKG">UKG</option>
+                              <option value="class 1">class 1</option>
+                              <option value="class 2">class 2</option>
+                              <option value="class 3">class 3</option>
+                              <option value="class 4">class 4</option>
+                              <option value="class 5">class 5</option>
+                              <option value="class 6">class 6</option>
+                              <option value="class 7">class 7</option>
+                              <option value="class 8">class 8</option>
+                              <option value="class 9">class 9</option>
+                              <option value="class 10">class 10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
 
+                      <Button
+                        variant="primary"
+                        className="new-yellow-btn content-sav-btn"
+                        onClick={handleFormSubmit}
+                      >
+                        Submit
+                      </Button>
+                    </div>
+                  </Modal.Body>
+                </Modal>
+                {/*  */}
                 <Modal show={show3} onHide={handleClose3}>
                   cart
                   <Modal.Header closeButton>

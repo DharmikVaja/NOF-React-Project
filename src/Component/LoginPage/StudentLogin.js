@@ -31,8 +31,14 @@ const StudentLogin = () => {
       if (response.status) {
         localStorage.setItem("token", response.userData.token);
         console.log("login success");
-        alert("Login Successfully");
+        alert("login successfully");
+        toast.success("Login Successfully");
         navigate("/user-dashboard");
+
+        localStorage.setItem("userEmail:", email);
+        localStorage.setItem("userPassword:", password);
+        console.log("userEmail:");
+        console.log("userPassword:");
       } else {
         console.error("Login failed:", response.message);
         toast.error(
@@ -53,7 +59,9 @@ const StudentLogin = () => {
           <div className="row">
             <div className="col-md-3 mb-2 mb-md-0">
               <div>
-                <img src={logoImg} alt="LogoImg" className="logoImg"></img>
+                <Link to="/">
+                  <img src={logoImg} alt="LogoImg" className="logoImg" />
+                </Link>
               </div>
             </div>
           </div>

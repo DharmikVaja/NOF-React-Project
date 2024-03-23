@@ -118,7 +118,7 @@ const ActivityLog = () => {
                           <Form className="input-group activity-search-input">
                             <InputGroup>
                               <Form.Control
-                                className="search-data play-search1 form-control"
+                                className="search-data form-control"
                                 onChange={handleSearchChange}
                                 type="text"
                                 name="search"

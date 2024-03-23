@@ -7,6 +7,7 @@ import {
   MdOutlineManageSearch,
 } from "react-icons/md";
 import "./acc-settings.css";
+import { Button } from "react-bootstrap";
 
 const MyOrdersComp = () => {
   function clearFilter() {
@@ -46,7 +47,7 @@ const MyOrdersComp = () => {
                           placeholder="Search"
                           name="search"
                           type="text"
-                          className="search-data play-search1 form-control"
+                          className="search-data form-control"
                           defaultValue=""
                         />
                       </div>
@@ -77,9 +78,9 @@ const MyOrdersComp = () => {
                       <td className="text-success fw-bold">COMPLETED </td>
                       <td>Processing </td>
                       <td>
-                        <button className="dash-order-btn  fw-bold text-white">
+                        <Button className="dash-order-btn  fw-bold text-white" disabled>
                           View
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                     <tr>
@@ -90,9 +91,9 @@ const MyOrdersComp = () => {
                       <td className="text-success fw-bold">COMPLETED </td>
                       <td>Processing </td>
                       <td>
-                        <button className="dash-order-btn  fw-bold text-white">
+                        <Button className="dash-order-btn  fw-bold text-white" disabled>
                           View
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                     <tr>
@@ -103,9 +104,9 @@ const MyOrdersComp = () => {
                       <td className="text-success fw-bold">COMPLETED </td>
                       <td>Processing </td>
                       <td>
-                        <button className="dash-order-btn fw-bold text-white">
+                        <Button className="dash-order-btn fw-bold text-white" disabled>
                           View
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   </table>

@@ -34,9 +34,9 @@ function DemoQuiz() {
     setShowResults(false);
   };
 
-  const Navigate =useNavigate();
+  const Navigate = useNavigate();
   const gotoreport = () => {
-    Navigate("/after-report")
+    Navigate("/after-report");
     localStorage.setItem("exam-score", score);
   };
   return (

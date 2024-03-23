@@ -23,9 +23,7 @@ const Home = () => {
   // };
   return (
     <div>
-      <Header 
-      // count={cart.length} handleShow={handleShow}
-      />
+      <Header />
       <ScrollToTop />
       <Content />
       <AboutTele />

@@ -14,6 +14,8 @@ import "react-phone-number-input/style.css";
 import "intl-tel-input/build/css/intlTelInput.css";
 // import intlTelInput from "intl-tel-input";
 import { handleSubmitAPI } from "../../Service/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SubmitForm = () => {
   const [validated, setValidated] = useState(false);
@@ -26,28 +28,6 @@ const SubmitForm = () => {
     comment: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-  console.log(formData);
-
-  const handleForm = async (e) => {
-    e.preventDefault();
-    console.log("---------");
-    try {
-      const response = await handleSubmitAPI(formData);
-      // if()
-      setValidated(true);
-      console.log(formData);
-      localStorage.setItem("FormData", JSON.stringify(formData));
-    } catch {}
-  };
-
-  //
   const phoneInputRef = useRef(null);
 
   const handleKeyPress = (event) => {
@@ -76,10 +56,43 @@ const SubmitForm = () => {
       });
     }
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  console.log(formData);
+
+  //
+  const handleForm = async (e) => {
+    e.preventDefault();
+    console.log("---------");
+    try {
+      const response = await handleSubmitAPI(formData);
+      if (response) {
+        setValidated(true);
+        console.log(formData);
+        localStorage.setItem("FormData", JSON.stringify(formData));
+        toast.success("Your review is submitted successfully")
+      } else {
+        toast.error(
+          "Something went wrong! Please fill in all mandatory fields & try again" ||
+            response.message
+        );
+      }
+    } catch (error) {
+      toast.error(
+        "Please fill in all mandatory fields & try again" || error.message
+      );
+    }
+  };
 
   return (
     <>
       <footer className="footer-home-new" id="footer">
+        <ToastContainer />
         <div className="container">
           <div className="row align-items-center d-flex justify-content-between ">
             <div className="offset-md-1 col-md-5 col-lg-3">
@@ -197,7 +210,7 @@ const SubmitForm = () => {
                       size="4"
                       onChange={handleCountryCode}
                       className="country-code form-control col-md-3"
-                      placeholder="+"
+                      placeholder="+91"
                     />
                     {/* </InputGroup> */}
                     <InputGroup hasValidation>

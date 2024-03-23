@@ -29,7 +29,7 @@ const DashUser2Parent = () => {
                   name="fatherName"
                   type="text"
                   className="form-control dash-input "
-                  defaultValu e=""
+                  defaultValue=""
                 />
               </div>
             </div>

@@ -9,6 +9,8 @@ import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.j
 import { handleSignupAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
 import Toast from "react-bootstrap/Toast";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,15 +33,23 @@ const Signup = () => {
       // console.log("Response", response);
       if (response.data.status !== true) {
         console.error("Signup failed:", response && response.data.message);
+        toast.error(
+          "Something went wrong! Please check all the details properly and try again. "
+        );
       } else {
         console.log("Signup successful");
         localStorage.setItem("token", response.data.data.token);
+        toast.success("Signup successfully, please Login to proceed");
         alert("Signup Successfully !");
         navigate("/login");
         return;
       }
     } catch (error) {
       console.error("Error message:", error);
+      toast.error(
+        error.response.data.message ||
+          "Signup failed! Please check all the details properly and try again"
+      );
     }
   };
   const [toastMessage, setToastMessage] = useState(false);
@@ -55,12 +65,15 @@ const Signup = () => {
   };
   return (
     <div>
+      <ToastContainer />
       <header className="header-main-login">
         <div className="container">
           <div className="row">
             <div className="col-md-3 mb-2 mb-md-0">
               <div>
-                <img src={logoImg} alt="LogoImg" className="logoImg"></img>
+                <Link to="/">
+                  <img src={logoImg} alt="LogoImg" className="logoImg"></img>
+                </Link>
               </div>
             </div>
           </div>

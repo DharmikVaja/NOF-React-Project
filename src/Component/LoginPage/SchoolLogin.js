@@ -54,9 +54,9 @@ const SchoolLogin = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-3 mb-2 mb-md-0">
-              <div>
-                <img src={logoImg} alt="LogoImg" className="logoImg"></img>
-              </div>
+              <Link to="/">
+                <img src={logoImg} alt="LogoImg" className="logoImg" />
+              </Link>
             </div>
           </div>
         </div>

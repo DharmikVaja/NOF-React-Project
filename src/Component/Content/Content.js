@@ -7,7 +7,7 @@ import CountryData from "./../../../src/CountryData.json";
 import { Link, useNavigate } from "react-router-dom";
 // import "../Modal/RegisterModal/RegModal.css";
 
-const Content = () => {
+const Content = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,19 +15,17 @@ const Content = () => {
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const handleFormSubmit = () => {
-    if(selectedCountry && selectedClass){
-    localStorage.setItem("selectedCountry:", selectedCountry);
-    localStorage.setItem("selectedClass:", selectedClass);
-    navigate("/product")
-    
-  } else{
-    alert("please select a country and class to continue!")
-  }
-  
-}
+    if (selectedCountry && selectedClass) {
+      localStorage.setItem("selectedCountry:", selectedCountry);
+      localStorage.setItem("selectedClass:", selectedClass);
+      navigate("/product");
+    } else {
+      alert("please select a country and class to continue!");
+    }
+  };
 
   return (
     <>
@@ -56,7 +54,6 @@ const Content = () => {
                     variant="primary"
                     to="/signup"
                     // onClick={handleShow}
-
                   >
                     Click Here to Register
                   </Link>

@@ -3,21 +3,30 @@ import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
+import { TbTrashXFilled } from "react-icons/tb";
+import { Button } from "react-bootstrap";
 
-const Cart = ({ cart, cartItem }) => {
+const Cart = ({ cart, cartItem, removeFromCart }) => {
   const [CART, setCART] = useState([]);
 
-  const removeFromCart = (itemId) => {
-    setCART((prevCart) => {
-      const filteredCart = prevCart.filter((item) => item.id !== itemId);
-      localStorage.setItem("cartList", JSON.stringify(filteredCart));
-      return filteredCart;
-    });
+  const handleRemoveFromCart = (itemId) => {
+    removeFromCart(itemId);
   };
+
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
     setCART(storedCart || []);
-  }, [localStorage.getItem("cartList") ]);
+  }, [localStorage.getItem("cartList")]);
+
+ 
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Optional: Add smooth scrolling behavior
+      });
+    };
+
+  // const CartLength = localStorage.getItem("cartList")
 
   return (
     <>
@@ -46,7 +55,7 @@ const Cart = ({ cart, cartItem }) => {
                           </tr>
                         </thead>
                         <tbody className="cart-body">
-                          {cart.map((cartItem, cartindex) => (
+                          {cart.map((cartItem) => (
                             <tr key={cartItem.id}>
                               <td className="text-left">{cartItem.name}</td>
                               <td className="text-left">{cartItem.class}</td>
@@ -79,7 +88,9 @@ const Cart = ({ cart, cartItem }) => {
                               <td>{cartItem.amount} ₹</td>
                               <td>
                                 <Link
-                                  onClick={() => removeFromCart(cartItem.id)}
+                                  onClick={() =>
+                                    handleRemoveFromCart(cartItem.id)
+                                  }
                                 >
                                   <TiDeleteOutline
                                     className="fs-2"
@@ -96,6 +107,43 @@ const Cart = ({ cart, cartItem }) => {
                 ) : (
                   <p className="text-center">Your cart is empty.</p>
                 )}
+
+                <div className="cart2-table cart2-total">
+                  <div className="table-responsive">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Cart Total </th>
+                          <th>Subtotal</th>
+                          <th>Shipping</th>
+                          <th>GST & Fees</th>
+                          <th className="total-amount ">Total Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody className="cart-body">
+                        <tr>
+                          <td>Price </td>
+                          <td>₹{CART.length * 300} </td>
+                          <td>₹ 00.00</td>
+                          <td>₹ 00.00</td>
+                          <td className="total-amount">₹{CART.length * 300}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div className="d-flex justify-content-center w-100">
+                      <Link to="/signup">
+                        <button className="common-btn place-order">
+                          Place Order
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="d-flex justify-content-end me-5">
+                      <button className="back-to-product bg-transparent text-secondary place-order" onClick={scrollToTop}>
+                        Back to Product
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

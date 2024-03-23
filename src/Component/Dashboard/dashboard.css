@@ -118,6 +118,9 @@
   padding: 15px;
   /* overflow-y: none; */
 }
+.navBars::-webkit-scrollbar {
+  display: none;
+}
 
 .dropdown-switch .dropdown-menu {
   right: 0;
@@ -130,7 +133,7 @@
 }
 .dropdown .dropdown-menu {
   max-height: 250px;
-  overflow-y: scroll;
+  overflow-y: none;
 }
 .dropdown-switch.dropdown .btn.show {
   background-color: transparent !important;
@@ -308,7 +311,7 @@
 }
 .table-exam-schedule .table {
   border-collapse: separate;
-  border-spacing: 0 15px;
+  border-spacing: 10px 10px;
 }
 .table-exam-schedule tbody tr td {
   background: #f5f5f5;
