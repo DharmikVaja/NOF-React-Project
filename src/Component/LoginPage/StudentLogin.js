@@ -125,6 +125,11 @@ const StudentLogin = () => {
                   <Button onClick={handleLogin} className="common-btn w-100">
                     Login
                   </Button>
+                  <Link to="/">
+                    <Button className="common-btn w-100" variant="primary">
+                      Go Back
+                    </Button>
+                  </Link>
                   <p className="forgot-link">
                     <Link to="/signup">Dont have account? Signup</Link>
                   </p>

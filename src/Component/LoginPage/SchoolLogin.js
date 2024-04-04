@@ -124,6 +124,11 @@ const SchoolLogin = () => {
                   >
                     Login
                   </Button>
+                  <Link to="/">
+                    <Button className="common-btn w-100" variant="primary">
+                      Go Back
+                    </Button>
+                  </Link>
 
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>

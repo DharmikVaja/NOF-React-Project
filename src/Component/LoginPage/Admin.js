@@ -21,7 +21,7 @@ const Admin = () => {
     const adminPassword = "admin123";
     if (email === adminEmail && password === adminPassword) {
       alert("Successfully Login");
-      navigate("/admin-panel")
+      navigate("/admin-panel");
     } else {
       setSmShow(true);
       setError("Invalid Credentials");
