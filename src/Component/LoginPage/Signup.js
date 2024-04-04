@@ -6,7 +6,7 @@ import logoImg from "../../assets/logo.png";
 import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import countriesData from "../../Component/Dashboard/UserAccountComp/DashUser2.json";
-import { handleSignupAPI, handleOtpVerificationAPI } from "../../Service/api";
+import { handleSignupAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
 import Toast from "react-bootstrap/Toast";
 import { ToastContainer, toast } from "react-toastify";

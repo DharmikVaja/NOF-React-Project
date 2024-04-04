@@ -58,44 +58,41 @@ export const handleSignupAPI = async ({
     throw error;
   }
 };
+
+// OTP verification
+
 export const handleOtpVerificationAPI = async (
-  email,
-  phoneNumber,
-  countryCode
+  { email, otp, type, daily_email_notify, daily_whatsApp_notify },
+  body
 ) => {
   try {
-    // Handle email OTP verification
-    const emailOtpResponse = await axios.post(`${BASEURL}verify-otp`, {
+    console.log("---------------------------------------");
+    // console.log("Data to be sent:", {
+    //   email: email,
+    //   otp: otp,
+    //   type: type,
+    //   daily_email_notify: daily_email_notify,
+    //   daily_whatsApp_notify: daily_whatsApp_notify,
+    // });
+    const response = await axios.post(`${BASEURL}verify-otp`, {
       email,
+      otp,
+      type,
+      daily_email_notify,
+      daily_whatsApp_notify,
     });
+    console.log("response status:", response.status);
 
-    if (emailOtpResponse.data.status !== true) {
-      console.error(
-        "Email OTP verification failed:",
-        emailOtpResponse.data.message
-      );
-      return false; // Return false indicating failure
+    if (response.status) {
+      console.log("OTP verification successful");
+      return true;
+    } else {
+      console.error("OTP verification failed:", response.data.message);
+      return false;
     }
-
-    // Handle phone OTP verification
-    const phoneOtpResponse = await axios.post(`${BASEURL}verify-otp`, {
-      phoneNumber,
-      countryCode,
-    });
-
-    if (phoneOtpResponse.data.status !== true) {
-      console.error(
-        "Phone OTP verification failed:",
-        phoneOtpResponse.data.message
-      );
-      return false; // Return false indicating failure
-    }
-
-    // If both OTPs are verified successfully, return true
-    return true;
   } catch (error) {
     console.error("Error during OTP verification:", error);
-    return false; // Return false indicating failure
+    return false;
   }
 };
 

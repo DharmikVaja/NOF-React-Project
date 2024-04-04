@@ -49,28 +49,29 @@ const VerifyOtp = ({ userData }) => {
       }
     }
   };
+
   const handleOTP = async () => {
-    const _finalKey = otp.join("");
-    console.log(_finalKey);
-
-    const { email, phoneNumber, countryCode } = userData;
+    const otpValue = otp.join("");
+    console.log("OTP Value:", otpValue);
     try {
-      const otpFromAPI = await handleOtpVerificationAPI(
-        email,
-        phoneNumber,
-        countryCode
+      const response = await handleOtpVerificationAPI(
+        Email,
+        otpValue,
+        "verify Phone",
+        "yes",
+        "yes"
+       
       );
-
-      // Compare the OTP entered by the user with the OTP from the API
-      if (_finalKey === otpFromAPI) {
-        console.log("OTP verification successful");
-        // Redirect or perform further actions upon successful OTP verification
+      console.log("API Response:", response);
+      if (response) {
+        console.log("OTP verified successfully!");
       } else {
-        toast.error("Incorrect OTP. Please try again.");
+        console.error("API Response is false or undefined");
+        toast.error("API Response is false or undefined");
       }
     } catch (error) {
-      console.error("Error verifying OTP:", error);
-      toast.error("Error verifying OTP. Please try again.");
+      console.error("Error during OTP verification:", error);
+      toast.error("Error during OTP verification:", error.message);
     }
   };
 
