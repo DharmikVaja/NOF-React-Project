@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./login-page.css";
 import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
@@ -10,11 +10,13 @@ import { handleLoginAPI } from "../../Service/api";
 import Button from "react-bootstrap/Button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-bootstrap/Modal";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const StudentLogin = () => {
   const [email, setEmail] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,6 +25,10 @@ const StudentLogin = () => {
     if (name === "email") setEmail(value);
     else if (name === "password") setPassword(value);
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleLogin = async () => {
     try {
@@ -30,11 +36,12 @@ const StudentLogin = () => {
       console.log(response);
       if (response.status) {
         localStorage.setItem("token", response.userData.token);
+        // alert("Login successfully")
         console.log("login success");
-        alert("login successfully");
-        toast.success("Login Successfully");
-        navigate("/user-dashboard");
-
+        handleShow(); 
+        setTimeout(() => {
+          navigate("/user-dashboard");
+        }, 1500);
         localStorage.setItem("userEmail:", email);
         localStorage.setItem("userPassword:", password);
         console.log("userEmail:");
@@ -122,6 +129,29 @@ const StudentLogin = () => {
                   </p>
                   <p className="error-msg"></p>
 
+                  {/*  */}
+                  <Modal
+                    show={show}
+                    onHide={handleClose}
+                    size="sm"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    className=""
+                    centered
+                  >
+                    <div className="row modal_success">
+                      <div className="col-12 d-flex justify-content-end">
+                        <AiOutlineCloseCircle
+                          onClick={handleClose}
+                          className="fs-5 cursorPointerClass"
+                          style={{ color: "#00000080" }}
+                        />
+                      </div>
+                      <div className="fs-2 d-flex justify-content-center py-4 pb-5">
+                        Login Successful
+                      </div>
+                    </div>
+                  </Modal>
+                  {/*  */}
                   <Button onClick={handleLogin} className="common-btn w-100">
                     Login
                   </Button>
@@ -131,7 +161,7 @@ const StudentLogin = () => {
                     </Button>
                   </Link>
                   <p className="forgot-link">
-                    <Link to="/signup">Dont have account? Signup</Link>
+                    <Link to="/signup">Don't have account? Signup</Link>
                   </p>
                 </div>
               </div>

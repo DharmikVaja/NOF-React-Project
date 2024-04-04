@@ -9,6 +9,7 @@ import ProImg2 from "../../../src/assets/product/pro2.png";
 import ProImg3 from "../../../src/assets/product/pro3.png";
 import ProImg4 from "../../../src/assets/product/pro4.png";
 import ProImg5 from "../../../src/assets/product/pro5.png";
+import { Link } from "react-router-dom";
 
 const ContentMiddle = () => {
   const [show1, setShow1] = useState(false);
@@ -102,13 +103,13 @@ const ContentMiddle = () => {
               </div>
             </div>
             <div className="set-top-margin">
-              <Button
+              <Link
                 className="new-yellow-btn "
                 variant="primary"
-                onClick={handleShow1}
+                to="/signup"
               >
                 Click Here to Register
-              </Button>
+              </Link>
               <Modal show={show1} onHide={handleClose1}>
                 <Modal.Header closeButton>
                   <Modal.Title></Modal.Title>

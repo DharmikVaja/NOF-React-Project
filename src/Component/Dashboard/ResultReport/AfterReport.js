@@ -18,7 +18,11 @@ const AfterReport = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const quizmark = localStorage.getItem("exam-score")
+  const examScore = localStorage.getItem("exam-score");
+
+  const scoreObject = JSON.parse(examScore);
+  const score = scoreObject.score;
+
   return (
     <div>
       <div className="dashboard-layout ">
@@ -45,8 +49,10 @@ const AfterReport = () => {
                       <div className="student-report-details">
                         <p className="report-p">Student Name: {}Hibba</p>
                         <p className="report-p">Class: {}8th</p>
-                        <p className="report-p">Email: {}stu503924@misdoha.com</p>
-                         <p className="report-p">Student Code: {} ind23</p>
+                        <p className="report-p">
+                          Email: {}stu503924@misdoha.com
+                        </p>
+                        <p className="report-p">Student Code: {} ind23</p>
                         <p className="report-p">Mobile No.: {}987543210</p>
                       </div>
                     </div>
@@ -71,14 +77,30 @@ const AfterReport = () => {
                         >
                           View Results Report
                         </Link>
-                        <Modal show={show} onHide={handleClose}>
+                        <Modal
+                          show={show}
+                          onHide={handleClose}
+                          size="md"
+                          aria-labelledby="contained-modal-title-vcenter"
+                          className=""
+                          centered
+                        >
                           <Modal.Header closeButton>
-                            <Modal.Title>GK Result</Modal.Title>
+                            <Modal.Title className="fs-2">
+                              GK Result
+                            </Modal.Title>
                           </Modal.Header>
                           <Modal.Body>
-                            You scored {quizmark} out of / 30
+                          <div className="py-2">
+
+                            Your previous test score is{" "}
+                            <span className="fw-bold">
+                              {score} {""}
+                              out of /30
+                            </span>
+                            , keep scoring!
+                          </div>
                           </Modal.Body>
-                          
                         </Modal>
                       </div>
                     </div>

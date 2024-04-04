@@ -207,29 +207,19 @@ const NavbarDashboard = () => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <div className="dropdown-switch dropdown">
-                      <Dropdown.Item
-                        className="dropdown-item"
-                        role="button"
-                        href="/login"
-                      >
+                      <Link className="dropdown-item" role="button" to="/login">
                         Switch User
-                      </Dropdown.Item>
-
-                      <Dropdown.Item
-                        className="dropdown-item"
-                        role="button"
-                        href="/"
-                      >
+                      </Link>
+                      <Link className="dropdown-item" role="button" to="/">
                         Go to Home page
-                      </Dropdown.Item>
-
-                      <Dropdown.Item
+                      </Link>
+                      <Link
                         className="dropdown-item"
                         role="button"
                         onClick={handleLogOut}
                       >
                         LogOut
-                      </Dropdown.Item>
+                      </Link>
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>

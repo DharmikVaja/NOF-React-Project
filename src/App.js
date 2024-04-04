@@ -46,6 +46,7 @@ import ForgotPassword from "./Component/LoginPage/ForgotPassword";
 import PurchaseCourse from "./Component/Dashboard/SelectTest/PurchaseCourse";
 import AdminPanel from "./Component/LoginPage/AdminPanelComp/AdminPanel";
 import NOFInterNatExam from "./Component/Dashboard/SelectTest/NOFInterNatExam";
+import VerifyOtp from "./Component/LoginPage/VerifyOtp";
 // import Cart from "./Component/HeaderLink/Cart/Cart";
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
         <Route path="/refund-and-cancellation" element={<RefundCancel />} />
         <Route path="/school-login" element={<SchoolLogin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/forgot-psd" element={<ForgotPassword />} />

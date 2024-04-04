@@ -58,6 +58,46 @@ export const handleSignupAPI = async ({
     throw error;
   }
 };
+export const handleOtpVerificationAPI = async (
+  email,
+  phoneNumber,
+  countryCode
+) => {
+  try {
+    // Handle email OTP verification
+    const emailOtpResponse = await axios.post(`${BASEURL}verify-otp`, {
+      email,
+    });
+
+    if (emailOtpResponse.data.status !== true) {
+      console.error(
+        "Email OTP verification failed:",
+        emailOtpResponse.data.message
+      );
+      return false; // Return false indicating failure
+    }
+
+    // Handle phone OTP verification
+    const phoneOtpResponse = await axios.post(`${BASEURL}verify-otp`, {
+      phoneNumber,
+      countryCode,
+    });
+
+    if (phoneOtpResponse.data.status !== true) {
+      console.error(
+        "Phone OTP verification failed:",
+        phoneOtpResponse.data.message
+      );
+      return false; // Return false indicating failure
+    }
+
+    // If both OTPs are verified successfully, return true
+    return true;
+  } catch (error) {
+    console.error("Error during OTP verification:", error);
+    return false; // Return false indicating failure
+  }
+};
 
 // SubmitForm
 
@@ -103,14 +143,14 @@ export const handleSubmitAPI = async ({
 
 // change password
 
-export const handleChangePsdAPI = async ( body) => {
+export const handleChangePsdAPI = async (body) => {
   try {
-    const response = await axios.post(`${BASEURL}reset-password`)
-    if(response.data.status){
-      console.log("request submitted: ", response.data.status)
+    const response = await axios.post(`${BASEURL}reset-password`);
+    if (response.data.status) {
+      console.log("request submitted: ", response.data.status);
     }
   } catch (error) {
-    console.log("something went wrong: ", error.response.data)
+    console.log("something went wrong: ", error.response.data);
   }
 };
 // export const handleAdminAPI = async ({ email, password }, URLS, body) => {

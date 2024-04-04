@@ -16,7 +16,7 @@ const Header = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true); 
+  const handleShow = () => setShow(true);
 
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
@@ -26,6 +26,7 @@ const Header = () => {
       localStorage.setItem("selectedCountry:", selectedCountry);
       localStorage.setItem("selectedClass:", selectedClass);
       Navigate("/product");
+      handleClose();
     } else {
       alert("please select a country and class to continue!");
     }
@@ -42,15 +43,13 @@ const Header = () => {
     setIsToken(localStorage.getItem("token"));
   }, []);
 
-
   const SCountry = localStorage.getItem("selectedCountry:");
   const SClass = localStorage.getItem("selectedClass:");
   const handleProductheader = () => {
     if (SCountry && SClass) {
       Navigate("/product");
-      // <Link to="/product" />;
     } else {
-      setShow(true);
+      handleShow();
     }
   };
   return (

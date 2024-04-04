@@ -6,7 +6,7 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./result-report.css";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
-import Criteria from "../../../assets/Dashboard/Criteria+Senior.pdf"
+import Criteria from "../../../assets/Dashboard/Criteria+Senior.pdf";
 
 const ResultReport = () => {
   return (
@@ -45,7 +45,13 @@ const ResultReport = () => {
                   <div className="col-md-4">
                     <div className="test-box-new">
                       <h4>VIEW AWARD & RECOGNITION CRITERIA</h4>
-                      <a type= "button " target="_blank" href={Criteria} className="cursorPointerClass"  rel="noreferrer">
+                      <a
+                        type="button "
+                        target="_blank"
+                        href={Criteria}
+                        className="cursorPointerClass"
+                        rel="noreferrer"
+                      >
                         <img src={Arrowicon} alt="" />
                       </a>
                     </div>

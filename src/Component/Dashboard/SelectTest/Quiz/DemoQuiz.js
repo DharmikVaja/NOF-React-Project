@@ -36,9 +36,14 @@ function DemoQuiz() {
 
   const Navigate = useNavigate();
   const gotoreport = () => {
+    const id = Date.now();
+    const scoreObject = {
+        id: id,
+        score: score
+    };
     Navigate("/after-report");
-    localStorage.setItem("exam-score", score);
-  };
+    localStorage.setItem("exam-score", JSON.stringify(scoreObject));
+};
   return (
     <div className="container-fluid Demo-Quiz">
       <ScrollToTop />
