@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./practiceEBook.css";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import productData from "../../Product/productData";
 
 const PracticeEBook = () => {
+  const SClass = localStorage.getItem("selectedClass:");
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleCartProduct = (productId) => {
+    setIsAdded((prevAddedToCart) => ({
+      ...prevAddedToCart,
+      [productId]: true,
+    }));
+    console.log("cart is added", productId);
+  };
+  const addedItemCount = Object.keys(isAdded).length;
+  // const navigate = useNavigate();
+  // const handleGotoCart = () => {
+  //   navigate("/order-summary");
+  // };
+
   return (
     <div>
       <div className="dashboard-layout ">
@@ -32,7 +49,8 @@ const PracticeEBook = () => {
                     </div>
                   </div>
                   <Link className="common-btn show-number" to="/order-summary">
-                    <span className="show1 right">0</span>View Cart
+                    <span className="show1 right">{addedItemCount || 0}</span>
+                    View Cart
                   </Link>
                 </div>
               </div>
@@ -45,162 +63,39 @@ const PracticeEBook = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691577031378test4.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International GK Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
+                {/*  */}
+                {productData.map((product) => {
+                  const { id, name, img, amount } = product;
+                  const isProductAdded = isAdded[id] || false;
+                  return (
+                    <div className="col-md-4" key={id}>
+                      <div className="test-box-inner">
+                        <img src={img} alt="" />
+                        <h4>{name}</h4>
+                        <div className="d-flex gap-5 justify-content-between">
+                          <p> {SClass}</p>
+                          <p>Price : ₹&nbsp; {amount}</p>
+                        </div>
+                        <button
+                          className="addtocartbtn"
+                          onClick={() => handleCartProduct(id)}
+                        >
+                          {isProductAdded ? (
+                            <Link
+                              to="/order-summary "
+                              className="go_to_cart_Link text-white"
+                            >
+                              {"Go to Cart"}
+                            </Link>
+                          ) : (
+                            " Add to Cart"
+                          )}
+                        </button>
+                      </div>
                     </div>
-                    <button className="addtocartbtndisable" disabled="">
-                      Already paid
-                    </button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691576833344test1.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International Math Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtndisable" disabled="">
-                      Already paid
-                    </button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691575296724test6.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International Science Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtndisable" disabled="">
-                      Already paid
-                    </button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691577164831test5.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International French Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691576685498test5.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>MTSE-English</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691576685498test5.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>MTSE-Hindi</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691574669762test3.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International Hindi Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691577031378test4.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International Aptitude Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691575714423test2.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>International English Olympiad</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-box-inner">
-                    <img
-                      src="https://nofs3-bucket.s3.ap-south-1.amazonaws.com/BOOKIMAGES/1691576685498test5.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                    <h4>MTSE-Marathi</h4>
-                    <div className="d-flex gap-5 justify-content-between">
-                      <p>CLASS 8</p>
-                      <p>Price : ₹&nbsp; 300</p>
-                    </div>
-                    <button className="addtocartbtn">Add to cart</button>
-                  </div>
-                </div>
+                  );
+                })}
+                {/*  */}
               </div>
             </div>
           </section>

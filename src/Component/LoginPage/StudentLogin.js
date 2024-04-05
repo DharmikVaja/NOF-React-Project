@@ -38,7 +38,7 @@ const StudentLogin = () => {
         localStorage.setItem("token", response.userData.token);
         // alert("Login successfully")
         console.log("login success");
-        handleShow(); 
+        handleShow();
         setTimeout(() => {
           navigate("/user-dashboard");
         }, 1500);
@@ -152,10 +152,10 @@ const StudentLogin = () => {
                     </div>
                   </Modal>
                   {/*  */}
-                  <Button onClick={handleLogin} className="common-btn w-100">
+                  <Button onClick={handleLogin} className="common-btn w-100 my-1">
                     Login
                   </Button>
-                  <Link to="/">
+                  <Link to="/" className="my-0">
                     <Button className="common-btn w-100" variant="primary">
                       Go Back
                     </Button>

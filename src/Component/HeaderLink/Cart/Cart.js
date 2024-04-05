@@ -3,8 +3,6 @@ import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
-import { TbTrashXFilled } from "react-icons/tb";
-import { Button } from "react-bootstrap";
 
 const Cart = ({ cart, cartItem, removeFromCart }) => {
   const [CART, setCART] = useState([]);
@@ -13,18 +11,40 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
     removeFromCart(itemId);
   };
 
+  const cartList = localStorage.getItem("cartList");
+
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
     setCART(storedCart || []);
-  }, [localStorage.getItem("cartList")]);
+  }, [cartList]);
 
- 
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth" // Optional: Add smooth scrolling behavior
-      });
-    };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: Add smooth scrolling behavior
+    });
+  };
+
+  const handleIncrement = (itemId) => {
+    const updatedCart = CART.map((item) =>
+      item.id === itemId
+        ? { ...item, quantity: (item.quantity || 1) + 1 }
+        : item
+    );
+    setCART(updatedCart);
+  };
+
+  const handleDecrement = (itemId) => {
+    const updatedCart = CART.map((item) =>
+      item.id === itemId
+        ? {
+            ...item,
+            quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity,
+          }
+        : item
+    );
+    setCART(updatedCart);
+  };
 
   // const CartLength = localStorage.getItem("cartList")
 
@@ -66,6 +86,9 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
                                       type="button"
                                       className="btn btn-outline-secondary"
                                       disabled
+                                      onClick={() =>
+                                        handleDecrement(cartItem.id)
+                                      }
                                     >
                                       <FaMinus />
                                     </button>
@@ -73,12 +96,15 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
                                       type="text"
                                       readOnly
                                       className="form-control cart-quantity-value"
-                                      defaultValue={cartItem.quantity || 1}
+                                      value={cartItem.quantity || 1}
                                     />
                                     <button
                                       type="button"
                                       className="btn btn-outline-secondary"
                                       disabled
+                                      onClick={() =>
+                                        handleIncrement(cartItem.id)
+                                      }
                                     >
                                       <FaPlus />
                                     </button>
@@ -138,7 +164,10 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
                       </Link>
                     </div>
                     <div className="d-flex justify-content-end me-5">
-                      <button className="back-to-product bg-transparent text-secondary place-order" onClick={scrollToTop}>
+                      <button
+                        className="back-to-product bg-transparent text-secondary place-order"
+                        onClick={scrollToTop}
+                      >
                         Back to Product
                       </button>
                     </div>

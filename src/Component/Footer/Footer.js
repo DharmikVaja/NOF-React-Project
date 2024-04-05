@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="container">
           <div className="row ">
             <div className="col-lg-6">
-              <ul className="link-list d-flex align-items-center container-fluid">
+              <ul className="link-list d-flex flex-wrap align-items-center container-fluid">
                 <li>
                   <Link to="/privacy-policy" className="">
                     Privacy Policy

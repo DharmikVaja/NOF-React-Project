@@ -138,6 +138,18 @@ export const handleSubmitAPI = async ({
   }
 };
 
+//get books
+export const handleGetBook = async (body) => {
+  try {
+    const response = await axios.post(`${BASEURL}get-books`, body);
+    // if(response)
+    console.log(response)
+  }
+  catch(err){
+    console.error("error while getting books", err)
+  }
+};
+
 // change password
 
 export const handleChangePsdAPI = async (body) => {
@@ -150,6 +162,7 @@ export const handleChangePsdAPI = async (body) => {
     console.log("something went wrong: ", error.response.data);
   }
 };
+
 // export const handleAdminAPI = async ({ email, password }, URLS, body) => {
 //   try {
 //     console.log("---------------");

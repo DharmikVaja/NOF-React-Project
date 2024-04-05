@@ -59,7 +59,8 @@ const Signup = () => {
         // toast.success("Signup successfully, please Login to proceed");
         handleShow();
         setTimeout(() => {
-          navigate("/verify-otp");
+          // navigate("/verify-otp");
+          navigate("/login");
         }, 1500);
 
         return;
@@ -266,9 +267,12 @@ const Signup = () => {
                     <Toast.Body>{toastMessage}</Toast.Body>
                   </Toast>
 
-                  <p>
+                  <p className="d-flex flex-column ">
                     <small>
                       Already have account? <Link to="/login">Login here</Link>
+                    </small>
+                    <small>
+                      <Link to="/">Go Back</Link>
                     </small>
                   </p>
                 </div>

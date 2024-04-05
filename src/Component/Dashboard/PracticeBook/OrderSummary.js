@@ -1,8 +1,8 @@
 import React from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
-import "./practiceEBook.css"
+import "./practiceEBook.css";
 import { Link } from "react-router-dom";
-import ScrollToTop from '../../ScrollToTop/ScrollToTop';
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const OrderSummary = () => {
   return (
@@ -12,7 +12,7 @@ const OrderSummary = () => {
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
-              <ScrollToTop/>
+              <ScrollToTop />
             </header>
             <section className="dash-outer-box">
               <div className="row">
@@ -73,8 +73,18 @@ const OrderSummary = () => {
                           </tbody>
                         </table>
                         <div className="text-center mt-5 d-flex justify-content-between">
-                          <Link className="common-all-btn text-center" to="/practice-books">Back</Link>
-                          <Link className="common-all-btn text-center" to="/order-summary">Next</Link>
+                          <Link
+                            className="common-all-btn text-center"
+                            to="/practice-books"
+                          >
+                            Back
+                          </Link>
+                          <Link
+                            className="common-all-btn text-center"
+                            to="/order-summary"
+                          >
+                            Next
+                          </Link>
                         </div>
                       </div>
                     </div>

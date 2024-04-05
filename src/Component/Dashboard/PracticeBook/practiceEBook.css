@@ -80,3 +80,6 @@
 .order-total .table-order .order-total{
     border-top:  1px solid black !important;
 }
+.go_to_cart_Link{
+    text-decoration: none;
+}

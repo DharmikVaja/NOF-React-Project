@@ -70,7 +70,7 @@ const Product = () => {
     );
   };
   const removeFromCart = (itemId) => {
-    const updatedCart = CART.filter(item => item.id !== itemId);
+    const updatedCart = CART.filter((item) => item.id !== itemId);
     setCART(updatedCart);
     localStorage.setItem("cartList", JSON.stringify(updatedCart));
   };
@@ -145,7 +145,11 @@ const Product = () => {
                     </div>
                   </div>
                 ))}
-                <Cart cart={CART} ref={targetRef} removeFromCart={removeFromCart}/>
+                <Cart
+                  cart={CART}
+                  ref={targetRef}
+                  removeFromCart={removeFromCart}
+                />
               </div>
             </div>
           </section>
