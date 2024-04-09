@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./instruction.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Instruction = () => {
+  const navigate = useNavigate();
+  const openFrontCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "user" },
+      });
+      navigate("/demo-quiz");
+      // Use the stream to display the camera feed or perform other actions
+    } catch (error) {
+      console.error("Error accessing camera:", error);
+      toast.error("Failed to access camera. Please check your permissions.");
+    }
+  };
   return (
     <div>
+    <ToastContainer/>
       <div>
         <div className="dashboard-layout ">
           <div className="inner-dash-bpx ">
             <header className="main-header login-header-home">
               <NavbarDashboard />
-              <ScrollToTop/>
+              <ScrollToTop />
             </header>
             <section className="dash-outer-box">
               <div className="row">
@@ -127,8 +143,15 @@ const Instruction = () => {
                       </ul>
                     </div>
                     <div className="d-flex mt-4 gap-2 justify-content-center">
-                      <Link className="common-all-btn" to="/demo-quiz">Take Test</Link>
-                      <Link className="common-all-btn" to="/demo-test">Back</Link>
+                      <Link
+                        className="common-all-btn"
+                        onClick={openFrontCamera}
+                      >
+                        Take Test
+                      </Link>
+                      <Link className="common-all-btn" to="/demo-test">
+                        Back
+                      </Link>
                     </div>
                   </div>
                 </div>

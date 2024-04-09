@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./demoquiz.css";
 import Questions from "./Questions";
 import ScrollToTop from "../../../ScrollToTop/ScrollToTop";
@@ -38,12 +38,45 @@ function DemoQuiz() {
   const gotoreport = () => {
     const id = Date.now();
     const scoreObject = {
-        id: id,
-        score: score
+      id: id,
+      score: score,
     };
+    handleCloseCamera();
     Navigate("/after-report");
     localStorage.setItem("exam-score", JSON.stringify(scoreObject));
-};
+  };
+  //
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        alert("Switching tabs is not allowed during the exam.");
+        // Optionally, you can focus back on the tab to prevent switching
+        window.focus();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+  //
+
+  const stopFrontCamera = (stream) => {
+    if (stream) {
+      const tracks = stream.getTracks();
+      tracks.forEach((track) => track.stop());
+    }
+  };
+
+  // Example usage:
+  let cameraStream;
+
+  const handleCloseCamera = () => {
+    stopFrontCamera(cameraStream);
+  };
+  //
   return (
     <div className="container-fluid Demo-Quiz">
       <ScrollToTop />
@@ -111,7 +144,11 @@ function DemoQuiz() {
             Close
           </Button>
           <Link to="/user-dashboard">
-            <Button variant="danger" className="common-btn px-3 py-3">
+            <Button
+              variant="danger"
+              className="common-btn px-3 py-3"
+              onClick={handleCloseCamera}
+            >
               Proceed
             </Button>
           </Link>
