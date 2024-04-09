@@ -85,6 +85,7 @@
   padding: 10px 20px;
   color: #000;
   border: black;
+  transition: 0.3s ease-in-out;
   font-size: 16px;
   font-weight: 600;
   line-height: 28px;
@@ -271,8 +272,8 @@
 }
 .new-white-btn:hover {
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgb(255, 255, 255);
-  color: black;
+  background-color: rgb(255, 255, 255)!important;
+  color: black!important;
   /* border: #ffc426 !important; */
   transform: scale(1.01);
 }

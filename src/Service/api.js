@@ -97,43 +97,13 @@ export const handleOtpVerificationAPI = async (
 };
 
 // SubmitForm
-
-export const handleSubmitAPI = async ({
-  first_name,
-  last_name,
-  phone,
-  countryCode,
-  email,
-  comment,
-}) => {
+export const handleSubmitAPI = async (formData) => {
   try {
-    console.log("formData:", {
-      first_name,
-      last_name,
-      phone,
-      countryCode,
-      email,
-      comment,
-    });
-    const response = await axios.post(`${BASEURL}contact-us`, {
-      first_name,
-      last_name,
-      phone,
-      countryCode,
-      email,
-      comment,
-    });
+    const response = await axios.post(`${BASEURL}contact-us`, formData);
     console.log("response", response);
-    if (response.data.status) {
-      console.log("Form is submitted");
-      // alert("Your Response is saved successfully");
-      // localStorage.setItem("FormData", JSON.stringify(formData));
-    } else {
-      console.error("Something went wrong:", response.data.message);
-    }
     return response;
   } catch (error) {
-    console.error("Something went wrong:", error.response.data);
+    console.error("Something went wrong:", error.response);
     throw error;
   }
 };
@@ -143,10 +113,9 @@ export const handleGetBook = async (body) => {
   try {
     const response = await axios.post(`${BASEURL}get-books`, body);
     // if(response)
-    console.log(response)
-  }
-  catch(err){
-    console.error("error while getting books", err)
+    console.log(response);
+  } catch (err) {
+    console.error("error while getting books", err);
   }
 };
 
