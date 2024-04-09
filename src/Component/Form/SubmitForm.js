@@ -16,6 +16,7 @@ import "intl-tel-input/build/css/intlTelInput.css";
 import { handleSubmitAPI } from "../../Service/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-bootstrap/Modal";
 
 const SubmitForm = () => {
   const [validated, setValidated] = useState(false);
@@ -27,6 +28,17 @@ const SubmitForm = () => {
     email: "",
     comment: "",
   });
+
+  const [smShow, setSmShow] = useState(false);
+  //
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  console.log(formData);
 
   const phoneInputRef = useRef(null);
 
@@ -56,43 +68,47 @@ const SubmitForm = () => {
       });
     }
   };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-  console.log(formData);
 
-  //
+  //issue was inside the backend code contactUs, removed decrypt functionality
+
   const handleForm = async (e) => {
     e.preventDefault();
-    console.log("---------");
+
     try {
       const response = await handleSubmitAPI(formData);
-      if (response) {
+      if (response.status === 200 && response.data.status) {
         setValidated(true);
-        console.log(formData);
         localStorage.setItem("FormData", JSON.stringify(formData));
-        toast.success("Your review is submitted successfully")
+        setSmShow(true);
+        setFormData({
+          first_name: "",
+          last_name: "",
+          countryCode: "",
+          phone: "",
+          email: "",
+          comment: "",
+        });
+        setValidated(false);
+        console.log("Form is submitted successfully.");
       } else {
         toast.error(
-          "Something went wrong! Please fill in all mandatory fields & try again" ||
-            response.message
+          "Something went wrong! Please fill in all mandatory fields & try again"
+        );
+        console.error(
+          "Something went wrong! Please fill in all mandatory fields & try again"
         );
       }
     } catch (error) {
-      toast.error(
-        "Please fill in all mandatory fields & try again" || error.message
-      );
+      console.error("Please fill in all mandatory fields & try again");
+      toast.error("Please fill in all mandatory fields & try again");
     }
   };
+  //
 
   return (
     <>
+      <ToastContainer />
       <footer className="footer-home-new" id="footer">
-        <ToastContainer />
         <div className="container">
           <div className="row align-items-center d-flex justify-content-between ">
             <div className="offset-md-1 col-md-5 col-lg-3">
@@ -205,7 +221,6 @@ const SubmitForm = () => {
                       type="tel"
                       name="countryCode"
                       value={formData.countryCode}
-                      id="ppf"
                       maxLength="8"
                       size="4"
                       onChange={handleCountryCode}
@@ -226,6 +241,7 @@ const SubmitForm = () => {
                         onKeyDown={handleKeyPress}
                         required
                       />
+                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     </InputGroup>
                   </Form.Group>
                   {/* </div> */}
@@ -250,6 +266,7 @@ const SubmitForm = () => {
                       <Form.Control.Feedback type="invalid">
                         Please Enter valid Email Address
                       </Form.Control.Feedback>
+                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     </InputGroup>
                   </Form.Group>
                 </Row>
@@ -279,10 +296,29 @@ const SubmitForm = () => {
                     feedbackType="invalid"
                   /> */}
                 </Form.Group>
-                <Button type="submit" className="form-submit-btn">
+                <Button
+                  type="submit"
+                  className="form-submit-btn"
+                  // onClick={handleForm}
+                >
                   Submit
                 </Button>
               </Form>
+
+              {/*  */}
+              <Modal
+                size="sm"
+                show={smShow}
+                onHide={() => setSmShow(false)}
+                aria-labelledby="example-modal-sizes-title-sm"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="example-modal-sizes-title-sm">
+                    Your response is saved!
+                  </Modal.Title>
+                </Modal.Header>
+              </Modal>
+              {/*  */}
             </div>
           </div>
         </div>
