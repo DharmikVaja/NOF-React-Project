@@ -14,7 +14,7 @@ const DashUser3Add = () => {
         <div className="delivery-form mt-4">
           <div className="row d-flex justify-content-between">
             <div className="col-md-5">
-              <div className="mb-3 input-group d-flex flex-column">
+              <div className="mb-3 input-group ">
                 <span className="input-group-text">
                   <FaRegIdCard className="fs-4" />
                 </span>

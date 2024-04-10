@@ -2,8 +2,8 @@ import React from "react";
 
 const DashUser3data = () => {
   return (
-    <div>
-      <select name="schoolCode" className="form-select form-dashuser3 " id="country-state">
+   
+      <select name="schoolCode" className="form-select  " id="country-state">
         <option value="">Select School Code</option>
         <option value="IND23">IND23 - Others</option>
         <option value="UAE444">
@@ -1005,7 +1005,7 @@ const DashUser3data = () => {
           WB289 - Delhi World Public School, Islampur
         </option>
       </select>
-    </div>
+   
   );
 };
 

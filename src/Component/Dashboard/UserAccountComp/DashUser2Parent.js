@@ -22,7 +22,7 @@ const DashUser2Parent = () => {
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <FaUser className="fs-4"/>
+                  <FaUser className="fs-4" />
                 </span>
                 <input
                   placeholder="Father Name"
@@ -36,7 +36,7 @@ const DashUser2Parent = () => {
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <FaUser className="fs-4"/>
+                  <FaUser className="fs-4" />
                 </span>
                 <input
                   placeholder="Mother Name"
@@ -57,6 +57,7 @@ const DashUser2Parent = () => {
                   className="form-select d-flex "
                   onChange={handleCountryChange}
                   value={selectedCountry}
+                  defaultValue={+91}
                 >
                   {countriesData.map((country, index) => (
                     <option
@@ -81,7 +82,7 @@ const DashUser2Parent = () => {
             <div className="col-md-5">
               <div className="mb-3 input-group">
                 <span className="input-group-text">
-                  <IoMdMail className="fs-4"/>
+                  <IoMdMail className="fs-4" />
                 </span>
                 <input
                   placeholder="Email Address"

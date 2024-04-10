@@ -39,7 +39,7 @@ const DashUserProfile = () => {
                   className="mb-3 Dash-user-tabs"
                   fill
                 >
-                  <Tab eventKey="student" title="Student Details" className="Dash-user-tabs-link">
+                  <Tab eventKey="student" title="Student Details" className="Dash-user-tabs-link ">
                     <DashUser1Student  />
                   </Tab>
                   <Tab eventKey="parent" title="Parent Details"  className="Dash-user-tabs-link">

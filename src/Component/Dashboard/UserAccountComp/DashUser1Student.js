@@ -91,7 +91,7 @@ const DashUser1Student = () => {
             <div className="col md-5">
               <div className="input-group mb-3">
                 <span className="input-group-text">
-                  <IoSchool className="fs-4"/>
+                  <IoSchool className="fs-4" />
                 </span>
                 <label htmlFor="exampleFormControlSelect1"></label>
                 <select

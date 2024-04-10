@@ -15,7 +15,7 @@ const PracticeEBook = () => {
       ...prevAddedToCart,
       [productId]: true,
     }));
-    console.log("cart is added", productId);
+    // console.log("cart is added", productId);
   };
   const addedItemCount = Object.keys(isAdded).length;
   // const navigate = useNavigate();

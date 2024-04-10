@@ -21,7 +21,7 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Optional: Add smooth scrolling behavior
+      behavior: "smooth",
     });
   };
 
@@ -46,6 +46,7 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
     setCART(updatedCart);
   };
 
+  const SClass = localStorage.getItem("selectedClass:");
   // const CartLength = localStorage.getItem("cartList")
 
   return (
@@ -78,7 +79,7 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
                           {cart.map((cartItem) => (
                             <tr key={cartItem.id}>
                               <td className="text-left">{cartItem.name}</td>
-                              <td className="text-left">{cartItem.class}</td>
+                              <td className="text-left">{SClass}</td>
                               <td>
                                 <div className="quantity-input-group">
                                   <div className="input-group">
