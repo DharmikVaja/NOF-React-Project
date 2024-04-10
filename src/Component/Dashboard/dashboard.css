@@ -329,6 +329,11 @@
   color: #000;
   border-radius: 10px;
 }
+.nav-dashboard-logout:active,
+.nav-dashboard-logout:hover,
+.nav-dashboard-logout:focus{
+background-color: rgb(151, 9, 9) !important;
+}
 .dashboard-links:active,
 .dashboard-links:hover,
 .dashboard-links:focus {

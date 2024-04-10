@@ -56,10 +56,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<Home />} />
-        <Route
-          path="/product"
-          element={<Product  />}
-        />
+        <Route path="/product" element={<Product />} />
         <Route path="/how-it-works" element={<HowItWork />} />
         <Route path="/reports-and-analysis" element={<ReportAnalysis />} />
         <Route path="/syllabus" element={<Syllabus />} />
@@ -78,34 +75,201 @@ function App() {
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/forgot-psd" element={<ForgotPassword />} />
         <Route path="/login" element={<StudentLogin />} />
-        <Route path="/user-dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
-        <Route path="/select-test" element={<ProtectedRoute><SelectTest/></ProtectedRoute>} />
-        <Route path="/demo-test" element={<ProtectedRoute><DemoTest/></ProtectedRoute>} />
-        <Route path="/demo-quiz" element={<ProtectedRoute><DemoQuiz/></ProtectedRoute>} />
-        <Route path="/nof-exam" element={<ProtectedRoute><NOFInterNatExam/></ProtectedRoute>} />
-        <Route path="/purchase-course" element={<ProtectedRoute><PurchaseCourse/></ProtectedRoute>} />
-        <Route path="/instructions" element={<ProtectedRoute><Instruction/></ProtectedRoute>} />
-        <Route path="/exam-guideline" element={<ProtectedRoute><ExamGuideline/></ProtectedRoute>}/>
-        <Route path="/result-and-report" element={<ProtectedRoute><ResultReport/></ProtectedRoute>} />
-        <Route path="/practice-books" element={<ProtectedRoute><PracticeEBook/></ProtectedRoute>} />
-        <Route path="/order-summary" element={<ProtectedRoute><OrderSummary/></ProtectedRoute>} />
-        <Route path="/after-report" element={<ProtectedRoute><AfterReport/></ProtectedRoute>} />
-        <Route path="/activity-logs" element={<ProtectedRoute><ActivityLog/></ProtectedRoute>} />
-        <Route path="/faqs" element={<ProtectedRoute><FAQs/></ProtectedRoute>}/>
-        <Route path="/faqs-ticket" element={<ProtectedRoute><Ticket/></ProtectedRoute>}/>
-        <Route path="/ticket-history" element={<ProtectedRoute><TicketHistory/></ProtectedRoute>} />
-        <Route path="/olympiad-syllabus" element={<ProtectedRoute><OlymSyllabus/></ProtectedRoute>} />
-        <Route path="/account-setting" element={<ProtectedRoute><AccountSettings/></ProtectedRoute>} />
-        <Route path="/user-profile" element={<ProtectedRoute><DashUserProfile/></ProtectedRoute>} />
-        <Route path="/user-notification" element={<ProtectedRoute><DashNotification/></ProtectedRoute>} />
-        <Route path="/address-manager" element={<ProtectedRoute><AddressManager/></ProtectedRoute>} />
-        <Route path="/user-orders" element={<ProtectedRoute><MyOrdersComp/></ProtectedRoute>} />
-        <Route path="/transaction-history" element={<ProtectedRoute><TransactionHistory/></ProtectedRoute>} />
-        <Route path="/add-student" element={<ProtectedRoute><AddStudent/></ProtectedRoute>} />
+        <Route
+          path="/user-dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/select-test"
+          element={
+            <ProtectedRoute>
+              <SelectTest />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/demo-test"
+          element={
+            <ProtectedRoute>
+              <DemoTest />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/demo-quiz"
+          element={
+            <ProtectedRoute>
+              <DemoQuiz />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/nof-exam"
+          element={
+            <ProtectedRoute>
+              <NOFInterNatExam />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/purchase-course"
+          element={
+            <ProtectedRoute>
+              <PurchaseCourse />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/instructions"
+          element={
+            <ProtectedRoute>
+              <Instruction />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/exam-guideline"
+          element={
+            <ProtectedRoute>
+              <ExamGuideline />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/result-and-report"
+          element={
+            <ProtectedRoute>
+              <ResultReport />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/practice-books"
+          element={
+            <ProtectedRoute>
+              <PracticeEBook />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/order-summary"
+          element={
+            <ProtectedRoute>
+              <OrderSummary />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/after-report"
+          element={
+            <ProtectedRoute>
+              <AfterReport />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/activity-logs"
+          element={
+            <ProtectedRoute>
+              <ActivityLog />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/faqs"
+          element={
+            <ProtectedRoute>
+              <FAQs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/faqs-ticket"
+          element={
+            <ProtectedRoute>
+              <Ticket />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ticket-history"
+          element={
+            <ProtectedRoute>
+              <TicketHistory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/olympiad-syllabus"
+          element={
+            <ProtectedRoute>
+              <OlymSyllabus />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/account-setting"
+          element={
+            <ProtectedRoute>
+              <AccountSettings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user-profile"
+          element={
+            <ProtectedRoute>
+              <DashUserProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user-notification"
+          element={
+            <ProtectedRoute>
+              <DashNotification />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/address-manager"
+          element={
+            <ProtectedRoute>
+              <AddressManager />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user-orders"
+          element={
+            <ProtectedRoute>
+              <MyOrdersComp />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/transaction-history"
+          element={
+            <ProtectedRoute>
+              <TransactionHistory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/add-student"
+          element={
+            <ProtectedRoute>
+              <AddStudent />
+            </ProtectedRoute>
+          }
+        />
         {/* <Route path="/quiz" element={<ProtectedRoute><Quiz/></ProtectedRoute>} /> */}
-        
       </Routes>
     </>
   );
-} 
+}
 export default App;

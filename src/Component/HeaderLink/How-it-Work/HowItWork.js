@@ -11,12 +11,32 @@ import Benefit4 from "../../../assets/hiw-achievement4.png";
 import "./how-it-work.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./how-it-work.css";
 import Header from "../../Header/Header";
 import ScrollToTop from "../../../Component/ScrollToTop/ScrollToTop";
 import HIWData from "./HowItWorkData";
 
 const HowItWork = () => {
+  
+  const CustomPrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "black" }}
+        onClick={onClick}
+      />
+    );
+  };
+  const CustomNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "blue"  }}
+        onClick={onClick}
+      />
+    );
+  };
   let settings = {
     dots: true,
     infinite: true,
@@ -24,6 +44,8 @@ const HowItWork = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -43,6 +65,8 @@ const HowItWork = () => {
       },
     ],
   };
+
+
   const containerStyle = {
     backgroundImage: `url(${BgImg})`,
     backgroundSize: "cover",
@@ -79,6 +103,7 @@ const HowItWork = () => {
           {HIWData.map((item) => (
             <div
               data-index={item.id}
+              key={item.id}
               className="slick-slide slick-active"
               tabIndex="-1"
               aria-hidden="false"
@@ -86,7 +111,7 @@ const HowItWork = () => {
               <div>
                 <div className="how-work-box" tabIndex="-1">
                   <div className="image">
-                    <img src={item.image}  className="img-fluid" alt="img" />
+                    <img src={item.image} alt="" />
                   </div>
                   <h4>{item.title}</h4>
                   <p>{item.content}</p>

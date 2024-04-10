@@ -18,6 +18,7 @@ import { BsJournalText } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { MdListAlt } from "react-icons/md";
 import Stack from "react-bootstrap/Stack";
+import Button from "react-bootstrap/Button";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 const NavbarDashboard = () => {
@@ -38,6 +39,7 @@ const NavbarDashboard = () => {
     localStorage.removeItem("token");
     setIsToken(false);
     setSmShow(true);
+    setSmShow1(false)
   };
   const navigate = useNavigate();
   useEffect(() => {
@@ -45,7 +47,8 @@ const NavbarDashboard = () => {
       navigate("/");
     }
   }, [isToken]);
-  // const [smShow, setSmShow] = useState(false);
+  const [smShow1, setSmShow1] = useState(false);
+
 
   return (
     <div className="">
@@ -166,8 +169,8 @@ const NavbarDashboard = () => {
                       </Link> */}
                         {/*  */}
                         <Link
-                          className="nav-link dashboard-links "
-                          onClick={handleLogOut}
+                          className="nav-link dashboard-links nav-dashboard-logout "
+                          onClick={setSmShow1}
                         >
                           <HiOutlineLogout className="fs-4 me-4 " /> Logout
                         </Link>
@@ -224,7 +227,26 @@ const NavbarDashboard = () => {
                   </Dropdown.Menu>
                 </Dropdown>
                 {/* </Scrollbars> */}
-
+                <Modal
+                  size="sm"
+                  show={smShow1}
+                  onHide={() => setSmShow1(false)}
+                  aria-labelledby="example-modal-sizes-title-sm"
+                  centered
+                >
+                  <Modal.Header closeButton className="border-bottom-0 m-1 p-0">
+                    <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="">
+                    <div className="fs-3 d-flex pb-4 text-center">
+                      Are you sure ?
+                    </div>
+                    <div className="d-flex justify-content-end gap-2">
+                      <Button onClick={()=>setSmShow1(false)} className="px-4">Cancel</Button>
+                      <Button variant="danger" onClick={handleLogOut} className="px-4">Logout</Button>
+                    </div>
+                  </Modal.Body>
+                </Modal>
                 <button
                   aria-controls="basic-navbar-nav"
                   type="button"
