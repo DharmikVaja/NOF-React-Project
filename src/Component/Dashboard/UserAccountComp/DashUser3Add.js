@@ -121,7 +121,7 @@ const DashUser3Add = () => {
 
           <p className="error-msg" />
           <div className="d-flex mt-3 gap-2">
-            <button className="common-all-btn">Add Student</button>
+            <button className="common-all-btn">Request Add Student</button>
           </div>
         </div>
       </div>

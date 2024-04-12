@@ -19,9 +19,6 @@ const DashUser1Student = (props) => {
   const [selectedSchool, setSelectedSChool] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [selectedDOB, setSelectedDOB] = useState("");
-
-  const [smShow, setSmShow] = useState(false);
-
   const [studentDetails, setStudentDetails] = useState({
     stu_name: "",
     stu_id: "",
@@ -30,8 +27,24 @@ const DashUser1Student = (props) => {
     stu_gender: "",
     stu_dob: "",
   });
-  console.log(studentDetails);
 
+  useEffect(() => {
+    const storedStudentDetails = localStorage.getItem("studentDetails");
+    if (storedStudentDetails) {
+      setStudentDetails(JSON.parse(storedStudentDetails));
+    }
+  }, []);
+
+  useEffect(() => {
+    setStudentName(studentDetails.stu_name);
+    setSelectedClass(studentDetails.stu_class);
+    setSelectedGender(studentDetails.stu_gender);
+    setSelectedDOB(studentDetails.stu_dob);
+    setSelectedId(studentDetails.stu_id);
+    setSelectedSChool(studentDetails.stu_class);
+  }, [studentDetails]);
+
+  const [smShow, setSmShow] = useState(false);
   const handleNameChange = (e) => {
     setStudentName(e.target.value);
   };
@@ -70,6 +83,7 @@ const DashUser1Student = (props) => {
         stu_dob: selectedDOB,
       })
     );
+    console.log(studentDetails);
   };
   return (
     <div>
@@ -98,7 +112,7 @@ const DashUser1Student = (props) => {
                   className="dash-input  form-control ms-1"
                   name="stu_name"
                   type="text "
-                  defaultValue={studentName }
+                  value={studentName}
                   placeholder="Name of the Student"
                   onChange={handleNameChange}
                 />
@@ -113,7 +127,7 @@ const DashUser1Student = (props) => {
                   className="dash-input form-control ms-1"
                   name="stu_id"
                   type="text "
-                  defaultValue="DO777"
+                  value="DO777"
                   placeholder="Enter the School Id"
                   onChange={handleIDChange}
                   readOnly
@@ -133,9 +147,9 @@ const DashUser1Student = (props) => {
                   name="stu_school"
                   type="text "
                   onChange={handleSchoolChange}
-                  // placeholder="Your School Name"
+                  placeholder="Your School Name"
                   value="DPS Monarch International School, Doha, Qatar"
-                  // readOnly
+                  readOnly
                 />
               </div>
             </div>
@@ -150,7 +164,7 @@ const DashUser1Student = (props) => {
                   id="exampleFormControlSelect1"
                   type="text "
                   name="stu_class"
-                  defaultValue={selectedClass}
+                  value={selectedClass}
                   onChange={handleClassChange}
                 >
                   <option>Select your Class</option>
@@ -199,6 +213,7 @@ const DashUser1Student = (props) => {
                   type="date"
                   className="dash-input"
                   name="stu_dob"
+                  value={selectedDOB}
                   onChange={handleDOBChange}
                 />
               </div>

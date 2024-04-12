@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -8,6 +8,68 @@ import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const DashUser2Parent = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [studentFName, setStudentFName] = useState("");
+  const [studentMName, setStudentMName] = useState("");
+  const [selectedNum, setSelectedNum] = useState("");
+  const [selectedEmail, setSelectedEmail] = useState("");
+
+  const [studentParentDetails, setStudentParentDetails] = useState({
+    stu_f_name: "",
+    stu_m_name: "",
+    stu_num: "",
+    stu_email: "",
+  });
+
+  useEffect(() => {
+    const storedStudentDetails = localStorage.getItem("studentParentDetails");
+    if (storedStudentDetails) {
+      // If storedStudentDetails exist in localStorage, parse it and update state
+      setStudentParentDetails(JSON.parse(storedStudentDetails));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Update state with values from studentParentDetails when it changes
+    setStudentFName(studentParentDetails.stu_f_name);
+    setStudentMName(studentParentDetails.stu_m_name);
+    setSelectedNum(studentParentDetails.stu_num);
+    setSelectedEmail(studentParentDetails.stu_email);
+  }, [studentParentDetails]);
+
+  const handleFNameChange = (e) => {
+    setStudentFName(e.target.value);
+  };
+
+  const handleMNameChange = (e) => {
+    setStudentMName(e.target.value);
+  };
+
+  const handleNumChange = (e) => {
+    setSelectedNum(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setSelectedEmail(e.target.value);
+  };
+
+  const handleUpdate = () => {
+    setStudentParentDetails({
+      stu_f_name: studentFName,
+      stu_m_name: studentMName,
+      stu_num: selectedNum,
+      stu_email: selectedEmail,
+    });
+
+    localStorage.setItem(
+      "studentParentDetails",
+      JSON.stringify({
+        stu_f_name: studentFName,
+        stu_m_name: studentMName,
+        stu_num: selectedNum,
+        stu_email: selectedEmail,
+      })
+    );
+  };
 
   const handleCountryChange = (e) => {
     setSelectedCountry(e.target.value);
@@ -25,11 +87,12 @@ const DashUser2Parent = () => {
                   <FaUser className="fs-4" />
                 </span>
                 <input
-                  placeholder="Father Name"
+                  className="form-control dash-input "
                   name="fatherName"
                   type="text"
-                  className="form-control dash-input "
-                  defaultValue=""
+                  value={studentFName}
+                  placeholder="Father Name"
+                  onChange={handleFNameChange}
                 />
               </div>
             </div>
@@ -39,11 +102,12 @@ const DashUser2Parent = () => {
                   <FaUser className="fs-4" />
                 </span>
                 <input
-                  placeholder="Mother Name"
+                  className="form-control dash-input "
                   name="motherName"
                   type="text"
-                  className="form-control dash-input "
-                  defaultValue=""
+                  value={studentMName}
+                  placeholder="Mother Name"
+                  onChange={handleMNameChange}
                 />
               </div>
             </div>
@@ -56,8 +120,7 @@ const DashUser2Parent = () => {
                   name="countryCode"
                   className="form-select d-flex "
                   onChange={handleCountryChange}
-                  value={selectedCountry}
-                  defaultValue={+91}
+                  value={selectedCountry || "IN"}
                 >
                   {countriesData.map((country, index) => (
                     <option
@@ -71,11 +134,12 @@ const DashUser2Parent = () => {
                 </select>
                 <input
                   name="phoneNumber"
-                  placeholder="Phone Number"
                   type="number"
+                  onChange={handleNumChange}
+                  className="form-control"
+                  value={selectedNum}
+                  placeholder="Phone Number"
                   readOnly=""
-                  className="  form-control"
-                  defaultValue={97430087421}
                 />
               </div>
             </div>
@@ -88,16 +152,22 @@ const DashUser2Parent = () => {
                   placeholder="Email Address"
                   name="email"
                   type="email"
-                  readOnly=""
+                  // readOnly=""
+                  onChange={handleEmailChange}
                   className=" dash-input form-control"
-                  defaultValue="stu503924@misdoha.com"
+                  value={selectedEmail}
                 />
               </div>
             </div>
           </div>
           <p className="error-msg" />
           <div className="d-flex mt-3 gap-2">
-            <input type="submit" value={"Save"} className="common-all-btn" />
+            <input
+              type="submit"
+              value={"Save"}
+              className="common-all-btn"
+              onClick={handleUpdate}
+            />
           </div>
         </div>
       </div>
