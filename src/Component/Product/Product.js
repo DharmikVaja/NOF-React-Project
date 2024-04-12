@@ -84,7 +84,7 @@ const Product = () => {
         <div className="row justify-content-center">
           <div className="col-lg-6">
             <div className="testimonial-heading text-center">
-              <h1>NOF International Olympiads and Practice books </h1>
+              <h1>NOF International Olympiads and Practice books</h1>
             </div>
           </div>
           <div className="mt-5 margin-mobile-box row">

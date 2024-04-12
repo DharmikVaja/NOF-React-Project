@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./practiceEBook.css";
@@ -8,20 +8,21 @@ import productData from "../../Product/productData";
 
 const PracticeEBook = () => {
   const SClass = localStorage.getItem("selectedClass:");
-  const [isAdded, setIsAdded] = useState(false);
+  const [studentCart, setStudentCart] = useState({});
 
-  const handleCartProduct = (productId) => {
-    setIsAdded((prevAddedToCart) => ({
-      ...prevAddedToCart,
-      [productId]: true,
+  useEffect(() => {
+    localStorage.setItem("StudentCart", JSON.stringify(studentCart));
+  }, [studentCart]);
+  
+  const handleAddToCart = (productId) => {
+    setStudentCart((prevCart) => ({
+      ...prevCart,
+      [productId]: (prevCart[productId] || 0) + 1,
     }));
-    // console.log("cart is added", productId);
+    localStorage.setItem("StudentCart", JSON.stringify(studentCart));
   };
-  const addedItemCount = Object.keys(isAdded).length;
-  // const navigate = useNavigate();
-  // const handleGotoCart = () => {
-  //   navigate("/order-summary");
-  // };
+
+  const cartItemCount = Object.keys(studentCart).length;
 
   return (
     <div>
@@ -49,7 +50,7 @@ const PracticeEBook = () => {
                     </div>
                   </div>
                   <Link className="common-btn show-number" to="/order-summary">
-                    <span className="show1 right">{addedItemCount || 0}</span>
+                    <span className="show1 right">{cartItemCount || 0}</span>
                     View Cart
                   </Link>
                 </div>
@@ -66,7 +67,7 @@ const PracticeEBook = () => {
                 {/*  */}
                 {productData.map((product) => {
                   const { id, name, img, amount } = product;
-                  const isProductAdded = isAdded[id] || false;
+                  const productCount = studentCart[id] || 0;
                   return (
                     <div className="col-md-4" key={id}>
                       <div className="test-box-inner">
@@ -78,11 +79,11 @@ const PracticeEBook = () => {
                         </div>
                         <button
                           className="addtocartbtn"
-                          onClick={() => handleCartProduct(id)}
+                          onClick={() => handleAddToCart(id)}
                         >
-                          {isProductAdded ? (
+                          {productCount > 0 ? (
                             <Link
-                              to="/order-summary "
+                              to="/order-summary"
                               className="go_to_cart_Link text-white"
                             >
                               {"Go to Cart"}

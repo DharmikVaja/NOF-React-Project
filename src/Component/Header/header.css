@@ -7,6 +7,7 @@
   z-index: 10 !important;
   position: fixed;
 }
+
 .header-nav {
   margin: 0px 0px -10px 0px !important;
 }
@@ -20,12 +21,15 @@ Header {
   padding: 0;
   /* box-sizing: border-box; */
 }
+
 .logoImg {
   height: 3.75rem;
 }
+
 .nav-item.active {
   background-color: #ffc426 !important;
 }
+
 .new-header-home .yellow-no-border {
   color: #ffc426 !important;
   font-size: 16px;
@@ -35,6 +39,7 @@ Header {
   border: none !important;
   padding: 12px 20px;
 }
+
 .new-header-home .yellow-border {
   color: #ffc426 !important;
   font-size: 16px;
@@ -45,6 +50,7 @@ Header {
   border-radius: 8px;
   border: 1px solid #ffc426;
 }
+
 .gap-2 {
   gap: 0.5rem !important;
 }
@@ -58,13 +64,16 @@ Header {
   line-height: normal;
   margin: 0 12px;
 }
+
 @media screen and (max-width: 991px) {
   .header-nav {
     visibility: hidden;
   }
+
   .wl-cart-img {
     height: 30px;
   }
+
   .heading-wc {
     font-size: 10px;
   }
@@ -73,9 +82,10 @@ Header {
     display: flex;
     justify-content: space-between !important;
     /* align-content:; */
-    
+
   }
-  .header-list .wl-ct{
+
+  .header-list .wl-ct {
     /* margin-right: 30px !important; */
 
   }
@@ -91,6 +101,7 @@ Header {
   background: black;
   position: fixed;
 }
+
 .navbar-nav .nav-item .nav-link {
   /* color: white !important; */
   font-family: "Montserrat Alternates", sans-serif;
@@ -106,6 +117,7 @@ Header {
   transition: color 0.3s ease-in-out;
   text-decoration: none;
 }
+
 .navbarClass li a:hover {
   color: #ffc426 !important;
 }
@@ -114,6 +126,7 @@ Header {
   display: flex;
   padding-left: 0;
 }
+
 .nav-link {
   display: block;
   text-decoration: none;
@@ -124,6 +137,7 @@ Header {
     height: 20px;
   }
 }
+
 .cart-wl-btn {
   color: #fff;
   font-size: 16px;
@@ -134,9 +148,11 @@ Header {
   line-height: normal;
   margin: 10px 12px;
 }
+
 .wl-cart-img {
   margin: 0px 6px 0px 0px;
 }
+
 .show-number .show1 {
   left: -10px !important;
   position: absolute;
@@ -159,15 +175,17 @@ Header {
   font-size: 16px !important;
   font-family: "Montserrat Alternates", sans-serif !important;
   font-weight: 500 !important;
-  background-color: transparent !important ;
+  background-color: transparent !important;
   border: none !important;
   padding: 6px 10px;
 }
+
 .login-btn:hover {
   font-size: 16px !important;
   color: #000dff !important;
   font-weight: 510 !important;
 }
+
 .sign-up {
   color: #ffc426 !important;
   font-size: 16px !important;
@@ -178,6 +196,7 @@ Header {
   border-radius: 8px !important;
   border: 2px solid #ffc426 !important;
 }
+
 .sign-up:hover {
   font-size: 16px !important;
   color: #000dff !important;
@@ -188,14 +207,17 @@ Header {
 .login-modal-heading {
   border: none !important;
 }
+
 .login-text {
   font-size: 1.5rem;
   padding: 20px;
 }
+
 .login-modal {
   /* border: 2px solid #ffc426 !important; */
   border-radius: 30px;
 }
+
 .login-link {
   text-decoration: none;
   color: black;
@@ -207,12 +229,15 @@ Header {
   justify-content: space-between;
   align-items: center;
 }
+
 .student-login-image {
   padding-bottom: 20px;
 }
+
 .school-login-image {
   padding-bottom: 20px;
 }
+
 .school-login-detail {
   display: flex;
   flex-direction: column;
@@ -225,7 +250,21 @@ Header {
   text-decoration: none !important;
   gap: 25px;
 }
+
 .login-modal-footer {
   justify-content: space-evenly !important;
   padding-bottom: 30px !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse ul {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: left;
+    text-align: left;
+  }
+
+  .navbar-collapse ul:hover {
+    color: #ffc426;
+  }
 }

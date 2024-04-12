@@ -177,7 +177,7 @@ const Header = () => {
             className="collapse navbar-collapse justify-content-center"
             id="navbarNav"
           >
-            <ul className="nav navbarClass">
+            <ul className="nav navbarClass ">
               <li className="nav-item">
                 <Link to="/" className="nav-link listNames">
                   Home

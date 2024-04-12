@@ -47,7 +47,6 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
   };
 
   const SClass = localStorage.getItem("selectedClass:");
-  // const CartLength = localStorage.getItem("cartList")
 
   return (
     <>

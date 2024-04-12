@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserProfile from "../../../assets/Dashboard/edit-user-dash-profile.png";
 import UserProfileEdit from "../../../assets/Dashboard/user-edit-rightbottom.png";
 import { FaUser } from "react-icons/fa";
@@ -10,20 +10,66 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Form from "react-bootstrap/Form";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const DashUser1Student = () => {
-  const [selectedClass, setSelectedClass] = useState("Class 8");
-  const [selectedGender, setSelectedGender] = useState("Male");
+const DashUser1Student = (props) => {
+  const [studentName, setStudentName] = useState("");
+  const [selectedId, setSelectedId] = useState("DO778");
+  const [selectedClass, setSelectedClass] = useState("");
+  const [selectedSchool, setSelectedSChool] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedDOB, setSelectedDOB] = useState("");
 
   const [smShow, setSmShow] = useState(false);
 
+  const [studentDetails, setStudentDetails] = useState({
+    stu_name: "",
+    stu_id: "",
+    stu_school: "DPS Monarch International School, Doha, Qatar",
+    stu_class: "",
+    stu_gender: "",
+    stu_dob: "",
+  });
+  console.log(studentDetails);
+
+  const handleNameChange = (e) => {
+    setStudentName(e.target.value);
+  };
   const handleClassChange = (e) => {
     setSelectedClass(e.target.value);
   };
   const handleGenderChange = (e) => {
     setSelectedGender(e.target.value);
+  };
+  const handleDOBChange = (e) => {
+    setSelectedDOB(e.target.value);
+  };
+  const handleIDChange = (e) => {
+    setSelectedId(e.target.value);
+  };
+  const handleSchoolChange = (e) => {
+    setSelectedSChool(e.target.value);
+  };
+  const handleUpdate = () => {
+    setStudentDetails((prevStudentDetails) => ({
+      ...prevStudentDetails,
+      stu_name: studentName,
+      stu_id: selectedId,
+      stu_class: selectedClass,
+      stu_gender: selectedGender,
+      stu_dob: selectedDOB,
+    }));
+
+    localStorage.setItem(
+      "studentDetails",
+      JSON.stringify({
+        stu_id: selectedId,
+        stu_name: studentName,
+        stu_class: selectedClass,
+        stu_gender: selectedGender,
+        stu_dob: selectedDOB,
+      })
+    );
   };
   return (
     <div>
@@ -50,10 +96,11 @@ const DashUser1Student = () => {
                 </span>
                 <input
                   className="dash-input  form-control ms-1"
-                  name="studentname"
+                  name="stu_name"
                   type="text "
-                  value="Hibba"
-                  readOnly
+                  defaultValue={studentName }
+                  placeholder="Name of the Student"
+                  onChange={handleNameChange}
                 />
               </div>
             </div>
@@ -64,9 +111,11 @@ const DashUser1Student = () => {
                 </span>
                 <input
                   className="dash-input form-control ms-1"
-                  name="studentname"
+                  name="stu_id"
                   type="text "
-                  value="DO777"
+                  defaultValue="DO777"
+                  placeholder="Enter the School Id"
+                  onChange={handleIDChange}
                   readOnly
                 />
               </div>
@@ -81,10 +130,12 @@ const DashUser1Student = () => {
                 </span>
                 <input
                   className="dash-input form-control ms-1"
-                  name="studentname"
+                  name="stu_school"
                   type="text "
+                  onChange={handleSchoolChange}
+                  // placeholder="Your School Name"
                   value="DPS Monarch International School, Doha, Qatar"
-                  readOnly
+                  // readOnly
                 />
               </div>
             </div>
@@ -98,9 +149,11 @@ const DashUser1Student = () => {
                   className=" dash-input form-control ms-1"
                   id="exampleFormControlSelect1"
                   type="text "
-                  value={selectedClass}
+                  name="stu_class"
+                  defaultValue={selectedClass}
                   onChange={handleClassChange}
                 >
+                  <option>Select your Class</option>
                   <option>Class 1</option>
                   <option>Class 2</option>
                   <option>Class 3</option>
@@ -124,11 +177,13 @@ const DashUser1Student = () => {
                 <label htmlFor="exampleFormControlSelect1"></label>
                 <select
                   className="dash-input form-control ms-1"
+                  name="stu_gender"
                   id="exampleFormControlSelect1"
                   type="text "
                   value={selectedGender}
                   onChange={handleGenderChange}
                 >
+                  <option>Select Gender </option>
                   <option>Male </option>
                   <option>Female</option>
                   <option>Other</option>
@@ -140,7 +195,12 @@ const DashUser1Student = () => {
                 <span className="input-group-text">
                   <FaCalendarAlt className="fs-4" />
                 </span>
-                <Form.Control type="date" className="dash-input" />
+                <Form.Control
+                  type="date"
+                  className="dash-input"
+                  name="stu_dob"
+                  onChange={handleDOBChange}
+                />
               </div>
             </div>
           </div>
@@ -151,7 +211,9 @@ const DashUser1Student = () => {
               <button className="common-all-btn">Request Change</button>
             </Link>
             <Link onClick={() => setSmShow(true)}>
-              <button className="common-all-btn">Update</button>
+              <button className="common-all-btn" onClick={handleUpdate}>
+                Update
+              </button>
             </Link>
             <Modal
               size="sm"

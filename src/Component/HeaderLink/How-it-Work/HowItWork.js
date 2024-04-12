@@ -16,7 +16,6 @@ import ScrollToTop from "../../../Component/ScrollToTop/ScrollToTop";
 import HIWData from "./HowItWorkData";
 
 const HowItWork = () => {
-  
   const CustomPrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -32,7 +31,7 @@ const HowItWork = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "blue"  }}
+        style={{ ...style, display: "block", background: "blue" }}
         onClick={onClick}
       />
     );
@@ -65,7 +64,6 @@ const HowItWork = () => {
       },
     ],
   };
-
 
   const containerStyle = {
     backgroundImage: `url(${BgImg})`,
