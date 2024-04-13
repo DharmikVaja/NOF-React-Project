@@ -23,6 +23,14 @@ const AfterReport = () => {
   const scoreObject = JSON.parse(examScore);
   const score = scoreObject.score;
 
+  const stuDetailsString = localStorage.getItem("studentDetails");
+  const stuDetails = JSON.parse(stuDetailsString);
+  console.log(stuDetails);
+
+  const stuEmail = localStorage.getItem("email:");
+
+  const phoneNum = localStorage.getItem("phoneNumber:")
+
   return (
     <div>
       <div className="dashboard-layout ">
@@ -47,13 +55,13 @@ const AfterReport = () => {
                   <div className="col-md-12">
                     <div className="pad-set report-border">
                       <div className="student-report-details">
-                        <p className="report-p">Student Name: {}Hibba</p>
-                        <p className="report-p">Class: {}8th</p>
                         <p className="report-p">
-                          Email: {}stu503924@misdoha.com
+                          Student Name: {stuDetails.stu_name}
                         </p>
-                        <p className="report-p">Student Code: {} ind23</p>
-                        <p className="report-p">Mobile No.: {}987543210</p>
+                        <p className="report-p">Class: {stuDetails.stu_class}</p>
+                        <p className="report-p">Email: {stuEmail}</p>
+                        <p className="report-p">Student Code: {stuDetails.stu_id} </p>
+                        <p className="report-p">Mobile No.: {phoneNum}</p>
                       </div>
                     </div>
                     <hr />
@@ -91,15 +99,14 @@ const AfterReport = () => {
                             </Modal.Title>
                           </Modal.Header>
                           <Modal.Body>
-                          <div className="py-2">
-
-                            Your previous test score is{" "}
-                            <span className="fw-bold">
-                              {score} {""}
-                              out of /30
-                            </span>
-                            , keep scoring!
-                          </div>
+                            <div className="py-2">
+                              Your previous test score is{" "}
+                              <span className="fw-bold">
+                                {score} {""}
+                                out of /30
+                              </span>
+                              , keep scoring!
+                            </div>
                           </Modal.Body>
                         </Modal>
                       </div>

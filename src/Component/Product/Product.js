@@ -49,17 +49,24 @@ const Product = () => {
     }
   };
   const isProductInCart = (productId) => {
-    // Check localStorage for cart items
-    const storedCart = JSON.parse(localStorage.getItem("cartList"));
-    return storedCart && storedCart.some((item) => item.id === productId);
+    const storedCart = JSON.parse(localStorage.getItem("cartList")) || [];
+    if (!Array.isArray(storedCart)) {
+      return false;
+    }
+    for (const item of storedCart) {
+      if (item.id === productId) {
+        return true;
+      }
+    }
+    return false;
   };
-
   const scrollToCart = () => {
     if (targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
   const SClass = localStorage.getItem("selectedClass:");
+
   const SCountry = localStorage.getItem("selectedCountry:");
   const isProductLiked = (productId) => likedProducts.includes(productId);
   const toggleWishlist = (productId) => {

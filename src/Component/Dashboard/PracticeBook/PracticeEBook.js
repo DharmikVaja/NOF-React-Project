@@ -2,28 +2,53 @@ import React, { useEffect, useState } from "react";
 import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "../dashboard.css";
 import "./practiceEBook.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import productData from "../../Product/productData";
+import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png";
 
 const PracticeEBook = () => {
-  const SClass = localStorage.getItem("selectedClass:");
-  const [studentCart, setStudentCart] = useState({});
+  const [studentCart, setStudentCart] = useState([]);
+  const [addedToCart, setAddedToCart] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    localStorage.setItem("StudentCart", JSON.stringify(studentCart));
-  }, [studentCart]);
-  
-  const handleAddToCart = (productId) => {
-    setStudentCart((prevCart) => ({
-      ...prevCart,
-      [productId]: (prevCart[productId] || 0) + 1,
-    }));
-    localStorage.setItem("StudentCart", JSON.stringify(studentCart));
+  const handleAddToCart = (product) => {
+    if (isProductInCart(product.id)) {
+      navigate("/order-summary");
+    } else {
+      setAddedToCart((prev) => ({ ...prev, [product.id]: true }));
+      addToCart(product);
+    }
   };
 
-  const cartItemCount = Object.keys(studentCart).length;
+  const isProductInCart = (productId) => {
+    const storedCart = JSON.parse(localStorage.getItem("cartList")) || [];
+    if (!Array.isArray(storedCart)) {
+      return false;
+    }
+    for (const item of storedCart) {
+      if (item.id === productId) {
+        return true;
+      }
+    }
+    return false;
+  };
 
+  const addToCart = (product) => {
+    const updatedCart = [...studentCart];
+    updatedCart.push(product);
+    setStudentCart(updatedCart);
+    localStorage.setItem("cartList", JSON.stringify(updatedCart));
+  };
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cartList"));
+    if (storedCart) {
+      setStudentCart(storedCart);
+    }
+  }, []);
+
+  const cartItemCount = Object.keys(studentCart).length;
   return (
     <div>
       <div className="dashboard-layout ">
@@ -37,11 +62,7 @@ const PracticeEBook = () => {
               <div className="col-md-12">
                 <div className="view-all-link pad-set register-border">
                   <div className="head-for-all-page">
-                    <img
-                      src="assets/img/exam-icon.png"
-                      className="head-icon"
-                      alt=""
-                    />
+                    <img src={AssesmentIcon} className="head-icon" alt="" />
                     <div>
                       <h3>NOF Practice book</h3>
                       <p>
@@ -65,37 +86,33 @@ const PracticeEBook = () => {
               </div>
               <div className="row">
                 {/*  */}
-                {productData.map((product) => {
-                  const { id, name, img, amount } = product;
-                  const productCount = studentCart[id] || 0;
-                  return (
-                    <div className="col-md-4" key={id}>
-                      <div className="test-box-inner">
-                        <img src={img} alt="" />
-                        <h4>{name}</h4>
-                        <div className="d-flex gap-5 justify-content-between">
-                          <p> {SClass}</p>
-                          <p>Price : ₹&nbsp; {amount}</p>
-                        </div>
-                        <button
-                          className="addtocartbtn"
-                          onClick={() => handleAddToCart(id)}
-                        >
-                          {productCount > 0 ? (
-                            <Link
-                              to="/order-summary"
-                              className="go_to_cart_Link text-white"
-                            >
-                              {"Go to Cart"}
-                            </Link>
-                          ) : (
-                            " Add to Cart"
-                          )}
-                        </button>
+                {productData.map((product) => (
+                  <div key={product.id} className="col-md-4">
+                    <div className="test-box-inner">
+                      <img src={product.img} alt={product.name} />
+                      <h4>{product.name}</h4>
+                      <div className="d-flex gap-5 justify-content-between">
+                        <p>Class: {localStorage.getItem("selectedClass:")}</p>
+                        <p>Price : ₹ {product.amount}</p>
                       </div>
+                      <button
+                        className="addtocartbtn"
+                        onClick={() => handleAddToCart(product)}
+                      >
+                        {isProductInCart(product.id) ? (
+                          <Link
+                            to="/order-summary"
+                            className="go_to_cart_Link text-white"
+                          >
+                            {"Go to Cart"}
+                          </Link>
+                        ) : (
+                          " Add to Cart"
+                        )}
+                      </button>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
                 {/*  */}
               </div>
             </div>

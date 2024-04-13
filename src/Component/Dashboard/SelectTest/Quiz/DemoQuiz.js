@@ -10,7 +10,6 @@ function DemoQuiz() {
   const [showResults, setShowResults] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -45,8 +44,22 @@ function DemoQuiz() {
     Navigate("/after-report");
     localStorage.setItem("exam-score", JSON.stringify(scoreObject));
   };
-  //
+
   useEffect(() => {
+    const checkCameraAccess = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        });
+        handleClose();
+      } catch (error) {
+        alert("Camera access is required for this quiz.");
+        setShow(false);
+      }
+    };
+
+    checkCameraAccess();
+
     const handleVisibilityChange = () => {
       if (document.hidden) {
         alert("Switching tabs is not allowed during the exam.");
@@ -61,7 +74,6 @@ function DemoQuiz() {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
-  //
 
   const stopFrontCamera = (stream) => {
     if (stream) {
@@ -70,7 +82,6 @@ function DemoQuiz() {
     }
   };
 
-  // Example usage:
   let cameraStream;
 
   const handleCloseCamera = () => {

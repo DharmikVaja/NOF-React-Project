@@ -17,6 +17,7 @@ const Cart = ({ cart, cartItem, removeFromCart }) => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
     setCART(storedCart || []);
   }, [cartList]);
+  console.log(cartList);
 
   const scrollToTop = () => {
     window.scrollTo({

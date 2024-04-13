@@ -35,20 +35,36 @@ const DashUserProfile = () => {
                 </div>
                 <Tabs
                   defaultActiveKey="student"
-                  id="fill-tab-example" 
+                  id="fill-tab-example"
                   className="mb-3 Dash-user-tabs"
                   fill
                 >
-                  <Tab eventKey="student" title="Student Details" className="Dash-user-tabs-link ">
-                    <DashUser1Student  />
+                  <Tab
+                    eventKey="student"
+                    title="Student Details"
+                    className="Dash-user-tabs-link "
+                  >
+                    <DashUser1Student />
                   </Tab>
-                  <Tab eventKey="parent" title="Parent Details"  className="Dash-user-tabs-link">
+                  <Tab
+                    eventKey="parent"
+                    title="Parent Details"
+                    className="Dash-user-tabs-link"
+                  >
                     <DashUser2Parent />
                   </Tab>
-                  <Tab eventKey="add" title="Add Students"  className="Dash-user-tabs-link">
+                  <Tab
+                    eventKey="add"
+                    title="Add Students"
+                    className="Dash-user-tabs-link"
+                  >
                     <DashUser3Add />
                   </Tab>
-                  <Tab eventKey="change" title="Change Password"  className="Dash-user-tabs-link">
+                  <Tab
+                    eventKey="change"
+                    title="Change Password"
+                    className="Dash-user-tabs-link"
+                  >
                     <DashUser4ChangePsd />
                   </Tab>
                 </Tabs>

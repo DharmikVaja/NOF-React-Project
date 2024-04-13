@@ -22,7 +22,7 @@ const DashUser1Student = (props) => {
   const [studentDetails, setStudentDetails] = useState({
     stu_name: "",
     stu_id: "",
-    stu_school: "DPS Monarch International School, Doha, Qatar",
+    stu_school: "",
     stu_class: "",
     stu_gender: "",
     stu_dob: "",
@@ -41,7 +41,7 @@ const DashUser1Student = (props) => {
     setSelectedGender(studentDetails.stu_gender);
     setSelectedDOB(studentDetails.stu_dob);
     setSelectedId(studentDetails.stu_id);
-    setSelectedSChool(studentDetails.stu_class);
+    setSelectedSChool(studentDetails.stu_school);
   }, [studentDetails]);
 
   const [smShow, setSmShow] = useState(false);
@@ -59,26 +59,30 @@ const DashUser1Student = (props) => {
   };
   const handleIDChange = (e) => {
     setSelectedId(e.target.value);
+    localStorage.setItem("studentId:", e.target.value)
   };
   const handleSchoolChange = (e) => {
     setSelectedSChool(e.target.value);
+    localStorage.setItem("studentSChool:", e.target.value)
   };
   const handleUpdate = () => {
     setStudentDetails((prevStudentDetails) => ({
       ...prevStudentDetails,
       stu_name: studentName,
       stu_id: selectedId,
+      stu_school: selectedSchool,
       stu_class: selectedClass,
       stu_gender: selectedGender,
       stu_dob: selectedDOB,
     }));
-
+    
     localStorage.setItem(
       "studentDetails",
       JSON.stringify({
         stu_id: selectedId,
         stu_name: studentName,
         stu_class: selectedClass,
+        stu_school: selectedSchool,
         stu_gender: selectedGender,
         stu_dob: selectedDOB,
       })
@@ -127,7 +131,7 @@ const DashUser1Student = (props) => {
                   className="dash-input form-control ms-1"
                   name="stu_id"
                   type="text "
-                  value="DO777"
+                  value={selectedId}
                   placeholder="Enter the School Id"
                   onChange={handleIDChange}
                   readOnly
@@ -148,7 +152,7 @@ const DashUser1Student = (props) => {
                   type="text "
                   onChange={handleSchoolChange}
                   placeholder="Your School Name"
-                  value="DPS Monarch International School, Doha, Qatar"
+                  value={selectedSchool}
                   readOnly
                 />
               </div>

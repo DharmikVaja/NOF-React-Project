@@ -3,23 +3,27 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./practiceEBook.css";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
-import productData from "../../Product/productData"
 
 const OrderSummary = () => {
-  const [studentCart, setStudentCart] = useState({});
+  const [cartList, setCartList] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
     // Load cart items from localStorage
-    const storedCart = JSON.parse(localStorage.getItem("StudentCart")) || {};
-    setStudentCart(storedCart);
+    const storedCart = JSON.parse(localStorage.getItem("cartList")) || {};
+    setCartList(storedCart || {});
+    // console.log("cart-list:", storedCart);
 
     // Calculate subtotal and total items
     let subtotal = 0;
     let totalItems = 0;
+
     Object.entries(storedCart).forEach(([productId, quantity]) => {
-      const product = productData.find((item) => item.id === productId);
+      const product = storedCart[productId];
+
+      // console.log("productId", productId);
+      // console.log("quantity", quantity);
       if (product) {
         subtotal += product.amount * quantity;
         totalItems += quantity;
@@ -30,10 +34,10 @@ const OrderSummary = () => {
   }, []);
 
   const removeFromCart = (productId) => {
-    const updatedCart = { ...studentCart };
+    const updatedCart = { ...cartList };
     delete updatedCart[productId];
-    setStudentCart(updatedCart);
-    localStorage.setItem("StudentCart", JSON.stringify(updatedCart));
+    setCartList(updatedCart);
+    localStorage.setItem("cartList", JSON.stringify(updatedCart));
   };
 
   return (
@@ -52,11 +56,9 @@ const OrderSummary = () => {
                     <div className="order-table">
                       <table className="table">
                         <tbody className="big-content set-border-pad">
-                          {Object.entries(studentCart).map(
+                          {Object.entries(cartList).map(
                             ([productId, quantity]) => {
-                              const product = productData.find(
-                                (item) => item.id === productId
-                              );
+                              const product = cartList[productId];
                               return (
                                 <tr key={productId}>
                                   <td>{product.name}</td>
