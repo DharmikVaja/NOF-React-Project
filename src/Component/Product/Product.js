@@ -23,7 +23,7 @@ const Product = () => {
       updatedCart[existingIndex].quantity =
         (updatedCart[existingIndex].quantity || 1) + 1;
     } else {
-      const newProduct = { ...product }; // Deep copy with spread operator
+      const newProduct = { ...product };
       updatedCart.push(newProduct);
     }
     setCART(updatedCart);

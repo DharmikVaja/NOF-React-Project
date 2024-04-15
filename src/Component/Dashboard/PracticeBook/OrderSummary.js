@@ -4,6 +4,8 @@ import "./practiceEBook.css";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png";
+import { TiDeleteOutline } from "react-icons/ti";
+import PaymentForm from "./PaymentForm";
 
 const OrderSummary = ({ props }) => {
   const [cartList, setCartList] = useState([]);
@@ -29,13 +31,13 @@ const OrderSummary = ({ props }) => {
 
   const SClass = localStorage.getItem("selectedClass:");
 
-  const storedCart = cartList;
+  // const storedCart = cartList;
 
-  const quantity = Object.keys(storedCart).length;
+  const quantity = Object.keys(cartList).length;
 
   const removeFromCart = (productId) => {
-    const updatedCart = { ...cartList };
-    delete updatedCart[productId];
+    const updatedCart = cartList.filter((product) => product.id !== productId);
+
     setCartList(updatedCart);
     localStorage.setItem("cartList", JSON.stringify(updatedCart));
   };
@@ -70,26 +72,28 @@ const OrderSummary = ({ props }) => {
                       <table className="table">
                         <tbody className=" order-table">
                           <tr>
-                            <th className="d-flex justify-content-center">
-                              Name
-                            </th>
+                            <th className="">Name</th>
                             <th>Quantity</th>
                             <th>Amount</th>
                             <th></th>
                           </tr>
                           {Object.values(cartList).map((product) => (
                             <tr key={product.id} className="">
-                              <td className="justify-content-start d-flex ps-3">
-                                {product.name}
-                              </td>
+                              <td className="">{product.name}</td>
                               <td>{quantity / quantity}</td>
                               <td>{product.amount}₹</td>
                               <td>
-                                <input
+                                <Link
                                   type="button"
-                                  value="Remove"
-                                  onClick={()=>{removeFromCart(product.id)}}
-                                />
+                                  onClick={() => {
+                                    removeFromCart(product.id);
+                                  }}
+                                >
+                                  <TiDeleteOutline
+                                    className="fs-2"
+                                    color="#AC0606"
+                                  />
+                                </Link>
                               </td>
                             </tr>
                           ))}
@@ -142,7 +146,8 @@ const OrderSummary = ({ props }) => {
                         </Link>
                         <Link
                           className="common-all-btn text-center"
-                          to="/order-summary"
+                          // to="/order-summary"
+                          // onClick={<PaymentForm/>}
                         >
                           Next
                         </Link>

@@ -35,12 +35,18 @@ const PracticeEBook = () => {
   };
 
   const addToCart = (product) => {
-    const updatedCart = [...studentCart]; // Create a copy to avoid mutation
-    updatedCart.push(product);
+    const updatedCart = [...studentCart];
+    const existingIndex = updatedCart.findIndex((p) => p.id === product.id);
+    if (existingIndex !== -1) {
+      updatedCart[existingIndex].quantity =
+        (updatedCart[existingIndex].quantity || 1) + 1;
+    } else {
+      const newProduct = { ...product }; // Deep copy with spread operator
+      updatedCart.push(newProduct);
+    }
     setStudentCart(updatedCart);
     localStorage.setItem("cartList", JSON.stringify(updatedCart));
   };
-
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
     if (Array.isArray(storedCart)) {
