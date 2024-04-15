@@ -63,9 +63,7 @@
     display: inline-block;
     min-width: 100px;
 }
-.order-table tr {
-    border: transparent !important;
-}
+
 .dashboard-layout .dash-outer-box .pad-set {
     padding: 20px 32px;
 }
@@ -82,4 +80,13 @@
 }
 .go_to_cart_Link{
     text-decoration: none;
+}
+.order-table tr td{
+    padding: 20px 0px;
+}
+.small-content tr td{
+    padding: 10px 0px;
+}
+.small-content{
+    border: 1px solid transparent
 }

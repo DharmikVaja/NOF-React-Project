@@ -3,27 +3,21 @@ import NavbarDashboard from "../UserDashboard/NavbarDashboard";
 import "./practiceEBook.css";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
+import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png";
 
-const OrderSummary = () => {
+const OrderSummary = ({ props }) => {
   const [cartList, setCartList] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
-    // Load cart items from localStorage
     const storedCart = JSON.parse(localStorage.getItem("cartList")) || {};
     setCartList(storedCart || {});
-    // console.log("cart-list:", storedCart);
-
-    // Calculate subtotal and total items
     let subtotal = 0;
     let totalItems = 0;
 
     Object.entries(storedCart).forEach(([productId, quantity]) => {
       const product = storedCart[productId];
-
-      // console.log("productId", productId);
-      // console.log("quantity", quantity);
       if (product) {
         subtotal += product.amount * quantity;
         totalItems += quantity;
@@ -33,6 +27,12 @@ const OrderSummary = () => {
     setTotalItems(totalItems);
   }, []);
 
+  const SClass = localStorage.getItem("selectedClass:");
+
+  const storedCart = cartList;
+
+  const quantity = Object.keys(storedCart).length;
+
   const removeFromCart = (productId) => {
     const updatedCart = { ...cartList };
     delete updatedCart[productId];
@@ -41,7 +41,7 @@ const OrderSummary = () => {
   };
 
   return (
-    <div>
+    <div style={{ fontFamily: "Montserrat Alternates, sans-serif" }}>
       <div className="dashboard-layout">
         <div className="inner-dash-bpx">
           <header className="main-header login-header-home">
@@ -51,31 +51,48 @@ const OrderSummary = () => {
           <section className="dash-outer-box">
             <div className="pad-set">
               <div className="row">
+                <div className="col-md-12">
+                  <div className="view-all-link pad-set register-border">
+                    <div className="head-for-all-page align-items-center">
+                      <img src={AssesmentIcon} className="head-icon" alt="" />
+                      <div>
+                        <h3>Order Summary</h3>
+                        <p>You can order your Practice books here</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
                 <div className="col-md-7">
-                  <div className="pad-set inter-grey-box mt-3">
-                    <div className="order-table">
+                  <div className="pad-set inter-grey-box mt-3 ">
+                    <div className="table-responsive">
                       <table className="table">
-                        <tbody className="big-content set-border-pad">
-                          {Object.entries(cartList).map(
-                            ([productId, quantity]) => {
-                              const product = cartList[productId];
-                              return (
-                                <tr key={productId}>
-                                  <td>{product.name}</td>
-                                  <td>{quantity}</td>
-                                  <td>{product.amount}</td>
-                                  <td>
-                                    <button
-                                      className="btn btn-danger"
-                                      onClick={() => removeFromCart(productId)}
-                                    >
-                                      Remove
-                                    </button>
-                                  </td>
-                                </tr>
-                              );
-                            }
-                          )}
+                        <tbody className=" order-table">
+                          <tr>
+                            <th className="d-flex justify-content-center">
+                              Name
+                            </th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th></th>
+                          </tr>
+                          {Object.values(cartList).map((product) => (
+                            <tr key={product.id} className="">
+                              <td className="justify-content-start d-flex ps-3">
+                                {product.name}
+                              </td>
+                              <td>{quantity / quantity}</td>
+                              <td>{product.amount}₹</td>
+                              <td>
+                                <input
+                                  type="button"
+                                  value="Remove"
+                                  onClick={()=>{removeFromCart(product.id)}}
+                                />
+                              </td>
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>
@@ -89,21 +106,30 @@ const OrderSummary = () => {
                       <table className="table text-start table-order">
                         <tbody className="small-content">
                           <tr>
-                            <td>Total Practice book - {totalItems}</td>
+                            <td>Standard </td>
+                            <td className="text-end ">{SClass}</td>
+                          </tr>
+                          <tr>
+                            <td>Total Practice book </td>
+                            <td className="text-end ">{quantity}</td>
                           </tr>
                           <tr>
                             <td className="padding-less">Subtotal</td>
-                            <td className="text-end padding-less">
-                              ₹ {subtotal}
-                            </td>
+                            <td className="text-end ">₹ {quantity * 300}</td>
                           </tr>
                           <tr>
                             <td className="padding-less">Shipping</td>
-                            <td className="text-end padding-less">00</td>
+                            <td className="text-end ">00</td>
                           </tr>
+                          <tr
+                            style={{
+                              borderBottom: "1px solid lightGray",
+                              width: "135%",
+                            }}
+                          />
                           <tr className="order-total">
                             <td>Total Amount</td>
-                            <td className="text-end">₹ {subtotal}</td>
+                            <td className="text-end">₹ {quantity * 300}</td>
                           </tr>
                         </tbody>
                       </table>

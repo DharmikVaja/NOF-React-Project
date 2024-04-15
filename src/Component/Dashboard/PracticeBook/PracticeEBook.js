@@ -35,7 +35,7 @@ const PracticeEBook = () => {
   };
 
   const addToCart = (product) => {
-    const updatedCart = [...studentCart];
+    const updatedCart = [...studentCart]; // Create a copy to avoid mutation
     updatedCart.push(product);
     setStudentCart(updatedCart);
     localStorage.setItem("cartList", JSON.stringify(updatedCart));
@@ -43,12 +43,15 @@ const PracticeEBook = () => {
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartList"));
-    if (storedCart) {
+    if (Array.isArray(storedCart)) {
       setStudentCart(storedCart);
+    } else {
+      setStudentCart([]);
     }
   }, []);
 
   const cartItemCount = Object.keys(studentCart).length;
+
   return (
     <div>
       <div className="dashboard-layout ">
@@ -85,7 +88,7 @@ const PracticeEBook = () => {
                 </div>
               </div>
               <div className="row">
-                {/*  */}
+                {/* Product Listing */}
                 {productData.map((product) => (
                   <div key={product.id} className="col-md-4">
                     <div className="test-box-inner">
@@ -104,7 +107,7 @@ const PracticeEBook = () => {
                             to="/order-summary"
                             className="go_to_cart_Link text-white"
                           >
-                            {"Go to Cart"}
+                            Go to Cart
                           </Link>
                         ) : (
                           " Add to Cart"
@@ -113,7 +116,7 @@ const PracticeEBook = () => {
                     </div>
                   </div>
                 ))}
-                {/*  */}
+                {/* Product Listing */}
               </div>
             </div>
           </section>
