@@ -205,7 +205,10 @@ body::-webkit-scrollbar-thumb {
   .outer-show-table {
     flex-wrap: wrap;
   }
-
+.login_type_btns
+{
+padding: 0px
+}
   .outer-show-table .d-flex {
     margin: 10px 0;
     font-size: 12px;

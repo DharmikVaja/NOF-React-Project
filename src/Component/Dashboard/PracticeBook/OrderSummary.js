@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 import AssesmentIcon from "../../../assets/Dashboard/exam-assesment-icon.png";
 import { TiDeleteOutline } from "react-icons/ti";
-import PaymentForm from "./PaymentForm";
+// import PaymentForm from "./PaymentForm";
 
 const OrderSummary = ({ props }) => {
   const [cartList, setCartList] = useState([]);

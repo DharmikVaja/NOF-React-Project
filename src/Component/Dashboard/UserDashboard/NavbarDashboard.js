@@ -39,7 +39,7 @@ const NavbarDashboard = () => {
     localStorage.removeItem("token");
     setIsToken(false);
     setSmShow(true);
-    setSmShow1(false)
+    setSmShow1(false);
   };
   const navigate = useNavigate();
   useEffect(() => {
@@ -48,7 +48,6 @@ const NavbarDashboard = () => {
     }
   }, [isToken]);
   const [smShow1, setSmShow1] = useState(false);
-
 
   return (
     <div className="">
@@ -67,7 +66,7 @@ const NavbarDashboard = () => {
                   }`}
                   id="basic-navbar-nav"
                 >
-                  <div className="me-auto navbar-nav navBars">
+                  <div className="me-auto navbar-nav navBars ">
                     <Scrollbars>
                       <Stack
                         direction="vertical"
@@ -204,7 +203,7 @@ const NavbarDashboard = () => {
                     variant="success"
                     id="dropdown-basic-button"
                     type="button"
-                    className="profile-dropdown bottom dropdown-toggle btn btn-primary bg-transparent"
+                    className="profile-dropdown  bottom dropdown-toggle btn btn-primary bg-transparent"
                   >
                     <img src={NOFUserLogo} alt="Nof User Logo" />
                   </Dropdown.Toggle>
@@ -214,10 +213,18 @@ const NavbarDashboard = () => {
                         Switch User
                       </Link>
                       <Link className="dropdown-item" role="button" to="/">
-                        Go to Home page
+                        Go to Home
                       </Link>
                       <Link
                         className="dropdown-item"
+                        role="button"
+                        to="/account-setting"
+                      >
+                        Settings
+                      </Link>
+
+                      <Link
+                        className="dropdown-item logout"
                         role="button"
                         onClick={handleLogOut}
                       >
@@ -238,12 +245,23 @@ const NavbarDashboard = () => {
                     <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
                   </Modal.Header>
                   <Modal.Body className="">
-                    <div className="fs-3 d-flex pb-4 text-center">
-                      Are you sure ?
+                    <div className="fs-3 d-flex  text-center justify-content-center">
+                      <p className="d-flex text-center fs-2">Are you sure ?</p>
                     </div>
                     <div className="d-flex justify-content-end gap-2">
-                      <Button onClick={()=>setSmShow1(false)} className="px-4">Cancel</Button>
-                      <Button variant="danger" onClick={handleLogOut} className="px-4">Logout</Button>
+                      <Button
+                        onClick={() => setSmShow1(false)}
+                        className="px-4 py-2"
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        variant="danger"
+                        onClick={handleLogOut}
+                        className="px-4 py-2"
+                      >
+                        Logout
+                      </Button>
                     </div>
                   </Modal.Body>
                 </Modal>
@@ -253,10 +271,10 @@ const NavbarDashboard = () => {
                   aria-label="Toggle navigation"
                   className={`navbar-toggler collapsed ${
                     isNavBarsVisible ? "active" : ""
-                  }`}
+                  } ` }
                   onClick={handleToggleNavBars}
                 >
-                  <img src={LogoImgUp} className="img-fluid" alt="" />
+                  <img src={LogoImgUp} className="img-fluid menu_img" alt="" />
                 </button>
               </div>
             </div>

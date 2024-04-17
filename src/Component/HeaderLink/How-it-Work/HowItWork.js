@@ -16,26 +16,6 @@ import ScrollToTop from "../../../Component/ScrollToTop/ScrollToTop";
 import HIWData from "./HowItWorkData";
 
 const HowItWork = () => {
-  const CustomPrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
-        onClick={onClick}
-      />
-    );
-  };
-  const CustomNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "blue" }}
-        onClick={onClick}
-      />
-    );
-  };
   let settings = {
     dots: true,
     infinite: true,
@@ -43,8 +23,8 @@ const HowItWork = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    // prevArrow: <CustomPrevArrow />,
+    // nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,

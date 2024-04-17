@@ -18,7 +18,7 @@ const ActivityLog = () => {
     setSearchValue(e.target.value);
   };
   function clearFilter() {
-    document.querySelector(".search-data").value = "";
+    setSearchValue("") 
   }
 
   const ActLog = [
@@ -121,6 +121,7 @@ const ActivityLog = () => {
                                 className="search-data form-control"
                                 onChange={handleSearchChange}
                                 type="text"
+                                value={searchValue}
                                 name="search"
                                 placeholder="Type to search"
                               />

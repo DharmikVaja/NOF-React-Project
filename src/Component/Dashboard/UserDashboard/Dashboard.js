@@ -22,7 +22,7 @@ const Dashboard = () => {
         <section className="dash-outer-box">
           <div className="pad-set">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 dashboard_box">
                 <div className="grey-dash-box">
                   <div className="d-flex justify-content-between align-items-start">
                     <div className="left-content max-100">
@@ -48,14 +48,14 @@ const Dashboard = () => {
                     <div className="right-image">
                       <img
                         src={UserProfile}
-                        className="img-fluid logo"
+                        className="img-fluid logo dashboard_user_image"
                         alt="user profile"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 dashboard_box">
                 <div className="grey-dash-box">
                   <div className="">
                     <div className=" left-content">
@@ -84,7 +84,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 dashboard_box">
                 <div className="grey-dash-box">
                   <div className="">
                     <div className=" left-content">
@@ -100,7 +100,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 dashboard_box">
                 <div className="grey-dash-box">
                   <div className="">
                     <div className=" left-content">

@@ -78,7 +78,7 @@ const Header = () => {
               </Link>
             </div> */}
 
-            <div className="col-md-4 text-end d-flex justify-content-end gap-2">
+            <div className="col-md-4 text-end d-flex justify-content-end gap-2 align-items-center">
               {isToken ? (
                 <Link to="/user-dashboard">
                   <Button type="button" className="sign-up btn">
@@ -108,7 +108,7 @@ const Header = () => {
 
               {/*  */}
               <button
-                className="navbar-toggler"
+                className="navbar-toggler menu_toggle_btn"
                 type="button"
                 // style={{ backgroundColor: "white" }}
                 data-toggle="collapse"
@@ -117,7 +117,7 @@ const Header = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <img src={MenuBtn} alt="" />
+                <img src={MenuBtn} className="menu_img" alt="" />
               </button>
 
               {/* Login modal */}
@@ -144,11 +144,12 @@ const Header = () => {
                           <HiMiniUserGroup className="fs-1" />
                         </div>
                         <Button variant="primary" className="new-white-btn ">
-                          <div>
-                            <Link to="login" className="login-link">
-                              <h6>Student Login </h6>
-                            </Link>
-                          </div>
+                          <Link
+                            to="login"
+                            className="login-link  login_type_btns"
+                          >
+                            <h6>Student Login </h6>
+                          </Link>
                         </Button>
                       </div>
                       <div className="school-login-detail">
@@ -156,11 +157,12 @@ const Header = () => {
                           <FaSchool className="fs-1" />
                         </div>
                         <Button variant="primary" className="new-white-btn ">
-                          <div>
-                            <Link to="school-login" className="login-link">
-                              <h6>School Login</h6>
-                            </Link>
-                          </div>
+                          <Link
+                            to="school-login"
+                            className="login-link login_type_btns"
+                          >
+                            <h6>School Login</h6>
+                          </Link>
                         </Button>
                       </div>
                     </div>

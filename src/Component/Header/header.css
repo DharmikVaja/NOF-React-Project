@@ -218,6 +218,16 @@ Header {
   border-radius: 30px;
 }
 
+.menu_toggle_btn {
+  height: 40px;
+  border-radius: 2px solid white !important;
+  padding: 6px 12px !important;
+}
+
+.menu_img {
+  max-height: 20px !important;
+}
+
 .login-link {
   text-decoration: none;
   color: black;

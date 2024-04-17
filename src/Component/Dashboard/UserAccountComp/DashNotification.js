@@ -12,6 +12,9 @@ const DashNotification = () => {
   const handleNotif = (e) => {
     setNotif(e.target.value);
   };
+  const clearfilter=()=>{
+    setNotif('');
+  }
   const Notifications = [
     {
       id: 1,
@@ -75,12 +78,12 @@ const DashNotification = () => {
                           onChange={handleNotif}
                           type="text"
                           className="search_data play-search1 form-control"
-                          defaultValue=""
+                          value={notif}
                         />
                       </div>
                     </div>
                     <div>
-                      <button className="common-all-btn ms-4">
+                      <button className="common-all-btn ms-4" onClick={clearfilter}>
                         Clear Filter
                       </button>
                     </div>
