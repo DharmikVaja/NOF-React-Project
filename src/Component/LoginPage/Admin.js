@@ -5,28 +5,40 @@ import LoginBGImg from "../../assets/login-after-btn-bg.png";
 import logoImg from "../../assets/logo.png";
 import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { handleAdminAPI } from "../../Service/api";
 
 const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [smShow, setSmShow] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleClose = () => setSmShow(false);
-
   const navigate = useNavigate();
-  const handleAdminLog = () => {
+
+  const handleAdminLog = async () => {
     const adminEmail = "nof123@gmail.com";
     const adminPassword = "admin123";
-    if (email === adminEmail && password === adminPassword) {
-      alert("Successfully Login");
-      navigate("/admin-panel");
-    } else {
-      setSmShow(true);
-      setError("Invalid Credentials");
+    try {
+      console.log("------------------");
+      const response = await handleAdminAPI({ email, password });
+      if (email === adminEmail && password === adminPassword) {
+        alert("Successfully Login");
+        navigate("/admin-panel");
+      } else {
+        setError("Invalid Credentials");
+      }
+      console.log(response);
+    } catch (error) {
+      console.log("error", error || "Error while login, please try again");
     }
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "email") setEmail(value);
+    else if (name === "password") setPassword(value);
+    console.log(name, value);
+  };
+
   return (
     <div>
       <header className="header-main-login">
@@ -56,7 +68,7 @@ const Admin = () => {
               <div className="login-side-box">
                 <div className="inner-box-login">
                   <h2>Admin Login</h2>
-                  <p>Please login to continue</p>
+                  {/* <p>Please login to continue</p> */}
                   <div className="mb-3 input-group">
                     <span className="input-group-text">
                       <FaUser />
@@ -66,8 +78,8 @@ const Admin = () => {
                       name="email"
                       type="email"
                       className="form-control"
-                      defaultValue={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="mb-3 input-group">
@@ -77,23 +89,21 @@ const Admin = () => {
                     <input
                       placeholder="Password"
                       name="password"
-                      type={showPassword ? "text" : "password"}
+                      type={showPassword ? "password" : "text"}
                       id="id_pass"
                       className="form-control"
-                      defaultValue={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={password}
+                      onChange={handleChange}
                     />
                     <span
                       className="input-group-text"
                       onClick={() => setShowPassword(!showPassword)}
                     >
-                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
                     </span>
                   </div>
 
                   <p className="error-msg"></p>
-
-                  {/*  */}
                   <Button
                     className="common-btn w-100"
                     variant="primary"
@@ -103,33 +113,8 @@ const Admin = () => {
                     Login
                   </Button>
 
-                  <Modal
-                    size="sm"
-                    show={smShow}
-                    onHide={() => setSmShow(false)}
-                    aria-labelledby="example-modal-sizes-title-sm"
-                    style={{ border: "0" }}
-                  >
-                    <Modal.Header closeButton>
-                      <Modal.Title id="example-modal-sizes-title-sm"></Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      Please Create an Account first !!
-                      <Button
-                        className="common-btn "
-                        style={{
-                          display: "flex",
-                          marginLeft: "auto",
-                        }}
-                        onClick={handleClose}
-                      >
-                        Understood
-                      </Button>
-                    </Modal.Body>
-                  </Modal>
-                  {/*  */}
                   <Link to="/">
-                    <button className="common-btn w-100 m-0">Back</button>
+                    <button className="common-btn w-100 m-0">Go Back</button>
                   </Link>
                 </div>
               </div>

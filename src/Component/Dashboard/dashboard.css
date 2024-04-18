@@ -490,13 +490,17 @@
 
 .Dash-user-tabs {
   background-color: #ebebeb72;
-
+  max-width:700px;
   color: #597ad1;
   font-weight: 450;
   font-size: 17px;
   /* margin: 5px 0; */
-  height: 43px;
+  /* height: 43px; */
 }
+.Dash-user-tabs:hover{
+
+}
+
 
 .dash-user1-update {
   font-weight: 600;

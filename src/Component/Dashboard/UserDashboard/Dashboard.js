@@ -11,7 +11,7 @@ const Dashboard = () => {
   const stuDetails = JSON.parse(stuDetailsString);
   console.log(stuDetails);
 
-  const stuEmail = localStorage.getItem("email:")
+  const stuEmail = localStorage.getItem("email:");
   return (
     <div className="dashboard-layout ">
       <div className="inner-dash-bpx ">
@@ -26,7 +26,9 @@ const Dashboard = () => {
                 <div className="grey-dash-box">
                   <div className="d-flex justify-content-between align-items-start">
                     <div className="left-content max-100">
-                      <h3 className="for_capitalize pb-2">Welcome {stuDetails.stu_name}</h3>
+                      <h3 className="for_capitalize pb-2">
+                        Welcome {stuDetails.stu_name}
+                      </h3>
                       <ul className="blue-content">
                         <li>Class - {stuDetails.stu_class}</li>
                         <li>

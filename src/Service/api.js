@@ -96,7 +96,7 @@ export const handleOtpVerificationAPI = async (
   }
 };
 
-// SubmitForm
+// Contact form SubmitForm
 export const handleSubmitAPI = async (formData) => {
   try {
     const response = await axios.post(`${BASEURL}contact-us`, formData);
@@ -132,22 +132,21 @@ export const handleChangePsdAPI = async (body) => {
   }
 };
 
-// export const handleAdminAPI = async ({ email, password }, URLS, body) => {
-//   try {
-//     console.log("---------------");
-//     console.log("UserData:", { email, password });
+export const handleAdminAPI = async ({ email, password }, URLS, body) => {
+  try {
+    console.log("---------------");
+    console.log("UserData:", { email, password });
 
-//     const response = await axios.post(`${BASEURL}admin`, { email, password });
-//     const { status, message, data: userData } = response.data;
-//     // console.log("response", response);
-//     if (response.data.status) {
-//       console.log("Login successful");
-//     } else {
-//       console.error(response.data.message);
-//     }
-//     return { status, message, userData };
-//   } catch (error) {
-//     console.error("Error during login:", error.message);
-//     throw error;
-//   }
-// };
+    const response = await axios.post(`${BASEURL}admin`, { email, password });
+    // console.log("response", response);
+    if (response.data.status) {
+      console.log("Login successful");
+    } else {
+      console.error(response.data.message);
+    }
+    return { response };
+  } catch (error) {
+    console.error("Error during login:", error.message);
+    throw error;
+  }
+};

@@ -36,6 +36,7 @@
 .account-tabs .nav-tabs .nav-link.active {
   color: #597ad1;
 }
+
 .account-tabs .nav-tabs {
   background-color: transparent;
   border-color: transparent;
@@ -100,3 +101,9 @@
 .table-exam-schedule {
     overflow-x: scroll;
 }}
+@media screen and (max-width: 768px){
+  .account-set-inner{
+    padding: 0px 15px;
+  }
+
+}

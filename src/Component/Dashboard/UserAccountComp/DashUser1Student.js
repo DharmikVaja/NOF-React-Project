@@ -14,7 +14,7 @@ import Modal from "react-bootstrap/Modal";
 
 const DashUser1Student = (props) => {
   const [studentName, setStudentName] = useState("");
-  const [selectedId, setSelectedId] = useState("DO778");
+  const [selectedId, setSelectedId] = useState("DO778");  
   const [selectedClass, setSelectedClass] = useState("");
   const [selectedSchool, setSelectedSChool] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
@@ -59,11 +59,11 @@ const DashUser1Student = (props) => {
   };
   const handleIDChange = (e) => {
     setSelectedId(e.target.value);
-    localStorage.setItem("studentId:", e.target.value)
+    localStorage.setItem("studentId:", e.target.value);
   };
   const handleSchoolChange = (e) => {
     setSelectedSChool(e.target.value);
-    localStorage.setItem("studentSChool:", e.target.value)
+    localStorage.setItem("studentSChool:", e.target.value);
   };
   const handleUpdate = () => {
     setStudentDetails((prevStudentDetails) => ({
@@ -75,7 +75,7 @@ const DashUser1Student = (props) => {
       stu_gender: selectedGender,
       stu_dob: selectedDOB,
     }));
-    
+
     localStorage.setItem(
       "studentDetails",
       JSON.stringify({
@@ -225,7 +225,7 @@ const DashUser1Student = (props) => {
           </div>
 
           <p className="error-msg"></p>
-          <div className="d-flex mt-3 gap-2">
+          <div className="d-flex flex-wrap mt-3 gap-2">
             <Link to="/faqs-ticket">
               <button className="common-all-btn">Request Change</button>
             </Link>
